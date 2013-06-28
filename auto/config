@@ -1,0 +1,25 @@
+#!/bin/sh
+
+set -e
+
+case "$(dpkg --print-architecture)" in
+	amd64)
+		_LINUX_FLAVOURS="amd64"
+		_SOURCE="false"
+		;;
+
+	i386)
+		_LINUX_FLAVOURS="486 686-pae"
+		_SOURCE="true"
+		;;
+esac
+
+lb config noauto \
+	--clean \
+	--ignore-system-defaults \
+	--mode debian \
+	--debian-installer live \
+	--linux-flavours "${_LINUX_FLAVOURS}" \
+	--linux-packages "linux-image linux-headers" \
+	--source "${_SOURCE}" \
+"${@}"
