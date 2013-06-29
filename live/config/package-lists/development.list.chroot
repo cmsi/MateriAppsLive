@@ -1,0 +1,9 @@
+build-essential
+cmake-curses-gui
+gfortran
+git
+libboost-all-dev
+libfftw3-dev
+libhdf5-serial-dev
+openmpi-bin
+subversion
