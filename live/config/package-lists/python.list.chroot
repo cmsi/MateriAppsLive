@@ -1,4 +1,10 @@
 python-h5py
 python-numpy
+python-numpy-doc
 python-matplotlib
+python-matplotlib-doc
 python-scipy
+python-wxgtk2.8
+python-opengl
+ipython
+ipython-doc
