@@ -6,3 +6,4 @@ Version: 3.1
 Architectures: amd64 source
 Components: main non-free contrib
 Description: MateriApps Debian Repository
+SignWith: default
