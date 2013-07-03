@@ -7,4 +7,5 @@ libfftw3-dev
 libhdf5-serial-dev
 hdf5-tools
 openmpi-bin
+ruby
 subversion
