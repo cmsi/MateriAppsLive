@@ -1,0 +1,70 @@
+Debian Live
+===========
+
+必要ツールのインストール
+------------------------
+
+* live-build と関連ツール
+
+  # apt-get install live-build live-boot live-config
+
+* キャッシュ
+
+  # apt-get install apt-cacher-ng
+
+* 動作確認のためのツール
+
+   # apt-get install qemu wodim
+
+基本設定
+--------
+
+ live-images
+
+ $ git clone http://live.debian.net/git/live-images.git
+
+live-images/images/lxde-desktop 中の auto と config ディレクトリをコピー
+
+auto/config を編集
+
+* proxy の設定を追加
+
+   --apt-http-proxy "http://localhost:3142"
+
+* mirror site の追加
+
+   --parent-mirror-bootstrap "http://ftp.jp.debian.org/debian/" \
+   --parent-mirror-binary "http://ftp.jp.debian.org/debian/" \
+   --mirror-bootstrap "http://ftp.jp.debian.org/debian/" \
+   --mirror-binary "http://ftp.jp.debian.org/debian/" \
+   --mirror-chroot "http://ftp.jp.debian.org/debian/" \
+
+* boot parameter の設定
+
+   --bootappend-live "boot=live config persistence noeject live-config.utc= live-config.locales=ja_JP.UTF-8 live-config.keyboard-model=jp106 live-config.keyboard-layouts=jp" \
+
+Debian Live のビルド
+--------------------
+
+ # cd ~/build
+ # lb config --config [設定一式がおいてあるディレクトリ名]
+ # lb build
+
+USB メモリへの書き込み
+----------------------
+
+ # dd if=binary.hybrid.iso of=/dev/sdb bs=4M
+ # fdisk (/dev/sdb2 を作成)
+ # mkfs.ext3 /dev/sdb2 -L persistence
+
+persistence.conf を作成
+
+ # mount /dev/sdb2 /mnt
+ # echo "/home" > /mnt/persistence.conf
+ # umount /mnt
+ 
+参考文献
+--------
+
+ * Debian Live Manual http://live.debian.net/manual/3.x/html/live-manual.en.html
+ * DebianLive/Build-HOWTO-for-the-Impatient http://yakushi.shinshu-u.ac.jp/robotics/?DebianLive%2FBuild-HOWTO-for-the-Impatient
