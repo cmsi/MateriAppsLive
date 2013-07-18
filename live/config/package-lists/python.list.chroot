@@ -3,6 +3,7 @@ python-numpy
 python-numpy-doc
 python-matplotlib
 python-matplotlib-doc
+python-mechanize
 python-scipy
 python-wxgtk2.8
 python-opengl
