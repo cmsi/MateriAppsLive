@@ -13,17 +13,17 @@ class Frame(wx.Frame):
         self.prefix = prefix
         self.compiler = compiler
         self.option = option
-        wx.Frame.__init__(self, None, -1, "Machikaneyama Setup", size = (350,250))
+        wx.Frame.__init__(self, None, -1, "Machikaneyama Setup", size = (400,280))
         self.panel = wx.Panel(self, -1)
 
         layout = wx.BoxSizer(wx.VERTICAL)
 
-        self.radio_download = wx.RadioButton(self.panel, -1, "Download source code from official website")
+        self.radio_download = wx.RadioButton(self.panel, -1, "Download source tarball from official website")
         self.radio_download.SetValue(True)
         layout.Add(self.radio_download, 0, wx.LEFT | wx.RIGHT | wx.TOP, 10)
 
         grid_1 = wx.FlexGridSizer(2, 3)
-        self.text_email = wx.TextCtrl(self.panel, -1, size = (1000, -1))
+        self.text_email = wx.TextCtrl(self.panel, -1, size = (285, -1))
         self.text_password = wx.TextCtrl(self.panel, -1, style = wx.TE_PASSWORD)
         grid_1.Add(wx.StaticText(self.panel, -1, '     '), 0)
         grid_1.Add(wx.StaticText(self.panel, -1, "Email:"), 0, wx.RIGHT, 4)
@@ -33,11 +33,11 @@ class Frame(wx.Frame):
         grid_1.Add(self.text_password, 1, wx.EXPAND | wx.TOP, 4)
         layout.Add(grid_1, 0, wx.LEFT | wx.RIGHT | wx.TOP, 10)
 
-        self.radio_local = wx.RadioButton(self.panel, -1, "Use source code on local storage")
+        self.radio_local = wx.RadioButton(self.panel, -1, "Use a tarball (*.tar.gz) on local storage")
         layout.Add(self.radio_local, 0, wx.LEFT | wx.RIGHT | wx.TOP, 10)
 
         grid_2 = wx.FlexGridSizer(2, 3)
-        self.text_file = wx.TextCtrl(self.panel, -1, size = (1000, -1), style = wx.TE_READONLY)
+        self.text_file = wx.TextCtrl(self.panel, -1, size = (325, -1), style = wx.TE_READONLY)
         self.button_choose = wx.Button(self.panel, -1, "Choose")
         self.button_choose.Bind(wx.EVT_BUTTON, self.OnChoose)
         grid_2.Add(wx.StaticText(self.panel, -1, '     '), 0)
@@ -49,12 +49,12 @@ class Frame(wx.Frame):
         layout.Add(grid_2, 0, wx.LEFT | wx.RIGHT | wx.TOP, 10)
 
         box_1 = wx.BoxSizer(wx.HORIZONTAL)
-        self.button_install = wx.Button(self.panel, -1, "Install", size=(70,30))
-        self.button_install.Bind(wx.EVT_BUTTON, self.OnInstall)
         self.button_cancel = wx.Button(self.panel, -1, "Cancel", size=(70,30))
         self.button_cancel.Bind(wx.EVT_BUTTON, self.OnClose)
-        box_1.Add(self.button_install, 0, wx.LEFT | wx.BOTTOM, 5)
+        self.button_install = wx.Button(self.panel, -1, "Install", size=(70,30))
+        self.button_install.Bind(wx.EVT_BUTTON, self.OnInstall)
         box_1.Add(self.button_cancel, 0, wx.LEFT | wx.BOTTOM, 5)
+        box_1.Add(self.button_install, 0, wx.LEFT | wx.BOTTOM, 5)
         layout.Add(box_1, 0, wx.ALIGN_BOTTOM | wx.ALIGN_RIGHT | wx.RIGHT | wx.TOP, 10)
         
         self.panel.SetSizer(layout)
