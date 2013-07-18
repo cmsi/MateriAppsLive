@@ -1,0 +1,34 @@
+diff -crN cpa2002v009c.orig/makefile cpa2002v009c/makefile
+*** cpa2002v009c.orig/makefile	2010-07-14 19:15:28.000000000 +0900
+--- cpa2002v009c/makefile	2013-07-18 13:57:33.000000000 +0900
+***************
+*** 6,11 ****
+--- 6,12 ----
+  #flag = -mp1 -prec_div -tpp7 -axW -xW -mcmodel=medium -i-dynamic
+  flag = -O3
+  program = specx
++ prefix=/usr/local
+  objs = \
+  source/$(program).o \
+  source/spmain.o \
+***************
+*** 201,206 ****
+  source/zroots.o
+  
+  $(program): $(objs)
+! 	@$(fort) -o $(program) $(flag) $(objs) $(libs)
+  .f.o:
+  	$(fort) $(flag) -o $(<:.f=.o) -c $<
+--- 202,213 ----
+  source/zroots.o
+  
+  $(program): $(objs)
+! 	$(fort) -o $(program) $(flag) $(objs) $(libs)
+  .f.o:
+  	$(fort) $(flag) -o $(<:.f=.o) -c $<
++ install: $(program)
++ 	mkdir -p $(prefix)/bin $(prefix)/share/machikaneyama/in
++ 	cp $(program) $(prefix)/bin
++ 	chmod 755 $(prefix)/bin/$(program)
++ 	cp in/* $(prefix)/share/machikaneyama/in
++ 	chmod 644 $(prefix)/share/machikaneyama/in/*
