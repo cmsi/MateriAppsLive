@@ -6,20 +6,22 @@ import sys
 import subprocess
 import os, os.path
 
-def CompileAndInstall(dir, file, prefix, compiler, option):
+import config
+
+def CompileAndInstall(version, file, prefix, compiler, option):
     # Extract files from the tarball
     print "Extracting", file + "..."
-    cmd = ['/usr/bin/tar', 'zxvf', file]
+    cmd = ['tar', 'zxvf', file]
     p = subprocess.check_call(cmd)
 
     # Patch
     print "Applying patch..."
-    patch = os.path.join(os.path.abspath(os.path.dirname(__file__)), dir + ".patch")
-    cmd = ['/usr/bin/patch', '-i', patch, '-p', '1', '-d', dir]
+    patch = os.path.join(os.path.abspath(os.path.dirname(__file__)), version + ".patch")
+    cmd = ['patch', '-i', patch, '-p', '1', '-d', version]
     p = subprocess.check_call(cmd)
     
     # Make
-    cmd = ['/usr/bin/make', '-C', dir]
+    cmd = ['make', '-C', version]
     if (compiler):
         cmd.append("fort=" + compiler)
     if (option):
@@ -28,16 +30,15 @@ def CompileAndInstall(dir, file, prefix, compiler, option):
     p = subprocess.check_call(cmd)
 
     # Install
-    cmd = ['/usr/bin/make', '-C', dir]
+    cmd = ['make', '-C', version]
     if (prefix):
         cmd.append("prefix=" + prefix)
     cmd.append("install")
     print "Installing with", cmd, "..."
     p = subprocess.check_call(cmd)
+    return 0
         
 if __name__ == '__main__':
-    dir = "cpa2002v009c"
-    file = dir + ".tar.gz"
     if (len(sys.argv) < 2):
         print "Usage:", sys.argv[0], "prefix [compiler] [option]"
         sys.exit(127)
@@ -48,5 +49,5 @@ if __name__ == '__main__':
         compiler = sys.argv[2]
     if (len(sys.argv) >= 4):
         option = sys.argv[3]
-    ret = CompileAndInstall(dir, file, prefix, compiler, option)
+    ret = CompileAndInstall(config.version, config.tarfile, prefix, compiler, option)
     sys.exit(ret)

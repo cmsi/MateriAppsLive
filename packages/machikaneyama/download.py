@@ -9,6 +9,8 @@
 import sys
 import mechanize
 
+import config
+
 def Download(url, file, email, password):
     # Create Browser
     br = mechanize.Browser()
@@ -49,12 +51,10 @@ def Download(url, file, email, password):
     return 0
 
 if __name__ == '__main__':
-    url = "http://kkr.phys.sci.osaka-u.ac.jp/download.cgi"
-    file = "cpa2002v009c.tar.gz"
     if (len(sys.argv) != 3):
         print "Usage:", sys.argv[0], "email", "password"
         sys.exit(127)
     email = sys.argv[1]
     password = sys.argv[2]
-    ret = Download(url, file, email, password)
+    ret = Download(config.url, config.tarfile, email, password)
     sys.exit(ret)

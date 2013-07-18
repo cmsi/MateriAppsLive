@@ -4,15 +4,15 @@ import sys
 import wx
 import os
 
+import config
 import download
 import compile
 
-url = "http://kkr.phys.sci.osaka-u.ac.jp/download.cgi"
-dir = "cpa2002v009c"
-file = dir + ".tar.gz"
-
 class Frame(wx.Frame):
-    def __init__(self):
+    def __init__(self, prefix, compiler, option):
+        self.prefix = prefix
+        self.compiler = compiler
+        self.option = option
         wx.Frame.__init__(self, None, -1, "Machikaneyama Setup", size = (350,250))
         self.panel = wx.Panel(self, -1)
 
@@ -24,8 +24,7 @@ class Frame(wx.Frame):
 
         grid_1 = wx.FlexGridSizer(2, 3)
         self.text_email = wx.TextCtrl(self.panel, -1, size = (1000, -1))
-        # self.text_password = wx.TextCtrl(self.panel, -1, style = wx.TE_PASSWORD)
-        self.text_password = wx.TextCtrl(self.panel, -1)
+        self.text_password = wx.TextCtrl(self.panel, -1, style = wx.TE_PASSWORD)
         grid_1.Add(wx.StaticText(self.panel, -1, '     '), 0)
         grid_1.Add(wx.StaticText(self.panel, -1, "Email:"), 0, wx.RIGHT, 4)
         grid_1.Add(self.text_email, 1, wx.EXPAND, 4)
@@ -81,30 +80,54 @@ class Frame(wx.Frame):
         if (self.radio_download.GetValue()):
             email = self.text_email.GetValue()
             password = self.text_password.GetValue()
-            prefix = os.environ['HOME']
-            compiler = 'gfortran-mp-4.7'
-            option = ''
             if (email and password):
-                ret = download.Download(url, file, email, password)
+                ret = download.Download(config.url, config.tarfile, email, password)
                 if (ret != 0):
                     dialog = wx.MessageDialog(None, 'Invalid email and/or password', 'Error', wx.OK | wx.ICON_ERROR)
                     dialog.ShowModal()
                     dialog.Destroy()
                     return
-                ret = compile.CompileAndInstall(dir, file, prefix, compiler, option)
+                ret = compile.CompileAndInstall(config.version, config.tarfile, self.prefix, self.compiler, self.option)
+                if (ret != 0):
+                    dialog = wx.MessageDialog(None, 'Error occured during compilation', 'Error', wx.OK | wx.ICON_ERROR)
+                    dialog.ShowModal()
+                    dialog.Destroy()
+                    return
             else:
                 dialog = wx.MessageDialog(None, 'Please input email and password', 'Error', wx.OK | wx.ICON_ERROR)
                 dialog.ShowModal()
                 dialog.Destroy()
                 return
         else:
-            print "local"
+            file = self.text_file.GetValue()
+            if (file):
+                ret = compile.CompileAndInstall(config.version, file, self.prefix, self.compiler, self.option)
+                if (ret != 0):
+                    dialog = wx.MessageDialog(None, 'Error occured during compilation', 'Error', wx.OK | wx.ICON_ERROR)
+                    dialog.ShowModal()
+                    dialog.Destroy()
+                    return
+            else:
+                dialog = wx.MessageDialog(None, 'Please specify source archive', 'Error', wx.OK | wx.ICON_ERROR)
+                dialog.ShowModal()
+                dialog.Destroy()
+                return
         dialog = wx.MessageBox('Installation completed', 'Machikaneyama Setup')
         self.Destroy()
 
 if __name__ == '__main__':
+    if (len(sys.argv) < 2):
+        print "Usage:", sys.argv[0], "prefix [compiler] [option]"
+        sys.exit(127)
+    prefix = sys.argv[1]
+    compiler = ""
+    option = ""
+    if (len(sys.argv) >= 3):
+        compiler = sys.argv[2]
+    if (len(sys.argv) >= 4):
+        option = sys.argv[3]
     app = wx.App()
-    frame = Frame()
+    frame = Frame(prefix, compiler, option)
     frame.Show()
     app.MainLoop()
     app.Destroy()
