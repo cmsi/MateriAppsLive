@@ -1,10 +1,12 @@
 build-essential
 cmake-curses-gui
 gfortran
+gdb
 git
 libboost-all-dev
 libfftw3-dev
 libhdf5-serial-dev
+ltrace
 hdf5-tools
 openmpi-bin
 ruby
