@@ -24,7 +24,8 @@ class Frame(wx.Frame):
 
         grid_1 = wx.FlexGridSizer(2, 3)
         self.text_email = wx.TextCtrl(self.panel, -1, size = (1000, -1))
-        self.text_password = wx.TextCtrl(self.panel, -1, style = wx.TE_PASSWORD)
+        # self.text_password = wx.TextCtrl(self.panel, -1, style = wx.TE_PASSWORD)
+        self.text_password = wx.TextCtrl(self.panel, -1)
         grid_1.Add(wx.StaticText(self.panel, -1, '     '), 0)
         grid_1.Add(wx.StaticText(self.panel, -1, "Email:"), 0, wx.RIGHT, 4)
         grid_1.Add(self.text_email, 1, wx.EXPAND, 4)
