@@ -81,16 +81,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.775"
-     inkscape:cx="657.45435"
-     inkscape:cy="305.24687"
+     inkscape:cx="574.36733"
+     inkscape:cy="250.84337"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1365"
-     inkscape:window-height="855"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1" />
+     inkscape:window-width="1016"
+     inkscape:window-height="570"
+     inkscape:window-x="64"
+     inkscape:window-y="142"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata3325">
     <rdf:RDF>
@@ -116,6 +116,44 @@
        x="0"
        y="572.36218" />
     <text
+       transform="scale(1.0000015,0.9999985)"
+       sodipodi:linespacing="100%"
+       id="text3002"
+       y="715.9812"
+       x="31.97191"
+       style="font-size:35.65467453px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Bold"
+       xml:space="preserve"><tspan
+         y="715.9812"
+         x="31.97191"
+         sodipodi:role="line"
+         style="font-size:20px;font-style:normal;font-weight:bold;-inkscape-font-specification:DejaVu Sans Bold;font-family:DejaVu Sans;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:100%"
+         id="tspan3037">MateriApps Live @MA_VERSION@</tspan><tspan
+         y="735.9812"
+         x="31.97191"
+         sodipodi:role="line"
+         style="font-size:18px;font-style:normal;font-weight:bold;-inkscape-font-specification:DejaVu Sans Bold;font-family:DejaVu Sans;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:100%"
+         id="tspan3047">@PROJECT@ @VERSION@ (@DISTRIBUTION@) @ARCHITECTURE@ </tspan><tspan
+         y="755.98114"
+         x="31.97191"
+         sodipodi:role="line"
+         style="font-size:18px;font-style:normal;font-weight:bold;-inkscape-font-specification:DejaVu Sans Bold;font-family:DejaVu Sans;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:100%"
+         id="tspan3039">Build: @YEAR@-@MONTH@-@DAY@ @HOUR@:@MINUTE@:@SECOND@</tspan><tspan
+         y="775.98108"
+         x="31.97191"
+         sodipodi:role="line"
+         style="font-size:19.99996948px;font-style:normal;font-weight:bold;-inkscape-font-specification:DejaVu Sans Bold"
+         id="tspan3098" /><tspan
+         y="795.98108"
+         x="31.97191"
+         sodipodi:role="line"
+         style="font-size:19.99996948px;font-style:normal;font-weight:normal;-inkscape-font-specification:DejaVu Sans"
+         id="tspan3012" /><tspan
+         y="815.98108"
+         x="31.97191"
+         sodipodi:role="line"
+         style="font-size:19.99996948px;font-style:normal;font-weight:normal;-inkscape-font-specification:DejaVu Sans"
+         id="tspan3066" /></text>
+    <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        x="200"
@@ -127,7 +165,7 @@
          id="tspan3116" /></text>
     <g
        id="レイヤー_11"
-       transform="matrix(1.2507123,0,0,1.2507123,-541.52416,527.03588)">
+       transform="matrix(1.0625912,0,0,1.0914229,-459.33099,530.213)">
       <path
          class="st4"
          d="m 717.621,90.612 c -1.729,-1.98 -4.003,-2.972 -6.827,-2.972 -2.845,0 -5.152,0.97 -6.923,2.909 -1.686,1.876 -2.529,4.258 -2.529,7.146 0,2.909 0.832,5.321 2.498,7.24 0.693,0.784 1.475,1.41 2.336,1.887 2.487,-0.624 4.972,-1.259 7.45,-1.913 1.648,-0.436 3.296,-0.879 4.94,-1.327 1.051,-1.677 1.584,-3.626 1.584,-5.855 0,-2.846 -0.842,-5.217 -2.529,-7.115 z"
@@ -136,7 +174,7 @@
          style="fill:none" />
       <polygon
          class="st4"
-         points="674.359,96.775 668.168,80.695 661.943,96.775 "
+         points="661.943,96.775 674.359,96.775 668.168,80.695 "
          id="polygon3462"
          style="fill:none" />
       <path
@@ -225,7 +263,7 @@
          style="fill:#75ad0a" />
       <polygon
          class="st3"
-         points="498.742,102.986 504.652,85.424 507.112,99.884 507.112,99.884 504.652,85.423 498.742,102.986 "
+         points="507.112,99.884 507.112,99.884 504.652,85.423 498.742,102.986 498.742,102.986 504.652,85.424 "
          id="polygon3492"
          style="fill:#ffffff" />
       <rect
@@ -278,7 +316,7 @@
          style="fill:#ffffff" />
       <polygon
          class="st3"
-         points="632.725,80.381 632.725,80.383 632.725,80.381 "
+         points="632.725,80.381 632.725,80.381 632.725,80.383 "
          id="polygon3506"
          style="fill:#ffffff" />
       <polygon
@@ -302,7 +340,7 @@
          style="fill:#ffffff" />
       <polygon
          class="st3"
-         points="486.871,114.763 486.912,114.887 494.737,114.887 496.215,110.496 497.168,107.663 497.799,105.787 497.799,105.787 498.742,102.986 504.652,85.423 507.112,99.884 507.508,102.209 507.741,103.581 508.137,105.906 509.664,114.887 518.26,114.887 518.26,114.887 516.273,103.106 515.874,100.741 515.662,99.48 515.263,97.115 510.394,68.232 501.83,68.232 490.872,100.774 480.072,68.232 471.383,68.232 463.327,114.887 463.327,114.887 472.018,114.887 477.123,85.424 484.949,108.98 485.646,111.075 486.176,112.668 486.871,114.763 "
+         points="504.652,85.423 507.112,99.884 507.508,102.209 507.741,103.581 508.137,105.906 509.664,114.887 518.26,114.887 518.26,114.887 516.273,103.106 515.874,100.741 515.662,99.48 515.263,97.115 510.394,68.232 501.83,68.232 490.872,100.774 480.072,68.232 471.383,68.232 463.327,114.887 463.327,114.887 472.018,114.887 477.123,85.424 484.949,108.98 485.646,111.075 486.176,112.668 486.871,114.763 486.871,114.763 486.912,114.887 494.737,114.887 496.215,110.496 497.168,107.663 497.799,105.787 497.799,105.787 498.742,102.986 "
          id="polygon3514"
          style="fill:#ffffff" />
       <path
@@ -313,7 +351,7 @@
          style="fill:#ffffff" />
       <polygon
          class="st3"
-         points="570.146,88.368 570.146,87.865 572.346,87.865 575.252,87.865 575.252,87.865 575.252,87.209 575.252,84.496 575.252,83.82 575.252,82.267 575.252,81.105 575.252,80.381 575.252,80.38 570.146,80.38 570.146,67.662 570.146,67.662 561.486,67.662 561.486,67.662 561.486,80.38 557.047,80.38 557.047,80.381 557.047,85.344 557.047,87.865 557.047,87.865 557.661,87.865 560.938,87.865 561.486,87.865 561.486,90.415 561.486,114.887 570.146,114.887 "
+         points="575.252,82.267 575.252,81.105 575.252,80.381 575.252,80.38 570.146,80.38 570.146,67.662 570.146,67.662 561.486,67.662 561.486,67.662 561.486,80.38 557.047,80.38 557.047,80.381 557.047,85.344 557.047,87.865 557.047,87.865 557.661,87.865 560.938,87.865 561.486,87.865 561.486,90.415 561.486,114.887 570.146,114.887 570.146,88.368 570.146,87.865 572.346,87.865 575.252,87.865 575.252,87.865 575.252,87.209 575.252,84.496 575.252,83.82 "
          id="polygon3518"
          style="fill:#ffffff" />
       <path
@@ -330,7 +368,7 @@
          style="fill:#ffffff" />
       <polygon
          class="st3"
-         points="644.063,114.887 644.063,82.267 644.063,80.381 644.063,80.38 635.34,80.38 635.34,80.381 635.34,114.887 "
+         points="644.063,82.267 644.063,80.381 644.063,80.38 635.34,80.38 635.34,80.381 635.34,114.887 644.063,114.887 "
          id="polygon3524"
          style="fill:#ffffff" />
       <path
@@ -346,5 +384,21 @@
          inkscape:connector-curvature="0"
          style="fill:#75ad0a" />
     </g>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="36.129032"
+       y="140.64516"
+       id="text3042"
+       sodipodi:linespacing="125%"
+       transform="translate(0,572.3622)"><tspan
+         sodipodi:role="line"
+         id="tspan3044"
+         x="36.129032"
+         y="140.64516"></tspan><tspan
+         sodipodi:role="line"
+         id="tspan3046"
+         x="36.129032"
+         y="190.64516" /></text>
   </g>
 </svg>

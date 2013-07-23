@@ -1,5 +1,6 @@
 task-lxde-desktop
-task-print-server
+task-japanese-desktop
+# task-print-server
 
 #nif DISTRIBUTION wheezy
 	plymouth plymouth-drm plymouth-x11

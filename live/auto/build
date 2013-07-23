@@ -2,4 +2,5 @@
 
 set -e
 
-lb build noauto "${@}" && echo $? 2>&1 | tee build.log
+lb build noauto "${@}" 2>&1 | tee build.log
+echo $? | tee -a build.log
