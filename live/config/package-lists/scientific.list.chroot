@@ -18,7 +18,3 @@ openmx
 # Quantum Espresso
 quantum-espresso
 quantum-espresso-data
-
-# Paraview
-paraview
-paraview-doc
