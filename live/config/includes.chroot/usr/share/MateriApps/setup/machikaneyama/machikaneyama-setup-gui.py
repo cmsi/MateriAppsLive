@@ -13,7 +13,7 @@ class Frame(wx.Frame):
         self.prefix = prefix
         self.compiler = compiler
         self.option = option
-        wx.Frame.__init__(self, None, -1, "Machikaneyama Setup", size = (400,280))
+        wx.Frame.__init__(self, None, -1, "Machikaneyama Setup", size = (420,280))
         self.panel = wx.Panel(self, -1)
 
         layout = wx.BoxSizer(wx.VERTICAL)
