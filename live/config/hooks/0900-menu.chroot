@@ -8,7 +8,7 @@ cd $DIR
 patch -p0 << EOF
 --- lxde-applications.menu.orig	2013-07-23 15:16:13.845737617 +0900
 +++ lxde-applications.menu	2013-07-23 15:16:58.709731871 +0900
-@@ -173,4 +173,12 @@
+@@ -173,4 +173,13 @@
  		<Menuname>DesktopSettings</Menuname>
  	</Layout>
  
@@ -17,6 +17,7 @@ patch -p0 << EOF
 +    <Name>MateriApps</Name>
 +    <Directory>materiapps.directory</Directory>
 +    <Include>
++      <Filename>materiapps-about.desktop</Filename>
 +      <Filename>materiapps-materiapps.desktop</Filename>
 +      <Filename>materiapps-machikaneyama-setup.desktop</Filename>
 +    </Include>
