@@ -21,7 +21,7 @@ def CompileAndInstall(version, file, prefix, compiler, option):
     p = subprocess.check_call(cmd)
     
     # Make
-    cmd = ['make', '-C', version]
+    cmd = ['make', 'clean', 'default', '-C', version]
     if (compiler):
         cmd.append("fort=" + compiler)
     if (option):
