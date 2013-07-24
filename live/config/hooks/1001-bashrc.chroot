@@ -6,5 +6,5 @@ BASHRC=/etc/skel/.bashrc
 
 cat << EOF >> ${BASHRC}
 
-export PATH=$HOME/bin:$PATH
+export PATH=\$HOME/bin:\$PATH
 EOF
