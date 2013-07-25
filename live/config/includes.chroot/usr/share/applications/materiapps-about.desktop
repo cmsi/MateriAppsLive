@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
-Exec=iceweasel https://github.com/cmsi/MateriAppsLive/wiki
+Exec=iceweasel http://cmsi.github.io/MateriAppsLive/
 Name=About MateriApps Live
 Name[ja]=MateriApps Liveについて
