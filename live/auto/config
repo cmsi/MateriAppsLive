@@ -23,6 +23,7 @@ lb config noauto \
 	--linux-packages "linux-image linux-headers" \
 	--source "${_SOURCE}" \
         --iso-volume "MateriApps" \
+	--archive-areas "main contrib non-free" \
 	--apt-http-proxy "http://localhost:3142" \
 	--parent-mirror-bootstrap "http://ftp.jp.debian.org/debian/" \
 	--parent-mirror-binary "http://ftp.jp.debian.org/debian/" \
