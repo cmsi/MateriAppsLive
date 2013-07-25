@@ -1,0 +1,43 @@
+#!/bin/sh
+
+set -e
+
+case "$(dpkg --print-architecture)" in
+	amd64)
+		_LINUX_FLAVOURS="amd64"
+		_SOURCE="false"
+		;;
+
+	i386)
+		_LINUX_FLAVOURS="486 686-pae"
+		_SOURCE="true"
+		;;
+esac
+
+lb config noauto \
+	--clean \
+	--ignore-system-defaults \
+	--mode debian \
+	--debian-installer live \
+	--linux-flavours "${_LINUX_FLAVOURS}" \
+	--linux-packages "linux-image linux-headers" \
+	--source "${_SOURCE}" \
+        --iso-volume "MateriApps" \
+	--archive-areas "main contrib non-free" \
+	--apt-http-proxy "http://localhost:3142" \
+	--parent-mirror-bootstrap "http://ftp.jp.debian.org/debian/" \
+	--parent-mirror-binary "http://ftp.jp.debian.org/debian/" \
+	--mirror-bootstrap "http://ftp.jp.debian.org/debian/" \
+	--mirror-binary "http://ftp.jp.debian.org/debian/" \
+	--mirror-chroot "http://ftp.jp.debian.org/debian/" \
+	--bootappend-live "boot=live config persistence noeject live-config.utc=no live-config.timezone=Asia/Tokyo" \
+"${@}"
+
+# setup version of MateriApps live
+if test -f materiapps_version; then
+  mkdir -p config/includes.chroot/etc
+  cp -p materiapps_version config/includes.chroot/etc
+  MATERIAPPS_VERSION=`cat materiapps_version`
+  mv config/bootloaders/isolinux/splash.svg.in config/bootloaders/isolinux/splash.svg.in.orig
+  sed -e "s|@MA_VERSION@|${MATERIAPPS_VERSION}|g" config/bootloaders/isolinux/splash.svg.in.orig > config/bootloaders/isolinux/splash.svg.in
+fi

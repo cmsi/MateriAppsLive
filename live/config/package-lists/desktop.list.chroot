@@ -1,0 +1,10 @@
+task-lxde-desktop
+task-japanese-desktop
+# task-print-server
+
+#nif DISTRIBUTION wheezy
+	plymouth plymouth-drm plymouth-x11
+#endif
+
+#gstreamer-vaapi
+i965-va-driver

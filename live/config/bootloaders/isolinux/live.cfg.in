@@ -1,0 +1,24 @@
+label live-@FLAVOUR@
+	menu label ^Live (@FLAVOUR@ LANG=en KBD=us)
+	menu default
+	linux @LINUX@
+	initrd @INITRD@
+	append @APPEND_LIVE@
+
+label live-@FLAVOUR@-ja-jp
+	menu label ^Live (@FLAVOUR@ LANG=ja KBD=jp)
+	linux @LINUX@
+	initrd @INITRD@
+	append @APPEND_LIVE@ live-config.locales=ja_JP.UTF-8 live-config.keyboard-layouts=jp
+
+label live-@FLAVOUR@-ja-us
+	menu label ^Live (@FLAVOUR@ LANG=ja KBD=us)
+	linux @LINUX@
+	initrd @INITRD@
+	append @APPEND_LIVE@ live-config.locales=ja_JP.UTF-8
+
+label live-@FLAVOUR@-failsafe
+	menu label ^Live (@FLAVOUR@ failsafe)
+	linux @LINUX@
+	initrd @INITRD@
+	append @APPEND_LIVE_FAILSAFE@

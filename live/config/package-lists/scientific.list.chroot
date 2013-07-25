@@ -1,0 +1,20 @@
+# ABINIT
+abinit
+abinit-doc
+
+# CP2K
+cp2k
+cp2k-data
+
+# Gromacs
+gromacs
+gromacs-data
+gromacs-dev
+gromacs-openmpi
+
+# OpenMX
+openmx
+
+# Quantum Espresso
+quantum-espresso
+quantum-espresso-data

@@ -1,0 +1,37 @@
+diff -urN cpa2002v009c.orig/makefile cpa2002v009c/makefile
+--- cpa2002v009c.orig/makefile	2012-10-06 18:06:07.000000000 +0900
++++ cpa2002v009c/makefile	2013-07-24 22:20:13.000000000 +0900
+@@ -12,6 +12,8 @@
+ libs =
+ 
+ program = specx
++utility = fmg
++prefix=/usr/local
+ objs = \
+ source/$(program).o \
+ source/spmain.o \
+@@ -206,10 +208,23 @@
+ source/xtoken.o \
+ source/zroots.o
+ 
++default: $(program) $(utility) gpd
+ $(program): $(objs)
+-	@$(fort) -o $(program) $(flag) $(objs) $(libs)
++	$(fort) -o $(program) $(flag) $(objs) $(libs)
++$(utility): util/fmg.f
++	$(fort) -o $(utility) $(flag) util/fmg.f $(libs)
+ .f.o:
+ 	$(fort) $(flag) -o $(<:.f=.o) -c $<
+ 
+ gpd: source/gpd.f
+ 	$(fort) $(flag) -o gpd source/gpd.f
++
++install: $(program) $(utility) gpd
++	mkdir -p $(prefix)/bin $(prefix)/share/machikaneyama/in $(prefix)/share/machikaneyama/util
++	cp $(program) $(utility) gpd $(prefix)/bin
++	chmod 755 $(prefix)/bin/$(program) $(prefix)/share/machikaneyama/in $(prefix)/share/machikaneyama/util
++	cp -p in/* $(prefix)/share/machikaneyama/in
++	cp -p util/* $(prefix)/share/machikaneyama/util
++	chmod 644 $(prefix)/share/machikaneyama/in/* $(prefix)/share/machikaneyama/util/*
++clean:
++	rm -f $(program) $(utility) gpd source/*.o
