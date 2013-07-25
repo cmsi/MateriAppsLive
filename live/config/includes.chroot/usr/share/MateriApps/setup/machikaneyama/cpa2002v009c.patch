@@ -1,222 +1,37 @@
 diff -urN cpa2002v009c.orig/makefile cpa2002v009c/makefile
---- cpa2002v009c.orig/makefile	1970-01-01 09:00:00.000000000 +0900
-+++ cpa2002v009c/makefile	2013-07-23 07:19:51.000000000 +0900
-@@ -0,0 +1,218 @@
-+# ThecCommand invoking the fortran compiler of the
-+# system should be specified by "fort= ".
-+# The corresponding compiler option also should be given 
-+# by "flag= ".
-+fort = ifort
-+#flag = -mp1 -prec_div -tpp7 -axW -xW -mcmodel=medium -i-dynamic
-+flag = -O3
-+program = specx
+--- cpa2002v009c.orig/makefile	2012-10-06 18:06:07.000000000 +0900
++++ cpa2002v009c/makefile	2013-07-24 22:20:13.000000000 +0900
+@@ -12,6 +12,8 @@
+ libs =
+ 
+ program = specx
 +utility = fmg
 +prefix=/usr/local
-+objs = \
-+source/$(program).o \
-+source/spmain.o \
-+source/alphac.o \
-+source/asymbl.o \
-+source/atmcor.o \
-+source/atmicv.o \
-+source/atmmas.o \
-+source/atmnum.o \
-+source/atmrot.o \
-+source/aveari.o \
-+source/avearr.o \
-+source/banden.o \
-+source/biomix.o \
-+source/bravai.o \
-+source/brintg.o \
-+source/brvsym.o \
-+source/bzmesh.o \
-+source/bzmrot.o \
-+source/bzmsmb.o \
-+source/cemesh.o \
-+source/cemesr.o \
-+source/cg.o \
-+source/cgc.o \
-+source/cgntcd.o \
-+source/cgntcs.o \
-+source/cgnwt.o \
-+source/cgtabl.o \
-+source/chebpc.o \
-+source/chklat.o \
-+source/chktyp.o \
-+source/chleng.o \
-+source/chrasa.o \
-+source/chrdnc.o \
-+source/cinvrn.o \
-+source/cinvrx.o \
-+source/ckmesh.o \
-+source/clrarc.o \
-+source/clrari.o \
-+source/clrarr.o \
-+source/cnsole.o \
-+source/corada.o \
-+source/corcnf.o \
-+source/corgga.o \
-+source/corlsd.o \
-+source/cpaitr.o \
-+source/cpolin.o \
-+source/cprinv.o \
-+source/cpshft.o \
-+source/crtint.o \
-+source/cryrho.o \
-+source/cstatc.o \
-+source/cstate.o \
-+source/cubmtr.o \
-+source/dawson.o \
-+source/diffn.o \
-+source/dplini.o \
-+source/drivtv.o \
-+source/drvlud.o \
-+source/drvmsh.o \
-+source/dsenum.o \
-+source/dspcpa.o \
-+source/dspgm.o \
-+source/equarc.o \
-+source/equari.o \
-+source/equarr.o \
-+source/eqvlat.o \
-+source/eranlb.o \
-+source/erfc.o \
-+source/erranc.o \
-+source/errtrp.o \
-+source/etaopt.o \
-+source/excev.o \
-+source/excg91.o \
-+source/excgga.o \
-+source/exclmm.o \
-+source/excmjw.o \
-+source/excpym.o \
-+source/excpyv.o \
-+source/excvbh.o \
-+source/excvwn.o \
-+source/exgga.o \
-+source/extorg.o \
-+source/fczero.o \
-+source/fd2ini.o \
-+source/fd3.o \
-+source/finitn.o \
-+source/fintgr.o \
-+source/fldf.o \
-+source/fxspin.o \
-+source/gcor.o \
-+source/gengpt.o \
-+source/genrpt.o \
-+source/gensm.o \
-+source/getdtb.o \
-+source/getfil.o \
-+source/getnum.o \
-+source/getorg.o \
-+source/getrtm.o \
-+source/gettmp.o \
-+source/gmtrns.o \
-+source/gnpset.o \
-+source/gntcds.o \
-+source/gntcs.o \
-+source/gpsort.o \
-+source/green.o \
-+source/gsdatp.o \
-+source/gtchst.o \
-+source/guesse.o \
-+source/guessz.o \
-+source/hexmtr.o \
-+source/hypera.o \
-+source/ibrava.o \
-+source/ifkey.o \
-+source/inijip.o \
-+source/inqbrv.o \
-+source/julday.o \
-+source/kkrsed.o \
-+source/laguer.o \
-+source/lftfil.o \
-+source/lindx.o \
-+source/lsqftr.o \
-+source/lubksb.o \
-+source/ludcmp.o \
-+source/lwcase.o \
-+source/madlng.o \
-+source/mdbsl.o \
-+source/midexp.o \
-+source/mkemap.o \
-+source/mseque.o \
-+source/mshatm.o \
-+source/nesbet.o \
-+source/neutrl.o \
-+source/nfqlty.o \
-+source/phasea.o \
-+source/phaseb.o \
-+source/poisna.o \
-+source/poisnb.o \
-+source/polin0.o \
-+source/polint.o \
-+source/potenv.o \
-+source/prdmtc.o \
-+source/prdmtr.o \
-+source/prdrtm.o \
-+source/prmvec.o \
-+source/prntcs.o \
-+source/prntpn.o \
-+source/pyexch.o \
-+source/qromo.o \
-+source/qvolum.o \
-+source/radial.o \
-+source/radnrl.o \
-+source/ratin0.o \
-+source/redata.o \
-+source/readin.o \
-+source/realh.o \
-+source/reduce.o \
-+source/relred.o \
-+source/rlubks.o \
-+source/rludcm.o \
-+source/rmesha.o \
-+source/rmserb.o \
-+source/rmserr.o \
-+source/rndkpt.o \
-+source/rotatm.o \
-+source/rrcnv.o \
-+source/rsymeq.o \
-+source/sbrnch.o \
-+source/sbtime.o \
-+source/setarc.o \
-+source/setari.o \
-+source/setarr.o \
-+source/spckkr.o \
-+source/stfact.o \
-+source/subscr.o \
-+source/swpari.o \
-+source/swparr.o \
-+source/tchmta.o \
-+source/tchstr.o \
-+source/tfp.o \
-+source/totalw.o \
-+source/transp.o \
-+source/ty2ity.o \
-+source/uclock.o \
-+source/udate.o \
-+source/utimer.o \
-+source/uutrns.o \
-+source/uxcor.o \
-+source/viomix.o \
-+source/vrotat.o \
-+source/vwncor.o \
-+source/xtoken.o \
-+source/zroots.o
-+
-+default: $(program) $(utility)
-+$(program): $(objs)
+ objs = \
+ source/$(program).o \
+ source/spmain.o \
+@@ -206,10 +208,23 @@
+ source/xtoken.o \
+ source/zroots.o
+ 
++default: $(program) $(utility) gpd
+ $(program): $(objs)
+-	@$(fort) -o $(program) $(flag) $(objs) $(libs)
 +	$(fort) -o $(program) $(flag) $(objs) $(libs)
 +$(utility): util/fmg.f
 +	$(fort) -o $(utility) $(flag) util/fmg.f $(libs)
-+.f.o:
-+	$(fort) $(flag) -o $(<:.f=.o) -c $<
-+install: $(program) $(utility)
-+	mkdir -p $(prefix)/bin $(prefix)/share/machikaneyama/in $(prefix)/share/machikaneyama/util $(prefix)/share/machikaneyama/data
-+	cp $(program) $(utility) $(prefix)/bin
-+	chmod 755 $(prefix)/bin/$(program) $(prefix)/share/machikaneyama/in $(prefix)/share/machikaneyama/util $(prefix)/share/machikaneyama/data
+ .f.o:
+ 	$(fort) $(flag) -o $(<:.f=.o) -c $<
+ 
+ gpd: source/gpd.f
+ 	$(fort) $(flag) -o gpd source/gpd.f
++
++install: $(program) $(utility) gpd
++	mkdir -p $(prefix)/bin $(prefix)/share/machikaneyama/in $(prefix)/share/machikaneyama/util
++	cp $(program) $(utility) gpd $(prefix)/bin
++	chmod 755 $(prefix)/bin/$(program) $(prefix)/share/machikaneyama/in $(prefix)/share/machikaneyama/util
 +	cp -p in/* $(prefix)/share/machikaneyama/in
-+	cp -p util/inputsample $(prefix)/share/machikaneyama/util
-+	chmod 644 $(prefix)/share/machikaneyama/in/* $(prefix)/share/machikaneyama/*
++	cp -p util/* $(prefix)/share/machikaneyama/util
++	chmod 644 $(prefix)/share/machikaneyama/in/* $(prefix)/share/machikaneyama/util/*
++clean:
++	rm -f $(program) $(utility) gpd source/*.o
