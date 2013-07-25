@@ -214,9 +214,9 @@ diff -urN cpa2002v009c.orig/makefile cpa2002v009c/makefile
 +.f.o:
 +	$(fort) $(flag) -o $(<:.f=.o) -c $<
 +install: $(program) $(utility)
-+	mkdir -p $(prefix)/bin $(prefix)/share/machikaneyama/in $(prefix)/share/machikaneyama/util
++	mkdir -p $(prefix)/bin $(prefix)/share/machikaneyama/in $(prefix)/share/machikaneyama/util $(prefix)/share/machikaneyama/data
 +	cp $(program) $(utility) $(prefix)/bin
-+	chmod 755 $(prefix)/bin/$(program) $(prefix)/share/machikaneyama/in $(prefix)/share/machikaneyama/util
++	chmod 755 $(prefix)/bin/$(program) $(prefix)/share/machikaneyama/in $(prefix)/share/machikaneyama/util $(prefix)/share/machikaneyama/data
 +	cp -p in/* $(prefix)/share/machikaneyama/in
 +	cp -p util/inputsample $(prefix)/share/machikaneyama/util
 +	chmod 644 $(prefix)/share/machikaneyama/in/* $(prefix)/share/machikaneyama/*
