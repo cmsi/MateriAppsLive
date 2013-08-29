@@ -1,0 +1,12 @@
+Source: machikaneyama-setup
+Section: scientific
+Priority: optional
+Maintainer: Synge Todo <wistaria@issp.u-tokyo.ac.jp>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+
+Package: machikaneyama-setup
+Architecture: all
+Depends: ${misc:Depends}, python-mechanize, python-wxgtk2.8
+Description: GUI for downloading and installing Machikaneyama 2002
+ machikaneyama-setup is a gui for downloading and installing Machikaneyama 2002.
