@@ -1,7 +1,7 @@
-MateriApps Live Release 1.0 (2013/07/26)
+MateriApps LIVE! Release 1.0 (2013/07/26)
 ========================================
 
-  - First released version of MateriApps Live
+  - First released version of MateriApps LIVE!
   - Based on Debian GNU/Linux (wheezy) amd64
   - Newly included MateriApps Applications
      * ABINIT (5.3.4)
@@ -17,6 +17,6 @@ MateriApps Live Release 1.0 (2013/07/26)
 References
 ==========
 
- - [MateriApps Live](http://cmsi.github.io/MateriAppsLive)
- - [How to make Live USB?](http://github.com/cmsi/MateriAppsLive/wiki/How-to-make-Live-USB)
- - [MateriApps Live Forum](http://ma.cms-initiative.jp/ja/community/materiapps-messageboard/materiapps-live)
+ - [MateriApps LIVE!](http://cmsi.github.io/MateriAppsLive)
+ - [How to make LIVE! USB?](http://github.com/cmsi/MateriAppsLive/wiki/How-to-make-Live-USB)
+ - [MateriApps LIVE! Forum](http://ma.cms-initiative.jp/ja/community/materiapps-messageboard/materiapps-live)
