@@ -1,5 +1,5 @@
-machikaneyama-setup-gui	/usr/bin
+machikaneyama-setup	/usr/bin
 *.py			/usr/share/machikaneyama-setup
 *.patch			/usr/share/machikaneyama-setup
-# *.1			/usr/share/man/man1
+*.1			/usr/share/man/man1
 *.desktop		/usr/share/applications

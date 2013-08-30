@@ -8,5 +8,7 @@ Standards-Version: 3.9.3
 Package: machikaneyama-setup
 Architecture: all
 Depends: ${misc:Depends}, python-mechanize, python-wxgtk2.8
-Description: GUI for downloading and installing Machikaneyama 2002
- machikaneyama-setup is a gui for downloading and installing Machikaneyama 2002.
+Description: GUI utility for installing Machikaneyama2002
+ Machikaneyama-setup is a GUI utility for downloading the source code of
+ Machikaneyama2002 from the official website and installing it under
+ $HOME/bin.
