@@ -2,5 +2,6 @@
 Encoding=UTF-8
 Type=Application
 Exec=machikaneyama-setup
+Categories=X-MateriApps;
 Name=Machikaneyama Setup
 Name[ja]=Machikaneyamaセットアップ 
