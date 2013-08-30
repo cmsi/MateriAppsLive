@@ -1,6 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
+Categories=X-MateriApps;
 Exec=machikaneyama-setup-gui
 Name=Machikaneyama Setup
 Name[ja]=Machikaneyamaセットアップ 
