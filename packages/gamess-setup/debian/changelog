@@ -1,5 +1,11 @@
+gamess-setup (1.1) wheezy; urgency=low
+
+  * Fixed gamess-setup launcher.
+
+ -- Synge Todo <wistaria@issp.u-tokyo.ac.jp>  Sun, 01 Sep 2013 21:08:59 +0900
+
 gamess-setup (1.0) wheezy; urgency=low
 
   * Initial Release.
 
- -- Synge Todo <wistaria@issp.u-tokyo.ac.jp>  Sun, 1 Sep 2013 12:01:10 +0900
+ -- Synge Todo <wistaria@issp.u-tokyo.ac.jp>  Sun, 01 Sep 2013 12:01:10 +0900
