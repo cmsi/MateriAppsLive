@@ -7,6 +7,7 @@ libatlas-base-dev
 libboost-all-dev
 libfftw3-dev
 libhdf5-serial-dev
+libqt4-dev
 ltrace
 hdf5-tools
 openmpi-bin
