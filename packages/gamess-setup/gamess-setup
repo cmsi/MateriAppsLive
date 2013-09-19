@@ -1,3 +1,0 @@
-#!/bin/sh
-
-python /usr/share/gamess-setup/gamess-setup-gui.py $HOME
