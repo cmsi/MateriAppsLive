@@ -99,17 +99,6 @@
 		</Include>
 	</Menu>	 <!-- End Internet -->
 
-	<!-- Multimedia -->
-	<Menu>
-		<Name>Multimedia</Name>
-		<Directory>lxde-audio-video.directory</Directory>
-		<Include>
-			<And>
-				<Category>AudioVideo</Category>
-			</And>
-		</Include>
-	</Menu>	 <!-- End Multimedia -->
-
 	<!-- Office -->
 	<Menu>
 		<Name>Office</Name>
