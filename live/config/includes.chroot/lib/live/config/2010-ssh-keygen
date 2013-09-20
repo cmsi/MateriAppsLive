@@ -1,0 +1,16 @@
+#!/bin/sh
+
+Configure_ssh_key ()
+{
+  if [ -e /usr/bin/ssh-keygen ]; then
+    if [ -f /home/${LIVE_USERNAME}/.ssh/id_rsa ]; then :; else
+      /usr/bin/ssh-keygen -q -t rsa -P '' -C "${LIVE_USERNAME}@debian" -f /home/${LIVE_USERNAME}/.ssh/id_rsa
+      cat /home/${LIVE_USERNAME}/.ssh/id_rsa.pub >> /home/${LIVE_USERNAME}/.ssh/authorized_keys 
+      echo "Host *" >> /home/${LIVE_USERNAME}/.ssh/config
+      echo "    StrictHostKeyChecking no" >> /home/${LIVE_USERNAME}/.ssh/config
+      chown -R ${LIVE_USERNAME}:${LIVE_USERNAME} /home/${LIVE_USERNAME}/.ssh
+    fi
+  fi
+}
+
+Configure_ssh_key
