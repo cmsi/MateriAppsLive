@@ -4,6 +4,7 @@ Configure_ssh_key ()
 {
   if [ -e /usr/bin/ssh-keygen ]; then
     if [ -f /home/${LIVE_USERNAME}/.ssh/id_rsa ]; then :; else
+      mkdir -p /home/${LIVE_USERNAME}/.ssh
       /usr/bin/ssh-keygen -q -t rsa -P '' -C "${LIVE_USERNAME}@debian" -f /home/${LIVE_USERNAME}/.ssh/id_rsa
       cat /home/${LIVE_USERNAME}/.ssh/id_rsa.pub >> /home/${LIVE_USERNAME}/.ssh/authorized_keys 
       echo "Host *" >> /home/${LIVE_USERNAME}/.ssh/config
