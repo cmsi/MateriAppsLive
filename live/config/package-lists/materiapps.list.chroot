@@ -1,5 +1,7 @@
 # ALPS
-task-alps
+alps-applications
+alps-tutorials
+libalps-dev
 
 # ERmod
 ermod
