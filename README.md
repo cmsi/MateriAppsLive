@@ -1,3 +1,14 @@
+MateriApps LIVE! Release 1.1 (2013/09/26)
+========================================
+
+  - New MateriApps LIVE! logo
+  - Newly included MateriApps Applications
+     * xTAPP (130919)
+     * Tapioca (1.3.3 [beta])
+     * GAMESS Setup Tool (for May 1, 2013 R1)
+  - Updated MateriApps Applications
+     * Feram (0.21.04)
+
 MateriApps LIVE! Release 1.0 (2013/07/26)
 ========================================
 
