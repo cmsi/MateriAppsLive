@@ -6,10 +6,11 @@ MateriApps LIVE! Release 1.1 (2013/09/26)
      * xTAPP (130919)
      * GAMESS Setup Tool (for May 1, 2013 R1)
   - Newly included visualization tools
-     * Tapioca (1.3.3 [beta])
+     * Tapioca (1.3.3)
      * OpenDX (4.4.4)
   - Updated MateriApps Applications
      * Feram (0.21.04)
+     * Machikaneyama Setup Tool (for cpa2002v009c Sep. 14, 2013)
 
 MateriApps LIVE! Release 1.0 (2013/07/26)
 ========================================
