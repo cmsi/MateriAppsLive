@@ -1,8 +1,22 @@
 # ALPS
-task-alps
+alps-applications
+alps-tutorials
+libalps-dev
 
 # ERmod
 ermod
 
 # feram
 feram
+
+# GAMESS
+gamess-setup
+
+# Machikaneyama
+machikaneyama-setup
+
+# xTAPP
+xtapp
+xtapp-util
+xtapp-ps
+tapioca

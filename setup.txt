@@ -28,6 +28,7 @@ Debian Live
  * auto/config を編集
 
    - proxy の設定
+   - archive-area の設定
    - mirror site の追加
    - boot parameter の設定
    - version 番号の設定スクリプトの追加
@@ -61,6 +62,7 @@ Debian Live
 
    - config/archives にリポジトリのエントリと GPG 鍵を追加
    - 日本語環境の追加 : config/package-lists/desktop.list.chroot config/package-lists/localization.list.chroot
+   - non-free なドライバ群 : config/package-lists/desktop.list.chroot config/package-lists/non-free.list.chroot
    - 開発環境の追加 : config/package-lists/development.list.chroot
      + コンパイラ, cmake, subversion, git, openmpi, ruby, hdf5, boost, fftw 他
    - エディタの追加 : config/package-lists/editor.list.chroot
@@ -123,7 +125,7 @@ USB メモリへの書き込み
 
    例: git checkout master
        git merge --no-ff release-1.0
-       git tag -a 1.0)
+       git tag -a 1.0
 
  * develop にマージした後, リリースブランチを削除
 
@@ -131,9 +133,15 @@ USB メモリへの書き込み
        git merge --no-ff release-1.0
        git branch -d release-1.0
 
- * MateriApps Live Wiki の更新
+ * github に push
 
- * MateriApps のニュース更新
+   例: git push origin develop
+       git push origin main
+       git push origin 1.0
+ 
+ * MateriApps Live ページの更新
+
+ * MateriApps のニュース更新 & Twitter 告知
    
 SourceForgeへのアップロード
 ---------------------------
