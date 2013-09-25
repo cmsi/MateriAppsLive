@@ -35,5 +35,5 @@ References
 ==========
 
  - [MateriApps LIVE!](http://cmsi.github.io/MateriAppsLive)
- - [How to make LIVE! USB?](http://github.com/cmsi/MateriAppsLive/wiki/How-to-make-Live-USB)
+ - [How to make LIVE! USB?](http://github.com/cmsi/MateriAppsLive/wiki/HowToMakeLiveUSB)
  - [MateriApps LIVE! Forum](http://ma.cms-initiative.jp/ja/community/materiapps-messageboard/materiapps-live)
