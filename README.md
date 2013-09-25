@@ -1,5 +1,5 @@
-MateriApps LIVE! Release 1.1 (2013/09/26)
-========================================
+MateriApps LIVE! Release 1.1 (2013/09/25)
+===========================================
 
   - New MateriApps LIVE! logo
   - Newly included MateriApps Applications
@@ -13,7 +13,7 @@ MateriApps LIVE! Release 1.1 (2013/09/26)
      * Machikaneyama Setup Tool (for cpa2002v009c Sep. 14, 2013)
 
 MateriApps LIVE! Release 1.0 (2013/07/26)
-========================================
+===========================================
 
   - First released version of MateriApps LIVE!
   - Based on Debian GNU/Linux (wheezy) amd64
