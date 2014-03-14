@@ -1,37 +1,6 @@
 Debian Live
 ===========
 
-必要ツールのインストール
-------------------------
-
- * live-build と関連ツール
-
-   # apt-get install live-build live-boot live-config
-
- * キャッシュ
-
-   # apt-get install apt-cacher-ng
-
- * 動作確認のためのツール
-
-   # apt-get install qemu wodim
-
-設定内容の概略
---------------
-
- * ひな形
-
-   $ git clone http://live.debian.net/git/live-images.git
-
-   live-images/images/lxde-desktop 中の auto と config ディレクトリをコピー
-
- * auto/config を編集
-
-   - proxy の設定
-   - archive-area の設定
-   - mirror site の追加
-   - boot parameter の設定
-   - version 番号の設定スクリプトの追加
 
  * ブートメニューの変更
 
@@ -46,14 +15,6 @@ Debian Live
    - config/includes.chroot/usr/share/applications/materiapps-about.desktop : MateriApps Live へのショートカット
    - config/includes.chroot/usr/share/applications/materiapps-materiapps.desktop : MateriApps へのショートカット
 
- * ブラウザのホームページを MateriApps に
-
-   - config/hooks/1000-iceweasel.chroot
-
- * Desktop 上に MateriApps へのショートカットを作成
-
-   - config/includes.chroot/etc/skel/Desktop/materiapps.desktop
-  
  * $HOME/bin をデフォルトの PATH に追加
 
    - config/hooks/1001-bashrc.chroot
@@ -77,80 +38,12 @@ Debian Live
    - ALPS : config/package-lists/materiapps.list.chroot
    - ERmod : config/package-lists/materiapps.list.chroot
    - feram : config/package-lists/materiapps.list.chroot
-   - Machikaneyama
-     + ダウンロード・コンパイル・インストール用 GUI: config/includes.chroot/usr/bin/machikaneyama-setup-gui config/includes.chroot/usr/share/MateriApps/machikaneyama/
-     + config/includes.chroot/usr/share/applications/materiapps-machikaneyama-setup.desktop
+   - gamess-setup : config/package-lists/materiapps.list.chroot
+   - MachKKR : config/package-lists/materiapps.list.chroot
+   - xTAPP : config/package-lists/materiapps.list.chroot
+   - tapioca : config/package-lists/materiapps.list.chroot
    - すでに debian パッケージがあるもの : config/package-lists/scientific.list.chroot
      + abinit, cp2k, gromacs, openmx quantum espresso
-  
-Debian Live のビルド
---------------------
-
-  # cd $HOME/build-amd64
-  # lb clean --all
-  # lb config --config [設定一式がおいてあるディレクトリ名]
-  # lb build
-
-USB メモリへの書き込み
-----------------------
-
-  # dd if=binary.hybrid.iso of=/dev/sdb bs=4M
-  # fdisk (/dev/sdb2 を作成)
-  # mkfs.ext4 /dev/sdb2 -L persistence
-
-  persistence.conf を作成
-
-  # mount /dev/sdb2 /mnt
-  # echo "/home" > /mnt/persistence.conf
-  # umount /mnt
-
-リリース手順
-------------
-
- * ブランチ命名規則は http://keijinsonyaban.blogspot.jp/2010/10/successful-git-branching-model.html に従う
-
- * develop ブランチからリリースブランチの作成
-
-   例: git checkout -b release-1.0 develop
-
- * materiapps_version にバージョン番号を設定し、commit
- 
- * Debian Live をビルドし、テスト・修正を行う
-
- * 公開版 iso イメージを作成、SourceForge へのアップロード
-
-   - イメージ名称 : MateriAppsLive-(バージョン).hybrid.iso
-   
- * master にマージし tag を付ける
-
-   例: git checkout master
-       git merge --no-ff release-1.0
-       git tag -a 1.0
-
- * develop にマージした後, リリースブランチを削除
-
-   例: git checkout develop
-       git merge --no-ff release-1.0
-       git branch -d release-1.0
-
- * github に push
-
-   例: git push origin develop
-       git push origin main
-       git push origin 1.0
- 
- * MateriApps Live ページの更新
-
- * MateriApps のニュース更新 & Twitter 告知
-   
-SourceForgeへのアップロード
----------------------------
-
- * Web インターフェースでフォルダ(例 Release-1.0)を作成
-
- * rsync を使ってアップロード
-
-   rsync -avP -e ssh MateriAppsLive-1.0.hybrid.iso frs.sourceforge.net:/home/frs/project/materiappslive/Release-1.0
   
 参考文献
 --------
