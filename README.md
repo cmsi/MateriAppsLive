@@ -1,4 +1,4 @@
-MateriApps LIVE! Release 1.2 (2014/03/12)
+MateriApps LIVE! Release 1.2 (2014/03/14)
 ===========================================
 
   - [New download site](http://exa.phys.s.u-tokyo.ac.jp/archive/MateriApps/apt) for MateriApps Debian Packages
