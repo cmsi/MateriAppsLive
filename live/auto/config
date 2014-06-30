@@ -30,6 +30,7 @@ lb config noauto \
 	--mirror-bootstrap "http://ftp.jp.debian.org/debian/" \
 	--mirror-binary "http://ftp.jp.debian.org/debian/" \
 	--mirror-chroot "http://ftp.jp.debian.org/debian/" \
+	--backports true \
 	--bootappend-live "boot=live config persistence noeject live-config.utc=no live-config.timezone=Asia/Tokyo live-noconfig=debian-installer-launcher" \
 "${@}"
 
