@@ -38,9 +38,10 @@ Debian Live
    - ALPS : config/package-lists/materiapps.list.chroot
    - ERmod : config/package-lists/materiapps.list.chroot
    - feram : config/package-lists/materiapps.list.chroot
-   - Machikaneyama
-     + ダウンロード・コンパイル・インストール用 GUI: config/includes.chroot/usr/bin/machikaneyama-setup-gui config/includes.chroot/usr/share/MateriApps/machikaneyama/
-     + config/includes.chroot/usr/share/applications/materiapps-machikaneyama-setup.desktop
+   - gamess-setup : config/package-lists/materiapps.list.chroot
+   - MachKKR : config/package-lists/materiapps.list.chroot
+   - xTAPP : config/package-lists/materiapps.list.chroot
+   - tapioca : config/package-lists/materiapps.list.chroot
    - すでに debian パッケージがあるもの : config/package-lists/scientific.list.chroot
      + abinit, cp2k, gromacs, openmx quantum espresso
   

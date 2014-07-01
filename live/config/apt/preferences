@@ -1,0 +1,3 @@
+Package: paraview
+Pin: release n=wheezy-backports
+Pin-Priority: 600

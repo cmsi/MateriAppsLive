@@ -1,3 +1,18 @@
+MateriApps LIVE! Release 1.2 (2014/03/14)
+===========================================
+
+  - [New download site](http://exa.phys.s.u-tokyo.ac.jp/archive/MateriApps/apt) for MateriApps Debian Packages
+  - Newly included MateriApps applications
+     * MachKKR (previously known as AkaiKKR or Machikaneyama2002) (20130914)
+  - Updated MateriApps applications
+     * ALPS (20140309-r7370)
+     * Feram (0.22.1)
+     * xTAPP (140129)
+  - Updated MateriApps visualization tools
+     * TAPIOCA (1.4.2)
+  - Removed packages
+     * Machikaneyama Setup Tools (replaced by MachKKR package)
+
 MateriApps LIVE! Release 1.1 (2013/09/25)
 ===========================================
 
@@ -6,7 +21,7 @@ MateriApps LIVE! Release 1.1 (2013/09/25)
      * xTAPP (130919)
      * GAMESS Setup Tool (for May 1, 2013 R1)
   - Newly included visualization tools
-     * Tapioca (1.3.3)
+     * TAPIOCA (1.3.3)
      * OpenDX (4.4.4)
   - Updated MateriApps Applications
      * Feram (0.21.04)
