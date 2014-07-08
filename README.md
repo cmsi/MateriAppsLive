@@ -1,3 +1,13 @@
+MateriApps LIVE! Release 1.3 (2014/07/xx)
+===========================================
+
+  - Added link to ["Getting Started"](https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted) on Desktop
+  - Removed "Install" menu from default boot menu
+  - Updated MateriApps applications
+     * AkaiKKR (renamed from MachKKR) (20130914)
+     * ALPS (20140623-r7482)
+     * xTAPP (patch for moldyn) (140129)
+
 MateriApps LIVE! Release 1.2 (2014/03/14)
 ===========================================
 
