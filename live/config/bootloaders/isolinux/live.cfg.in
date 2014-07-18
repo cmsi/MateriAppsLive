@@ -6,6 +6,12 @@ label live-@FLAVOUR@
 	append @APPEND_LIVE@
 
 label live-@FLAVOUR@-ja-jp
+	menu label ^Live (@FLAVOUR@ LANG=en KBD=jp)
+	linux @LINUX@
+	initrd @INITRD@
+	append @APPEND_LIVE@ live-config.keyboard-layouts=jp
+
+label live-@FLAVOUR@-ja-jp
 	menu label ^Live (@FLAVOUR@ LANG=ja KBD=jp)
 	linux @LINUX@
 	initrd @INITRD@

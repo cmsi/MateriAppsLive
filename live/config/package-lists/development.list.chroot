@@ -13,3 +13,5 @@ hdf5-tools
 openmpi-bin
 ruby
 subversion
+m4
+libncurses5-dev
