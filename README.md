@@ -1,12 +1,15 @@
-MateriApps LIVE! Release 1.3 (2014/07/xx)
+MateriApps LIVE! Release 1.3 (2014/07/19)
 ===========================================
 
-  - Added link to ["Getting Started"](https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted) on Desktop
+  - Added off-line tutorial ["Getting Started"](https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted) on Desktop
   - Removed "Install" menu from default boot menu
+  - Added boot option with LANG=en KBD=jp
   - Updated MateriApps applications
-     * AkaiKKR (renamed from MachKKR) (20130914)
-     * ALPS (20140623-r7482)
-     * xTAPP (patch for moldyn) (140129)
+     * AkaiKKR (renamed from MachKKR) (20130914-1)
+     * ALPS (20140623-r7482-1)
+     * feram (0.22.04-1)
+     * xTAPP (patch for moldyn) (140129-5)
+  - Added source repository for MateriApps LIVE!
 
 MateriApps LIVE! Release 1.2 (2014/03/14)
 ===========================================
@@ -16,7 +19,7 @@ MateriApps LIVE! Release 1.2 (2014/03/14)
      * MachKKR (previously known as AkaiKKR or Machikaneyama2002) (20130914)
   - Updated MateriApps applications
      * ALPS (20140309-r7370)
-     * Feram (0.22.1)
+     * feram (0.22.1)
      * xTAPP (140129)
   - Updated MateriApps visualization tools
      * TAPIOCA (1.4.2)
