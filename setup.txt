@@ -35,6 +35,7 @@ Debian Live
   
 * MateriApps アプリの追加  
 
+   - AkaiKKR : config/package-lists/materiapps.list.chroot
    - ALPS : config/package-lists/materiapps.list.chroot
    - ERmod : config/package-lists/materiapps.list.chroot
    - feram : config/package-lists/materiapps.list.chroot
@@ -43,7 +44,7 @@ Debian Live
    - xTAPP : config/package-lists/materiapps.list.chroot
    - tapioca : config/package-lists/materiapps.list.chroot
    - すでに debian パッケージがあるもの : config/package-lists/scientific.list.chroot
-     + abinit, cp2k, gromacs, openmx quantum espresso
+     + abinit, cp2k, gromacs, openmx, quantum espresso
   
 参考文献
 --------
