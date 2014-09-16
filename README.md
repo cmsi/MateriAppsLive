@@ -1,3 +1,18 @@
+MateriApps LIVE! Release 1.4 (2014/09/XX)
+===========================================
+
+  - Newly included MateriApps applications
+     * SMASH (1.0.1-1)
+  - Updated MateriApps applications
+     * AkaiKKR (20140905-1) (Supported OpenMP prallelization)
+     * ERmod (0.2.4-2) (Fixed permission of ERmod plugins)
+  - Newly included tutorials/examples
+     * ermod-example-gromacs (20120406-1)
+  - Newly included visualization tools
+     * Gifsicle
+     * ImageMagick
+  - Updated GettingStarted document
+
 MateriApps LIVE! Release 1.3 (2014/07/19)
 ===========================================
 
