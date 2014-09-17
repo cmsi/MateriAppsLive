@@ -1,11 +1,11 @@
-MateriApps LIVE! Release 1.4 (2014/09/XX)
+MateriApps LIVE! Release 1.4 (2014/09/17)
 ===========================================
 
   - Newly included MateriApps applications
      * SMASH (1.0.1-1)
   - Updated MateriApps applications
      * AkaiKKR (20140905-1) (Supported OpenMP prallelization)
-     * ERmod (0.2.4-2) (Fixed permission of ERmod plugins)
+     * ERmod (0.2.4-3) (Fixed permission of ERmod plugins, changed compile option)
      * OpenMX (3.7.8-1) (with openmx-data and openmx-example)
      * xTAPP (140916-1) (xtapp and xtapp-util)
   - Newly included tutorials/examples
@@ -14,6 +14,7 @@ MateriApps LIVE! Release 1.4 (2014/09/XX)
      * Gifsicle
      * ImageMagick
   - Updated GettingStarted document
+  - Fixed paraview startup problem in Japanese enviroment
 
 MateriApps LIVE! Release 1.3 (2014/07/19)
 ===========================================
