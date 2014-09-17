@@ -7,7 +7,7 @@ MateriApps LIVE! Release 1.4 (2014/09/17)
      * AkaiKKR (20140905-1) (Supported OpenMP prallelization)
      * ERmod (0.2.4-3) (Fixed permission of ERmod plugins, changed compile option)
      * OpenMX (3.7.8-1) (with openmx-data and openmx-example)
-     * xTAPP (140916-1) (xtapp and xtapp-util)
+     * xTAPP (140916-2) (xtapp and xtapp-util)
   - Newly included tutorials/examples
      * ERmod example for gromacs (ermod-example-gromacs 20120406-1)
   - Newly included visualization tools
