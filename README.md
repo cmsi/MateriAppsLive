@@ -9,7 +9,7 @@ MateriApps LIVE! Release 1.4 (2014/09/17)
      * OpenMX (3.7.8-1) (with openmx-data and openmx-example)
      * xTAPP (140916-1) (xtapp and xtapp-util)
   - Newly included tutorials/examples
-     * ermod-example-gromacs (20120406-1)
+     * ERmod example for gromacs (ermod-example-gromacs 20120406-1)
   - Newly included visualization tools
      * Gifsicle
      * ImageMagick
