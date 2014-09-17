@@ -13,8 +13,8 @@ MateriApps LIVE! Release 1.4 (2014/09/17)
   - Newly included visualization tools
      * Gifsicle
      * ImageMagick
-  - Updated GettingStarted document
   - Fixed paraview startup problem in Japanese environment
+  - Updated ["Getting Started"](https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted) document
 
 MateriApps LIVE! Release 1.3 (2014/07/19)
 ===========================================
