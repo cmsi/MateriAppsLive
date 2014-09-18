@@ -1,5 +1,6 @@
 # ABINIT
 abinit
+# abinit-data
 abinit-doc
 
 # CP2K
@@ -14,6 +15,8 @@ gromacs-openmpi
 
 # OpenMX
 openmx
+openmx-data
+openmx-example
 
 # Quantum Espresso
 quantum-espresso

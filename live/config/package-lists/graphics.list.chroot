@@ -1,8 +1,10 @@
-evince
 dx
+evince
+gifsicle
 gnuplot-x11
 graphviz
-python-pygraphviz
-pymol
+imagemagick
 paraview
 paraview-doc
+pymol
+python-pygraphviz

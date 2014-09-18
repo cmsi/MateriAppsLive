@@ -11,12 +11,16 @@ libalps-dev
 
 # ERmod
 ermod
+ermod-example-gromacs
 
 # feram
 feram
 
 # GAMESS
 gamess-setup
+
+# SMASH
+smash
 
 # xTAPP
 xtapp
