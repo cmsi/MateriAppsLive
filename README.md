@@ -1,3 +1,26 @@
+MateriApps LIVE! Release 1.4 (2014/09/18)
+===========================================
+
+  - Newly included MateriApps applications
+     * SMASH (1.0.1-1)
+  - Updated MateriApps applications
+     * AkaiKKR (20140905-1)
+         - Supported OpenMP parallelization
+     * ERmod (ermod 0.2.4-3, ermod-example-gromacs 20120406-1)
+         - Fixed permission of ERmod plugins
+         - Added Gromacs sample trajectory for ERmod example
+         - Fixed compile option for compatibility
+     * OpenMX (openmx 3.7.8-1, openmx-data 3.7.8-1, openmx-example 3.7.8-1)
+         - New upstream 3.7.8
+     * xTAPP (xtapp 140916-2, xtapp-util 140916-1, xtapp-ps 140401-1)
+         - New upstream 140916
+         - Added CAPZ and PBE-nc pseudo potential
+  - Newly included visualization tools
+     * Gifsicle
+     * ImageMagick
+  - Fixed paraview startup problem in Japanese environment
+  - Updated ["Getting Started"](https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted) document
+
 MateriApps LIVE! Release 1.3 (2014/07/19)
 ===========================================
 
