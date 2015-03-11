@@ -1,3 +1,16 @@
+MateriApps LIVE! Release 1.5 (2015/03/12)
+===========================================
+
+  - Updated MateriApps applications
+     * Feram (0.22.04-1)
+     * Tapioca (1.5.0-1)
+  - Newly included visualization tools
+     * XCrySDen
+  - Newly included debian packages
+     * numactl
+  - Replaced GPG public key by the one from materiapps-keyring package
+  - Included English version of ["Getting Started"](https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted)
+
 MateriApps LIVE! Release 1.4 (2014/09/18)
 ===========================================
 
