@@ -1,2 +1,3 @@
 enscript
+numactl
 tree
