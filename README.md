@@ -1,4 +1,4 @@
-MateriApps LIVE! Release 1.5 (2015/03/xx)
+MateriApps LIVE! Release 1.5 (2015/03/12)
 ===========================================
 
   - Updated MateriApps applications
