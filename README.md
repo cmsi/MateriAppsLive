@@ -2,7 +2,7 @@ MateriApps LIVE! Release 1.5 (2015/03/12)
 ===========================================
 
   - Updated MateriApps applications
-     * Feram (0.22.04-1)
+     * feram (0.22.06-1)
      * Tapioca (1.5.0-1)
   - Newly included visualization tools
      * XCrySDen
