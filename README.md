@@ -1,6 +1,8 @@
-MateriApps LIVE! Release 1.5 (2015/03/12)
-===========================================
+MateriApps LIVE! Release 1.5 (2015/03/12, 2015/03/28)
+=====================================================
 
+  - 64bit (amd64) as well as 32bit (i386) architecture
+  - VirtualBox Disk Images (OVA) are provided in addition to ISO boot images
   - Updated MateriApps applications
      * feram (0.22.06-1)
      * Tapioca (1.5.0-1)
