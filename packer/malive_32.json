@@ -1,0 +1,37 @@
+{
+    "variables": {
+        "ssh_name": "user",
+        "ssh_pass": "live",
+        "ma_version": "1.5",
+        "ma_checksum": "eee10da28b0d7f417116dfd99f9a7b48"
+    },
+
+    "builders": [{
+        "type": "virtualbox-iso",
+        "format": "ova",
+        "guest_os_type": "Debian",
+	"vm_name": "MateriAppsLive-{{user `ma_version`}}-i386",
+
+        "iso_url": "malive/MateriAppsLive-{{user `ma_version`}}-i386.hybrid.iso",
+        "iso_checksum": "{{user `ma_checksum`}}",
+        "iso_checksum_type": "md5",
+
+        "http_directory" : "malive",
+
+        "ssh_username": "{{user `ssh_name`}}",
+        "ssh_password": "{{user `ssh_pass`}}",
+        "ssh_wait_timeout": "20m",
+
+        "shutdown_command": "echo {{user `ssh_pass`}} | sudo -S shutdown -hP now",
+
+        "boot_command" : [
+            "<esc><wait>",
+            "install vga=788 ",
+            "auto=true ",
+            "netcfg/get_domain=local ",
+            "netcfg/get_hostname=malive ",
+            "url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+            "<enter><wait>"
+        ]
+    }]
+}
