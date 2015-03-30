@@ -12,6 +12,11 @@
         "guest_os_type": "Debian_64",
 	"vm_name": "MateriAppsLive-{{user `ma_version`}}-x86_64",
 
+        "vboxmanage": [
+            ["modifyvm", "{{.Name}}", "--vram", "32"],
+            ["modifyvm", "{{.Name}}", "--clipboard", "bidirectional"]
+        ],
+
         "iso_url": "malive/MateriAppsLive-{{user `ma_version`}}-x86_64.hybrid.iso",
         "iso_checksum": "{{user `ma_checksum`}}",
         "iso_checksum_type": "md5",
