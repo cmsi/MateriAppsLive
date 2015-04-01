@@ -1,3 +1,8 @@
+MateriApps LIVE! Release 1.6 (2015/04/??)
+=========================================
+
+  - xtapp-ps: CAPZ and norm-conserving + PBE pseudo potentials have been moved to xtapp-ps-extra package and made optional.
+
 MateriApps LIVE! Release 1.5 (2015/03/12, 2015/03/28)
 =====================================================
 
