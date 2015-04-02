@@ -1,9 +1,15 @@
 MateriApps LIVE! Release 1.6 (2015/04/??)
 =========================================
 
+  - Six type binary images are provided
+     * ISO boot image (MateriAppsLive-1.6-*.hybrid.iso) for 64bit (amd64) and 32bit (i386) architectures
+     * VirtualBox Disk Images (OVA) (MateriAppsLive-1.6-*.ova) for 64bit (amd64) and 32bit (i386) architectures
+     * VirtualBox Disk Images (OVA) with Japanese texlive packages (MateriAppsLive-ltx-1.6-*.ova) for 64bit (amd64) and 32bit (i386) architectures
   - Updated MateriApps packages
-     * xtapp (150401-1), xtapp-util (150401-1): New upstream release
-     * xtapp-ps (140401-2), xtapp-ps-extra (140401-2): CAPZ and norm-conserving + PBE pseudo potentials have been moved to xtapp-ps-extra package and made optional.
+     * alps: New upstream snapshot (20150402-r7566)
+     * xtapp, xtapp-util: New upstream release (150401)
+     * xtapp-ps, xtapp-ps-extra: CAPZ and norm-conserving + PBE pseudo potentials have been moved to xtapp-ps-extra package and made optional.
+  - Removed LibreOffice, Java, XSane to reduce the image size
 
 MateriApps LIVE! Release 1.5 (2015/03/12, 2015/03/28)
 =====================================================
