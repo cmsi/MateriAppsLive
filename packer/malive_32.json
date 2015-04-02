@@ -2,8 +2,8 @@
     "variables": {
         "ssh_name": "user",
         "ssh_pass": "live",
-        "ma_version": "1.5",
-        "ma_checksum": "eee10da28b0d7f417116dfd99f9a7b48"
+        "ma_version": "1.6",
+        "ma_checksum": "a7fbd60ac8e85010ac8432e4a3b0b209"
     },
 
     "builders": [{
