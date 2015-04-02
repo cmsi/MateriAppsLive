@@ -1,4 +1,4 @@
-MateriApps LIVE! Release 1.6 (2015/04/??)
+MateriApps LIVE! Release 1.6 (2015/04/02)
 =========================================
 
   - Six type binary images are provided
