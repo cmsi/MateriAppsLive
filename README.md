@@ -1,8 +1,24 @@
-MateriApps LIVE! Release 1.5 (2015/03/12)
-===========================================
+MateriApps LIVE! Release 1.6 (2015/04/02)
+=========================================
 
+  - Following binary images are provided
+     * ISO boot image (MateriAppsLive-1.6-*.hybrid.iso) for 64bit (amd64) and 32bit (i386) architectures
+     * VirtualBox Disk Images (OVA) (MateriAppsLive-1.6-*.ova) for 64bit (amd64) and 32bit (i386) architectures
+     * VirtualBox Disk Images (OVA) with Japanese texlive packages (MateriAppsLive-ltx-1.6-*.ova) for 64bit (amd64) and 32bit (i386) architectures
+     * For more information, see ["Using MateriApps LIVE! on VirtualBox"](https://github.com/cmsi/MateriAppsLive/wiki/Using-MateriApps-LIVE!-on-VirtualBox)
+  - Updated MateriApps packages
+     * alps: New upstream snapshot (20150402-r7566)
+     * xtapp, xtapp-util: New upstream release (150401)
+     * xtapp-ps, xtapp-ps-extra: CAPZ and norm-conserving + PBE pseudo potentials have been moved to xtapp-ps-extra package and made optional.
+  - Removed LibreOffice, Java, XSane to reduce the image size
+
+MateriApps LIVE! Release 1.5 (2015/03/12, 2015/03/28)
+=====================================================
+
+  - 64bit (amd64) as well as 32bit (i386) architecture
+  - VirtualBox Disk Images (OVA) are provided in addition to ISO boot images
   - Updated MateriApps applications
-     * Feram (0.22.04-1)
+     * feram (0.22.06-1)
      * Tapioca (1.5.0-1)
   - Newly included visualization tools
      * XCrySDen
@@ -73,7 +89,7 @@ MateriApps LIVE! Release 1.1 (2013/09/25)
      * TAPIOCA (1.3.3)
      * OpenDX (4.4.4)
   - Updated MateriApps Applications
-     * Feram (0.21.04)
+     * feram (0.21.04)
      * Machikaneyama Setup Tool (for cpa2002v009c Sep. 14, 2013)
 
 MateriApps LIVE! Release 1.0 (2013/07/26)
@@ -85,7 +101,7 @@ MateriApps LIVE! Release 1.0 (2013/07/26)
      * ABINIT (5.3.4)
      * ALPS (20130626-r6962)
      * CP2K (2.2.426)
-     * Feram (0.21.02)
+     * feram (0.21.02)
      * ERmod (0.2.4)
      * Gromacs (4.5.5)
      * Machikaneyama Setup Tool (for cpa2002v009c July 23, 2013)
