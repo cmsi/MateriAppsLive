@@ -1,10 +1,11 @@
-MateriApps LIVE! Release 1.6 (2015/04/??)
+MateriApps LIVE! Release 1.6 (2015/04/02)
 =========================================
 
-  - Six type binary images are provided
+  - Following binary images are provided
      * ISO boot image (MateriAppsLive-1.6-*.hybrid.iso) for 64bit (amd64) and 32bit (i386) architectures
      * VirtualBox Disk Images (OVA) (MateriAppsLive-1.6-*.ova) for 64bit (amd64) and 32bit (i386) architectures
      * VirtualBox Disk Images (OVA) with Japanese texlive packages (MateriAppsLive-ltx-1.6-*.ova) for 64bit (amd64) and 32bit (i386) architectures
+     * For more information, see ["Using MateriApps LIVE! on VirtualBox"](https://github.com/cmsi/MateriAppsLive/wiki/Using-MateriApps-LIVE!-on-VirtualBox)
   - Updated MateriApps packages
      * alps: New upstream snapshot (20150402-r7566)
      * xtapp, xtapp-util: New upstream release (150401)
