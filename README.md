@@ -1,3 +1,9 @@
+MateriApps LIVE! Release 1.7 (2015/xx/xx)
+=========================================
+
+  - Updated MateriApps packages
+     * xtapp-util (150401-3): Added missing utilities: disp2fset.py, disp2xti.py, rho2xsf, stm2cci, exrho2dx, wfneig, etc
+     
 MateriApps LIVE! Release 1.6 (2015/04/02)
 =========================================
 
