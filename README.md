@@ -4,7 +4,7 @@ MateriApps LIVE! Release 1.7 (2015/xx/xx)
   - Newly included MateriApps tools
      * c-tools (0.3.1-1)
   - Updated MateriApps packages
-     * ermod (0.3.0-1): New upstream release
+     * ermod (0.3.1-1): New upstream release
      * tapioca (1.6.2-1): New upstream release
      * xtapp-util (150401-3): Added missing utilities: disp2fset.py, disp2xti.py, rho2xsf, stm2cci, exrho2dx, wfneig, etc
      
