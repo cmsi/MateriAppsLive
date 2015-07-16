@@ -3,6 +3,7 @@ MateriApps LIVE! Release 1.7 (2015/xx/xx)
 
   - Newly included MateriApps tools
      * c-tools (0.3.1-1)
+     * rasmol (2.7.5.2.1)
   - Updated MateriApps packages
      * ermod (0.3.1-1): New upstream release
      * tapioca (1.6.2-1): New upstream release
