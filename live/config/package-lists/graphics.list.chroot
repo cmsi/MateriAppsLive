@@ -1,3 +1,4 @@
+avogadro
 dx
 evince
 gifsicle
@@ -10,4 +11,5 @@ pymol
 python-pygraphviz
 rasmol
 rasmol-doc
+vesta
 xcrysden
