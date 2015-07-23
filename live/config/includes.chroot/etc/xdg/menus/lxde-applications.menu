@@ -151,8 +151,22 @@
 				<Category>X-MateriApps</Category>
 			</Or>
 		</Include>
-	</Menu> <!-- End MateriApps -->
+	</Menu>
+	<!-- End MateriApps -->
 
+	<!-- Database -->
+        <Menu>
+		<Name>Database</Name>
+		<Directory>database.directory</Directory>
+		<OnlyUnallocated/>
+		<Include>
+			<Or>
+				<Category>X-Database</Category>
+			</Or>
+		</Include>
+	</Menu>
+	<!-- End Database -->
+	
 	<Layout>
 		<Merge type="files"/>
 		<Merge type="menus"/>
