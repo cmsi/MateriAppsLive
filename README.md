@@ -8,9 +8,11 @@ MateriApps LIVE! Release 1.7 (2015/07/xx)
      * rasmol (2.7.5.2)
      * vesta (3.3.0)
   - Updated MateriApps packages
-     * ermod (0.3.1-1): New upstream release
-     * tapioca (1.6.2-1): New upstream release
-     * xtapp-util (150401-3): Added missing utilities: disp2fset.py, disp2xti.py, rho2xsf, stm2cci, exrho2dx, wfneig, etc
+     * ermod (0.3.1): New upstream release
+     * openmx (3.7.8): Added utilities for postprocessing: bandgnu13 and DosMain
+     * tapioca (1.6.2): New upstream release
+     * xtapp-util (150401): Added missing utilities: disp2fset.py, disp2xti.py, rho2xsf, stm2cci, exrho2dx, wfneig, etc
+  - Added link menu items to databases of materials science
      
 MateriApps LIVE! Release 1.6 (2015/04/02)
 =========================================
