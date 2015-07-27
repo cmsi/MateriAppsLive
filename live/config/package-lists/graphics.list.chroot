@@ -1,3 +1,4 @@
+avogadro
 dx
 evince
 gifsicle
@@ -8,4 +9,7 @@ paraview
 paraview-doc
 pymol
 python-pygraphviz
+rasmol
+rasmol-doc
+vesta
 xcrysden
