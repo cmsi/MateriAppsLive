@@ -2,8 +2,8 @@
     "variables": {
         "ssh_name": "user",
         "ssh_pass": "live",
-        "ma_version": "1.6",
-        "ma_checksum": "a7fbd60ac8e85010ac8432e4a3b0b209"
+        "ma_version": "1.7",
+        "ma_checksum": "5919a77520c0b3ead25e3a7d84619c48"
     },
 
     "builders": [{
@@ -31,7 +31,7 @@
 
         "boot_command" : [
             "<esc><wait>",
-            "install vga=788 ",
+            "/install/vmlinuz initrd=/install/initrd.gz vga=788 ",
             "auto=true ",
             "netcfg/get_domain=local ",
             "netcfg/get_hostname=malive ",
