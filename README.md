@@ -1,4 +1,4 @@
-MateriApps LIVE! Release 1.7 (2015/07/xx)
+MateriApps LIVE! Release 1.7 (2015/07/27)
 =========================================
 
   - Newly included MateriApps tools
