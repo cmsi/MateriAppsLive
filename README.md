@@ -1,3 +1,14 @@
+MateriApps LIVE! Release 1.8 (2015/08/??)
+=========================================
+
+  - Newly included MateriApps tools
+     * 
+  - Newly included visualization tools
+     * vmd-setup: VMD Setup Tool (for 1.9.2)
+  - Updated MateriApps packages
+     * gamess-setup: GAMESS Setup Tool (for December 5, 2014 R1)
+  - Allowed to open popup window in Iceweasel by default
+
 MateriApps LIVE! Release 1.7 (2015/07/27)
 =========================================
 
