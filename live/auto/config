@@ -38,6 +38,24 @@ if test -f materiapps_version; then
   mkdir -p config/includes.chroot/etc
   cp -p materiapps_version config/includes.chroot/etc
   MATERIAPPS_VERSION=`cat materiapps_version`
+  _PROJECT=$(. /etc/os-release && echo $PRETTY_NAME)
+  _YEAR="$(date +%Y)"
+  _MONTH="$(date +%m)"
+  _DAY="$(date +%d)"
+  _HOUR="$(date +%H)"
+  _MINUTE="$(date +%M)"
+  _SECOND="$(date +%S)"
   mv config/bootloaders/isolinux/splash.svg.in config/bootloaders/isolinux/splash.svg.in.orig
-  sed -e "s|@MA_VERSION@|${MATERIAPPS_VERSION}|g" config/bootloaders/isolinux/splash.svg.in.orig > config/bootloaders/isolinux/splash.svg.in
+  sed -e "s|@MA_VERSION@|${MATERIAPPS_VERSION}|g" \
+                -e "s|@PROJECT@|${_PROJECT}|g" \
+                -e "s|@DATE@|${_DATE}|g" \
+                -e "s|@YEAR@|${_YEAR}|g" \
+                -e "s|@MONTH@|${_MONTH}|g" \
+                -e "s|@DAY@|${_DAY}|g" \
+                -e "s|@HOUR@|${_HOUR}|g" \
+                -e "s|@MINUTE@|${_MINUTE}|g" \
+                -e "s|@SECOND@|${_SECOND}|g" \
+    config/bootloaders/isolinux/splash.svg.in.orig > config/bootloaders/isolinux/splash.svg.in
+  mkdir -p config/includes.chroot/usr/share/images/desktop-base 
+  cp -f config/bootloaders/isolinux/splash.svg.in config/includes.chroot/usr/share/images/desktop-base/login-background.svg
 fi
