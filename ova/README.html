@@ -1,0 +1,68 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>MateriApps LIVE! OVA版</title>
+  <link rel="stylesheet" href="github.css" type="text/css" />
+</head>
+<body>
+<h1>MateriApps LIVE! OVA版</h1>
+
+<p>本ドキュメントの最新版は <a href="https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ova">https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ova</a> にあります。</p>
+
+<p>MateriApps LIVE! OVA版は、<a href="http://cmsi.github.io/MateriAppsLive/">MateriApps LIVE!</a>のVirtualBox仮想ディスクイメージです。計算物質科学アプリケーションのハンズオン環境としてだけでなく、UNIX全般(UNIXコマンド, ネットワーク, Emacs, Gnuplot)、プログラミング(C, C++, Fortran)などの実習環境として使うことも想定して製作・配布しています。</p>
+
+<ul>
+<li><p><a href="http://ma.cms-initiative.jp">MateriApps</a>とは?</p>
+
+<p>日本国内において、計算物質科学シミュレーションのための、高性能・高精度な手法・ソフトウェアが数多く開発されています。しかしながら、実験家・企業研究者にその存在が伝わっておらず、主として海外製の公開ソフトウェア・商用ソフトウェアが使われているのが現状です。物質科学シミュレーションのポータルサイトMateriAppsでは、これまでにあまり知られていなかった国内外で開発された物質科学アプリケーション、あるいは今後開発されるアプリケーションを紹介しています。</p></li>
+<li><p><a href="http://cmsi.github.io/MateriAppsLive/">MateriApps LIVE!</a>とは?</p>
+
+<p>公開ソフトウェアを試そうとしたとき、ソフトウェアのインストールそのものが大きな障害となっているのも事実です。MateriApps LIVE!は、手持ちのノートPCなどを用いて、気軽に計算物質科学アプリケーションを試せる環境を提供します。MateriAppsアプリケーション、OS (Debian GNU/Linux)、エディタ、可視化ツールなど、チュートリアルを始めるのに必要な環境が全て一つのイメージファイルに収められており、USBメモリや仮想マシンからブートするだけで簡単に使うことができます。</p></li>
+<li><p><a href="https://www.virtualbox.org">VirtualBox</a>とは?</p>
+
+<p>オープンソースの仮想化ソフトウェア。Mac OS XやWindowsなどの、既存のオペレーティングシステム(ホストOS)の上で、別のOS (ゲストOS)を実行することができます。サポートされるホストOSはLinux、Mac OS X、Windows、Solaris。ゲストOSとしては、FreeBSD、Linux、OpenBSD、OS/2 Warp、Windows、Mac OS X、Solarisなど、x86/x64アーキテクチャのOSであれば基本的には動作します。GNU General Public License (GPL) Version2の下で公開・配布されています。</p></li>
+</ul>
+
+<h2>USBに含まれるファイル</h2>
+
+<ul>
+<li>VirtualBox-*-OSX.dmg : VirtualBoxインストーラ for Mac OS X</li>
+<li>VirtualBox-*-Win.exe : VirtualBoxインストーラ for Windows</li>
+<li>MateriAppsLive-*-x86_64.ova : VirtualBox仮想ディスクイメージ(64bit版)</li>
+<li>MateriAppsLive-*-i386.ova : VirtualBox仮想ディスクイメージ(32bit版)</li>
+<li>README.html : このファイル</li>
+<li>github.css : HTMLスタイルファイル</li>
+</ul>
+
+<h2>セットアップ</h2>
+
+<ol>
+<li>VirtualBoxインストーラを起動し、VirtualBoxをインストール</li>
+<li>MateriAppsLive-*-x86_64.ova をダブルクリックしてOVAイメージを開くと、VirtualBoxが立ち上がる。「インポート」をクリック。(64bit版仮想ディスクイメージでうまくいかない場合には、32bit版 MateriAppsLive-*-i386.ova を試してみてください)</li>
+<li>インポート完了後、「起動」ボタンを押す</li>
+<li>ログイン画面で以下の内容を入力してログイン
+
+<ul>
+<li>Login(ユーザ名): <code>user</code></li>
+<li>Password(パスワード): <code>live</code></li>
+</ul></li>
+</ol>
+
+<h2>ホストOS (Mac OS X あるいは Windows)と MateriApps LIVE! との間でファイルをやりとりする</h2>
+
+<ol>
+<li>VirtualBoxマネージャーWindowを開き、MateriAppsLive を選択、「設定」をクリック</li>
+<li>「共有フォルダー」タブを開き、右側の「+」(新規共有フォルダーを追加します)をクリック</li>
+<li>「フォルダーのパス」の右側の「ｖ」をクリックし、「その他」を選択。共有したいフォルダーを選択する</li>
+<li>「自動マウント」「永続化する」をチェックし、「OK」をクリック</li>
+<li>仮想マシンを起動(再起動)すると、3で選択したフォルダが、/media/sf_... の下に見える (...の箇所は、ホストOSのフォルダー名)</li>
+</ol>
+
+<h2>参考資料</h2>
+
+<ul>
+<li>MateriApps LIVE!: FAQ よくある質問 <a href="https://github.com/cmsi/MateriAppsLive/wiki/FAQ">https://github.com/cmsi/MateriAppsLive/wiki/FAQ</a></li>
+<li>MateriApps LIVE!: はじめの一歩 <a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted">https://github.com/cmsi/MateriAppsLive/wiki/GettingStarted</a></li>
+</ul>
+</body>
+</html>

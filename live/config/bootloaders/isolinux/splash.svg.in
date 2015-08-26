@@ -132,7 +132,7 @@
          x="332.74567"
          sodipodi:role="line"
          style="font-size:14px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Bold;fill:#e6e6e6"
-         id="tspan3047">@PROJECT@ @VERSION@ (@DISTRIBUTION@)</tspan><tspan
+         id="tspan3047">@PROJECT@</tspan><tspan
          y="635.14252"
          x="332.74567"
          sodipodi:role="line"
