@@ -14,7 +14,10 @@
 
         "vboxmanage": [
             ["modifyvm", "{{.Name}}", "--vram", "32"],
-            ["modifyvm", "{{.Name}}", "--clipboard", "bidirectional"]
+            ["modifyvm", "{{.Name}}", "--clipboard", "bidirectional"],
+            ["modifyvm", "{{.Name}}", "--usb", "on"],
+            ["modifyvm", "{{.Name}}", "--accelerate3d", "on"],
+            ["modifyvm", "{{.Name}}", "--memory", "1000"]
         ],
 
         "iso_url": "malive/MateriAppsLive-{{user `ma_version`}}-i386.hybrid.iso",
