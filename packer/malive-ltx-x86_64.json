@@ -2,7 +2,7 @@
     "variables": {
         "ssh_name": "user",
         "ssh_pass": "live",
-        "ma_version": "@MA_VERSOION@",
+        "ma_version": "@MA_VERSION@",
         "ma_checksum": "@MA_CHECKSUM@"
     },
 
@@ -10,7 +10,7 @@
         "type": "virtualbox-iso",
         "format": "ova",
         "guest_os_type": "Debian_64",
-	"vm_name": "MateriAppsLive-{{user `ma_version`}}-x86_64",
+	"vm_name": "MateriAppsLive-ltx-{{user `ma_version`}}-x86_64",
 
         "vboxmanage": [
             ["modifyvm", "{{.Name}}", "--vram", "32"],
@@ -40,5 +40,13 @@
             "url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
             "<enter><wait>"
         ]
-    }]
+    }],
+
+    "provisioners": [
+	{
+	    "type": "shell",
+	    "inline": ["apt-get -y install texlive-lang-cjk"],
+	    "execute_command": "echo {{user `ssh_pass`}} | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+	}
+    ]
 }
