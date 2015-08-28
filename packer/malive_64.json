@@ -2,8 +2,8 @@
     "variables": {
         "ssh_name": "user",
         "ssh_pass": "live",
-        "ma_version": "1.7",
-        "ma_checksum": "646dc984fa9dae16c50c7126f7adb3b3"
+        "ma_version": "@MA_VERSOION@",
+        "ma_checksum": "@MA_CHECKSUM@"
     },
 
     "builders": [{
@@ -16,7 +16,6 @@
             ["modifyvm", "{{.Name}}", "--vram", "32"],
             ["modifyvm", "{{.Name}}", "--clipboard", "bidirectional"],
             ["modifyvm", "{{.Name}}", "--usb", "on"],
-            ["modifyvm", "{{.Name}}", "--accelerate3d", "on"],
             ["modifyvm", "{{.Name}}", "--memory", "1000"]
         ],
 
