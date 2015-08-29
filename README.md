@@ -1,13 +1,15 @@
-MateriApps LIVE! Release 1.8 (2015/08/??)
+MateriApps LIVE! Release 1.8 (2015/08/31)
 =========================================
 
-  - Newly included MateriApps tools
-     * 
   - Newly included visualization tools
      * vmd-setup: VMD Setup Tool (for 1.9.2)
   - Updated MateriApps packages
-     * gamess-setup: GAMESS Setup Tool (for December 5, 2014 R1)
+     * alps (20150825-r7620)
+     * gamess-setup (for December 5, 2014 R1)
   - Allowed to open popup window in Iceweasel by default
+  - Added MateriApps LIVE! login background in OVA
+  - Enable accelerate3d and usb support in VirtualBox
+  - Added link menu items to PDB
 
 MateriApps LIVE! Release 1.7 (2015/07/27)
 =========================================
