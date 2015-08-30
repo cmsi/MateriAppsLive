@@ -5,7 +5,10 @@ MateriApps LIVE! Release 1.8 (2015/08/31)
      * vmd-setup: VMD Setup Tool (for 1.9.2)
   - Updated MateriApps packages
      * alps (20150825-r7620)
+     * feram (0.24.02)
      * gamess-setup (for December 5, 2014 R1)
+  - Updated Visualization tools
+     * paraview (3.14.1-6+1)
   - Allowed to open popup window in Iceweasel by default
   - Added MateriApps LIVE! login background in OVA
   - Enable accelerate3d and usb support in VirtualBox
