@@ -13,7 +13,3 @@ Pin-Priority: -1
 Package: xsane*
 Pin: version *
 Pin-Priority: -1
-
-Package: xterm
-Pin: version *
-Pin-Priority: -1
