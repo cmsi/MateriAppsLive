@@ -32,6 +32,7 @@
 <li>MateriAppsLive-*-i386.ova : VirtualBox仮想ディスクイメージ(32bit版)</li>
 <li>README.html : このファイル</li>
 <li>github.css : HTMLスタイルファイル</li>
+<li>vbconfig.* : VirtualBox で不要なポップアップメニューを非表示にするためのスクリプト。Windows では vbconfig.bat、Mac OS X では vbconfig.command をダブルクリック。ポップアップを再度表示するには、VirtualBox の「ヘルプ」メニュー ⇒「Reset All Warnings」</li>
 </ul>
 
 <h2>セットアップ</h2>
@@ -51,11 +52,20 @@
 <h2>ホストOS (Mac OS X あるいは Windows)と MateriApps LIVE! との間でファイルをやりとりする</h2>
 
 <ol>
-<li>VirtualBoxマネージャーWindowを開き、MateriAppsLive を選択、「設定」をクリック</li>
+<li><p>ホストOSとの間でファイルをやりとりする</p>
+
+<ol>
+<li>Oracle VM VirtualBoxマネージャーで MateriAppsLive を選択し、「設定」</li>
 <li>「共有フォルダー」タブを開き、右側の「+」(新規共有フォルダーを追加します)をクリック</li>
 <li>「フォルダーのパス」の右側の「ｖ」をクリックし、「その他」を選択。共有したいフォルダーを選択する</li>
-<li>「自動マウント」「永続化する」をチェックし、「OK」をクリック</li>
-<li>仮想マシンを起動(再起動)すると、3で選択したフォルダが、/media/sf_... の下に見える (...の箇所は、ホストOSのフォルダー名)</li>
+<li>「自動マウント」をチェックし、「OK」。</li>
+<li>仮想マシンを起動(再起動)すると、3で選択したフォルダが、/mnt/sf_... の下に見える</li>
+</ol></li>
+<li><p>USBフラッシュメモリを仮想マシンに接続する</p>
+
+<ul>
+<li>VirtualBoxのUSBセットアップ: <a href="https://sites.google.com/site/owlnetvista/virtualpc200725">https://sites.google.com/site/owlnetvista/virtualpc200725</a></li>
+</ul></li>
 </ol>
 
 <h2>参考資料</h2>
