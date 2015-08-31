@@ -2,19 +2,22 @@
     "variables": {
         "ssh_name": "user",
         "ssh_pass": "live",
-        "ma_version": "1.7",
-        "ma_checksum": "646dc984fa9dae16c50c7126f7adb3b3"
+        "ma_version": "@MA_VERSION@",
+        "ma_checksum": "@MA_CHECKSUM@"
     },
 
     "builders": [{
         "type": "virtualbox-iso",
         "format": "ova",
         "guest_os_type": "Debian_64",
-	"vm_name": "MateriAppsLive-{{user `ma_version`}}-x86_64",
+	"vm_name": "MateriAppsLive-ltx-{{user `ma_version`}}-x86_64",
 
         "vboxmanage": [
             ["modifyvm", "{{.Name}}", "--vram", "32"],
-            ["modifyvm", "{{.Name}}", "--clipboard", "bidirectional"]
+            ["modifyvm", "{{.Name}}", "--clipboard", "bidirectional"],
+            ["modifyvm", "{{.Name}}", "--usb", "on"],
+            ["modifyvm", "{{.Name}}", "--accelerate3d", "on"],
+            ["modifyvm", "{{.Name}}", "--memory", "1000"]
         ],
 
         "iso_url": "malive/MateriAppsLive-{{user `ma_version`}}-x86_64.hybrid.iso",
@@ -38,5 +41,13 @@
             "url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
             "<enter><wait>"
         ]
-    }]
+    }],
+
+    "provisioners": [
+	{
+	    "type": "shell",
+	    "inline": ["apt-get -y install texlive-lang-cjk"],
+	    "execute_command": "echo {{user `ssh_pass`}} | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+	}
+    ]
 }
