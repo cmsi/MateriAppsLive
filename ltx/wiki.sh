@@ -11,16 +11,26 @@ fi
 
 CSS="https://gist.githubusercontent.com/andyferra/2554919/raw/2e66cabdafe1c9a7f354aa2ebf5bc38265e638e5/github.css"
 
-git clone $REPOSITORY $SRCDIR
-
-wget -O github.css "$CSS"
+if [ -d "$SRCDIR" ]; then
+  (cd "$SRCDIR" && git fetch && git merge origin/master)
+else
+  git clone $REPOSITORY $SRCDIR
+fi
 
 cat << EOF > README.html
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>MateriApps LIVE! LTX版</title>
-  <link rel="stylesheet" href="github.css" type="text/css" />
+  <style type="text/css">
+<!--
+EOF
+
+wget -O - "$CSS" >> README.html
+
+cat << EOF >> README.html
+-->
+  </style>
 </head>
 <body>
 EOF
