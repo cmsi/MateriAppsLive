@@ -13,6 +13,8 @@
 	"vm_name": "MateriAppsLive-ltx-{{user `ma_version`}}-i386",
 
         "vboxmanage": [
+            ["setextradata", "global", "GUI/SuppressMessages", "all"],
+            ["modifyvm", "{{.Name}}", "--nictype1", "virtio"],
             ["modifyvm", "{{.Name}}", "--vram", "32"],
             ["modifyvm", "{{.Name}}", "--clipboard", "bidirectional"],
             ["modifyvm", "{{.Name}}", "--usb", "on"],
@@ -46,7 +48,7 @@
     "provisioners": [
 	{
 	    "type": "shell",
-	    "inline": ["apt-get -y install texlive-lang-cjk"],
+	    "inline": ["apt-get --yes --no-install-recommends install ed fonts-ipaexfont-gothic fonts-ipaexfont-mincho ko.tex-extra-hlfont latex-beamer latex-cjk-all latex-cjk-chinese latex-cjk-chinese-arphic-bkai00mp latex-cjk-chinese-arphic-bsmi00lp latex-cjk-chinese-arphic-gbsn00lp latex-cjk-chinese-arphic-gkai00mp latex-cjk-common latex-cjk-japanese latex-cjk-japanese-wadalab latex-cjk-korean latex-cjk-thai latex-fonts-thai-tlwg latex-xcolor libgraphite3 libptexenc1 lmodern luatex pgf preview-latex-style prosper ps2eps swath tex-common texlive-base texlive-binaries texlive-common texlive-doc-base texlive-doc-zh texlive-extra-utils texlive-font-utils texlive-generic-recommended texlive-lang-cjk texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-pictures texlive-pstricks thailatex"],
 	    "execute_command": "echo {{user `ssh_pass`}} | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
 	}
     ]

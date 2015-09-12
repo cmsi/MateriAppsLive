@@ -13,6 +13,8 @@
 	"vm_name": "MateriAppsLive-{{user `ma_version`}}-i386",
 
         "vboxmanage": [
+            ["setextradata", "global", "GUI/SuppressMessages", "all"],
+            ["modifyvm", "{{.Name}}", "--nictype1", "virtio"],
             ["modifyvm", "{{.Name}}", "--vram", "32"],
             ["modifyvm", "{{.Name}}", "--clipboard", "bidirectional"],
             ["modifyvm", "{{.Name}}", "--usb", "on"],
