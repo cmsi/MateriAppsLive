@@ -40,11 +40,12 @@ mkfs.vfat $DEV$n -n "MateriApps"
 
 # copy files
 mkdir -p $MNT
+echo "Info: mouting $DEV$n to $MNT"
 mount $DEV$n $MNT
 FILES=$(awk '{print $3}' $MD5)
 for f in $FILES $MD5; do
-  echo "Info: copying $f..."
-  cp -fp $f $MNT
+  echo "Info: copying $f to $DEV$n..."
+  cp -f $f $MNT
 done
 sync; sync; sync; umount $DEV$n
 
@@ -55,12 +56,12 @@ for f in $FILES; do
   size_in=$(ls -l $f | awk '{print $5}')
   md5_out=$(md5sum $MNT/$f | awk '{print $1}')
   size_out=$(ls -l $MNT/$f | awk '{print $5}')
-  if [ $md5_out != $md5_in ]; then
-    echo "Error: checksum error for $f"
-  elif [ $size_out != $size_in ]; then
-    echo "Error: size check error for $f"
+  if [ "$md5_out" != "$md5_in" ]; then
+    echo "Error: checksum error for $f on $DEV$n"
+  elif [ "$size_out" != "$size_in" ]; then
+    echo "Error: size check error for $f on $DEV$n"
   else
-    echo "Info: checksum test passed for $f"
+    echo "Info: checksum test passed for $f on $DEV$n"
   fi  
 done
 sync; sync; sync; umount $DEV$n
