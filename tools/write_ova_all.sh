@@ -5,7 +5,7 @@ date
 
 for d in $DEV; do
   if [ -b /dev/$d ]; then
-    sh $SCRIPT_DIR/write_usb.sh /dev/$d &
+    sh $SCRIPT_DIR/write_ova.sh /dev/$d &
   fi
 done
 wait
