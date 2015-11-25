@@ -1,2 +1,4 @@
-deb http://sourceforge.net/projects/materiappslive/files/Debian/apt wheezy main non-free contrib
-deb-src http://sourceforge.net/projects/materiappslive/files/Debian/apt wheezy main non-free contrib
+#deb http://sourceforge.net/projects/materiappslive/files/Debian/apt wheezy main non-free contrib
+#deb-src http://sourceforge.net/projects/materiappslive/files/Debian/apt wheezy main non-free contrib
+deb http://exa.phys.s.u-tokyo.ac.jp/archive/MateriApps/apt wheezy main non-free contrib
+deb-src http://exa.phys.s.u-tokyo.ac.jp/archive/MateriApps/apt wheezy main non-free contrib
