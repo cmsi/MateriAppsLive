@@ -17,6 +17,8 @@ MateriApps LIVE! Release 1.9 (2015/11/??)
      * dsqss (1.1.17+pv1.1.2-2)
   - Updated MateriApps packages
      * c-tools (0.5.2-1)
+     * ermod (0.3.3-1)
+     * smash (1.1.0-1)
      * tapioca (1.6.10-1)
   - Wrapper for paraview now set LIBGL_ALWAYS_INDIRECT=1 to prevent warning messages
 
