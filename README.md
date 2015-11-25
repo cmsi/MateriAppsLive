@@ -3,12 +3,22 @@ MateriApps LIVE! Release Files
 
 Which archive should be used?
 
-  - MateriAppsLive-*-x86_64.ova: Open Virtualization Format for VirtualBox (64bit)
-  - MateriAppsLive-*-x86_64.hybrid.iso: Hybrid ISO Image for USB Boot (64bit)
   - MateriAppsLive-*-i386.ova: Open Virtualization Format for VirtualBox (32bit)
   - MateriAppsLive-*-i386.hybrid.iso: Hybrid ISO Image for USB Boot (32bit)
+  - MateriAppsLive-*-x86_64.ova: Open Virtualization Format for VirtualBox (64bit)
+  - MateriAppsLive-*-x86_64.hybrid.iso: Hybrid ISO Image for USB Boot (64bit)
+  - MateriAppsLive-ltx-*-i386.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (32bit)
   - MateriAppsLive-ltx-*-x86_64.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (64bit)
-  - MateriAppsLive-ltx-*-i386.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (64bit)
+
+MateriApps LIVE! Release 1.9 (2015/11/??)
+=========================================
+
+  - Newly included MateriApps packages
+     * dsqss (1.1.17+pv1.1.2-2)
+  - Updated MateriApps packages
+     * c-tools (0.5.2-1)
+     * tapioca (1.6.10-1)
+  - Wrapper for paraview now set LIBGL_ALWAYS_INDIRECT=1 to prevent warning messages
 
 MateriApps LIVE! Release 1.8 (2015/08/31)
 =========================================
