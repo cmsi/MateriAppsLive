@@ -20,7 +20,8 @@ MateriApps LIVE! Release 1.9 (2015/11/??)
      * ermod (0.3.3-1)
      * smash (1.1.0-1)
      * tapioca (1.6.10-1)
-  - Wrapper for paraview now set LIBGL_ALWAYS_INDIRECT=1 to prevent warning messages
+     * vmd-setup (1.3)
+  - Wrapper for paraview now set LIBGL_ALWAYS_SOFTWARE=1 to prevent warning messages
 
 MateriApps LIVE! Release 1.8 (2015/08/31)
 =========================================
