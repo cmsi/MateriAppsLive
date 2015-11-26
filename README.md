@@ -1,13 +1,44 @@
-MateriApps LIVE! Release 1.8 (2015/08/??)
+MateriApps LIVE! Release Files
+==============================
+
+Which archive should be used?
+
+  - MateriAppsLive-*-i386.ova: Open Virtualization Format for VirtualBox (32bit)
+  - MateriAppsLive-*-i386.hybrid.iso: Hybrid ISO Image for USB Boot (32bit)
+  - MateriAppsLive-*-x86_64.ova: Open Virtualization Format for VirtualBox (64bit)
+  - MateriAppsLive-*-x86_64.hybrid.iso: Hybrid ISO Image for USB Boot (64bit)
+  - MateriAppsLive-ltx-*-i386.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (32bit)
+  - MateriAppsLive-ltx-*-x86_64.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (64bit)
+
+MateriApps LIVE! Release 1.9 (2015/11/27)
 =========================================
 
-  - Newly included MateriApps tools
-     * 
+  - Newly included MateriApps packages
+     * dsqss (1.1.17+pv1.1.2-2)
+  - Updated MateriApps packages
+     * c-tools (0.5.2-1)
+     * ermod (0.3.3-1)
+     * smash (1.1.0-1)
+     * tapioca (1.6.10-1)
+     * vmd-setup (1.3)
+  - Wrapper for paraview now set LIBGL_ALWAYS_SOFTWARE=1 to prevent warning messages
+  - Changed MateriApps Debian repository to sourceforge
+
+MateriApps LIVE! Release 1.8 (2015/08/31)
+=========================================
+
   - Newly included visualization tools
      * vmd-setup: VMD Setup Tool (for 1.9.2)
   - Updated MateriApps packages
-     * gamess-setup: GAMESS Setup Tool (for December 5, 2014 R1)
+     * alps (20150825-r7620)
+     * feram (0.24.02)
+     * gamess-setup (for December 5, 2014 R1)
+  - Updated Visualization tools
+     * paraview (3.14.1-6+1)
   - Allowed to open popup window in Iceweasel by default
+  - Added MateriApps LIVE! login background in OVA
+  - Enable accelerate3d and usb support in VirtualBox
+  - Added link menu items to PDB
 
 MateriApps LIVE! Release 1.7 (2015/07/27)
 =========================================
@@ -142,5 +173,5 @@ References
 ==========
 
  - [MateriApps LIVE!](http://cmsi.github.io/MateriAppsLive)
- - [How to make LIVE! USB?](http://github.com/cmsi/MateriAppsLive/wiki/HowToMakeLiveUSB)
+ - [MateriApps LIVE! Wiki](https://github.com/cmsi/MateriAppsLive/wiki)
  - [MateriApps LIVE! Forum](http://ma.cms-initiative.jp/ja/community/materiapps-messageboard/materiapps-live)

@@ -6,14 +6,10 @@ Package: libsane*
 Pin: version *
 Pin-Priority: -1
 
-Package: vela-terminal
+Package: vala-terminal
 Pin: version *
 Pin-Priority: -1
 
 Package: xsane*
-Pin: version *
-Pin-Priority: -1
-
-Package: xterm
 Pin: version *
 Pin-Priority: -1

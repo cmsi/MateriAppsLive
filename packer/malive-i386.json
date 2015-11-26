@@ -2,8 +2,8 @@
     "variables": {
         "ssh_name": "user",
         "ssh_pass": "live",
-        "ma_version": "1.7",
-        "ma_checksum": "5919a77520c0b3ead25e3a7d84619c48"
+        "ma_version": "@MA_VERSION@",
+        "ma_checksum": "@MA_CHECKSUM@"
     },
 
     "builders": [{
@@ -13,8 +13,13 @@
 	"vm_name": "MateriAppsLive-{{user `ma_version`}}-i386",
 
         "vboxmanage": [
+            ["setextradata", "global", "GUI/SuppressMessages", "all"],
+            ["modifyvm", "{{.Name}}", "--nictype1", "virtio"],
             ["modifyvm", "{{.Name}}", "--vram", "32"],
-            ["modifyvm", "{{.Name}}", "--clipboard", "bidirectional"]
+            ["modifyvm", "{{.Name}}", "--clipboard", "bidirectional"],
+            ["modifyvm", "{{.Name}}", "--usb", "on"],
+            ["modifyvm", "{{.Name}}", "--accelerate3d", "on"],
+            ["modifyvm", "{{.Name}}", "--memory", "1000"]
         ],
 
         "iso_url": "malive/MateriAppsLive-{{user `ma_version`}}-i386.hybrid.iso",
