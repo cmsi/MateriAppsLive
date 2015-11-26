@@ -10,7 +10,7 @@ Which archive should be used?
   - MateriAppsLive-ltx-*-i386.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (32bit)
   - MateriAppsLive-ltx-*-x86_64.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (64bit)
 
-MateriApps LIVE! Release 1.9 (2015/11/??)
+MateriApps LIVE! Release 1.9 (2015/11/27)
 =========================================
 
   - Newly included MateriApps packages
@@ -22,6 +22,7 @@ MateriApps LIVE! Release 1.9 (2015/11/??)
      * tapioca (1.6.10-1)
      * vmd-setup (1.3)
   - Wrapper for paraview now set LIBGL_ALWAYS_SOFTWARE=1 to prevent warning messages
+  - Changed MateriApps Debian repository to sourceforge
 
 MateriApps LIVE! Release 1.8 (2015/08/31)
 =========================================
@@ -172,5 +173,5 @@ References
 ==========
 
  - [MateriApps LIVE!](http://cmsi.github.io/MateriAppsLive)
- - [How to make LIVE! USB?](http://github.com/cmsi/MateriAppsLive/wiki/HowToMakeLiveUSB)
+ - [MateriApps LIVE! Wiki](https://github.com/cmsi/MateriAppsLive/wiki)
  - [MateriApps LIVE! Forum](http://ma.cms-initiative.jp/ja/community/materiapps-messageboard/materiapps-live)
