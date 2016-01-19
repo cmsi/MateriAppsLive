@@ -13,6 +13,8 @@ Which archive should be used?
 MateriApps LIVE! Release ? (201?/??/??)
 =========================================
 
+  - Newly included application packages
+     * lammps, lammps-doc
   - Updated MateriApps packages
      * xtapp (150401-2)
      * xtapp-util (150401-4)
