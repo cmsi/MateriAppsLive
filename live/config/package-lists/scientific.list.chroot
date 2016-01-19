@@ -25,3 +25,7 @@ openmx-example
 # Quantum Espresso
 quantum-espresso
 quantum-espresso-data
+
+# LAMMPS
+lammps
+lammps-doc
