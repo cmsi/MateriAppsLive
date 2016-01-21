@@ -15,6 +15,8 @@ MateriApps LIVE! Release ? (201?/??/??)
 
   - Newly included application packages
      * lammps, lammps-doc
+  - Newly included MateriApps packages
+     * xcrysden-wrapper (1.0-1)
   - Updated MateriApps packages
      * xtapp (150401-2)
      * xtapp-util (150401-4)

@@ -35,3 +35,6 @@ c-tools
 
 # VMD
 vmd-setup
+
+# xcrysden
+xcrysden-wrapper
