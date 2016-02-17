@@ -19,6 +19,8 @@ MateriApps LIVE! Release ? (201?/??/??)
      * paraview-wrapper (1.0-1)
      * xcrysden-wrapper (1.0-1)
   - Updated MateriApps packages
+     * c-tools (0.5.2-2)
+     * tapioca (1.6.11-1)
      * xtapp (150401-2)
      * xtapp-util (150401-4)
 
