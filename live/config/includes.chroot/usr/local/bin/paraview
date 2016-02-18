@@ -1,4 +1,0 @@
-#!/bin/sh
-export LANG=C
-export LIBGL_ALWAYS_SOFTWARE=1
-/usr/bin/paraview "$@"
