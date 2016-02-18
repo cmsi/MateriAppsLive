@@ -13,6 +13,10 @@ gromacs-data
 gromacs-dev
 gromacs-openmpi
 
+# LAMMPS
+lammps
+lammps-doc
+
 # OpenMX
 openmx
 openmx-data

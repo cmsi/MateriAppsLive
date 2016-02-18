@@ -23,6 +23,9 @@ feram
 # GAMESS
 gamess-setup
 
+# paraview
+paraview-wrapper
+
 # SMASH
 smash
 
@@ -35,3 +38,6 @@ c-tools
 
 # VMD
 vmd-setup
+
+# xcrysden
+xcrysden-wrapper
