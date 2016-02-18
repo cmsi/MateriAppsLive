@@ -10,7 +10,7 @@ Which archive should be used?
   - MateriAppsLive-ltx-*-i386.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (32bit)
   - MateriAppsLive-ltx-*-x86_64.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (64bit)
 
-MateriApps LIVE! Release ? (201?/??/??)
+MateriApps LIVE! Release 1.10 (2016/02/18)
 =========================================
 
   - Newly included application packages
