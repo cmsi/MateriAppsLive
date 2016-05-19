@@ -10,3 +10,5 @@ python-opengl
 ipython
 ipython-doc
 ipython-notebook
+python-pip
+python-virtualenv
