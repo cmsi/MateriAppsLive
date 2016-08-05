@@ -4,8 +4,9 @@ set -e
 
 ICEWEASEL_PREFS=/etc/iceweasel/profile/prefs.js
 
-cat << EOF >> ${ICEWEASEL_PREFS}
+mkdir -p $(dirname ${ICEWEASEL_PREFS})
 
+cat << EOF >> ${ICEWEASEL_PREFS}
 /* MateriApps Live tune */
 user_pref("browser.cache.disk.parent_directory", "/tmp");
 user_pref("browser.cache.disk.capacity", 5000);
