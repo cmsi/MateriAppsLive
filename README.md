@@ -10,6 +10,25 @@ Which archive should be used?
   - MateriAppsLive-ltx-*-i386.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (32bit)
   - MateriAppsLive-ltx-*-x86_64.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (64bit)
 
+MateriApps LIVE! Release 1.11 (2016/09/04)
+=========================================
+
+  - Newly included MateriApps packages
+     * bsa (20151218-1): Kernel Method for Finite-Size Scaling Analysis of Critical Phenomena
+     * hphi (1.1.1-1): Numerical solver package for quantum lattice models
+     * xtapp-ps-so (20160420-1): Pseudo potential collection for xTAPP (spin-orbit interaction support)
+  - Newly included Python packages
+     * python-pip
+     * python-virtualenv
+  - Updated MateriApps packages
+     * alps (20160816-r7711-1)
+     * c-tools (0.6.2-1)
+     * smash (2.0.0-1)
+     * tapioca (1.7.3-1)
+     * xtapp (160715-1)
+     * xtapp-util (160715-1)
+  - ATLAS is replaced by OpenBLAS
+
 MateriApps LIVE! Release 1.10 (2016/02/18)
 =========================================
 
