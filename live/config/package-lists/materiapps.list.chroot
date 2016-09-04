@@ -10,18 +10,24 @@ alps-applications
 alps-tutorials
 libalps-dev
 
-# ERmod
-ermod
-ermod-example-gromacs
+# BSA
+bsa
 
 # dsqss
 dsqss
+
+# ERmod
+ermod
+ermod-example-gromacs
 
 # feram
 feram
 
 # GAMESS
 gamess-setup
+
+# Hphi
+hphi
 
 # paraview
 paraview-wrapper
