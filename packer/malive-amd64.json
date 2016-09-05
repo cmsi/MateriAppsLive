@@ -10,7 +10,7 @@
         "type": "virtualbox-iso",
         "format": "ova",
         "guest_os_type": "Debian_64",
-	"vm_name": "MateriAppsLive-ltx-{{user `ma_version`}}-x86_64",
+	"vm_name": "MateriAppsLive-{{user `ma_version`}}-amd64",
 
         "vboxmanage": [
             ["setextradata", "global", "GUI/SuppressMessages", "all"],
@@ -22,7 +22,7 @@
             ["modifyvm", "{{.Name}}", "--memory", "1000"]
         ],
 
-        "iso_url": "MateriAppsLive-{{user `ma_version`}}-x86_64.hybrid.iso",
+        "iso_url": "MateriAppsLive-{{user `ma_version`}}-amd64.hybrid.iso",
         "iso_checksum": "{{user `ma_checksum`}}",
         "iso_checksum_type": "md5",
 
@@ -43,13 +43,5 @@
             "url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
             "<enter><wait>"
         ]
-    }],
-
-    "provisioners": [
-	{
-	    "type": "shell",
-	    "inline": ["apt-get --yes --no-install-recommends install ed fonts-ipaexfont-gothic fonts-ipaexfont-mincho ko.tex-extra-hlfont latex-beamer latex-cjk-all latex-cjk-chinese latex-cjk-chinese-arphic-bkai00mp latex-cjk-chinese-arphic-bsmi00lp latex-cjk-chinese-arphic-gbsn00lp latex-cjk-chinese-arphic-gkai00mp latex-cjk-common latex-cjk-japanese latex-cjk-japanese-wadalab latex-cjk-korean latex-cjk-thai latex-fonts-thai-tlwg latex-xcolor libgraphite3 libptexenc1 lmodern luatex pgf preview-latex-style prosper ps2eps swath tex-common texlive-base texlive-binaries texlive-common texlive-doc-base texlive-doc-zh texlive-extra-utils texlive-font-utils texlive-generic-recommended texlive-lang-cjk texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-pictures texlive-pstricks thailatex"],
-	    "execute_command": "echo {{user `ssh_pass`}} | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-	}
-    ]
+    }]
 }

@@ -5,7 +5,7 @@ set -e
 lb build noauto "${@}" 2>&1 | tee build.log
 echo $? | tee -a build.log
 
-ISO_NAME="MateriAppsLive-$(cat materiapps_version)-$(uname -m).hybrid.iso"
+ISO_NAME="MateriAppsLive-$(cat materiapps_version)-$(dpkg --print-architecture).hybrid.iso"
 if [ -f binary.hybrid.iso ]; then
   echo "moving binary.hybrid.iso to ${ISO_NAME}..." 2>&1 | tee -a build.log
   mv -f binary.hybrid.iso ${ISO_NAME}
@@ -15,5 +15,5 @@ if [ -d /data ]; then
   echo "moving ${ISO_NAME} to /data/${ISO_NAME}..." 2>&1 | tee -a build.log
   mv -f ${ISO_NAME} /data/${ISO_NAME}
 fi
-data 2>&1 | tee -a build.log
+date 2>&1 | tee -a build.log
 echo "done" 2>&1 | tee -a build.log
