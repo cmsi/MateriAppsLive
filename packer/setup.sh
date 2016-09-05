@@ -11,7 +11,7 @@ fi
 echo "MA_VERSION=$MA_VERSION"
 echo "SCRIPT_DIR=$SCRIPT_DIR"
 
-ARCHITECTURES="x86_64 i386"
+ARCHITECTURES="amd64 i386"
 for arch in $ARCHITECTURES; do
     iso="MateriAppsLive-$MA_VERSION-$arch.hybrid.iso"
     if [ -f "$iso" ]; then

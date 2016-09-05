@@ -3,7 +3,7 @@
 REPOSITORY="https://github.com/cmsi/MateriAppsLive.wiki.git"
 SRCDIR="MateriAppsLive.wiki"
 
-GFM="/var/lib/gems/1.9.1/gems/github-markdown-0.6.5/bin/gfm"
+GFM="/var/lib/gems/1.9.1/gems/github-markdown-0.6.9/bin/gfm"
 if [ -x "$GFM" ]; then :; else
   echo "Error: not found $GFM"
   exit 127
