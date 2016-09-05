@@ -3,7 +3,7 @@
 REPOSITORY="https://github.com/cmsi/MateriAppsLive.wiki.git"
 SRCDIR="MateriAppsLive.wiki"
 
-GFM="/var/lib/gems/1.9.1/gems/github-markdown-0.6.5/bin/gfm"
+GFM="/var/lib/gems/1.9.1/gems/github-markdown-0.6.9/bin/gfm"
 if [ -x "$GFM" ]; then :; else
   echo "Error: not found $GFM"
   exit 127
@@ -16,6 +16,8 @@ if [ -d "$SRCDIR" ]; then
 else
   git clone $REPOSITORY $SRCDIR
 fi
+
+## ja
 
 cat << EOF > README.html
 <html>
@@ -35,9 +37,36 @@ cat << EOF >> README.html
 <body>
 EOF
 
-$GFM --readme $SRCDIR/MateriAppsLive-ltx.md >> README.html
+$GFM --readme $SRCDIR/MateriAppsLive-ltx.md | sed 's%<a href="https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ltx-en">English</a>%<a href="README-en.html">English</a>%' >> README.html
 
 cat << EOF >> README.html
+</body>
+</html>
+EOF
+
+## en
+
+cat << EOF > README-en.html
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>MateriApps LIVE! LTX Version</title>
+  <style type="text/css">
+<!--
+EOF
+
+wget -O - "$CSS" >> README-en.html
+
+cat << EOF >> README-en.html
+-->
+  </style>
+</head>
+<body>
+EOF
+
+$GFM --readme $SRCDIR/MateriAppsLive-ltx-en.md | sed 's%<a href="https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ltx">日本語</a>%<a href="README.html">日本語</a>%' >> README-en.html
+
+cat << EOF >> README-en.html
 </body>
 </html>
 EOF

@@ -29,3 +29,6 @@ source*.tar*
 source*.contents
 source*.packages
 source*.zsync
+
+ltx/MateriAppsLive.wiki
+ova/MateriAppsLive.wiki

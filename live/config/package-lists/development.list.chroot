@@ -3,7 +3,7 @@ cmake-curses-gui
 gfortran
 gdb
 git
-libatlas-base-dev
+libopenblas-dev
 libboost-all-dev
 libfftw3-dev
 libhdf5-serial-dev

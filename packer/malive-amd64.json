@@ -10,7 +10,7 @@
         "type": "virtualbox-iso",
         "format": "ova",
         "guest_os_type": "Debian_64",
-	"vm_name": "MateriAppsLive-{{user `ma_version`}}-x86_64",
+	"vm_name": "MateriAppsLive-{{user `ma_version`}}-amd64",
 
         "vboxmanage": [
             ["setextradata", "global", "GUI/SuppressMessages", "all"],
@@ -22,11 +22,11 @@
             ["modifyvm", "{{.Name}}", "--memory", "1000"]
         ],
 
-        "iso_url": "malive/MateriAppsLive-{{user `ma_version`}}-x86_64.hybrid.iso",
+        "iso_url": "MateriAppsLive-{{user `ma_version`}}-amd64.hybrid.iso",
         "iso_checksum": "{{user `ma_checksum`}}",
         "iso_checksum_type": "md5",
 
-        "http_directory" : "malive",
+        "http_directory" : ".",
 
         "ssh_username": "{{user `ssh_name`}}",
         "ssh_password": "{{user `ssh_pass`}}",
