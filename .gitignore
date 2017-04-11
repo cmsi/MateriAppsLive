@@ -32,3 +32,10 @@ source*.zsync
 
 ltx/MateriAppsLive.wiki
 ova/MateriAppsLive.wiki
+
+vagrant-box/box
+vagrant-box/build-*.log
+vagrant-box/log
+vagrant-box/output-*
+vagrant-box/packer_cache
+
