@@ -12,8 +12,8 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "debian711"
-  config.vm.hostname = "madev711"
+  config.vm.box = "madev/debian7-i386"
+  config.vm.hostname = "madev7-i386"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs

@@ -1,0 +1,3 @@
+# for MateriApps LIVE!
+deb http://zetta.phys.s.u-tokyo.ac.jp/Debian/wheezy wheezy main non-free contrib
+deb-src http://zetta.phys.s.u-tokyo.ac.jp/Debian/wheezy wheezy main non-free contrib
