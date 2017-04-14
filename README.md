@@ -13,6 +13,7 @@ Which archive should be used?
 ChangeLog after Release 1.11
 =========================================
 
+  - 2017/04/14: akaikkr 20170222-1 released
   - 2017/04/14: materiapps-keyring 20170413-1 released
   - 2016/10/01: smash 2.1.0-1 released (only for wheezy)
 
