@@ -10,11 +10,11 @@ Which archive should be used?
   - MateriAppsLive-ltx-*-i386.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (32bit)
   - MateriAppsLive-ltx-*-amd64.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (64bit)
 
-MateriApps LIVE! Release 1.12 (2016/xx/xx)
+ChangeLog after Release 1.11
 =========================================
 
-  - Updated MateriApps packages
-     * smash (2.1.0-1)
+  - 2017/04/14: materiapps-keyring 20170413-1 released
+  - 2016/10/01: smash 2.1.0-1 released (only for wheezy)
 
 MateriApps LIVE! Release 1.11 (2016/09/05)
 =========================================
