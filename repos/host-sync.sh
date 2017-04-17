@@ -8,3 +8,4 @@ $RSYNC $DEB_HOME/apt/wheezy/dists $DEB_HOME/apt/wheezy/pool frs.sourceforge.net:
 $RSYNC $DEB_HOME/apt/jessie/dists $DEB_HOME/apt/jessie/pool frs.sourceforge.net:/home/frs/project/materiappslive/Debian/jessie
 $RSYNC $DEB_HOME/archive frs.sourceforge.net:/home/frs/project/materiappslive/Debian
 $RSYNC $(dirname $0)/sources frs.sourceforge.net:/home/frs/project/materiappslive/Debian/
+$RSYNC $(dirname $0)/../README.md frs.sourceforge.net:/home/frs/project/materiappslive
