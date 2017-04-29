@@ -1,3 +1,0 @@
-# for MateriApps LIVE!
-deb http://download.sourceforge.net/project/materiappslive/Debian/apt wheezy main non-free contrib
-deb-src http://download.sourceforge.net/project/materiappslive/Debian/apt wheezy main non-free contrib
