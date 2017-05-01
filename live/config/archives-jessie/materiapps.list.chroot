@@ -1,0 +1,3 @@
+# for MateriApps LIVE!
+deb http://jaist.dl.sourceforge.net/project/materiappslive/Debian/jessie jessie main non-free contrib
+deb-src http://jaist.dl.sourceforge.net/project/materiappslive/Debian/jessie jessie main non-free contrib
