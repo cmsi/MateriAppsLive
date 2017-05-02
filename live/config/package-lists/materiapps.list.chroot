@@ -1,6 +1,7 @@
 # MateriApps LIVE!
-materiapps-keyring
+#if DISTRIBUTION wheezy
 materiappslive
+#endif
 
 # AkaiKKR
 akaikkr
@@ -14,36 +15,56 @@ libalps-dev
 bsa
 
 # dsqss
+#if DISTRIBUTION wheezy
 dsqss
+#endif
 
 # ERmod
+#if DISTRIBUTION wheezy
 ermod
 ermod-example-gromacs
+#endif
 
 # feram
+#if DISTRIBUTION wheezy
 feram
+#endif
 
 # GAMESS
+#if DISTRIBUTION wheezy
 gamess-setup
+#endif
 
 # Hphi
+#if DISTRIBUTION wheezy
 hphi
+#endif
 
 # paraview
+#if DISTRIBUTION wheezy
 paraview-wrapper
+#endif
 
 # SMASH
+#if DISTRIBUTION wheezy
 smash
+#endif
 
 # xTAPP
+#if DISTRIBUTION wheezy
 xtapp
 xtapp-util
 xtapp-ps
 tapioca
 c-tools
+#endif
 
 # VMD
+#if DISTRIBUTION wheezy
 vmd-setup
+#endif
 
 # xcrysden
+#if DISTRIBUTION wheezy
 xcrysden-wrapper
+#endif

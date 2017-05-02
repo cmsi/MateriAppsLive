@@ -1,7 +1,9 @@
 # ABINIT
 abinit
-# abinit-data
 abinit-doc
+#if DISTRIBUTION jessie
+ abinit-data
+#endif
 
 # CP2K
 cp2k
@@ -20,7 +22,9 @@ lammps-doc
 # OpenMX
 openmx
 openmx-data
+#if DISTRIBUTION wheezy
 openmx-example
+#endif
 
 # Quantum Espresso
 quantum-espresso

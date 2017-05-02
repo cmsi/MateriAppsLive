@@ -1,4 +1,6 @@
 task-english
 task-japanese
 
-console-tools
+# #if DISTRIBUTION wheezy
+# console-tools
+# #endif

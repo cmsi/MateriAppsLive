@@ -5,7 +5,12 @@ python-matplotlib
 python-matplotlib-doc
 python-mechanize
 python-scipy
-python-wxgtk2.8
+#if DISTRIBUTION wheezy
+ python-wxgtk2.8
+#endif
+#if DISTRIBUTION jessie
+ python-wxgtk3.0
+#endif
 python-opengl
 ipython
 ipython-doc

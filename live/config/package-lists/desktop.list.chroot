@@ -2,9 +2,15 @@ task-lxde-desktop
 task-japanese-desktop
 # task-print-server
 
-#nif DISTRIBUTION wheezy
-	plymouth plymouth-drm plymouth-x11
+plymouth plymouth-x11
+#if DISTRIBUTION wheezy
+ plymouth-drm
+#endif
+#if DISTRIBUTION jessie
+ plymouth-theme
 #endif
 
-#gstreamer-vaapi
+#if DISTRIBUTION jessie
+ gstreamer1.0-vaapi
+#endif
 i965-va-driver

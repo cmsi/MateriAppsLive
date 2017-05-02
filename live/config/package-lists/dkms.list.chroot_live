@@ -1,6 +1,10 @@
 # open-vm-tools
-open-vm-dkms
-open-vm-tools open-vm-toolbox
+#if DISTRIBUTION wheezy
+open-vm-dkms open-vm-tools open-vm-toolbox
+#endif
+#if DISTRIBUTION jessie
+open-vm-tools-dkms open-vm-tools open-vm-tools-desktop
+#endif
 
 # virtualbox
 virtualbox-guest-dkms
