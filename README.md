@@ -13,6 +13,8 @@ Which archive should be used?
 ChangeLog after Release 1.11
 =========================================
 
+  - 2017/05/06: hphi 2.0.0-1 released
+  - 2017/05/03: materiappslive 20170503-1 released
   - 2017/04/17: bsa 20151218-2 released
   - 2017/04/17: alps 20170127~r7841-1 released
   - 2017/04/15: akaikkr 20170222-1 released
