@@ -35,10 +35,11 @@ feram
 gamess-setup
 #endif
 
-# Hphi
-#if DISTRIBUTION wheezy
+# HPhi
 hphi
-#endif
+
+# mVMC
+mvmc
 
 # paraview
 #if DISTRIBUTION wheezy

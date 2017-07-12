@@ -76,7 +76,7 @@ Vagrant.configure("2") do |config|
     apt-get -y install python-matplotlib
     apt-get -y --no-install-recommends install texlive-lang-cjk nkf
     apt-get -y install ruby-dev
-    gem install github-markdown
+    # gem install github-markdown
     cp -fp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
     echo 'Asia/Tokyo' > /etc/timezone
   SHELL
