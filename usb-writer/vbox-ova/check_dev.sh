@@ -1,6 +1,7 @@
 #!/bin/sh
 
-DEV="sdc sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn sdo sdp sdq sdr"
+SCRIPT_DIR=$(cd "$(dirname $0)"; pwd)
+. $SCRIPT_DIR/devices.sh
 
 for d in $DEV; do
   if [ -b /dev/$d ]; then
@@ -9,5 +10,3 @@ for d in $DEV; do
     echo "/dev/$d X"
   fi
 done
-wait
-
