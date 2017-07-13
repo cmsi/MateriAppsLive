@@ -20,9 +20,9 @@
     * vbconfig.bat
     * vbconfig.command
 
-  最初の3つ以外は https://github.com/cmsi/MateriAppsLive/tree/master/ova にある
+   最初の3つ以外は https://github.com/cmsi/MateriAppsLive/tree/master/ova にある
 
-  必要に応じて、講習会用資料や実習用素材も含める
+   必要に応じて、講習会用資料や実習用素材も含める
 
 3. MD5SUM を作成し中身を確認
 
@@ -35,7 +35,7 @@
 5. USBメモリへの書き込み
 
    ```
-   sh /script/dir/write_all.sh
+   sudo sh /script/dir/write_ova_all.sh
    ```
 
    * 経験上50本に1本程度はチェックが失敗する
