@@ -58,12 +58,19 @@ for f in $FILES; do
   size_out=$(ls -l $MNT/$f | awk '{print $5}')
   if [ "$md5_out" != "$md5_in" ]; then
     echo "Error: checksum error for $f on $DEV$n"
+    umount $DEV$n
+    rm -rf $MNT
+    exit 127
   elif [ "$size_out" != "$size_in" ]; then
     echo "Error: size check error for $f on $DEV$n"
+    umount $DEV$n
+    rm -rf $MNT
+    exit 127
   else
     echo "Info: checksum test passed for $f on $DEV$n"
   fi  
 done
+touch $MNT/$MD5-checked
 sync; sync; sync; umount $DEV$n
 
 rm -rf $MNT
