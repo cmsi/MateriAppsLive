@@ -1,7 +1,5 @@
 # MateriApps LIVE!
-#if DISTRIBUTION wheezy
 materiappslive
-#endif
 
 # AkaiKKR
 akaikkr
@@ -26,14 +24,10 @@ ermod-example-gromacs
 #endif
 
 # feram
-#if DISTRIBUTION wheezy
 feram
-#endif
 
 # GAMESS
-#if DISTRIBUTION wheezy
 gamess-setup
-#endif
 
 # HPhi
 hphi
