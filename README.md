@@ -10,25 +10,25 @@ Which archive should be used?
   - MateriAppsLive-ltx-*-i386.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (32bit)
   - MateriAppsLive-ltx-*-amd64.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (64bit)
 
-ChangeLog after Release 1.11
-=========================================
+MateriApps LIVE! Release 1.12 (2017/07/xx)
+==========================================
 
-  - 2017/07/15: feram 0.26.04-1 released
-  - 2017/07/15: gamess-setup 1.4 released
-  - 2017/07/12: mvmc 1.0.1-2 released
-  - 2017/07/12: hphi 2.0.2-1 released
-  - 2017/06/26: mvmc 1.0.1-1 released
-  - 2017/06/26: hphi 2.0.1-1 released
-  - 2017/05/06: hphi 2.0.0-1 released
-  - 2017/05/03: materiappslive 20170503-1 released
-  - 2017/04/17: bsa 20151218-2 released
-  - 2017/04/17: alps 20170127~r7841-1 released
-  - 2017/04/15: akaikkr 20170222-1 released
-  - 2017/04/14: materiapps-keyring 20170413-1 released
-  - 2016/10/01: smash 2.1.0-1 released (only for wheezy)
+  - Newly included MateriApps packages
+     * mvmc (1.0.1-2): 
+  - Updated MateriApps packages
+     * akaikkr (20170222-1)
+     * alps (20170127~r7841-1)
+     * bsa (20151218-2)
+     * feram (0.26.04-1)
+     * gamess-setup (1.4)
+     * hphi (2.0.2-1)
+     * materiapps-keyring (20170413-1)
+     * smash (2.1.0-1)
+  - MateriApps Debian Package Repository has been moved from sourcesorge to
+    exa.phys.s.u-tokyo.ac.jp
 
 MateriApps LIVE! Release 1.11 (2016/09/05)
-=========================================
+==========================================
 
   - Newly included MateriApps packages
      * bsa (20151218-1): Kernel Method for Finite-Size Scaling Analysis of Critical Phenomena
@@ -49,7 +49,7 @@ MateriApps LIVE! Release 1.11 (2016/09/05)
   - 64-bit architecture name has been renamed from x86_64 to amd64 according to the Debian convention.
 
 MateriApps LIVE! Release 1.10 (2016/02/18)
-=========================================
+==========================================
 
   - Newly included application packages
      * lammps, lammps-doc
