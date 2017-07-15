@@ -13,6 +13,11 @@ Which archive should be used?
 ChangeLog after Release 1.11
 =========================================
 
+  - 2017/07/15: gamess-setup 1.4 released
+  - 2017/07/12: mvmc 1.0.1-2 released
+  - 2017/07/12: hphi 2.0.2-1 released
+  - 2017/06/26: mvmc 1.0.1-1 released
+  - 2017/06/26: hphi 2.0.1-1 released
   - 2017/05/06: hphi 2.0.0-1 released
   - 2017/05/03: materiappslive 20170503-1 released
   - 2017/04/17: bsa 20151218-2 released
