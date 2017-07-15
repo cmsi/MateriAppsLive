@@ -13,6 +13,7 @@ Which archive should be used?
 ChangeLog after Release 1.11
 =========================================
 
+  - 2017/07/15: feram 0.26.04-1 released
   - 2017/07/15: gamess-setup 1.4 released
   - 2017/07/12: mvmc 1.0.1-2 released
   - 2017/07/12: hphi 2.0.2-1 released
