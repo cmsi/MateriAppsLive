@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>MateriApps LIVE! OVA Version</title>
+  <title>MateriApps LIVE! VirtualBox Edition</title>
   <style type="text/css">
 <!--
 body {
@@ -285,13 +285,13 @@ pre {
   </style>
 </head>
 <body>
-<h1>MateriApps LIVE! OVA Edition</h1>
+<h1>MateriApps LIVE! VirtualBox Edition</h1>
 
 <p>[English/<a href="README.html">日本語</a>]</p>
 
 <p>The latest version of this document is available at <a href="https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ova-en">https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ova-en</a>.</p>
 
-<p>MateriApps LIVE! OVA Edition is a virtual disk image of <a href="http://cmsi.github.io/MateriAppsLive/">MateriApps LIVE!</a> for VirtualBox. It is being developed and distributed as a hands-on environment of materials science application programs and also as a training environment of UNIX (UNIX commands, network, Emacs, Gnuplot), programming language (C, C++, Fortran), etc.</p>
+<p>MateriApps LIVE! VirtualBox Edition is a virtual disk image (OVA) of <a href="http://cmsi.github.io/MateriAppsLive/">MateriApps LIVE!</a> for VirtualBox. It is being developed and distributed as a hands-on environment of materials science application programs and also as a training environment of UNIX (UNIX commands, network, Emacs, Gnuplot), programming language (C, C++, Fortran), etc.</p>
 
 <ul>
 <li><p>What&#39;s <a href="http://ma.cms-initiative.jp">MateriApps</a>?</p>
@@ -302,7 +302,7 @@ pre {
 <p>In the meantime, when trying to try out open-source software, installation of software itself often becomes a serious obstacle.  MateriApps LIVE! offers an environment where one can try out computational materials science simulation freely, using a notebook PC, etc. All environment required to begin tutorials, such as MateriApps applications, OS (Debian GNU/Linux), editors, and visualization tools, is provided in a USB memory stick.</p></li>
 <li><p>What&#39;s <a href="https://www.virtualbox.org">VirtualBox</a>?</p>
 
-<p>VirtualBox is open-source software providing a virtual machine environment. VirtualBox can be installed on Linux、Mac OS X、Windows、Solaris. It supports most popular operating systems on x86/x64 architecture, such as FreeBSD、Linux、OpenBSD、OS/2 Warp、Windows、Mac OS X、Solaris, etc, as guest OS. VirtualBox is distributed under GNU General Public License (GPL) Version2.</p></li>
+<p>VirtualBox is open-source software providing a virtual machine environment. VirtualBox can be installed on Linux、macOS、Windows、Solaris. It supports most popular operating systems on x86/x64 architecture, such as FreeBSD、Linux、OpenBSD、OS/2 Warp、Windows、macOS、Solaris, etc, as guest OS. VirtualBox is distributed under GNU General Public License (GPL) Version2.</p></li>
 </ul>
 
 <h2>Contents of USB stick memory</h2>
@@ -310,18 +310,34 @@ pre {
 <ul>
 <li>VirtualBox-*-OSX.dmg : VirtualBox Installer for Mac OS X</li>
 <li>VirtualBox-*-Win.exe : VirtualBox Installer for Windows</li>
-<li>MateriAppsLive-*-i386.ova : MateriApps LIVE! Virtual Disk Image (32bit version)</li>
+<li>MateriAppsLive-*-i386.ova : MateriApps LIVE! virtual disk image (32bit version)</li>
 <li>README-en.html : This file</li>
-<li>vbconfig.* : Script for disabling noisy popup menus in VirtualBox. Please execute vbconfig.bat (vbconfig.command) by double click on Windows (Mac OS X). To enable popups again, choose &quot;Reset All Warnings&quot; from &quot;Help&quot; menu in VirtualBox.</li>
+<li>vbconfig.* : Scripts for disabling noisy popup menus in VirtualBox.</li>
 </ul>
 
 <h2>How to setup MateriApps LIVE!</h2>
 
 <ol>
-<li>Open VirtualBox Installer and install VirtualBox software.</li>
+<li><p>Copy contents of USB memory stick to hard drive</p>
+
+<p>Copy all the files to your PC (e.g., Desktop).</p></li>
+<li><p>Starts VirtualBox Installer and install VirtualBox software.</p></li>
 <li>Starts VirtualBox by double clicking MateriAppsLive-*-i386.ova Virtual Disk Image. Click &quot;Import&quot; button in VirtualBox import window.</li>
-<li>Once the import of disk image has been completed, click &quot;Start&quot; button.</li>
-<li>Login to MateriApps LIVE! by the following username and password
+<li>Disable noisy popup menus in VirtualBox
+
+<ul>
+<li>Windows: double click vbconfig.bat</li>
+<li>maxOS: double click vbconfig.command or execute the following in the Terminal.
+<code>
+sh vbconfig.command
+</code></li>
+<li>To enable popups again, choose &quot;Reset All Warnings&quot; from &quot;Help&quot; menu in VirtualBox.</li>
+</ul></li>
+<li><p>Setup file transfer between host OS and MateriApps LIVE!</p>
+
+<p>Please refer to &quot;<a href="#sharing">How to transfer files from/to MateriApps LIVE!</a>&quot; below.</p></li>
+<li><p>Choose &quot;MateriAppsLive&quot; on Oracle VM VirtualBox Manager panel and click &quot;Start&quot; button.</p></li>
+<li>Login to MateriApps LIVE! by using the following username and password
 
 <ul>
 <li>Login(user name): <code>user</code></li>
@@ -329,17 +345,17 @@ pre {
 </ul></li>
 </ol>
 
-<h2>How to transfer files from/to MateriApps LIVE!</h2>
+<h2><a name="sharing"></a>How to transfer files from/to MateriApps LIVE!</h2>
 
 <ol>
-<li><p>Transfer files between Host OS (Mac OS X or Windows) and MateriApps LIVE!</p>
+<li><p>Transfer files between Host OS (macOS X or Windows) and MateriApps LIVE!</p>
 
 <ol>
-<li>Choose MateriAppsLive On Oracle VM VirtualBox Maneger panel and click &quot;Settings&quot;</li>
+<li>Choose &quot;MateriAppsLive&quot; on Oracle VM VirtualBox Manager panel and click &quot;Settings&quot;</li>
 <li>Open &quot;Shared Folders&quot; tab, and click &quot;+&quot; icon on the right to add a new shared folder definition</li>
 <li>Click &quot;v&quot; sign on the right of &quot;Folder Path:&quot; field, and choose &quot;Other&quot;. In the file dialog box, select a folder being shared between Host OS and MateriApps LIVE!</li>
 <li>Enable &quot;Auto-mount&quot; check box and press &quot;OK&quot; button.</li>
-<li>After booting (rebooting) the virtual machine, you can see the folder selected in step 3 under /mnt/sf_... in MateriApps LIVE!</li>
+<li>After booting (rebooting) the virtual machine, you can see the folder selected in step 3 under /media/sf_... in MateriApps LIVE!</li>
 </ol></li>
 <li><p>Connect a USB stick memory to MateriApps LIVE!</p>
 

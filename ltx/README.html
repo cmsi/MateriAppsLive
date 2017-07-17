@@ -291,7 +291,7 @@ pre {
 
 <p>本ドキュメントの最新版は <a href="https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ltx">https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ltx</a> にあります。</p>
 
-<p>MateriApps LIVE! ltx版は、通常の<a href="http://cmsi.github.io/MateriAppsLive/">MateriApps LIVE!</a>に日本語LaTeX環境を追加した VirtualBox仮想ディスクイメージです。計算物質科学アプリケーションのハンズオン環境としてだけでなく、UNIX全般(UNIXコマンド, ネットワーク, Emacs, Gnuplot)、LaTeX、プログラミング(C, C++, Fortran)などの実習環境として使うことも想定して製作・配布しています。(MateriApps LIVE! OVA版との違いは、LaTeX 一式を含んでいるかどうかという点です)</p>
+<p>MateriApps LIVE! LTX版は、通常の<a href="http://cmsi.github.io/MateriAppsLive/">MateriApps LIVE!</a> VirtualBox版に日本語LaTeX環境を追加したVirtualBox仮想ディスクイメージです。計算物質科学アプリケーションのハンズオン環境としてだけでなく、UNIX全般(UNIXコマンド, ネットワーク, Emacs, Gnuplot)、LaTeX、プログラミング(C, C++, Fortran)などの実習環境として使うことも想定して製作・配布しています。</p>
 
 <ul>
 <li><p><a href="http://ma.cms-initiative.jp">MateriApps</a>とは?</p>
@@ -308,19 +308,35 @@ pre {
 <h2>USBに含まれるファイル</h2>
 
 <ul>
-<li>VirtualBox-*-OSX.dmg : VirtualBoxインストーラ for Mac OS X</li>
+<li>VirtualBox-*-OSX.dmg : VirtualBoxインストーラ for macOS</li>
 <li>VirtualBox-*-Win.exe : VirtualBoxインストーラ for Windows</li>
-<li>MateriAppsLive-ltx-*-i386.ova : VirtualBox仮想ディスクイメージ(32bit版)</li>
+<li>MateriAppsLive-ltx-*-i386.ova : MateriApps LIVE!仮想ディスクイメージ(32bit版)</li>
 <li>README.html : このファイル</li>
-<li>vbconfig.* : VirtualBox で不要なポップアップメニューを非表示にするためのスクリプト。Windows では vbconfig.bat、Mac OS X では vbconfig.command をダブルクリック。ポップアップを再度表示するには、VirtualBox の「ヘルプ」メニュー ⇒「Reset All Warnings」</li>
+<li>vbconfig.* : VirtualBox で不要なポップアップメニューを非表示にするためのスクリプト</li>
 </ul>
 
 <h2>セットアップ</h2>
 
 <ol>
-<li>VirtualBoxインストーラを起動し、VirtualBoxをインストール</li>
-<li>MateriAppsLive-ltx-*-i386.ova をダブルクリックしてOVAイメージを開くと、VirtualBoxが立ち上がる。「インポート」をクリック</li>
-<li>インポート完了後、「起動」ボタンを押す</li>
+<li><p>USBメモリの内容をハードディスクにコピー</p>
+
+<p>すべてのファイルをPC(デスクトップ等)にコピーしてください</p></li>
+<li><p>VirtualBoxインストーラを起動し、VirtualBoxをインストール</p></li>
+<li>MateriAppsLive-ltx-*-i386.ova をダブルクリックして仮想ディスクイメージを開くと、VirtualBoxが立ち上がる。「インポート」をクリック</li>
+<li>VirutalBoxの不要なポップアップメッセージを非表示にする
+
+<ul>
+<li>Windows: USBメモリからコピーした vbconfig.bat をダブルクリック</li>
+<li>macOS: vbconfig.command をダブルクリック 。あるいはターミナルで以下を実行
+<code>
+sh vbconfig.command
+</code></li>
+<li>ポップアップを再度表示するには、VirtualBoxの「ヘルプ」メニューから「Reset All Warnings」</li>
+</ul></li>
+<li><p>ホストOSとMateriApps LIVE!との間でファイルをやりとりするための設定を行う</p>
+
+<p>下記「<a href="#sharing">MateriApps LIVE! とのファイルのやりとり</a>」を参照</p></li>
+<li><p>Oracle VM VirtualBoxマネージャー画面で「MateriAppsLive」を選択し、「起動」</p></li>
 <li>ログイン画面で以下の内容を入力してログイン
 
 <ul>
@@ -329,17 +345,17 @@ pre {
 </ul></li>
 </ol>
 
-<h2>MateriApps LIVE! とのファイルのやりとり</h2>
+<h2><a name="sharing"></a>MateriApps LIVE! とのファイルのやりとり</h2>
 
 <ol>
 <li><p>ホストOSとの間でファイルをやりとりする</p>
 
 <ol>
-<li>Oracle VM VirtualBoxマネージャーで MateriAppsLive を選択し、「設定」</li>
+<li>Oracle VM VirtualBoxマネージャー画面で「MateriAppsLive」を選択し、「設定」</li>
 <li>「共有フォルダー」タブを開き、右側の「+」(新規共有フォルダーを追加します)をクリック</li>
 <li>「フォルダーのパス」の右側の「ｖ」をクリックし、「その他」を選択。共有したいフォルダーを選択する</li>
 <li>「自動マウント」をチェックし、「OK」。</li>
-<li>仮想マシンを起動(再起動)すると、3で選択したフォルダが、/mnt/sf_... の下に見える</li>
+<li>仮想マシンを起動(再起動)すると、3で選択したフォルダが、/media/sf_... の下に見える</li>
 </ol></li>
 <li><p>USBフラッシュメモリを仮想マシンに接続する</p>
 

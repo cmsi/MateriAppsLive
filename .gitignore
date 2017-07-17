@@ -31,7 +31,9 @@ source*.packages
 source*.zsync
 
 ltx/MateriAppsLive.wiki
+ltx/github.css
 ova/MateriAppsLive.wiki
+ova/github.css
 
 vagrant-box/box
 vagrant-box/build-*.log

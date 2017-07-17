@@ -1,23 +1,25 @@
 #!/bin/sh
 
+SCRIPT_DIR=$(dirname $0)
 REPOSITORY="https://github.com/cmsi/MateriAppsLive.wiki.git"
 SRCDIR="MateriAppsLive.wiki"
 
-GFM="/var/lib/gems/1.9.1/gems/github-markdown-0.6.9/bin/gfm"
-if [ -x "$GFM" ]; then :; else
-  echo "Error: not found $GFM"
+if test -f "/var/lib/gems/2.1.0/gems/github-markdown-0.6.9/bin/gfm"; then
+  GFM="/var/lib/gems/2.1.0/gems/github-markdown-0.6.9/bin/gfm"
+elif test -f "/var/lib/gems/1.9.1/gems/github-markdown-0.6.9/bin/gfm"; then
+  GFM="/var/lib/gems/1.9.1/gems/github-markdown-0.6.9/bin/gfm"
+else
+  echo "Error: gfm not found"
   exit 127
 fi
 
 CSS="https://gist.githubusercontent.com/andyferra/2554919/raw/2e66cabdafe1c9a7f354aa2ebf5bc38265e638e5/github.css"
 
-if [ -d "$SRCDIR" ]; then
-  (cd "$SRCDIR" && git fetch && git merge origin/master)
-else
-  git clone $REPOSITORY $SRCDIR
-fi
+cd $SCRIPT_DIR
+rm -rf $SRCDIR
+git clone $REPOSITORY $SRCDIR
 
-## ja
+wget -O github.css "$CSS"
 
 cat << EOF > README.html
 <html>
@@ -37,7 +39,7 @@ cat << EOF >> README.html
 <body>
 EOF
 
-$GFM --readme $SRCDIR/MateriAppsLive-ltx.md | sed 's%<a href="https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ltx-en">English</a>%<a href="README-en.html">English</a>%' >> README.html
+$GFM --readme $SRCDIR/MateriAppsLive-ltx.md >> README.html
 
 cat << EOF >> README.html
 </body>
@@ -50,7 +52,7 @@ cat << EOF > README-en.html
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>MateriApps LIVE! LTX Version</title>
+  <title>MateriApps LIVE! LTX Edition</title>
   <style type="text/css">
 <!--
 EOF
@@ -64,9 +66,15 @@ cat << EOF >> README-en.html
 <body>
 EOF
 
-$GFM --readme $SRCDIR/MateriAppsLive-ltx-en.md | sed 's%<a href="https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ltx">日本語</a>%<a href="README.html">日本語</a>%' >> README-en.html
+$GFM --readme $SRCDIR/MateriAppsLive-ltx-en.md >> README-en.html
 
 cat << EOF >> README-en.html
 </body>
 </html>
 EOF
+
+FILES="README.html README-en.html"
+for file in $FILES; do
+  sed -i 's%<a href="MateriAppsLive-ltx">%<a href="README.html">%' $file
+  sed -i 's%<a href="MateriAppsLive-ltx-en">%<a href="README-en.html">%' $file
+done
