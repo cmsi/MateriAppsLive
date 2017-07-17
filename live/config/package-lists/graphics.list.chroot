@@ -11,5 +11,7 @@ pymol
 python-pygraphviz
 rasmol
 rasmol-doc
+#if DISTRIBUTION wheezy
 vesta
+#endif
 xcrysden

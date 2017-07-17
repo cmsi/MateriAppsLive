@@ -4,6 +4,7 @@ gfortran
 gdb
 git
 libopenblas-dev
+liblapack-dev
 libboost-all-dev
 libfftw3-dev
 libhdf5-serial-dev

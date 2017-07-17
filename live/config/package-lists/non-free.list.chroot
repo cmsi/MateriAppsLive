@@ -1,5 +1,7 @@
-firmware-atheros
-firmware-brcm80211
+#if DISTRIBUTION wheezy
+  firmware-atheros
+  firmware-brcm80211
+#endif
 firmware-ipw2x00
 firmware-iwlwifi
 firmware-libertas

@@ -33,29 +33,46 @@ lb config noauto \
 	--bootappend-live "boot=live config persistence noeject live-config.utc=no live-config.timezone=Asia/Tokyo live-noconfig=debian-installer-launcher" \
 "${@}"
 
+CODENAME=$(lsb_release -c -s)
+
+# setup config subdirectories
+DIRS="apt archives bootloaders hooks"
+for DIR in ${DIRS}; do
+  if test -d config/${DIR}-${CODENAME}; then
+    mkdir -p config/${DIR}
+    mv config/${DIR}-${CODENAME}/* config/${DIR}/
+  fi
+done
+
 # setup version of MateriApps live
-if test -f materiapps_version; then
+if test -f materiapps_version-${CODENAME}; then
+  cp -fp materiapps_version-${CODENAME} materiapps_version
   mkdir -p config/includes.chroot/etc
   cp -p materiapps_version config/includes.chroot/etc
   MATERIAPPS_VERSION=`cat materiapps_version`
-  _PROJECT=$(. /etc/os-release && echo $PRETTY_NAME)
-  _YEAR="$(date +%Y)"
-  _MONTH="$(date +%m)"
-  _DAY="$(date +%d)"
-  _HOUR="$(date +%H)"
-  _MINUTE="$(date +%M)"
-  _SECOND="$(date +%S)"
-  mv config/bootloaders/isolinux/splash.svg.in config/bootloaders/isolinux/splash.svg.in.orig
-  sed -e "s|@MA_VERSION@|${MATERIAPPS_VERSION}|g" \
-                -e "s|@PROJECT@|${_PROJECT}|g" \
-                -e "s|@DATE@|${_DATE}|g" \
-                -e "s|@YEAR@|${_YEAR}|g" \
-                -e "s|@MONTH@|${_MONTH}|g" \
-                -e "s|@DAY@|${_DAY}|g" \
-                -e "s|@HOUR@|${_HOUR}|g" \
-                -e "s|@MINUTE@|${_MINUTE}|g" \
-                -e "s|@SECOND@|${_SECOND}|g" \
-    config/bootloaders/isolinux/splash.svg.in.orig > config/bootloaders/isolinux/splash.svg.in
-  mkdir -p config/includes.chroot/usr/share/images/desktop-base 
-  cp -f config/bootloaders/isolinux/splash.svg.in config/includes.chroot/usr/share/images/desktop-base/login-background.svg
+  SVG="splash.svg splash.svg.in"
+  for s in $SVG; do
+    if test -f config/bootloaders/isolinux/$s; then
+      _PROJECT=$(. /etc/os-release && echo $PRETTY_NAME)
+      _YEAR="$(date +%Y)"
+      _MONTH="$(date +%m)"
+      _DAY="$(date +%d)"
+      _HOUR="$(date +%H)"
+      _MINUTE="$(date +%M)"
+      _SECOND="$(date +%S)"
+      mv config/bootloaders/isolinux/$s config/bootloaders/isolinux/$s.orig
+      sed -e "s|@MA_VERSION@|${MATERIAPPS_VERSION}|g" \
+                  -e "s|@PROJECT@|${_PROJECT}|g" \
+                  -e "s|@DATE@|${_DATE}|g" \
+                  -e "s|@YEAR@|${_YEAR}|g" \
+                  -e "s|@MONTH@|${_MONTH}|g" \
+                  -e "s|@DAY@|${_DAY}|g" \
+                  -e "s|@HOUR@|${_HOUR}|g" \
+                  -e "s|@MINUTE@|${_MINUTE}|g" \
+                  -e "s|@SECOND@|${_SECOND}|g" \
+        config/bootloaders/isolinux/$s.orig > config/bootloaders/isolinux/$s
+      mkdir -p config/includes.chroot/usr/share/images/desktop-base 
+      cp -f config/bootloaders/isolinux/$s config/includes.chroot/usr/share/images/desktop-base/login-background.svg
+    fi
+  done
 fi
