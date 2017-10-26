@@ -15,6 +15,7 @@ MateriApps LIVE! Release x.xx (201x/xx/xx)
 
   - Newly included MateriApps packages
   - Updated MateriApps packages
+     * hphi (2.0.4-1)
      * xtapp (170619-1)
 
 MateriApps LIVE! Release 1.12 (2017/07/17)
