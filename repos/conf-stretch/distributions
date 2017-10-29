@@ -1,0 +1,9 @@
+Origin: MateriApps
+Label: MateriApps
+Suite: stable
+Codename: stretch
+Version: 3.1
+Architectures: amd64 i386 source
+Components: main non-free contrib
+Description: MateriApps Debian Repository
+SignWith: default
