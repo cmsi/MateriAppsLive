@@ -74,6 +74,7 @@ Vagrant.configure("2") do |config|
     apt-get -y install git cmake
     apt-get -y install gfortran mpi-default-dev mpi-default-bin
     apt-get -y install libboost-all-dev libhdf5-serial-dev libsqlite3-dev liblapack-dev libfftw3-dev libeigen3-dev
+    apt-get -y install libqt4-dev
     apt-get -y install python-matplotlib
     apt-get -y --no-install-recommends install texlive-lang-japanese nkf htmldoc
     apt-get -y install ghostscript
