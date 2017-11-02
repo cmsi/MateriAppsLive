@@ -15,8 +15,11 @@ MateriApps LIVE! Release x.xx (201x/xx/xx)
 
   - Newly included MateriApps packages
   - Updated MateriApps packages
+     * alps (20170905~r7843-1)
      * hphi (2.0.4-1)
-     * xtapp (170619-1)
+     * lammps (0~20170811.malive-1)
+     * xtapp (170619-3), xtapp-util (160715-2)
+  - Provide debian package also for Debian 8 (Jessie) and Debian 9 (Stretch)
 
 MateriApps LIVE! Release 1.12 (2017/07/17)
 ==========================================
