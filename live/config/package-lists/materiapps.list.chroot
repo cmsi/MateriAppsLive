@@ -23,6 +23,10 @@ ermod
 ermod-example-gromacs
 #endif
 
+# Quantum ESPRESSO
+quantum-espresso
+quantum-espresso-data
+
 # feram
 feram
 

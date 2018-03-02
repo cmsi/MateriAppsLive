@@ -25,7 +25,3 @@ openmx-data
 #if DISTRIBUTION wheezy
 openmx-example
 #endif
-
-# Quantum Espresso
-quantum-espresso
-quantum-espresso-data
