@@ -14,9 +14,12 @@ MateriApps LIVE! Release x.xx (201x/xx/xx)
 ==========================================
 
   - Newly included MateriApps packages
+     * fermisurfer (1.10.0-1)
+     * respack (20171018-1)
   - Updated MateriApps packages
      * alps (20170905~r7843-1)
-     * hphi (2.0.4-1)
+     * espresso (6.2.1-1)
+     * hphi (3.0.0-1)
      * lammps (0~20170811.malive-1)
      * mvmc (1.0.2-1)
      * smash (2.2.0-1)

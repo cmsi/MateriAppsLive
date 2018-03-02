@@ -10,5 +10,5 @@ for cname in $CODENAME; do
     echo "Adding ${cng}..."
     reprepro --ask-passphrase --ignore=wrongdistribution -Vb $HOME/data/apt/$cname include $cname $cng
   done
-  cp -fp $HOME/data/apt/$cname/pool/*/*/*/${PACKAGE}_* /data/archive/$cname
+  cp -fp $HOME/data/apt/$cname/pool/*/*/*/*${PACKAGE}_* /data/archive/$cname
 done
