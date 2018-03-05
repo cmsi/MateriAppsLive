@@ -10,11 +10,28 @@ Which archive should be used?
   - MateriAppsLive-ltx-*-i386.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (32bit)
   - MateriAppsLive-ltx-*-amd64.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (64bit)
 
+MateriApps LIVE! Release 1.13 (2018/03/02)
+==========================================
+
+  - Newly included MateriApps packages
+     * fermisurfer (1.10.0-1)
+     * respack (20171018-1)
+  - Updated MateriApps packages
+     * alps (20170905~r7843-1)
+     * espresso (6.2.1-1)
+     * hphi (3.0.0-1)
+     * lammps (0~20170811.malive-1)
+     * mvmc (1.0.2-1)
+     * smash (2.2.0-1)
+     * xtapp (170619-3), xtapp-util (160715-2)
+  - Update pip to recent version
+  - Provide debian package also for Debian 8 (Jessie) and Debian 9 (Stretch)
+
 MateriApps LIVE! Release 1.12 (2017/07/17)
 ==========================================
 
   - Newly included MateriApps packages
-     * mvmc (1.0.1-2): 
+     * mvmc (1.0.1-2)
   - Updated MateriApps packages
      * akaikkr (20170222-1)
      * alps (20170127~r7841-1)

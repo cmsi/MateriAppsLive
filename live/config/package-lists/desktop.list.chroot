@@ -6,11 +6,11 @@ plymouth plymouth-x11
 #if DISTRIBUTION wheezy
  plymouth-drm
 #endif
-#if DISTRIBUTION jessie
+#if DISTRIBUTION stretch
  plymouth-theme
 #endif
 
-#if DISTRIBUTION jessie
+#if DISTRIBUTION stretch
  gstreamer1.0-vaapi
 #endif
 i965-va-driver

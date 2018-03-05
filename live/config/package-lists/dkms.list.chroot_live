@@ -2,7 +2,7 @@
 #if DISTRIBUTION wheezy
 open-vm-dkms open-vm-tools open-vm-toolbox
 #endif
-#if DISTRIBUTION jessie
+#if DISTRIBUTION stretch
 open-vm-tools-dkms open-vm-tools open-vm-tools-desktop
 #endif
 
