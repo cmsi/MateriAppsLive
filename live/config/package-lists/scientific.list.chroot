@@ -1,7 +1,7 @@
 # ABINIT
 abinit
 abinit-doc
-#if DISTRIBUTION jessie
+#if DISTRIBUTION stretch
  abinit-data
 #endif
 
