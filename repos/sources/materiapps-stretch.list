@@ -1,0 +1,5 @@
+# for MateriApps LIVE!
+# deb http://jaist.dl.sourceforge.net/project/materiappslive/Debian/stretch stretch main non-free contrib
+# deb-src http://jaist.dl.sourceforge.net/project/materiappslive/Debian/stretch stretch main non-free contrib
+deb http://exa.phys.s.u-tokyo.ac.jp/archive/MateriApps/apt/stretch stretch main non-free contrib
+deb-src http://exa.phys.s.u-tokyo.ac.jp/archive/MateriApps/apt/stretch stretch main non-free contrib
