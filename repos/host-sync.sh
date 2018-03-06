@@ -10,6 +10,7 @@ $RSYNC $DEB_HOME/apt/stretch/dists $DEB_HOME/apt/stretch/pool frs.sourceforge.ne
 $RSYNC $DEB_HOME/archive frs.sourceforge.net:/home/frs/project/materiappslive/Debian
 $RSYNC $(dirname $0)/sources frs.sourceforge.net:/home/frs/project/materiappslive/Debian/
 $RSYNC $(dirname $0)/../README.md frs.sourceforge.net:/home/frs/project/materiappslive
+$RSYNC $(dirname $0)/../keys frs.sourceforge.net:/home/frs/project/materiappslive/Debian/
 
 $RSYNC $DEB_HOME/apt/wheezy/dists $DEB_HOME/apt/wheezy/pool root@exa.phys.s.u-tokyo.ac.jp:/var/www/vhosts/exa.phys.s.u-tokyo.ac.jp/httpdocs/archive/MateriApps/apt/wheezy
 $RSYNC $DEB_HOME/apt/jessie/dists $DEB_HOME/apt/jessie/pool root@exa.phys.s.u-tokyo.ac.jp:/var/www/vhosts/exa.phys.s.u-tokyo.ac.jp/httpdocs/archive/MateriApps/apt/jessie
@@ -17,3 +18,4 @@ $RSYNC $DEB_HOME/apt/stretch/dists $DEB_HOME/apt/stretch/pool root@exa.phys.s.u-
 $RSYNC $DEB_HOME/archive/wheezy/*.orig.tar.gz root@exa.phys.s.u-tokyo.ac.jp:/var/www/vhosts/exa.phys.s.u-tokyo.ac.jp/httpdocs/archive/MateriApps/src
 $RSYNC $(dirname $0)/sources root@exa.phys.s.u-tokyo.ac.jp:/var/www/vhosts/exa.phys.s.u-tokyo.ac.jp/httpdocs/archive/MateriApps
 $RSYNC $(dirname $0)/../README.md root@exa.phys.s.u-tokyo.ac.jp:/var/www/vhosts/exa.phys.s.u-tokyo.ac.jp/httpdocs/archive/MateriApps
+$RSYNC $(dirname $0)/../keys root@exa.phys.s.u-tokyo.ac.jp:/var/www/vhosts/exa.phys.s.u-tokyo.ac.jp/httpdocs/archive/MateriApps
