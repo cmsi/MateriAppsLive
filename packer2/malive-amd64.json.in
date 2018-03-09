@@ -53,6 +53,7 @@
         	"script/update.sh",
         	"script/virtualbox.sh",
         	"script/materiapps.sh",
+        	"script/firefox.sh",
         	"script/minimize.sh",
         	"script/cleanup.sh"
 	],
