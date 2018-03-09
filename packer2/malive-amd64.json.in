@@ -1,0 +1,61 @@
+{
+    "variables": {
+        "ssh_name": "user",
+        "ssh_pass": "live",
+        "ma_version": "@MA_VERSION@",
+        "debian_version": "@DEBIAN_VERSION@",
+        "debian_checksum": "@DEBIAN_CHECKSUM@"
+    },
+
+    "builders": [{
+        "type": "virtualbox-iso",
+        "format": "ova",
+        "guest_os_type": "Debian_64",
+	"vm_name": "MateriAppsLive-{{user `ma_version`}}-amd64",
+
+        "vboxmanage": [
+            ["setextradata", "global", "GUI/SuppressMessages", "all"],
+            ["modifyvm", "{{.Name}}", "--nictype1", "virtio"],
+            ["modifyvm", "{{.Name}}", "--vram", "32"],
+            ["modifyvm", "{{.Name}}", "--clipboard", "bidirectional"],
+            ["modifyvm", "{{.Name}}", "--usb", "on"],
+            ["modifyvm", "{{.Name}}", "--accelerate3d", "on"],
+            ["modifyvm", "{{.Name}}", "--memory", "1000"]
+        ],
+
+        "iso_url": "debian-{{user `debian_version`}}-amd64-DVD-1.iso",
+        "iso_checksum": "{{user `debian_checksum`}}",
+        "iso_checksum_type": "md5",
+
+        "http_directory" : ".",
+
+        "ssh_username": "{{user `ssh_name`}}",
+        "ssh_password": "{{user `ssh_pass`}}",
+        "ssh_wait_timeout": "20m",
+
+        "shutdown_command": "echo {{user `ssh_pass`}} | sudo -S shutdown -hP now",
+
+        "boot_command" : [
+            "<esc><wait>",
+            "install ",
+            "auto=true ",
+            "netcfg/get_domain=local ",
+            "netcfg/get_hostname=malive ",
+            "url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+            "<enter><wait>"
+        ]
+    }],
+
+    "provisioners": [{
+	"execute_command": "echo {{user `ssh_pass`}} | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+	"scripts": [
+        	"script/remove-cdrom-sources.sh",
+        	"script/update.sh",
+        	"script/virtualbox.sh",
+        	"script/materiapps.sh",
+        	"script/minimize.sh",
+        	"script/cleanup.sh"
+	],
+	"type": "shell"
+    }]
+}
