@@ -39,6 +39,7 @@ vagrant-box/box
 vagrant-box/build-*.log
 vagrant-box/debian7-*.json
 vagrant-box/debian8-*.json
+vagrant-box/debian9-*.json
 vagrant-box/log
 vagrant-box/output-*
 vagrant-box/packer_cache

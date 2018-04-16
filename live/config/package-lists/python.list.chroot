@@ -8,7 +8,7 @@ python-scipy
 #if DISTRIBUTION wheezy
  python-wxgtk2.8
 #endif
-#if DISTRIBUTION jessie
+#if DISTRIBUTION stretch
  python-wxgtk3.0
 #endif
 python-opengl
