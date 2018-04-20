@@ -49,13 +49,15 @@
     "provisioners": [{
 	"execute_command": "echo {{user `ssh_pass`}} | {{.Vars}} sudo -E -S bash '{{.Path}}'",
 	"scripts": [
-        	"script/remove-cdrom-sources.sh",
-        	"script/update.sh",
-        	"script/virtualbox.sh",
-        	"script/materiapps.sh",
+        	"script/00_remove-cdrom-sources.sh",
+        	"script/01_update.sh",
+                "script/02_virtualbox.sh",
+        	"script/bashrc.sh",
         	"script/firefox.sh",
-        	"script/minimize.sh",
-        	"script/cleanup.sh"
+        	"script/materiapps.sh",
+        	"script/python.sh",
+        	"script/98_minimize.sh",
+        	"script/99_cleanup.sh"
 	],
 	"type": "shell"
     }]

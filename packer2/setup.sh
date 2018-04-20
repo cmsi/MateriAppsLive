@@ -1,13 +1,15 @@
 #!/bin/bash -eux
 
+set -x 
+
 SCRIPT_DIR=$(cd "$(dirname $0)"; pwd)
 echo "SCRIPT_DIR=$SCRIPT_DIR"
 
+. $SCRIPT_DIR/version.sh
+echo "DEBIAN_VERSION=$DEBIAN_VERSION"
+
 MA_VERSION=$(cat $SCRIPT_DIR/../live/materiapps_version-stretch)
 echo "MA_VERSION=$MA_VERSION"
-
-DEBIAN_VERSION="9.3.0"
-echo "DEBIAN_VERSION=$DEBIAN_VERSION"
 
 ARCHITECTURES="amd64 i386"
 for arch in $ARCHITECTURES; do
