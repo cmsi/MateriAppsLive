@@ -81,6 +81,7 @@ Vagrant.configure("2") do |config|
     apt-get -y install ghostscript
     apt-get -y tcl tcllib xsltproc
     apt-get -y install ruby2.1-dev rubygems
+    apt-get -y install pkg-config doxygen-latex graphviz libjs-jquery fonts-freefont-ttf
     gem install github-markdown
     cp -fp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
     echo 'Asia/Tokyo' > /etc/timezone
