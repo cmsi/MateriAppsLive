@@ -30,4 +30,7 @@ done
 
 cp -fp ${SCRIPT_DIR}/preseed.cfg .
 cp -frp ${SCRIPT_DIR}/script .
-sh ${SCRIPT_DIR}/images/login.sh ${MA_VERSION} login.svg
+
+mkdir -p files
+sh ${SCRIPT_DIR}/login.sh ${MA_VERSION} files/login.svg
+cp ${SCRIPT_DIR}/files/*.menu ${SCRIPT_DIR}/files/*.directory files/
