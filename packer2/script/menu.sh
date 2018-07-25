@@ -10,4 +10,4 @@ FILES="database.directory materiapps.directory"
 for f in $FILES; do
   cp /tmp/files/$f /usr/share/desktop-directories/
   chmod 644 /usr/share/desktop-directories/$f
-fi
+done
