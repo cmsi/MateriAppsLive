@@ -4,11 +4,30 @@ MateriApps LIVE! Release Files
 Which archive should be used?
 
   - MateriAppsLive-*-i386.ova: Open Virtualization Format for VirtualBox (32bit)
-  - MateriAppsLive-*-i386.hybrid.iso: Hybrid ISO Image for USB Boot (32bit)
   - MateriAppsLive-*-amd64.ova: Open Virtualization Format for VirtualBox (64bit)
-  - MateriAppsLive-*-amd64.hybrid.iso: Hybrid ISO Image for USB Boot (64bit)
   - MateriAppsLive-ltx-*-i386.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (32bit)
   - MateriAppsLive-ltx-*-amd64.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (64bit)
+  - (version 1.x only) MateriAppsLive-*-i386.hybrid.iso: Hybrid ISO Image for USB Boot (32bit)
+  - (version 1.x only) MateriAppsLive-*-amd64.hybrid.iso: Hybrid ISO Image for USB Boot (64bit)
+
+MateriApps LIVE! Release 2.0 (2018/xx/xx)
+==========================================
+
+  - Newly included MateriApps packages
+     * dcore (1.0.0)
+     * triqs, triqs-cthyb, triqs-dfttools, triqs-hubbardi (1.4.2)
+  - Updated MateriApps packages
+     * akaikkr (20180520)
+     * alps (20180220~r7849)
+     * dsqss (1.1.17+pv1.1.3)
+     * gammess-setup (for version Feb 14, 2018)
+     * openmx (3.8.5)
+     * vesta (3.4.4)
+     * vmd-setup (for version 1.9.3)
+     * xtapp, xtapp-util, xtapp-ps-so (180420)
+  - Base Debian distribution has been updated to Debian 9 (Stretch)
+  - Debian packages for MateriApps Applications are provided also for Debian 7 (Wheezy) and 8 (Jessie)
+  - MateriApps LIVE! Users Forum has been opened
 
 MateriApps LIVE! Release 1.13 (2018/03/02)
 ==========================================
