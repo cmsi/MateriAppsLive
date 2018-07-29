@@ -10,7 +10,7 @@ echo "==> Install Network Tools"
 apt-get -y install curl lftp wget
 
 echo "==> Install Other Tools"
-apt-get -y install enscript numactl tree
+apt-get -y install enscript numactl time tree
 
 echo "==> Install MateriApps Applications/Tools"
 apt-get -y install materiappslive
