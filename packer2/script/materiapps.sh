@@ -10,7 +10,7 @@ echo "==> Install Network Tools"
 apt-get -y install curl lftp wget
 
 echo "==> Install Other Tools"
-apt-get -y install enscript git numactl time tree
+apt-get -y install enscript git h5utils numactl time tree
 
 echo "==> Install MateriApps Applications/Tools"
 apt-get -y install materiappslive
@@ -25,4 +25,7 @@ apt-get -y install triqs triqs-cthyb triqs-dfttools triqs-hubbardi dcore
 echo "==> Copy desktop file(s)"
 if [ -d /etc/skel/Desktop ]; then
   cp -frp /etc/skel/Desktop $HOME
+fi
+if [ -d /etc/skel/.config ]; then
+  cp -frp /etc/skel/.config $HOME
 fi
