@@ -243,4 +243,4 @@ References
 
  - [MateriApps LIVE!](http://cmsi.github.io/MateriAppsLive)
  - [MateriApps LIVE! Wiki](https://github.com/cmsi/MateriAppsLive/wiki)
- - [MateriApps LIVE! Forum](http://ma.cms-initiative.jp/ja/community/materiapps-messageboard/materiapps-live)
+ - [MateriApps LIVE! Forum](https://github.com/cmsi/MateriAppsLive-forum/issues)
