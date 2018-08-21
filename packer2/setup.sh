@@ -26,7 +26,7 @@ for arch in $ARCHITECTURES; do
             fi
 	fi
 	DEBIAN_CHECKSUM=$(cat "$md5")
-	echo "DEBIAN_VERSION=$DEBIAN_CHECKSUM"
+	echo "$iso: $DEBIAN_CHECKSUM"
 	sed -e "s|@MA_VERSION@|${MA_VERSION}|g" \
 	    -e "s|@DEBIAN_VERSION@|${DEBIAN_VERSION}|g" \
 	    -e "s|@DEBIAN_CHECKSUM@|${DEBIAN_CHECKSUM}|g" \
