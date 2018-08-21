@@ -7,6 +7,12 @@ echo "SCRIPT_DIR=$SCRIPT_DIR"
 echo "DEBIAN_VERSION=$DEBIAN_VERSION"
 echo "MA_VERSION=$MA_VERSION"
 
+VB_VERSION=$(VBoxManage -v)
+echo "VB_VERSION=$VB_VERSION"
+
+PACKER_VERSION=$(packer -v)
+echo "PACKER_VERSION=$PACKER_VERSION"
+
 ARCHITECTURES="amd64 i386"
 for arch in $ARCHITECTURES; do
     iso="debian-${DEBIAN_VERSION}-${arch}-DVD-1.iso"
@@ -32,5 +38,5 @@ cp -fp ${SCRIPT_DIR}/preseed.cfg .
 cp -frp ${SCRIPT_DIR}/script .
 
 mkdir -p files
-sh ${SCRIPT_DIR}/login.sh ${MA_VERSION} files/login.svg
+sh ${SCRIPT_DIR}/login.sh ${DEBIAN_VERSION} ${MA_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login.svg
 cp ${SCRIPT_DIR}/files/*.menu ${SCRIPT_DIR}/files/*.directory files/
