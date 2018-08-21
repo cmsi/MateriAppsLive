@@ -10,7 +10,7 @@ echo "==> Install Network Tools"
 apt-get -y install curl lftp wget
 
 echo "==> Install Other Tools"
-apt-get -y install enscript git h5utils numactl time tree
+apt-get -y install cmake enscript git h5utils liblapack-dev numactl time tree
 
 echo "==> Install MateriApps Applications/Tools"
 apt-get -y install materiappslive
