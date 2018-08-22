@@ -60,6 +60,7 @@
                 "script/02_virtualbox.sh",
         	"script/bashrc.sh",
         	"script/firefox.sh",
+        	"script/grub.sh",
         	"script/login.sh",
         	"script/materiapps.sh",
         	"script/menu.sh",
