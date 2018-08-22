@@ -7,7 +7,7 @@ echo "SCRIPT_DIR=$SCRIPT_DIR"
 echo "DEBIAN_VERSION=$DEBIAN_VERSION"
 echo "MA_VERSION=$MA_VERSION"
 
-VB_VERSION=$(VBoxManage -v)
+VB_VERSION=$(VBoxManage -v | cut -dr -f1)
 echo "VB_VERSION=$VB_VERSION"
 
 PACKER_VERSION=$(packer -v)
