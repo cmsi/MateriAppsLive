@@ -14,6 +14,7 @@ MateriApps LIVE! Release 2.0 (2018/08/26)
 ==========================================
 
   - Base Debian distribution has been updated to Debian 9 (Stretch)
+  - Made 64bit version (amd64) default
   - Debian packages for MateriApps Applications are still provided also for Debian 7 (Wheezy) and 8 (Jessie)
   - [MateriApps LIVE! Users Forum](https://github.com/cmsi/MateriAppsLive-forum/issues?q=is%3Aissue+sort%3Aupdated-desc) has been opened
   - Newly included MateriApps packages
