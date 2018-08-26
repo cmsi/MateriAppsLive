@@ -10,7 +10,7 @@ Which archive should be used?
   - [version 1.x only] MateriAppsLive-*-amd64.hybrid.iso: Hybrid ISO Image for USB Boot (64bit)
   - [version 1.x only] MateriAppsLive-*-i386.hybrid.iso: Hybrid ISO Image for USB Boot (32bit)
 
-MateriApps LIVE! Release 2.0 (2018/xx/xx)
+MateriApps LIVE! Release 2.0 (2018/08/26)
 ==========================================
 
   - Base Debian distribution has been updated to Debian 9 (Stretch)
@@ -28,6 +28,8 @@ MateriApps LIVE! Release 2.0 (2018/xx/xx)
      * vesta (3.4.4)
      * vmd-setup (for version 1.9.3)
      * xtapp, xtapp-util, xtapp-ps-so (180420)
+  - Removed MateriApps packages
+     * gromacs
 
 MateriApps LIVE! Release 1.13 (2018/03/02)
 ==========================================
