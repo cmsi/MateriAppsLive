@@ -19,7 +19,7 @@
             ["modifyvm", "{{.Name}}", "--vram", "32"],
             ["modifyvm", "{{.Name}}", "--clipboard", "bidirectional"],
             ["modifyvm", "{{.Name}}", "--usb", "on"],
-            ["modifyvm", "{{.Name}}", "--accelerate3d", "on"],
+            ["modifyvm", "{{.Name}}", "--accelerate3d", "off"],
             ["modifyvm", "{{.Name}}", "--memory", "1000"]
         ],
 
