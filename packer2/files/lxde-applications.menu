@@ -109,17 +109,6 @@
 		</Include>
 	</Menu>	 <!-- End Multimedia -->
 
-	<!-- Office -->
-	<Menu>
-		<Name>Office</Name>
-		<Directory>lxde-office.directory</Directory>
-		<Include>
-			<And>
-				<Category>Office</Category>
-			</And>
-		</Include>
-	</Menu> <!-- End Office -->
-
 	<!-- System Tools-->
 	<Menu>
 		<Name>System</Name>
@@ -158,23 +147,6 @@
                 </Include>
         </Menu>
         <!-- End Database -->
-
-        <!-- Other -->
-        <Menu>
-                <Name>Other</Name>
-                <Directory>lxde-other.directory</Directory>
-                <OnlyUnallocated/>
-                <Include>
-                        <And>
-                                <Not><Category>Core</Category></Not>
-                                <Not><Category>Settings</Category></Not>
-                                <Not><Category>Screensaver</Category></Not>
-                                <Not><Category>Education</Category></Not>
-                                <Not><Category>X-MateriApps</Category></Not>
-                                <Not><Category>X-Database</Category></Not>
-                        </And>
-                </Include>
-                </Menu> <!-- End Other -->
 
 	<Menu>
 		<Name>DesktopSettings</Name>
