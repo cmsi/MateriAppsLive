@@ -40,3 +40,5 @@ cp -frp ${SCRIPT_DIR}/script .
 mkdir -p files
 sh ${SCRIPT_DIR}/login.sh ${DEBIAN_VERSION} ${MA_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login.svg
 cp ${SCRIPT_DIR}/files/*.menu ${SCRIPT_DIR}/files/*.directory files/
+
+sed -e "s|@MA_VERSION@|${MA_VERSION}|g" ${SCRIPT_DIR}/build.sh.in > build.sh
