@@ -3,12 +3,34 @@ MateriApps LIVE! Release Files
 
 Which archive should be used?
 
+  - [default] MateriAppsLive-*-amd64.ova: Open Virtualization Format for VirtualBox (64bit)
   - MateriAppsLive-*-i386.ova: Open Virtualization Format for VirtualBox (32bit)
-  - MateriAppsLive-*-i386.hybrid.iso: Hybrid ISO Image for USB Boot (32bit)
-  - MateriAppsLive-*-amd64.ova: Open Virtualization Format for VirtualBox (64bit)
-  - MateriAppsLive-*-amd64.hybrid.iso: Hybrid ISO Image for USB Boot (64bit)
-  - MateriAppsLive-ltx-*-i386.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (32bit)
   - MateriAppsLive-ltx-*-amd64.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (64bit)
+  - MateriAppsLive-ltx-*-i386.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (32bit)
+  - [version 1.x only] MateriAppsLive-*-amd64.hybrid.iso: Hybrid ISO Image for USB Boot (64bit)
+  - [version 1.x only] MateriAppsLive-*-i386.hybrid.iso: Hybrid ISO Image for USB Boot (32bit)
+
+MateriApps LIVE! Release 2.0 (2018/08/26)
+==========================================
+
+  - Base Debian distribution has been updated to Debian 9 (Stretch)
+  - Made 64bit version (amd64) default
+  - Debian packages for MateriApps Applications are still provided also for Debian 7 (Wheezy) and 8 (Jessie)
+  - [MateriApps LIVE! Users Forum](https://github.com/cmsi/MateriAppsLive-forum/issues?q=is%3Aissue+sort%3Aupdated-desc) has been opened
+  - Newly included MateriApps packages
+     * dcore (1.0.0)
+     * triqs, triqs-cthyb, triqs-dfttools, triqs-hubbardi (1.4.2)
+  - Updated MateriApps packages
+     * akaikkr (20180520)
+     * alps (20180220~r7849)
+     * dsqss (1.1.17+pv1.1.3)
+     * gammess-setup (for version Feb 14, 2018)
+     * openmx (3.8.5)
+     * vesta (3.4.4)
+     * vmd-setup (for version 1.9.3)
+     * xtapp, xtapp-util, xtapp-ps-so (180420)
+  - Removed MateriApps packages
+     * gromacs
 
 MateriApps LIVE! Release 1.13 (2018/03/02)
 ==========================================
@@ -242,5 +264,6 @@ References
 ==========
 
  - [MateriApps LIVE!](http://cmsi.github.io/MateriAppsLive)
+ - [MateriApps LIVE!](http://ma.issp.u-tokyo.ac.jp/app/275) on [MateriApps](http://ma.issp.u-tokyo.ac.jp)
+ - [MateriApps LIVE! Usesrs Forum](https://github.com/cmsi/MateriAppsLive-forum/issues?q=is%3Aissue+sort%3Aupdated-desc)
  - [MateriApps LIVE! Wiki](https://github.com/cmsi/MateriAppsLive/wiki)
- - [MateriApps LIVE! Forum](https://github.com/cmsi/MateriAppsLive-forum/issues)
