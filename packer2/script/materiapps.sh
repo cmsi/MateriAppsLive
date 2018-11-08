@@ -26,6 +26,7 @@ apt-get -y install dsqss
 apt-get -y install gamess-setup
 apt-get -y install tapioca
 apt-get -y install triqs triqs-cthyb triqs-dfttools triqs-hubbardi dcore
+apt-get -y install ddmrg
 
 echo "==> Copy desktop file(s)"
 if [ -d /etc/skel/Desktop ]; then
