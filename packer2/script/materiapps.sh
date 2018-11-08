@@ -10,8 +10,11 @@ apt-get -y install dx evince gnuplot-x11 paraview pymol rasmol vesta vmd-setup x
 echo "==> Install Network Tools"
 apt-get -y install curl lftp wget
 
+echo "==> Install Development Tools"
+apt-get -y install cmake git h5utils liblapack-dev libopenblas-dev mpi-default-dev numactl
+
 echo "==> Install Other Tools"
-apt-get -y install cmake enscript git h5utils liblapack-dev numactl time tree
+apt-get -y install enscript time tree
 
 echo "==> Install MateriApps Applications/Tools"
 apt-get -y install materiappslive
