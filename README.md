@@ -14,8 +14,10 @@ MateriApps LIVE! Release 2.1 (2018/xx/xx)
 ==========================================
 
   - Newly included MateriApps packages
+     * ddmrg
   - Updated MateriApps packages
      * akaikkr (20180822)
+     * hphi (3.1.2)
      * mvmc (1.0.3)
   - Removed MateriApps packages
 
