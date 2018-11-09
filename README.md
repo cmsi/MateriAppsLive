@@ -19,6 +19,7 @@ MateriApps LIVE! Release 2.1 (2018/xx/xx)
      * salmon (1.2.0)
   - Updated MateriApps packages
      * akaikkr (20180822)
+     * gamess-setup (201809)
      * hphi (3.1.2)
      * mvmc (1.0.3)
   - Included openblas-dev package
