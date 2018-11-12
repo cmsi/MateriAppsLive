@@ -44,3 +44,4 @@ vagrant-box/log
 vagrant-box/output-*
 vagrant-box/packer_cache
 
+.DS_Store
