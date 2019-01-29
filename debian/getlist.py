@@ -12,4 +12,4 @@ for afile in files:
         for j in jsons:
             if (re.match('ma-', j['name'])):
                 pkg = re.sub('ma-', '', j['name'])
-                print('{} {}'.format(pkg, j['html_url']))
+                print('{} {} {}'.format(pkg, j['html_url'], j['description']))

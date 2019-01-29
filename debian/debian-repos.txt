@@ -1,33 +1,33 @@
-akaikkr https://github.com/cmsi/ma-akaikkr
-alps https://github.com/cmsi/ma-alps
-alpscore https://github.com/cmsi/ma-alpscore
-bsa https://github.com/cmsi/ma-bsa
-c-tools https://github.com/cmsi/ma-c-tools
-dcore https://github.com/cmsi/ma-dcore
-ddmrg https://github.com/cmsi/ma-ddmrg
-dsqss https://github.com/cmsi/ma-dsqss
-eigen3 https://github.com/cmsi/ma-eigen3
-ermod https://github.com/cmsi/ma-ermod
-espresso https://github.com/cmsi/ma-espresso
-feram https://github.com/cmsi/ma-feram
-fermisurfer https://github.com/cmsi/ma-fermisurfer
-gamess-setup https://github.com/cmsi/ma-gamess-setup
-gromacs https://github.com/cmsi/ma-gromacs
-hphi https://github.com/cmsi/ma-hphi
-lammps https://github.com/cmsi/ma-lammps
-materiapps-keyring https://github.com/cmsi/ma-materiapps-keyring
-materiappslive https://github.com/cmsi/ma-materiappslive
-mvmc https://github.com/cmsi/ma-mvmc
-octa https://github.com/cmsi/ma-octa
-openmx https://github.com/cmsi/ma-openmx
-paraview https://github.com/cmsi/ma-paraview
-paraview-wrapper https://github.com/cmsi/ma-paraview-wrapper
-respack https://github.com/cmsi/ma-respack
-salmon https://github.com/cmsi/ma-salmon
-smash https://github.com/cmsi/ma-smash
-tapioca https://github.com/cmsi/ma-tapioca
-triqs https://github.com/cmsi/ma-triqs
-vesta https://github.com/cmsi/ma-vesta
-vmd-setup https://github.com/cmsi/ma-vmd-setup
-xcrysden-wrapper https://github.com/cmsi/ma-xcrysden-wrapper
-xtapp https://github.com/cmsi/ma-xtapp
+akaikkr https://github.com/cmsi/ma-akaikkr AkaiKKR Debian Package
+alps https://github.com/cmsi/ma-alps ALPS Debian Package
+alpscore https://github.com/cmsi/ma-alpscore ALPSCore Debian Package
+bsa https://github.com/cmsi/ma-bsa Bayesian Scaling Analysis Debian Package
+c-tools https://github.com/cmsi/ma-c-tools C-Tools Debian Package
+dcore https://github.com/cmsi/ma-dcore DCore Debian Package
+ddmrg https://github.com/cmsi/ma-ddmrg DDMRG Debian Package
+dsqss https://github.com/cmsi/ma-dsqss DSQSS Debian Package
+eigen3 https://github.com/cmsi/ma-eigen3 Eigen3 Debian Package
+ermod https://github.com/cmsi/ma-ermod ERmod Debian Package
+espresso https://github.com/cmsi/ma-espresso Quantum ESPRESSO Debian Package
+feram https://github.com/cmsi/ma-feram feram Debian Package
+fermisurfer https://github.com/cmsi/ma-fermisurfer FermiSurfer Debian Package
+gamess-setup https://github.com/cmsi/ma-gamess-setup GAMESS setup Debian Package
+gromacs https://github.com/cmsi/ma-gromacs Gromacs Debian Package
+hphi https://github.com/cmsi/ma-hphi HPHi Debian package
+lammps https://github.com/cmsi/ma-lammps LAMMPS Debian Package
+materiapps-keyring https://github.com/cmsi/ma-materiapps-keyring MateriApps Keyring Debian Package
+materiappslive https://github.com/cmsi/ma-materiappslive MateriApps Live! Debian Package
+mvmc https://github.com/cmsi/ma-mvmc mVMC Debian package
+octa https://github.com/cmsi/ma-octa Octa Debian Package
+openmx https://github.com/cmsi/ma-openmx OpenMX Debian Package
+paraview https://github.com/cmsi/ma-paraview None
+paraview-wrapper https://github.com/cmsi/ma-paraview-wrapper None
+respack https://github.com/cmsi/ma-respack RESPACK Debian Package
+salmon https://github.com/cmsi/ma-salmon Salmon Debian package
+smash https://github.com/cmsi/ma-smash None
+tapioca https://github.com/cmsi/ma-tapioca TAPIOCA Debian Package
+triqs https://github.com/cmsi/ma-triqs TRIQS Debian Package
+vesta https://github.com/cmsi/ma-vesta VESTA Debian Package
+vmd-setup https://github.com/cmsi/ma-vmd-setup VMD Setup Debian Repository
+xcrysden-wrapper https://github.com/cmsi/ma-xcrysden-wrapper XCrySDen Debian Package
+xtapp https://github.com/cmsi/ma-xtapp xTAPP Debian Package
