@@ -14,7 +14,7 @@ echo "==> Install Development Tools"
 apt-get -y install cmake git h5utils liblapack-dev libopenblas-dev mpi-default-dev numactl
 
 echo "==> Install Other Tools"
-apt-get -y install enscript time tree
+apt-get -y install enscript time tree zip
 
 echo "==> Install MateriApps Applications/Tools"
 apt-get -y install materiappslive

@@ -10,6 +10,15 @@ Which archive should be used?
   - [version 1.x only] MateriAppsLive-*-amd64.hybrid.iso: Hybrid ISO Image for USB Boot (64bit)
   - [version 1.x only] MateriAppsLive-*-i386.hybrid.iso: Hybrid ISO Image for USB Boot (32bit)
 
+MateriApps LIVE! Release 2.2 (2019/02/xx)
+==========================================
+
+  - Newly included MateriApps packages
+  - Updated MateriApps packages
+  - Newly included Tools
+     * openbabel (3.3.2)
+     * zip & unzip
+     
 MateriApps LIVE! Release 2.1 (2018/11/10)
 ==========================================
 
