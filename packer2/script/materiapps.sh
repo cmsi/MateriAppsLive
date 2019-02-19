@@ -28,6 +28,7 @@ apt-get -y install tapioca
 apt-get -y install triqs triqs-cthyb triqs-dfttools triqs-hubbardi dcore
 apt-get -y install ddmrg
 apt-get -y install salmon
+apt-get -y install libalpscore-dev
 
 echo "==> Copy desktop file(s)"
 if [ -d /etc/skel/Desktop ]; then

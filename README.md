@@ -14,8 +14,10 @@ MateriApps LIVE! Release 2.2 (2019/02/xx)
 ==========================================
 
   - Newly included MateriApps packages
-  - Updated MateriApps packages
      * alpscore (2.3.0~rc.1)
+  - Updated MateriApps packages
+     * espresso (6.3.0)
+     * fermisurfer (1.10.1)
   - Newly included Tools
      * openbabel (3.3.2)
      * zip & unzip
