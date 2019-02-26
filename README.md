@@ -18,6 +18,7 @@ MateriApps LIVE! Release 2.2 (2019/02/xx)
   - Updated MateriApps packages
      * espresso (6.3.0)
      * fermisurfer (1.10.1)
+     * respack (20190226)
   - Newly included Tools
      * openbabel (3.3.2)
      * zip & unzip
