@@ -17,18 +17,34 @@ echo "==> Install Other Tools"
 apt-get -y install enscript time tree zip
 
 echo "==> Install MateriApps Applications/Tools"
-apt-get -y install materiappslive
-apt-get -y install bsa c-tools ermod quantum-espresso quantum-espresso-data feram fermisurfer hphi lammps mvmc respack smash xtapp xtapp-ps xtapp-util
-apt-get -y install akaikkr alps-applications alps-tutorials
-apt-get -y install gromacs gromacs-data gromacs-openmpi
-apt-get -y install openmx openmx-data openmx-example
-apt-get -y install dsqss
-apt-get -y install gamess-setup
-apt-get -y install tapioca
-apt-get -y install triqs triqs-cthyb triqs-dfttools triqs-hubbardi dcore
-apt-get -y install ddmrg
-apt-get -y install salmon
-apt-get -y install libalpscore-dev
+apt-get -y install materiappslive \
+	bsa \
+	c-tools \
+	fermisurfer \
+	libalpscore-dev \
+	tapioca \
+	\
+	akaikkr \
+	quantum-espresso quantum-espresso-data \
+	openmx openmx-data openmx-example \
+	respack \
+	salmon \
+	xtapp xtapp-ps xtapp-util \
+	\
+	gamess-setup \
+	smash \
+	\
+	ermod \
+	gromacs gromacs-data gromacs-openmpi \
+	lammps lammps-data lammps-doc liblammps \
+	\
+	alps-applications alps-tutorials \
+	ddmrg \
+	dsqss \
+	feram \
+	hphi \
+	mvmc \
+	triqs triqs-cthyb triqs-dfttools triqs-hubbardi dcore
 
 echo "==> Copy desktop file(s)"
 if [ -d /etc/skel/Desktop ]; then
