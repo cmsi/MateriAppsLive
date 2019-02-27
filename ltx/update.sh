@@ -11,6 +11,8 @@ if test -f "/var/lib/gems/2.1.0/gems/github-markdown-0.6.9/bin/gfm"; then
   GFM="/var/lib/gems/2.1.0/gems/github-markdown-0.6.9/bin/gfm"
 elif test -f "/var/lib/gems/1.9.1/gems/github-markdown-0.6.9/bin/gfm"; then
   GFM="/var/lib/gems/1.9.1/gems/github-markdown-0.6.9/bin/gfm"
+elif test -f "/var/lib/gems/2.3.0/gems/github-markdown-0.6.9/bin/gfm"; then
+  GFM="/var/lib/gems/2.3.0/gems/github-markdown-0.6.9/bin/gfm"
 else
   echo "Error: gfm not found"
   exit 127
