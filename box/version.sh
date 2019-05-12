@@ -10,7 +10,7 @@ DEBIAN8_VERSION="8.11.0"
 DEBIAN8_AMD64_CHECKSUM="2a30bcfa3cb8aeea2a0cb8e3830765d0210263d3"
 DEBIAN8_I386_CHECKSUM="a2ed785da01367a56b95e01fcbff790cefc99ab5"
 
-# from http://cdimage.debian.org/debian-cd/current/[amd64,i386]/iso-dvd/SHA1SUMS
+# from http://cdimage.debian.org/debian-cd/$VERSION/[amd64,i386]/iso-dvd/SHA1SUMS
 
 DEBIAN9_VERSION="9.9.0"
 DEBIAN9_AMD64_CHECKSUM="97a2af384e27cdaaf48fe4798590f138ed8e8af2"
