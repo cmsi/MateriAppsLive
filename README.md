@@ -10,6 +10,12 @@ Which archive should be used?
   - [version 1.x only] MateriAppsLive-*-amd64.hybrid.iso: Hybrid ISO Image for USB Boot (64bit)
   - [version 1.x only] MateriAppsLive-*-i386.hybrid.iso: Hybrid ISO Image for USB Boot (32bit)
 
+
+MateriApps LIVE! Release 2.3 (2019/05/xx)
+==========================================
+
+  - The GPG key for the MateriApps LVIE! repository has been updated
+
 MateriApps LIVE! Release 2.2 (2019/02/27)
 ==========================================
 
