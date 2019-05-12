@@ -1,5 +1,9 @@
 #!/bin/bash -eux
 
+echo "==> Replace MateriApps LIVE! gpg key"
+apt-get -y install materiapps-keyring
+rm -f /etc/apt/trusted.gpg
+
 echo "==> Install Editors"
 apt-get -y install emacs vim
 
