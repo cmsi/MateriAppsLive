@@ -28,7 +28,9 @@ apt-get -y install materiappslive \
 	libalpscore-dev \
 	tapioca \
 	\
+        abinit \
 	akaikkr \
+        alamode \
 	quantum-espresso quantum-espresso-data \
 	openmx openmx-data openmx-example \
 	respack \
