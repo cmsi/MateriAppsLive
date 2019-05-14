@@ -6,7 +6,7 @@ Which archive should be used?
   - [default] MateriAppsLive-*-amd64.ova: Open Virtualization Format for VirtualBox (64bit)
   - MateriAppsLive-*-i386.ova: Open Virtualization Format for VirtualBox (32bit)
 
-MateriApps LIVE! Release 2.3 (2019/05/xx)
+MateriApps LIVE! Release 2.3 (2019/05/14)
 ==========================================
 
   - The GPG key for the MateriApps LVIE! repository has been updated
