@@ -67,28 +67,16 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
+    echo "deb http://archive.debian.org/debian/ wheezy main contrib non-free" > /etc/apt/sources.list
+    echo "deb-src http://archive.debian.org/debian/ wheezy main contrib non-free" >> /etc/apt/sources.list
     wget -O /etc/apt/sources.list.d/materiapps-wheezy.list http://jaist.dl.sourceforge.net/project/materiappslive/Debian/sources/materiapps-wheezy.list
     apt-get update
     apt-get -y --allow-unauthenticated install materiapps-keyring
     apt-get update
-    apt-get -y install live-build apt-cacher-ng syslinux
+    apt-get -y remove apt-listchanges
     apt-get -y install cdbs devscripts quilt reprepro
     apt-get -y install xauth
     apt-get -y install git cmake
-    apt-get -y install gfortran mpi-default-dev mpi-default-bin
-    apt-get -y install libblacs-mpi-dev libscalapack-mpi-dev
-    apt-get -y install libboost-all-dev libhdf5-serial-dev libsqlite3-dev liblapack-dev libfftw3-dev libeigen3-dev
-    apt-get -y install libqt4-dev freeglut3-dev
-    apt-get -y install python-matplotlib
-    apt-get -y --no-install-recommends install texlive-lang-cjk nkf htmldoc
-    apt-get -y install ghostscript
-    apt-get -y tcl tcllib xsltproc
-    apt-get -y install ruby-dev
-    # for eigen3
-    apt-get -y install pkg-config doxygen-latex graphviz libjs-jquery fonts-freefont-ttf
-    # for vesta
-    apt-get -y install libgnome2-0 libgnomeui-0 libgnomevfs2-0
-    gem install github-markdown
     cp -fp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
     echo 'Asia/Tokyo' > /etc/timezone
   SHELL

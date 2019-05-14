@@ -5,11 +5,38 @@ Which archive should be used?
 
   - [default] MateriAppsLive-*-amd64.ova: Open Virtualization Format for VirtualBox (64bit)
   - MateriAppsLive-*-i386.ova: Open Virtualization Format for VirtualBox (32bit)
-  - MateriAppsLive-ltx-*-amd64.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (64bit)
-  - MateriAppsLive-ltx-*-i386.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (32bit)
-  - [version 1.x only] MateriAppsLive-*-amd64.hybrid.iso: Hybrid ISO Image for USB Boot (64bit)
-  - [version 1.x only] MateriAppsLive-*-i386.hybrid.iso: Hybrid ISO Image for USB Boot (32bit)
 
+MateriApps LIVE! Release 2.3 (2019/05/14)
+==========================================
+
+  - The GPG key for the MateriApps LVIE! repository has been updated
+     * materiapps-keyring (20190512)
+  - Newly included MateriApps packages
+     * alamode (1.1.0)
+  - Updated MateriApps packages
+     * gromacs (2018.3) for i386
+     * hphi (3.2.0)
+  - Newly included tools/libraries
+     * spglib (1.12.2)
+  - Updated tools/libraries
+     * eigen3 (3.7.7)
+     * vesta (3.4.6) for amd64
+
+MateriApps LIVE! Release 2.2 (2019/02/27)
+==========================================
+
+  - Newly included MateriApps packages
+     * alpscore (2.3.0~rc.1)
+  - Updated MateriApps packages
+     * espresso (6.3.0)
+     * fermisurfer (1.10.1)
+     * lammps (20190201)
+     * respack (20190226)
+     * xtapp (20180402)
+  - Newly included Tools
+     * openbabel (3.3.2)
+     * zip & unzip
+     
 MateriApps LIVE! Release 2.1 (2018/11/10)
 ==========================================
 

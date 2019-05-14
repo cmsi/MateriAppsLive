@@ -4,10 +4,15 @@ SCRIPT_DIR=$(dirname $0)
 REPOSITORY="https://github.com/cmsi/MateriAppsLive.wiki.git"
 SRCDIR="MateriAppsLive.wiki"
 
+sudo apt-get -y install ruby2.3-dev rubygems
+sudo gem install github-markdown
+
 if test -f "/var/lib/gems/2.1.0/gems/github-markdown-0.6.9/bin/gfm"; then
   GFM="/var/lib/gems/2.1.0/gems/github-markdown-0.6.9/bin/gfm"
 elif test -f "/var/lib/gems/1.9.1/gems/github-markdown-0.6.9/bin/gfm"; then
   GFM="/var/lib/gems/1.9.1/gems/github-markdown-0.6.9/bin/gfm"
+elif test -f "/var/lib/gems/2.3.0/gems/github-markdown-0.6.9/bin/gfm"; then
+  GFM="/var/lib/gems/2.3.0/gems/github-markdown-0.6.9/bin/gfm"
 else
   echo "Error: gfm not found"
   exit 127

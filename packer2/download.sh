@@ -9,7 +9,7 @@ echo "DEBIAN_VERSION=$DEBIAN_VERSION"
 ARCHITECTURES="amd64 i386"
 for arch in ${ARCHITECTURES}; do
   ISO="debian-${DEBIAN_VERSION}-${arch}-DVD-1.iso"
-  URL="http://ftp.jaist.ac.jp/debian-cd/${DEBIAN_VERSION}/${arch}/iso-dvd/${ISO}"
+  URL="http://cdimage.debian.org/debian-cd/${DEBIAN_VERSION}/${arch}/iso-dvd/${ISO}"
   if [ -f "${ISO}" ]; then
     echo "Waning: ${ISO} exists. Skip."
   else

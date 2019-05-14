@@ -1,8 +1,0 @@
-#!/bin/bash
-
-set -e
-
-wget https://bootstrap.pypa.io/get-pip.py
-python get-pip.py
-pip install --upgrade pip
-rm -rf get-pip.py
