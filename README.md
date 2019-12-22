@@ -15,6 +15,8 @@ MateriApps LIVE! Release 2.4 (2019/12/xx)
      * alps (20190807)
      * dcore (2.0.2)
      * hphi (3.3.0)
+     * mvmc (1.1.0)
+     * salmon (1.2.1)
      * triqs (1.4.x)
   - Newly included tools/libraries
      * ovito (2.8.1)
