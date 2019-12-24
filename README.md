@@ -6,6 +6,21 @@ Which archive should be used?
   - [default] MateriAppsLive-*-amd64.ova: Open Virtualization Format for VirtualBox (64bit)
   - MateriAppsLive-*-i386.ova: Open Virtualization Format for VirtualBox (32bit)
 
+MateriApps LIVE! Release 2.4 (2019/12/24)
+==========================================
+
+  - Stopped support for Debian 7 (Wheezy)
+  - Started support for Debian 10 (Buster), Ubuntu 16 (Xenial), Ubuntu 18 (Bionic)
+  - Updated MateriApps packages
+     * alps (20190807)
+     * dcore (2.0.2)
+     * hphi (3.3.0)
+     * mvmc (1.1.0)
+     * salmon (1.2.1)
+     * triqs (1.4.x)
+  - Newly included tools/libraries
+     * ovito (2.8.1)
+
 MateriApps LIVE! Release 2.3 (2019/05/14)
 ==========================================
 

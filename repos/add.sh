@@ -3,7 +3,7 @@ PACKAGE="$1"
 test -z $PACKAGE && exit 127
 echo "PACKAGE: $PACKAGE"
 
-CODENAME="stretch jessie wheezy"
+CODENAME="buster stretch jessie bionic xenial"
 for cname in $CODENAME; do
   CHANGES=$(ls $HOME/data/pkg/$cname/${PACKAGE}_*.changes)
   for cng in $CHANGES; do

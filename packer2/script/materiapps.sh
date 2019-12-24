@@ -8,7 +8,7 @@ echo "==> Install Editors"
 apt-get -y install emacs vim
 
 echo "==> Install Graphics Tools"
-apt-get -y install dx evince gnuplot-x11 paraview pymol rasmol vesta vmd-setup xcrysden
+apt-get -y install dx evince gnuplot-x11 ovito paraview pymol rasmol vesta vmd-setup xcrysden
 # apt-get -y install gifsicle graphviz imagemagick python-pygraphviz
 
 echo "==> Install Network Tools"
@@ -18,7 +18,7 @@ echo "==> Install Development Tools"
 apt-get -y install cmake git h5utils liblapack-dev libopenblas-dev mpi-default-dev numactl
 
 echo "==> Install Other Tools"
-apt-get -y install enscript time tree zip
+apt-get -y install enscript time tree zip bc
 
 echo "==> Install MateriApps Applications/Tools"
 apt-get -y install materiappslive \
