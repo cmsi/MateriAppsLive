@@ -31,6 +31,7 @@ apt-get -y install materiappslive \
         abinit \
 	akaikkr \
         alamode \
+        casino-setup \
 	quantum-espresso quantum-espresso-data \
 	openmx openmx-data openmx-example \
 	respack \

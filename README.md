@@ -6,6 +6,14 @@ Which archive should be used?
   - [default] MateriAppsLive-*-amd64.ova: Open Virtualization Format for VirtualBox (64bit)
   - MateriAppsLive-*-i386.ova: Open Virtualization Format for VirtualBox (32bit)
 
+MateriApps LIVE! Release 2.5 (2020/02/xx)
+==========================================
+
+  - Newly included MateriApps packages
+     * casino-setup (2.12.1)
+  - Updated MateriApps packages
+     * espresso (6.5)
+
 MateriApps LIVE! Release 2.4 (2019/12/24)
 ==========================================
 
