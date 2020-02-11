@@ -17,3 +17,13 @@ chmod +x /usr/local/bin/jupyter
 
 # ipython2
 ln -s /usr/bin/ipython /usr/local/bin/ipython2
+
+# /usr/local/lib/python2
+VERSION=$(python2 --version 2>&1 | cut -d' ' -f 2 | cut -d. -f 1,2)
+mkdir -p /usr/local/lib/python$VERSION
+ln -s python$VERSION /usr/local/lib/python2
+
+# /usr/local/lib/python3
+VERSION=$(python3 --version 2>&1 | cut -d' ' -f 2 | cut -d. -f 1,2)
+mkdir -p /usr/local/lib/python$VERSION
+ln -s python$VERSION /usr/local/lib/python3
