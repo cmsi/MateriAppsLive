@@ -41,7 +41,6 @@ apt-get -y install materiappslive \
 	gamess-setup \
 	smash \
 	\
-	ermod \
 	gromacs gromacs-data gromacs-openmpi \
 	lammps lammps-data lammps-doc liblammps \
 	\
