@@ -13,6 +13,8 @@ MateriApps LIVE! Release 2.5 (2020/02/xx)
      * casino-setup (2.12.1)
   - Updated MateriApps packages
      * espresso (6.5)
+     * hphi (3.3.1)
+     * mvmc (1.1.1)
   - Removed MateriApps packages
      * ermod
 
