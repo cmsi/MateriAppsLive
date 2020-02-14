@@ -15,8 +15,11 @@ MateriApps LIVE! Release 2.5 (2020/02/xx)
      * espresso (6.5)
      * hphi (3.3.1)
      * mvmc (1.1.1)
+  - Newly included tools/libraries
+     * grace (xmgrace) (5.1.25)
   - Removed MateriApps packages
      * ermod
+  - Added menu items for keyboard setting
 
 MateriApps LIVE! Release 2.4 (2019/12/24)
 ==========================================

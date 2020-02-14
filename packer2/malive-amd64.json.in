@@ -63,10 +63,12 @@
         	"script/bashrc.sh",
         	"script/firefox.sh",
         	"script/grub.sh",
+        	"script/keyboard.sh",
         	"script/login.sh",
         	"script/materiapps.sh",
         	"script/menu.sh",
         	"script/python.sh",
+        	"script/xterm.sh",
         	"script/98_minimize.sh",
         	"script/99_cleanup.sh"
 	    ],
