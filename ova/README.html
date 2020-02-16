@@ -311,10 +311,11 @@ pre {
 <li><a href="https://www.virtualbox.org/wiki/Download_Old_Builds_5_2">VirtualBox-*-OSX.dmg</a> : VirtualBoxインストーラ for macOS (バージョン5)</li>
 <li><a href="https://www.virtualbox.org/wiki/Download_Old_Builds_5_2">VirtualBox-*-Win.exe</a> : VirtualBoxインストーラ for Windows (バージョン5)</li>
 <li><a href="https://sourceforge.net/projects/materiappslive/files">MateriAppsLive-*-amd64.ova</a> : MateriApps LIVE!仮想ディスクイメージ(64bit版)</li>
-<li><a href="https://github.com/cmsi/MateriAppsLive/blob/master/ova/README.html">README.html</a> : このファイル</li>
+<li><a href="https://github.com/cmsi/MateriAppsLive/blob/master/ova/README.html">README.html</a> : MateriApps LIVE! VirtualBox版について</li>
 <li><a href="https://github.com/cmsi/malive-tutorial/blob/master/setup/setup.pdf">setup.pdf</a> : MateriApps LIVE!の設定</li>
 <li><a href="https://github.com/cmsi/MateriAppsLive/blob/master/ova/vbconfig.bat">vbconfig.bat</a>, <a href="https://github.com/cmsi/MateriAppsLive/blob/master/ova/vbconfig.command">vbconfig.command</a> : VirtualBox で不要なポップアップメニューを非表示にするためのスクリプト</li>
 <li>MD5SUM : チェックサム</li>
+<li>その他、講習会などで用いるサンプルファイル(*.tar.gz, *.zip, *.isoなど)が含まれています</li>
 </ul>
 
 <h2>セットアップ</h2>
@@ -335,10 +336,7 @@ sh vbconfig.command
 </code></li>
 <li>ポップアップを再度表示するには、VirtualBoxの「ヘルプ」メニューから「Reset All Warnings」</li>
 </ul></li>
-<li><p>ホストOSとMateriApps LIVE!との間でファイルをやりとりするための設定を行う</p>
-
-<p>下記「<a href="#sharing">MateriApps LIVE! とのファイルのやりとり</a>」を参照</p></li>
-<li><p>Oracle VM VirtualBoxマネージャー画面で「MateriAppsLive」を選択し、「起動」</p></li>
+<li>Oracle VM VirtualBoxマネージャー画面で「MateriAppsLive」を選択し、「起動」</li>
 <li>ログイン画面で以下の内容を入力してログイン
 
 <ul>
@@ -350,16 +348,22 @@ sh vbconfig.command
 <h2><a name="sharing"></a>MateriApps LIVE! とのファイルのやりとり</h2>
 
 <ol>
-<li><p>ホストOSとの間でファイルをやりとりする</p>
+<li><p>ISOイメージファイル(*.iso)の中身を仮想マシンから参照する</p>
 
 <ol>
-<li>Oracle VM VirtualBoxマネージャー画面で「MateriAppsLive」を選択し、「設定」</li>
-<li>「共有フォルダー」タブを開き、右側の「+」(新規共有フォルダーを追加します)をクリック</li>
-<li>「フォルダーのパス」の右側の「ｖ」をクリックし、「その他」を選択。共有したいフォルダーを選択する</li>
-<li>「自動マウント」をチェックし、「OK」。</li>
-<li>仮想マシンを起動(再起動)すると、3で選択したフォルダが、/media/sf_... の下に見える</li>
+<li>仮想マシンウインドウの枠の下にあるCD-ROMのアイコンをクリック、「Choose disk image...」を選択し、ISOイメージファイルを開く</li>
+<li>ISOイメージファイルの中身が、/media/cdrom0 の下に見える</li>
 </ol></li>
-<li><p>USBフラッシュメモリを仮想マシンに接続する</p>
+<li><p>ホストOSと仮想マシン間のファイル共有</p>
+
+<ol>
+<li>VirtualBox マネージャー画面で MateriAppsLive-* を選択し「設定」</li>
+<li>「共有フォルダー」タブを開き、右側の「+」(新規共有フォルダーを追加します)をクリック</li>
+<li>「フォルダーのパス」の右側の「ｖ」マークをクリックし、「その他」を選択。さきほどUSBメモリからコピーしたフォルダーを選択する</li>
+<li>「自動マウント」をチェックし「OK」⇒ さらに「OK」</li>
+<li>仮想マシンを再起動すると、上で選択したフォルダが、/media/sf_... の下に見える</li>
+</ol></li>
+<li><p>USBメモリを仮想マシンに接続する</p>
 
 <ul>
 <li>VirtualBoxのUSBセットアップ: <a href="https://sites.google.com/site/owlnetvista/virtualpc200725">https://sites.google.com/site/owlnetvista/virtualpc200725</a></li>
