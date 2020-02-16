@@ -12,14 +12,18 @@ MateriApps LIVE! Release 2.5 (2020/02/xx)
   - Newly included MateriApps packages
      * casino-setup (2.12.1)
   - Updated MateriApps packages
-     * espresso (6.5)
+     * espresso (quantum espresso) (6.5)
+     * fermisurfer (2.0.0)
      * hphi (3.3.1)
      * mvmc (1.1.1)
+     * lammps (20200204)
+     * openmx (3.9.2)
+     * respack (20200113)
   - Newly included tools/libraries
      * grace (xmgrace) (5.1.25)
   - Removed MateriApps packages
      * ermod
-  - Added menu items for keyboard setting
+  - Added menu items for setting keyboard layout
 
 MateriApps LIVE! Release 2.4 (2019/12/24)
 ==========================================

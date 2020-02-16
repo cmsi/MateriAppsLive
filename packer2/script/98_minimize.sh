@@ -21,8 +21,8 @@ echo "==> Removing mail reader"
 apt-get -y purge mutt
 echo "==> Removing visual tools"
 apt-get -y purge lxmusic mpv pulseaudio libpulse0 youtube-dl
-echo "==> Removing clipit xscreensaver xterm gksu deluge"
-apt-get -y purge clipit xscreensaver xterm gksu deluge
+echo "==> Removing clipit xscreensaver gksu deluge"
+apt-get -y purge clipit xscreensaver gksu deluge
 echo "==> Removing dictionaries"
 apt-get -y purge dictionaries-common
 
