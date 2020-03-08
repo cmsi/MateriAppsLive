@@ -6,7 +6,7 @@ echo "SCRIPT_DIR=$SCRIPT_DIR"
 . $SCRIPT_DIR/version.sh
 echo "DEBIAN_VERSION=$DEBIAN_VERSION"
 
-ARCHITECTURES="amd64 i386"
+ARCHITECTURES="amd64"
 for arch in ${ARCHITECTURES}; do
   ISO="debian-${DEBIAN_VERSION}-${arch}-DVD-1.iso"
   URL="http://cdimage.debian.org/cdimage/archive/${DEBIAN_VERSION}/${arch}/iso-dvd/${ISO}"

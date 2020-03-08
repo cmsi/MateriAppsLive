@@ -13,7 +13,7 @@ echo "VB_VERSION=$VB_VERSION"
 PACKER_VERSION=$(packer -v)
 echo "PACKER_VERSION=$PACKER_VERSION"
 
-ARCHITECTURES="amd64 i386"
+ARCHITECTURES="amd64"
 for arch in $ARCHITECTURES; do
     iso="debian-${DEBIAN_VERSION}-${arch}-DVD-1.iso"
     md5="debian-${DEBIAN_VERSION}-${arch}-DVD-1.md5"

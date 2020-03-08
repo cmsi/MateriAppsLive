@@ -2,7 +2,7 @@
 
 MA_VERSION="@MA_VERSION@"
 
-ARCHITECTURES="amd64 i386"
+ARCHITECTURES="amd64"
 for arch in $ARCHITECTURES; do
     if [ -f malive-${arch}.json ]; then
 	rm -rf output-virtualbox-iso
