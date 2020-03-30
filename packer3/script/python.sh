@@ -5,6 +5,7 @@ apt-get -y install python-pip python3-pip
 apt-get -y install python-virtualenv python3-venv
 apt-get -y install python-notebook jupyter-notebook
 apt-get -y install python-numpy python-scipy python-matplotlib python3-numpy python3-scipy python3-matplotlib
+apt-get -y install python-sympy python3-sympy
 
 # jupyter
 cat << EOF > /usr/local/bin/jupyter
@@ -15,7 +16,8 @@ if __name__ == '__main__':
 EOF
 chmod +x /usr/local/bin/jupyter
 
-# ipython2
+# ipython
+apt-get -y install ipython ipython3
 ln -s /usr/bin/ipython /usr/local/bin/ipython2
 
 # /usr/local/lib/python2

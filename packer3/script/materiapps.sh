@@ -8,7 +8,7 @@ echo "==> Install Editors"
 apt-get -y install emacs vim
 
 echo "==> Install Graphics Tools"
-apt-get -y install dx evince gnuplot-x11 ovito paraview pymol rasmol vesta vmd-setup xcrysden
+apt-get -y install dx evince gnuplot-x11 grace ovito paraview pymol rasmol vesta vmd-setup xcrysden
 # apt-get -y install gifsicle graphviz imagemagick python-pygraphviz
 
 echo "==> Install Network Tools"
@@ -32,6 +32,7 @@ apt-get -y install materiappslive \
 	akaikkr \
         alamode \
         casino-setup \
+	conquest \
 	quantum-espresso quantum-espresso-data \
 	openmx openmx-data openmx-example \
 	respack \

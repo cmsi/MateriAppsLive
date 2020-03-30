@@ -17,7 +17,7 @@
             ["setextradata", "global", "GUI/SuppressMessages", "all"],
             ["modifyvm", "{{.Name}}", "--nictype1", "virtio"],
             ["modifyvm", "{{.Name}}", "--vram", "32"],
-            ["modifyvm", "{{.Name}}", "--clipboard", "bidirectional"],
+            ["modifyvm", "{{.Name}}", "--clipboard-mode", "bidirectional"],
             ["modifyvm", "{{.Name}}", "--usb", "on"],
             ["modifyvm", "{{.Name}}", "--accelerate3d", "off"],
             ["modifyvm", "{{.Name}}", "--memory", "1000"],

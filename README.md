@@ -6,12 +6,17 @@ MateriApps LIVE! Release 3.0 (2020/04/xx)
 
   - Updated base Debian distribution to Debian 10 (Buster)
   - Debian packages for MateriApps Applications are still provided also for Debian 8 (Jessie) and 9 (Stretch)
+  - Updated MateriApps packages
+     * xcrysden (1.6.2)
 
 MateriApps LIVE! Release 2.6 (2020/04/xx)
 ==========================================
 
   - Stoped distribution of 32bit version
   - Debian packages for MateriApps Applications are still provided also for 32bit architecture
+  - Newly included MateriApps packages
+     * conquest (1.0.2)
+  - Removed MateriApps packages
   
 MateriApps LIVE! Release 2.5 (2020/02/18)
 ==========================================
