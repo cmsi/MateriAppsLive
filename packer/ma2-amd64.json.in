@@ -2,9 +2,9 @@
     "variables": {
         "ssh_name": "user",
         "ssh_pass": "live",
-        "ma_version": "@MA_VERSION@",
-        "debian_version": "@DEBIAN_VERSION@",
-        "debian_checksum": "@DEBIAN_CHECKSUM@"
+        "ma_version": "@MA2_VERSION@",
+        "debian_version": "@DEBIAN9_VERSION@",
+        "debian_checksum": "@DEBIAN9_CHECKSUM@"
     },
 
     "builders": [{
@@ -43,7 +43,7 @@
             "auto=true ",
             "netcfg/get_domain=local ",
             "netcfg/get_hostname=malive ",
-            "url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+            "url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed9.cfg ",
             "<enter><wait>"
         ]
     }],
