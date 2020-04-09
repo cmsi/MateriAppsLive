@@ -11,14 +11,15 @@
         "type": "virtualbox-iso",
         "format": "ova",
         "guest_os_type": "Debian",
-	"vm_name": "MateriAppsLive-{{user `ma_version`}}-i386",
+        "vm_name": "MateriAppsLive-{{user `ma_version`}}-i386",
 
         "vboxmanage": [
             ["setextradata", "global", "GUI/SuppressMessages", "all"],
             ["modifyvm", "{{.Name}}", "--nictype1", "virtio"],
             ["modifyvm", "{{.Name}}", "--vram", "32"],
-            ["modifyvm", "{{.Name}}", "--clipboard", "bidirectional"],
+            ["modifyvm", "{{.Name}}", "--clipboard-mode", "bidirectional"],
             ["modifyvm", "{{.Name}}", "--usb", "on"],
+            ["modifyvm", "{{.Name}}", "--graphicscontroller", "vmsvga"],
             ["modifyvm", "{{.Name}}", "--accelerate3d", "off"],
             ["modifyvm", "{{.Name}}", "--memory", "1000"],
             ["storageattach", "{{.Name}}", "--storagectl", "IDE Controller", "--port", "1", "--device", "0", "--type", "dvddrive", "--medium", "emptydrive"]
@@ -48,31 +49,31 @@
     }],
 
     "provisioners": [
-	{
+        {
             "type": "file",
             "source": "files",
             "destination": "/tmp"
-	},
-	{
-	    "execute_command": "echo {{user `ssh_pass`}} | {{.Vars}} sudo -E -S bash '{{.Path}}'",
-	    "scripts": [
-        	"script/00_remove-cdrom-sources.sh",
-        	"script/01_update.sh",
+        },
+        {
+            "execute_command": "echo {{user `ssh_pass`}} | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+            "scripts": [
+                "script/00_remove-cdrom-sources.sh",
+                "script/01_update.sh",
                 "script/02_virtualbox.sh",
-        	"script/ldconfig.sh",
-        	"script/bashrc.sh",
-        	"script/firefox.sh",
-        	"script/grub.sh",
-        	"script/keyboard.sh",
-        	"script/login.sh",
-        	"script/materiapps.sh",
-        	"script/menu.sh",
-        	"script/python.sh",
-        	"script/xterm.sh",
-        	"script/98_minimize.sh",
-        	"script/99_cleanup.sh"
-	    ],
-	    "type": "shell"
-	}
+                "script/ldconfig.sh",
+                "script/bashrc.sh",
+                "script/firefox.sh",
+                "script/grub.sh",
+                "script/keyboard.sh",
+                "script/login.sh",
+                "script/materiapps.sh",
+                "script/menu.sh",
+                "script/python.sh",
+                "script/xterm.sh",
+                "script/98_minimize.sh",
+                "script/99_cleanup.sh"
+            ],
+            "type": "shell"
+        }
     ]
 }
