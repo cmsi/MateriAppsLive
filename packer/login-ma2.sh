@@ -28,4 +28,4 @@ sed -e "s|@MA_VERSION@|${MA_VERSION}|g" \
     -e "s|@HOUR@|${HOUR}|g" \
     -e "s|@MINUTE@|${MINUTE}|g" \
     -e "s|@SECOND@|${SECOND}|g" \
-${SCRIPT_DIR}/files/login-in.svg > ${OUTPUT}
+${SCRIPT_DIR}/files/login-ma-in.svg > ${OUTPUT}

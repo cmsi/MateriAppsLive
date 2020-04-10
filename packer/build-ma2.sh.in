@@ -1,7 +1,6 @@
 #!/bin/bash -eux
 
 MA2_VERSION="@MA2_VERSION@"
-
 ARCHITECTURES="amd64"
 for arch in $ARCHITECTURES; do
     if [ -f ma2-${arch}.json ]; then
