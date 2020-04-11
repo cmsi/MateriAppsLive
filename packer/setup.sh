@@ -37,6 +37,7 @@ cp -fp ${SCRIPT_DIR}/preseed9.cfg .
 
 echo "DEBIAN10_VERSION=$DEBIAN10_VERSION"
 echo "MA3_VERSION=$MA3_VERSION"
+echo "CE3_VERSION=$CE3_VERSION"
 ARCHITECTURES="amd64"
 for arch in $ARCHITECTURES; do
     iso="debian-${DEBIAN10_VERSION}-${arch}-DVD-1.iso"
@@ -55,6 +56,10 @@ for arch in $ARCHITECTURES; do
 	    -e "s|@DEBIAN10_VERSION@|${DEBIAN10_VERSION}|g" \
 	    -e "s|@DEBIAN10_CHECKSUM@|${DEBIAN10_CHECKSUM}|g" \
 	    ${SCRIPT_DIR}/ma3-${arch}.json.in > ma3-${arch}.json
+	sed -e "s|@CE3_VERSION@|${CE3_VERSION}|g" \
+	    -e "s|@DEBIAN10_VERSION@|${DEBIAN10_VERSION}|g" \
+	    -e "s|@DEBIAN10_CHECKSUM@|${DEBIAN10_CHECKSUM}|g" \
+	    ${SCRIPT_DIR}/ce3-${arch}.json.in > ce3-${arch}.json
     fi
 done
 cp -fp ${SCRIPT_DIR}/preseed10.cfg .
@@ -62,10 +67,12 @@ cp -fp ${SCRIPT_DIR}/preseed10.cfg .
 cp -frp ${SCRIPT_DIR}/script .
 
 mkdir -p files
-sh ${SCRIPT_DIR}/login.sh ${DEBIAN9_VERSION} ${MA2_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login9.svg
-sh ${SCRIPT_DIR}/login.sh ${DEBIAN10_VERSION} ${MA3_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login10.svg
+sh ${SCRIPT_DIR}/login-ma2.sh ${DEBIAN9_VERSION} ${MA2_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ma2.svg
+sh ${SCRIPT_DIR}/login-ma3.sh ${DEBIAN10_VERSION} ${MA3_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ma3.svg
+sh ${SCRIPT_DIR}/login-ce3.sh ${DEBIAN10_VERSION} ${CE3_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ce3.svg
 cp ${SCRIPT_DIR}/files/*.menu ${SCRIPT_DIR}/files/*.directory files/
 
-sed -e "s|@MA2_VERSION@|${MA2_VERSION}|g" \
-    -e "s|@MA3_VERSION@|${MA3_VERSION}|g" \
-    ${SCRIPT_DIR}/build.sh.in > build.sh
+cp ${SCRIPT_DIR}/build-all.sh .
+sed -e "s|@MA2_VERSION@|${MA2_VERSION}|g" ${SCRIPT_DIR}/build-ma2.sh.in > build-ma2.sh
+sed -e "s|@MA3_VERSION@|${MA3_VERSION}|g" ${SCRIPT_DIR}/build-ma3.sh.in > build-ma3.sh
+sed -e "s|@CE3_VERSION@|${CE3_VERSION}|g" ${SCRIPT_DIR}/build-ce3.sh.in > build-ce3.sh
