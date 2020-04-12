@@ -23,8 +23,8 @@ echo "==> Removing visual tools"
 apt-get -y purge lxmusic mpv pulseaudio libpulse0 youtube-dl
 echo "==> Removing clipit xscreensaver gksu deluge"
 apt-get -y purge clipit xscreensaver gksu deluge
-echo "==> Removing dictionaries"
-apt-get -y purge dictionaries-common
+# echo "==> Removing dictionaries"
+# apt-get -y purge dictionaries-common
 
 # Clean up the apt cache
 echo "==> Cleaning up the apt cache"

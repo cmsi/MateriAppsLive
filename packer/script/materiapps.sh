@@ -46,3 +46,4 @@ fi
 if [ -d /etc/skel/.config ]; then
   cp -frp /etc/skel/.config $HOME
 fi
+chown -R user.user $HOME/Desktop $HOME/.config

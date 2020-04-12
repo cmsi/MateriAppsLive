@@ -72,6 +72,7 @@
                 "script/python.sh",
                 "script/xterm.sh",
                 "script/login-ce3.sh",
+                "script/ceenv.sh",
                 "script/98_minimize.sh",
                 "script/99_cleanup.sh"
             ],
