@@ -1,27 +1,13 @@
 #!/bin/bash -eux
 
-echo "==> Replace MateriApps LIVE! gpg key"
-apt-get -y install materiapps-keyring
-rm -f /etc/apt/trusted.gpg
-
-echo "==> Install Editors"
-apt-get -y install emacs vim
-
 echo "==> Install Graphics Tools"
-apt-get -y install dx evince gnuplot-x11 grace ovito paraview pymol rasmol vesta vmd-setup xcrysden
-# apt-get -y install gifsicle graphviz imagemagick python-pygraphviz
-
-echo "==> Install Network Tools"
-apt-get -y install curl lftp wget
+apt-get -y install --no-install-recommends dx grace ovito paraview pymol rasmol vesta vmd-setup xcrysden
 
 echo "==> Install Development Tools"
-apt-get -y install cmake git h5utils liblapack-dev libopenblas-dev mpi-default-dev numactl
-
-echo "==> Install Other Tools"
-apt-get -y install enscript time tree zip bc
+apt-get -y install --no-install-recommends h5utils
 
 echo "==> Install MateriApps Applications/Tools"
-apt-get -y install materiappslive \
+apt-get -y install --no-install-recommends materiappslive \
 	bsa \
 	c-tools \
 	fermisurfer \
@@ -32,6 +18,7 @@ apt-get -y install materiappslive \
 	akaikkr \
         alamode \
         casino-setup \
+        conquest \
 	quantum-espresso quantum-espresso-data \
 	openmx openmx-data openmx-example \
 	respack \

@@ -1,10 +1,11 @@
 #!/bin/bash -eux
 
 echo "==> Install Python modules"
-apt-get -y install python-pip python3-pip
-apt-get -y install python-virtualenv python3-venv
-apt-get -y install python-notebook jupyter-notebook
-apt-get -y install python-numpy python-scipy python-matplotlib python3-numpy python3-scipy python3-matplotlib
+apt-get -y install --no-install-recommends python-pip python3-pip \
+	python-virtualenv python3-venv \
+	python-notebook jupyter-notebook \
+	python-numpy python-scipy python-matplotlib python3-numpy python3-scipy python3-matplotlib \
+	python-sympy python3-sympy
 
 # jupyter
 cat << EOF > /usr/local/bin/jupyter
@@ -15,7 +16,9 @@ if __name__ == '__main__':
 EOF
 chmod +x /usr/local/bin/jupyter
 
-# ipython2
+# ipython
+echo "==> Install iPython"
+apt-get -y install --no-install-recommends ipython ipython3
 ln -s /usr/bin/ipython /usr/local/bin/ipython2
 
 # /usr/local/lib/python2

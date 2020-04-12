@@ -2,16 +2,16 @@
     "variables": {
         "ssh_name": "user",
         "ssh_pass": "live",
-        "ma_version": "@MA_VERSION@",
-        "debian_version": "@DEBIAN_VERSION@",
-        "debian_checksum": "@DEBIAN_CHECKSUM@"
+        "ma_version": "@CE3_VERSION@",
+        "debian_version": "@DEBIAN10_VERSION@",
+        "debian_checksum": "@DEBIAN10_CHECKSUM@"
     },
 
     "builders": [{
         "type": "virtualbox-iso",
         "format": "ova",
         "guest_os_type": "Debian_64",
-        "vm_name": "MateriAppsLive-{{user `ma_version`}}-amd64",
+        "vm_name": "ceenv-{{user `ma_version`}}-amd64",
 
         "vboxmanage": [
             ["setextradata", "global", "GUI/SuppressMessages", "all"],
@@ -42,8 +42,8 @@
             "install ",
             "auto=true ",
             "netcfg/get_domain=local ",
-            "netcfg/get_hostname=malive ",
-            "url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+            "netcfg/get_hostname=ceenv ",
+            "url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-ce3.cfg ",
             "<enter><wait>"
         ]
     }],
@@ -60,14 +60,18 @@
                 "script/00_remove-cdrom-sources.sh",
                 "script/01_update.sh",
                 "script/02_virtualbox.sh",
+                "script/key.sh",
                 "script/ldconfig.sh",
                 "script/bashrc.sh",
+		"script/development.sh",
                 "script/firefox.sh",
                 "script/grub.sh",
-                "script/login.sh",
-                "script/materiapps.sh",
+                "script/keyboard.sh",
                 "script/menu.sh",
+                "script/openssl.sh",
                 "script/python.sh",
+                "script/xterm.sh",
+                "script/login-ce3.sh",
                 "script/98_minimize.sh",
                 "script/99_cleanup.sh"
             ],

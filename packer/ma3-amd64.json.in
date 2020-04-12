@@ -2,25 +2,26 @@
     "variables": {
         "ssh_name": "user",
         "ssh_pass": "live",
-        "ma_version": "@MA_VERSION@",
-        "debian_version": "@DEBIAN_VERSION@",
-        "debian_checksum": "@DEBIAN_CHECKSUM@"
+        "ma_version": "@MA3_VERSION@",
+        "debian_version": "@DEBIAN10_VERSION@",
+        "debian_checksum": "@DEBIAN10_CHECKSUM@"
     },
 
     "builders": [{
         "type": "virtualbox-iso",
         "format": "ova",
         "guest_os_type": "Debian_64",
-	"vm_name": "MateriAppsLive-{{user `ma_version`}}-amd64",
+        "vm_name": "MateriAppsLive-{{user `ma_version`}}-amd64",
 
         "vboxmanage": [
             ["setextradata", "global", "GUI/SuppressMessages", "all"],
             ["modifyvm", "{{.Name}}", "--nictype1", "virtio"],
             ["modifyvm", "{{.Name}}", "--vram", "32"],
-            ["modifyvm", "{{.Name}}", "--clipboard", "bidirectional"],
+            ["modifyvm", "{{.Name}}", "--clipboard-mode", "bidirectional"],
             ["modifyvm", "{{.Name}}", "--usb", "on"],
+            ["modifyvm", "{{.Name}}", "--graphicscontroller", "vmsvga"],
             ["modifyvm", "{{.Name}}", "--accelerate3d", "off"],
-            ["modifyvm", "{{.Name}}", "--memory", "1000"],
+            ["modifyvm", "{{.Name}}", "--memory", "2000"],
             ["storageattach", "{{.Name}}", "--storagectl", "IDE Controller", "--port", "1", "--device", "0", "--type", "dvddrive", "--medium", "emptydrive"]
         ],
 
@@ -42,37 +43,40 @@
             "auto=true ",
             "netcfg/get_domain=local ",
             "netcfg/get_hostname=malive ",
-            "url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+            "url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-ma3.cfg ",
             "<enter><wait>"
         ]
     }],
 
     "provisioners": [
-	{
+        {
             "type": "file",
             "source": "files",
             "destination": "/tmp"
-	},
-	{
-	    "execute_command": "echo {{user `ssh_pass`}} | {{.Vars}} sudo -E -S bash '{{.Path}}'",
-	    "scripts": [
-        	"script/00_remove-cdrom-sources.sh",
-        	"script/01_update.sh",
+        },
+        {
+            "execute_command": "echo {{user `ssh_pass`}} | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+            "scripts": [
+                "script/00_remove-cdrom-sources.sh",
+                "script/01_update.sh",
                 "script/02_virtualbox.sh",
-        	"script/ldconfig.sh",
-        	"script/bashrc.sh",
-        	"script/firefox.sh",
-        	"script/grub.sh",
-        	"script/keyboard.sh",
-        	"script/login.sh",
-        	"script/materiapps.sh",
-        	"script/menu.sh",
-        	"script/python.sh",
-        	"script/xterm.sh",
-        	"script/98_minimize.sh",
-        	"script/99_cleanup.sh"
-	    ],
-	    "type": "shell"
-	}
+                "script/key.sh",
+                "script/ldconfig.sh",
+                "script/bashrc.sh",
+		"script/development.sh",
+                "script/firefox.sh",
+                "script/grub.sh",
+                "script/keyboard.sh",
+                "script/menu.sh",
+                "script/openssl.sh",
+                "script/python.sh",
+                "script/xterm.sh",
+                "script/login-ma3.sh",
+                "script/materiapps.sh",
+                "script/98_minimize.sh",
+                "script/99_cleanup.sh"
+            ],
+            "type": "shell"
+        }
     ]
 }
