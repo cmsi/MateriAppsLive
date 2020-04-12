@@ -54,6 +54,12 @@
             "source": "files",
             "destination": "/tmp"
         },
+	{
+	    "type": "shell-local",
+            "inline": ["echo VBoxManage setextradata MateriAppsLive-@MA2_VERSION@-amd64 GUI/ScaleFactor 2.0",
+                       "VBoxManage setextradata MateriAppsLive-@MA2_VERSION@-amd64 GUI/ScaleFactor 2.0"
+		      ]
+	},
         {
             "execute_command": "echo {{user `ssh_pass`}} | {{.Vars}} sudo -E -S bash '{{.Path}}'",
             "scripts": [

@@ -54,6 +54,12 @@
             "source": "files",
             "destination": "/tmp"
         },
+	{
+	    "type": "shell-local",
+            "inline": ["echo VBoxManage setextradata ceenv-@CE3_VERSION@-amd64 GUI/ScaleFactor 2.0",
+                       "VBoxManage setextradata ceenv-@CE3_VERSION@-amd64 GUI/ScaleFactor 2.0"
+		      ]
+	},
         {
             "execute_command": "echo {{user `ssh_pass`}} | {{.Vars}} sudo -E -S bash '{{.Path}}'",
             "scripts": [
