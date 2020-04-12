@@ -33,7 +33,7 @@ for arch in $ARCHITECTURES; do
 	    ${SCRIPT_DIR}/ma2-${arch}.json.in > ma2-${arch}.json
     fi
 done
-cp -fp ${SCRIPT_DIR}/preseed9.cfg .
+cp -fp ${SCRIPT_DIR}/preseed-ma2.cfg .
 
 echo "DEBIAN10_VERSION=$DEBIAN10_VERSION"
 echo "MA3_VERSION=$MA3_VERSION"
@@ -62,7 +62,8 @@ for arch in $ARCHITECTURES; do
 	    ${SCRIPT_DIR}/ce3-${arch}.json.in > ce3-${arch}.json
     fi
 done
-cp -fp ${SCRIPT_DIR}/preseed10.cfg .
+cp -fp ${SCRIPT_DIR}/preseed-ma3.cfg .
+cp -fp ${SCRIPT_DIR}/preseed-ce3.cfg .
 
 cp -frp ${SCRIPT_DIR}/script .
 
