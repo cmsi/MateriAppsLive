@@ -1,8 +1,8 @@
-MateriApps LIVE! Release Files
-==============================
+MateriApps LIVE! Release Note
+=============================
 
 MateriApps LIVE! Release 3.0 (2020/04/xx)
-==========================================
+=========================================
 
   - Updated base Debian distribution to Debian 10 (Buster)
   - Increased default memory size to 2GB
@@ -15,7 +15,7 @@ MateriApps LIVE! Release 3.0 (2020/04/xx)
      * python-sympy, python3-sympy
 
 MateriApps LIVE! Release 2.6 (2020/04/xx)
-==========================================
+=========================================
 
   - Updated VirtualBox version to 6.1
   - Stoped distribution of 32bit version of MateriApps LIVE!
