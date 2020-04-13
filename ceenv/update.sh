@@ -1,8 +1,13 @@
 #!/bin/sh
 
-SCRIPT_DIR=$(dirname $0)
+if [ $(lsb_release -s -i) = 'Debian' -o $(lsb_release -s -i) = 'Ubuntu' ]; then :; else
+  exit 127
+fi
+
+SCRIPTDIR=$(cd $(dirname $0) && pwd)
+BASEDIR=$(cd $SCRIPTDIR/.. && pwd)
 REPOSITORY="https://github.com/cmsi/MateriAppsLive.wiki.git"
-SRCDIR="MateriAppsLive.wiki"
+WIKIDIR="$BASEDIR/MateriAppsLive.wiki"
 
 sudo apt-get -y install ruby-dev rubygems
 sudo gem install github-markdown
@@ -22,13 +27,13 @@ fi
 
 CSS="https://gist.githubusercontent.com/andyferra/2554919/raw/2e66cabdafe1c9a7f354aa2ebf5bc38265e638e5/github.css"
 
-cd $SCRIPT_DIR
-rm -rf $SRCDIR
-git clone $REPOSITORY $SRCDIR
+if test -d $WIKIDIR; then
+  (cd $WIKIDIR && git pull)
+else
+  (cd $BASEDIR && git clone $REPOSITORY)
+fi
 
-wget -O github.css "$CSS"
-
-cat << EOF > README.html
+cat << EOF > $SCRIPTDIR/README.html
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -37,25 +42,25 @@ cat << EOF > README.html
 <!--
 EOF
 
-wget -O - "$CSS" >> README.html
+wget -O - "$CSS" >> $SCRIPTDIR/README.html
 
-cat << EOF >> README.html
+cat << EOF >> $SCRIPTDIR/README.html
 -->
   </style>
 </head>
 <body>
 EOF
 
-$GFM --readme $SRCDIR/ceenv.md >> README.html
+$GFM --readme $WIKIDIR/ceenv.md >> $SCRIPTDIR/README.html
 
-cat << EOF >> README.html
+cat << EOF >> $SCRIPTDIR/README.html
 </body>
 </html>
 EOF
 
 ## en
 
-cat << EOF > README-en.html
+cat << EOF > $SCRIPTDIR/README-en.html
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -64,23 +69,23 @@ cat << EOF > README-en.html
 <!--
 EOF
 
-wget -O - "$CSS" >> README-en.html
+wget -O - "$CSS" >> $SCRIPTDIR/README-en.html
 
-cat << EOF >> README-en.html
+cat << EOF >> $SCRIPTDIR/README-en.html
 -->
   </style>
 </head>
 <body>
 EOF
 
-$GFM --readme $SRCDIR/ceenv-en.md >> README-en.html
+$GFM --readme $WIKIDIR/ceenv-en.md >> $SCRIPTDIR/README-en.html
 
-cat << EOF >> README-en.html
+cat << EOF >> $SCRIPTDIR/README-en.html
 </body>
 </html>
 EOF
 
-FILES="README.html README-en.html"
+FILES="$SCRIPTDIR/README.html $SCRIPTDIR/README-en.html"
 for file in $FILES; do
   sed -i 's%<a href="ceenv-en">%<a href="README-en.html">%' $file
   sed -i 's%<a href="ceenv">%<a href="README.html">%' $file
