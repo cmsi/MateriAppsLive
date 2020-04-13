@@ -20,7 +20,7 @@ MateriApps LIVE! Release 2.6 (2020/04/xx)
   - Updated VirtualBox version to 6.1
   - Stoped distribution of 32bit version of MateriApps LIVE!
   - Debian packages for MateriApps Applications are still provided also for 32bit architecture
-  - Added missing pip2, pip3
+  - Added missing packages: pip2, pip3, evince
   - Newly included MateriApps packages
      * conquest (1.0.2)
   - Updated MateriApps packages
