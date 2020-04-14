@@ -1,0 +1,16 @@
+#!/bin/bash -eux
+
+MA3_VERSION="@MA3_VERSION@"
+ARCHITECTURES="amd64"
+for arch in $ARCHITECTURES; do
+    if [ -f ma3-${arch}.json ]; then
+	rm -rf output-virtualbox-iso
+	packer build ma3-${arch}.json 2>&1 | tee build-ma3-${arch}.log
+	if [ -f output-virtualbox-iso/MateriAppsLive-${MA3_VERSION}-${arch}.ova ]; then
+	     mv -f output-virtualbox-iso/MateriAppsLive-${MA3_VERSION}-${arch}.ova .
+	else
+	    echo "Error: build failed."
+	    exit 127
+	fi
+    fi
+done

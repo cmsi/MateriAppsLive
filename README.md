@@ -1,11 +1,31 @@
-MateriApps LIVE! Release Files
-==============================
+MateriApps LIVE! Release Note
+=============================
 
-Which archive should be used?
+MateriApps LIVE! Release 3.0 (2020/04/14)
+=========================================
 
-  - [default] MateriAppsLive-*-amd64.ova: Open Virtualization Format for VirtualBox (64bit)
-  - MateriAppsLive-*-i386.ova: Open Virtualization Format for VirtualBox (32bit)
+  - Updated base Debian distribution to Debian 10 (Buster)
+  - Increased default memory size to 2GB
+  - Debian packages for MateriApps Applications are still provided also for Debian 8 (Jessie) and 9 (Stretch)
+  - Updated MateriApps packages
+     * xcrysden (1.6.2)
+  - Updated tools/libraries
+     * ovito (2.9.0)
 
+MateriApps LIVE! Release 2.6 (2020/04/14)
+=========================================
+
+  - Updated VirtualBox version to 6.1
+  - Stoped distribution of 32bit version of MateriApps LIVE!
+  - Debian packages for MateriApps Applications are still provided also for 32bit architecture
+  - Added missing packages: pip2, pip3, evince
+  - Newly included MateriApps packages
+     * conquest (1.0.2)
+  - Updated MateriApps packages
+     * vesta (3.4.8)
+  - Newly included tools/libraries
+     * python-sympy, python3-sympy, xsel
+  
 MateriApps LIVE! Release 2.5 (2020/02/18)
 ==========================================
 

@@ -37,7 +37,7 @@ cat << EOF > $SCRIPTDIR/README.html
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>MateriApps LIVE!</title>
+  <title>ceenv: Computer Experiment Environment</title>
   <style type="text/css">
 <!--
 EOF
@@ -51,7 +51,7 @@ cat << EOF >> $SCRIPTDIR/README.html
 <body>
 EOF
 
-$GFM --readme $WIKIDIR/MateriAppsLive-ova.md >> $SCRIPTDIR/README.html
+$GFM --readme $WIKIDIR/ceenv.md >> $SCRIPTDIR/README.html
 
 cat << EOF >> $SCRIPTDIR/README.html
 </body>
@@ -64,7 +64,7 @@ cat << EOF > $SCRIPTDIR/README-en.html
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>MateriApps LIVE!</title>
+  <title>ceenv: Computer Experiment Environment</title>
   <style type="text/css">
 <!--
 EOF
@@ -78,7 +78,7 @@ cat << EOF >> $SCRIPTDIR/README-en.html
 <body>
 EOF
 
-$GFM --readme $WIKIDIR/MateriAppsLive-ova-en.md >> $SCRIPTDIR/README-en.html
+$GFM --readme $WIKIDIR/ceenv-en.md >> $SCRIPTDIR/README-en.html
 
 cat << EOF >> $SCRIPTDIR/README-en.html
 </body>
@@ -87,6 +87,6 @@ EOF
 
 FILES="$SCRIPTDIR/README.html $SCRIPTDIR/README-en.html"
 for file in $FILES; do
-  sed -i 's%<a href="MateriAppsLive-ova">%<a href="README.html">%' $file
-  sed -i 's%<a href="MateriAppsLive-ova-en">%<a href="README-en.html">%' $file
+  sed -i 's%<a href="ceenv-en">%<a href="README-en.html">%' $file
+  sed -i 's%<a href="ceenv">%<a href="README.html">%' $file
 done

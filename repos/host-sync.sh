@@ -21,6 +21,8 @@ $RSYNC $(dirname $0)/sources frs.sourceforge.net:/home/frs/project/materiappsliv
 $RSYNC $(dirname $0)/../README.md frs.sourceforge.net:/home/frs/project/materiappslive
 $RSYNC $(dirname $0)/../keys frs.sourceforge.net:/home/frs/project/materiappslive/Debian/
 
+$RSYNC $(dirname $0)/../README-ceenv.md frs.sourceforge.net:/home/frs/project/ceenv
+
 for d in $DISTS; do
   $RSYNC $DEB_HOME/apt/$d/dists $DEB_HOME/apt/$d/pool zetta:/var/www/html/Debian/$d
 done
