@@ -1,7 +1,7 @@
 MateriApps LIVE! Release Note
 =============================
 
-MateriApps LIVE! Release 3.0 (2020/04/xx)
+MateriApps LIVE! Release 3.0 (2020/04/14)
 =========================================
 
   - Updated base Debian distribution to Debian 10 (Buster)
@@ -11,10 +11,8 @@ MateriApps LIVE! Release 3.0 (2020/04/xx)
      * xcrysden (1.6.2)
   - Updated tools/libraries
      * ovito (2.9.0)
-  - Newly included tools/libraries
-     * python-sympy, python3-sympy
 
-MateriApps LIVE! Release 2.6 (2020/04/xx)
+MateriApps LIVE! Release 2.6 (2020/04/14)
 =========================================
 
   - Updated VirtualBox version to 6.1
@@ -25,6 +23,8 @@ MateriApps LIVE! Release 2.6 (2020/04/xx)
      * conquest (1.0.2)
   - Updated MateriApps packages
      * vesta (3.4.8)
+  - Newly included tools/libraries
+     * python-sympy, python3-sympy, xsel
   
 MateriApps LIVE! Release 2.5 (2020/02/18)
 ==========================================
