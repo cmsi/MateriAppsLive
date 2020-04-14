@@ -14,4 +14,4 @@ echo "==> Install Development Tools"
 apt-get -y install --no-install-recommends gfortran cmake git liblapack-dev libopenblas-dev mpi-default-dev numactl
 
 echo "==> Install Other Tools"
-apt-get -y install --no-install-recommends enscript time tree zip bc
+apt-get -y install --no-install-recommends enscript time tree zip bc xsel
