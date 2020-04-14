@@ -11,7 +11,7 @@ echo "==> Install Network Tools"
 apt-get -y install --no-install-recommends curl lftp wget
 
 echo "==> Install Development Tools"
-apt-get -y install --no-install-recommends cmake git liblapack-dev libopenblas-dev mpi-default-dev numactl
+apt-get -y install --no-install-recommends gfortran cmake git liblapack-dev libopenblas-dev mpi-default-dev numactl
 
 echo "==> Install Other Tools"
-apt-get -y install --no-install-recommends enscript time tree zip bc
+apt-get -y install --no-install-recommends enscript time tree zip bc xsel

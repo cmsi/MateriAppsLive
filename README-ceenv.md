@@ -1,8 +1,8 @@
-ccenv Release Files
-==============================
+ccenv (Computer Experiment Envirionment) Release Note
+=====================================================
 
-ceenv Release 3.0 (2020/04/xx)
-==========================================
+ceenv Release 3.0 (2020/04/14)
+==============================
 
   - Initial relase of ceenv
 
