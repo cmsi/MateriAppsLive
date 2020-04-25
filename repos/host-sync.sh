@@ -2,7 +2,7 @@
 DEB_HOME=$HOME/vagrant/data
 RSYNC="rsync -avzP --delete -e ssh"
 
-DISTS="buster stretch jessie wheezy bionic xenial"
+DISTS="buster stretch jessie wheezy focal bionic xenial"
 
 set -x
 for d in $DISTS; do
