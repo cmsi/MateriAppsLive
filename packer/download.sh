@@ -19,7 +19,7 @@ for arch in ${ARCHITECTURES}; do
 done
 
 echo "DEBIAN10_VERSION=$DEBIAN10_VERSION"
-ARCHITECTURES="amd64"
+ARCHITECTURES="amd64 i386"
 for arch in ${ARCHITECTURES}; do
   ISO="debian-${DEBIAN10_VERSION}-${arch}-DVD-1.iso"
   URL="http://cdimage.debian.org/cdimage/release/${DEBIAN10_VERSION}/${arch}/iso-dvd/${ISO}"
