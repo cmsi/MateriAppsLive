@@ -36,8 +36,31 @@ done
 cp -fp ${SCRIPT_DIR}/preseed-ma2.cfg .
 
 echo "DEBIAN10_VERSION=$DEBIAN10_VERSION"
-echo "MA3_VERSION=$MA3_VERSION"
 echo "CE3_VERSION=$CE3_VERSION"
+ARCHITECTURES="amd64 i386"
+for arch in $ARCHITECTURES; do
+    iso="debian-${DEBIAN10_VERSION}-${arch}-DVD-1.iso"
+    md5="debian-${DEBIAN10_VERSION}-${arch}-DVD-1.md5"
+    if [ -f "$iso" ]; then
+	if [ -f "$md5" ]; then :; else
+            if [ $(type md5 > /dev/null 2>&1; echo $?) -eq 0 ]; then
+		md5 "$iso" | awk '{print $4}' > "$md5"
+            else
+		md5sum "$iso" | awk '{print $1}' > "$md5"
+            fi
+	fi
+	DEBIAN10_CHECKSUM=$(cat "$md5")
+	echo "$iso: $DEBIAN10_CHECKSUM"
+	sed -e "s|@CE3_VERSION@|${CE3_VERSION}|g" \
+	    -e "s|@DEBIAN10_VERSION@|${DEBIAN10_VERSION}|g" \
+	    -e "s|@DEBIAN10_CHECKSUM@|${DEBIAN10_CHECKSUM}|g" \
+	    ${SCRIPT_DIR}/ce3-${arch}.json.in > ce3-${arch}.json
+    fi
+done
+cp -fp ${SCRIPT_DIR}/preseed-ce3.cfg .
+
+echo "DEBIAN10_VERSION=$DEBIAN10_VERSION"
+echo "MA3_VERSION=$MA3_VERSION"
 ARCHITECTURES="amd64"
 for arch in $ARCHITECTURES; do
     iso="debian-${DEBIAN10_VERSION}-${arch}-DVD-1.iso"
@@ -56,14 +79,9 @@ for arch in $ARCHITECTURES; do
 	    -e "s|@DEBIAN10_VERSION@|${DEBIAN10_VERSION}|g" \
 	    -e "s|@DEBIAN10_CHECKSUM@|${DEBIAN10_CHECKSUM}|g" \
 	    ${SCRIPT_DIR}/ma3-${arch}.json.in > ma3-${arch}.json
-	sed -e "s|@CE3_VERSION@|${CE3_VERSION}|g" \
-	    -e "s|@DEBIAN10_VERSION@|${DEBIAN10_VERSION}|g" \
-	    -e "s|@DEBIAN10_CHECKSUM@|${DEBIAN10_CHECKSUM}|g" \
-	    ${SCRIPT_DIR}/ce3-${arch}.json.in > ce3-${arch}.json
     fi
 done
 cp -fp ${SCRIPT_DIR}/preseed-ma3.cfg .
-cp -fp ${SCRIPT_DIR}/preseed-ce3.cfg .
 
 cp -frp ${SCRIPT_DIR}/script .
 
