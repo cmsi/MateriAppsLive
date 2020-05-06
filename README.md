@@ -1,6 +1,22 @@
 MateriApps LIVE! Release Note
 =============================
 
+MateriApps LIVE! Release 3.2 (2020/xx/xx)
+===============================================
+
+  - Stoped distribution of 32bit version of MateriApps LIVE!
+  - Debian packages for MateriApps Applications are still provided also for 32bit architecture
+
+MateriApps LIVE! Release 2.7 & 3.1 (2020/xx/xx)
+===============================================
+
+  - Started support for Ubuntu 20 (Focal)
+  - Newly included MateriApps packages
+     * cif2cell (1.2.10)
+     * wannier90 (3.1.0)
+  - Newly included tools/libraries
+     * python-pycifrw (3.3)
+
 MateriApps LIVE! Release 3.0 (2020/04/14)
 =========================================
 
@@ -15,9 +31,7 @@ MateriApps LIVE! Release 3.0 (2020/04/14)
 MateriApps LIVE! Release 2.6 (2020/04/14)
 =========================================
 
-  - Updated VirtualBox version to 6.1
-  - Stoped distribution of 32bit version of MateriApps LIVE!
-  - Debian packages for MateriApps Applications are still provided also for 32bit architecture
+  - Updated VirtualBox version to 6.1 (for 64bit version)
   - Added missing packages: pip2, pip3, evince
   - Newly included MateriApps packages
      * conquest (1.0.2)
