@@ -1,8 +1,9 @@
 #!/bin/bash -eux
 
+VB_VERSION=$(VBoxManage -V | cut -d. -f1)
 MA2_VERSION="@MA2_VERSION@"
 if [ "$VB_VERSION" = "5" ]; then
-    ARCHITECTURES=
+    ARCHITECTURES="i386"
 else
     ARCHITECTURES="amd64"
 fi

@@ -13,7 +13,7 @@ echo "PACKER_VERSION=$PACKER_VERSION"
 
 echo "DEBIAN9_VERSION=$DEBIAN9_VERSION"
 echo "MA2_VERSION=$MA2_VERSION"
-ARCHITECTURES="amd64"
+ARCHITECTURES="amd64 i386"
 for arch in $ARCHITECTURES; do
     iso="debian-${DEBIAN9_VERSION}-${arch}-DVD-1.iso"
     md5="debian-${DEBIAN9_VERSION}-${arch}-DVD-1.md5"
@@ -61,7 +61,7 @@ cp -fp ${SCRIPT_DIR}/preseed-ce3.cfg .
 
 echo "DEBIAN10_VERSION=$DEBIAN10_VERSION"
 echo "MA3_VERSION=$MA3_VERSION"
-ARCHITECTURES="amd64"
+ARCHITECTURES="amd64 i386"
 for arch in $ARCHITECTURES; do
     iso="debian-${DEBIAN10_VERSION}-${arch}-DVD-1.iso"
     md5="debian-${DEBIAN10_VERSION}-${arch}-DVD-1.md5"
