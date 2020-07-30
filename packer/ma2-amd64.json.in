@@ -26,8 +26,7 @@
         ],
 
         "iso_url": "debian-{{user `debian_version`}}-amd64-DVD-1.iso",
-        "iso_checksum": "{{user `debian_checksum`}}",
-        "iso_checksum_type": "md5",
+        "iso_checksum": "md5:{{user `debian_checksum`}}",
 
         "http_directory" : ".",
 
@@ -78,6 +77,8 @@
                 "script/xterm.sh",
                 "script/login-ma2.sh",
                 "script/materiapps.sh",
+                "script/96_check.sh",
+                "script/97_check-ma.sh",
                 "script/98_minimize.sh",
                 "script/99_cleanup.sh"
             ],
