@@ -1,7 +1,12 @@
 #!/bin/bash -eux
 
+VB_VERSION=$(VBoxManage -V | cut -d. -f1)
 MA2_VERSION="@MA2_VERSION@"
-ARCHITECTURES="amd64"
+if [ "$VB_VERSION" = "5" ]; then
+    ARCHITECTURES="i386"
+else
+    ARCHITECTURES="amd64"
+fi
 for arch in $ARCHITECTURES; do
     if [ -f ma2-${arch}.json ]; then
 	rm -rf output-virtualbox-iso

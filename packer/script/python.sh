@@ -5,7 +5,8 @@ apt-get -y install --no-install-recommends python-pip python3-pip \
 	python-virtualenv python3-venv \
 	python-notebook jupyter-notebook \
 	python-numpy python-scipy python-matplotlib python3-numpy python3-scipy python3-matplotlib \
-	python-sympy python3-sympy
+	python-sympy python3-sympy \
+	python-dev python3-dev
 
 # jupyter
 cat << EOF > /usr/local/bin/jupyter

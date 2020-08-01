@@ -2,7 +2,7 @@
     "variables": {
         "ssh_name": "user",
         "ssh_pass": "live",
-        "ma_version": "@CE3_VERSION@",
+        "ma_version": "@MA3_VERSION@",
         "debian_version": "@DEBIAN10_VERSION@",
         "debian_checksum": "@DEBIAN10_CHECKSUM@"
     },
@@ -10,14 +10,14 @@
     "builders": [{
         "type": "virtualbox-iso",
         "format": "ova",
-        "guest_os_type": "Debian_64",
-        "vm_name": "ceenv-{{user `ma_version`}}-amd64",
+        "guest_os_type": "Debian",
+        "vm_name": "MateriAppsLive-{{user `ma_version`}}-i386",
 
         "vboxmanage": [
             ["setextradata", "global", "GUI/SuppressMessages", "all"],
             ["modifyvm", "{{.Name}}", "--nictype1", "virtio"],
             ["modifyvm", "{{.Name}}", "--vram", "32"],
-            ["modifyvm", "{{.Name}}", "--clipboard-mode", "bidirectional"],
+            ["modifyvm", "{{.Name}}", "--clipboard", "bidirectional"],
             ["modifyvm", "{{.Name}}", "--usb", "on"],
             ["modifyvm", "{{.Name}}", "--graphicscontroller", "vmsvga"],
             ["modifyvm", "{{.Name}}", "--accelerate3d", "off"],
@@ -25,7 +25,7 @@
             ["storageattach", "{{.Name}}", "--storagectl", "IDE Controller", "--port", "1", "--device", "0", "--type", "dvddrive", "--medium", "emptydrive"]
         ],
 
-        "iso_url": "debian-{{user `debian_version`}}-amd64-DVD-1.iso",
+        "iso_url": "debian-{{user `debian_version`}}-i386-DVD-1.iso",
         "iso_checksum": "md5:{{user `debian_checksum`}}",
 
         "http_directory" : ".",
@@ -41,8 +41,8 @@
             "install ",
             "auto=true ",
             "netcfg/get_domain=local ",
-            "netcfg/get_hostname=ceenv ",
-            "url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-ce3.cfg ",
+            "netcfg/get_hostname=malive ",
+            "url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-ma3.cfg ",
             "<enter><wait>"
         ]
     }],
@@ -53,12 +53,6 @@
             "source": "files",
             "destination": "/tmp"
         },
-	{
-	    "type": "shell-local",
-            "inline": ["echo VBoxManage setextradata ceenv-@CE3_VERSION@-amd64 GUI/ScaleFactor 2.0",
-                       "VBoxManage setextradata ceenv-@CE3_VERSION@-amd64 GUI/ScaleFactor 2.0"
-		      ]
-	},
         {
             "execute_command": "echo {{user `ssh_pass`}} | {{.Vars}} sudo -E -S bash '{{.Path}}'",
             "scripts": [
@@ -76,9 +70,10 @@
                 "script/openssl.sh",
                 "script/python.sh",
                 "script/xterm.sh",
-                "script/login-ce3.sh",
-                "script/ceenv.sh",
+                "script/login-ma3.sh",
+                "script/materiapps.sh",
                 "script/96_check.sh",
+                "script/97_check-ma.sh",
                 "script/98_minimize.sh",
                 "script/99_cleanup.sh"
             ],
