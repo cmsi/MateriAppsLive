@@ -1,6 +1,13 @@
 ccenv (Computer Experiment Envirionment) Release Note
 =====================================================
 
+ceenv Release 3.1 (2020/08/01)
+==============================
+
+  - Final distribution of 32bit version of ceenv
+  - Newly included tools/libraries
+     * python-dev, python3-dev
+
 ceenv Release 3.0 (2020/04/14)
 ==============================
 
