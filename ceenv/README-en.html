@@ -294,13 +294,10 @@ pre {
 <ul>
 <li><p>What is ceenv?</p>
 
-<p><a href="https://github.com/cmsi/MateriAppsLive/wiki/ceenv-en">ceenv (Computer Experiment Environment)</a> is a virtual machine that works on VirtualBox. It is being developed and distributed as a training environment of UNIX (UNIX commands, network, Emacs, Gnuplot), programming language (C, C++, Fortran, Python 2/3, MPI, OpenMP, BLAS/LAPACK), etc. The whole environment is included in one VirtualBox virtual disk image, and users can use it immediately by simply importing the image into VirtualBox.</p>
-
-<ul>
+<p><a href="https://github.com/cmsi/MateriAppsLive/wiki/ceenv-en">ceenv (Computer Experiment Environment)</a> is a virtual machine that works on VirtualBox. It is being developed and distributed as a training environment of UNIX (UNIX commands, network, Emacs, Gnuplot), programming language (C, C++, Fortran, Python 2/3, MPI, OpenMP, BLAS/LAPACK), etc. The whole environment is included in one VirtualBox virtual disk image, and users can use it immediately by simply importing the image into VirtualBox.</p></li>
 <li><p>What&#39;s <a href="https://www.virtualbox.org">VirtualBox</a>?</p>
 
 <p>VirtualBox is open-source software providing a virtual machine environment. VirtualBox can be installed on Linux、macOS、Windows、Solaris. It supports most popular operating systems on x86/x64 architecture, such as FreeBSD、Linux、OpenBSD、OS/2 Warp、Windows、macOS、Solaris, etc, as guest OS. VirtualBox is distributed under GNU General Public License (GPL) Version2.</p></li>
-</ul></li>
 <li><p>Relation between ceenv and <a href="https://cmsi.github.io/MateriAppsLive/">MateriApps LIVE!</a></p>
 
 <p><a href="https://cmsi.github.io/MateriAppsLive/">MateriApps LIVE!</a> is a VirtualBox virtual machine environment based on ceenv and pre-installed with various computational materials science applications and visualization tools. By simply importing it into VirtualBox, one can immediately start various computational material science simulations, such as first-principles calculations, molecular dynamics, and effective model simulations. All the computational materials science applications included in MateriApps LIVE! have been released as Debian packages, thus one can be easily installed and run on ceenv.</p></li>
@@ -311,7 +308,7 @@ pre {
 <ul>
 <li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox-*-Win.exe</a> (for Windows) or <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox-*-OSX.dmg</a> (for macOS): VirtualBox installer (110-130MB)</li>
 <li><a href="https://sourceforge.net/projects/ceenv/files">ceenv-*-amd64.ova</a>: ceenv virtual disk image (1.5GB)</li>
-<li><a href="https://github.com/cmsi/MateriAppsLive/raw/master/ova/vbconfig.bat">vbconfig.bat</a> (for Windows) or <a href="https://github.com/cmsi/MateriAppsLive/raw/master/ova/vbconfig.command">vbconfig.command</a> (for macOS): Script to hide unnecessary popup menus in VirtualBox (100B)</li>
+<li>If you are using a 32bit version of Windows, download <a href="https://www.virtualbox.org/wiki/Download_Old_Builds_5_2">VirtualBox-5.2.<em>-</em>-Win.exe</a> and <a href="https://sourceforge.net/projects/ceenv/files">ceenv-*-i386.ova</a>.</li>
 </ul>
 
 <h2>How to setup ceenv</h2>
@@ -320,13 +317,6 @@ pre {
 <li>Download filed listed above.</li>
 <li>Start VirtualBox Installer and install VirtualBox software.</li>
 <li>Start VirtualBox by double clicking ceenv-*-amd64.ova Virtual Disk Image. Click &quot;Import&quot; button in VirtualBox import window.</li>
-<li>Disable noisy popup menus in VirtualBox
-
-<ul>
-<li>Windows: double click vbconfig.bat</li>
-<li>maxOS: double click vbconfig.command or execute <code>sh vbconfig.command</code> in the Terminal.</li>
-<li>To enable popups again, choose &quot;Reset All Warnings&quot; from &quot;Help&quot; menu in VirtualBox.</li>
-</ul></li>
 </ol>
 
 <h2>How to start ceenv</h2>
@@ -376,11 +366,12 @@ pre {
 <li>File sharing between host OS and virtual machine
 
 <ul>
+<li>shutdown the virtual machine (ceenv), if it is running</li>
 <li>choose ceenv-* in VirtualBox Manager window, then “Settings”</li>
 <li>open “Shared Folders” tab and click “+” on the right</li>
 <li>click “v” on the right of “Folder Path”, choose “Other…”, and select the folder to which the files have been copied from the USB stick memory</li>
 <li>check “Auto-mount” box and press “OK”.  Then press “OK” again</li>
-<li>the folder specified above can be accessed as /media/sf_… after rebooting  the virtual machine</li>
+<li>the folder specified above can be accessed as /media/sf_... after restarting the virtual machine</li>
 </ul></li>
 <li>Connect a USB stick memory to ceenv
 

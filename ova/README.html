@@ -311,9 +311,8 @@ pre {
 <li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox-*-OSX.dmg</a> : VirtualBoxインストーラ for macOS</li>
 <li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox-*-Win.exe</a> : VirtualBoxインストーラ for Windows</li>
 <li><a href="https://sourceforge.net/projects/materiappslive/files">MateriAppsLive-*-amd64.ova</a> : MateriApps LIVE!仮想ディスクイメージ(64bit版)</li>
-<li><a href="https://github.com/cmsi/MateriAppsLive/blob/master/ova/README.html">README.html</a> : MateriApps LIVE! VirtualBox版について</li>
-<li><a href="https://github.com/cmsi/malive-tutorial/blob/master/setup/setup.pdf">setup.pdf</a> : MateriApps LIVE!の設定</li>
-<li><a href="https://github.com/cmsi/MateriAppsLive/blob/master/ova/vbconfig.bat">vbconfig.bat</a>, <a href="https://github.com/cmsi/MateriAppsLive/blob/master/ova/vbconfig.command">vbconfig.command</a> : VirtualBox で不要なポップアップメニューを非表示にするためのスクリプト</li>
+<li><a href="https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ova">README.html</a> : MateriApps LIVE! VirtualBox版について</li>
+<li><a href="https://github.com/cmsi/malive-tutorial/raw/master/setup/setup.pdf">setup.pdf</a> : MateriApps LIVE!の設定</li>
 <li>MD5SUM : チェックサム</li>
 <li>その他、講習会などで用いるサンプルファイル(*.tar.gz, *.zip, *.isoなど)が含まれています</li>
 </ul>
@@ -326,16 +325,6 @@ pre {
 <p>すべてのファイルをPC(デスクトップ等)にコピーする</p></li>
 <li><p>VirtualBoxインストーラを起動し、VirtualBoxをインストール</p></li>
 <li>MateriAppsLive-*-amd64.ova をダブルクリックして仮想ディスクイメージを開くと、VirtualBoxが立ち上がる。「インポート」をクリック</li>
-<li>VirutalBoxの不要なポップアップメッセージを非表示にする
-
-<ul>
-<li>Windows: USBメモリからコピーした vbconfig.bat をダブルクリック</li>
-<li>macOS: vbconfig.command をダブルクリック 。あるいはターミナルで以下を実行
-<code>
-sh vbconfig.command
-</code></li>
-<li>ポップアップを再度表示するには、VirtualBoxの「ヘルプ」メニューから「Reset All Warnings」</li>
-</ul></li>
 <li>Oracle VM VirtualBoxマネージャー画面で「MateriAppsLive」を選択し、「起動」</li>
 <li>ログイン画面で以下の内容を入力してログイン
 
@@ -357,11 +346,12 @@ sh vbconfig.command
 <li><p>ホストOSと仮想マシン間のファイル共有</p>
 
 <ol>
+<li>仮想マシンが走っている場合には終了する</li>
 <li>VirtualBox マネージャー画面で MateriAppsLive-* を選択し「設定」</li>
 <li>「共有フォルダー」タブを開き、右側の「+」(新規共有フォルダーを追加します)をクリック</li>
 <li>「フォルダーのパス」の右側の「ｖ」マークをクリックし、「その他」を選択。さきほどUSBメモリからコピーしたフォルダーを選択する</li>
 <li>「自動マウント」をチェックし「OK」⇒ さらに「OK」</li>
-<li>仮想マシンを再起動すると、上で選択したフォルダが、/media/sf_... の下に見える</li>
+<li>仮想マシンを起動すると、上で選択したフォルダが、/media/sf_... の下に見える</li>
 </ol></li>
 <li><p>USBメモリを仮想マシンに接続する</p>
 

@@ -311,10 +311,9 @@ pre {
 <li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox-*-OSX.dmg</a> : VirtualBox Installer for macOS</li>
 <li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox-*-Win.exe</a> : VirtualBox Installer for Windows</li>
 <li><a href="https://sourceforge.net/projects/materiappslive/files">MateriAppsLive-*-amd64.ova</a> : MateriApps LIVE! virtual disk image (64bit version)</li>
-<li><a href="https://github.com/cmsi/MateriAppsLive/blob/master/ova/README-en.html">README-en.html</a> : About MateriApps LIVE! VirtualBox Edition</li>
-<li><a href="https://github.com/cmsi/malive-tutorial/blob/master/setup/setup-en.pdf">setup-en.pdf</a> : How to setup MateriApps LIVE!</li>
-<li><a href="https://github.com/cmsi/MateriAppsLive/blob/master/ova/vbconfig.bat">vbconfig.bat</a>, <a href="https://github.com/cmsi/MateriAppsLive/blob/master/ova/vbconfig.command">vbconfig.command</a> : Scripts for disabling noisy popup menus in VirtualBox</li>
-<li>MD5SUM : Checksum</li>
+<li><a href="https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ova-en">README-en.html</a> : About MateriApps LIVE! VirtualBox Edition</li>
+<li><a href="https://github.com/cmsi/malive-tutorial/raw/master/setup/setup-en.pdf">setup-en.pdf</a> : How to setup MateriApps LIVE!</li>
+<li>MD5SUM : Checksums</li>
 <li>In addition, sample files (* .tar.gz, * .zip, * .iso, etc.) used for hands-on sessions are included</li>
 </ul>
 
@@ -326,16 +325,6 @@ pre {
 <p>Copy all the files to your PC (e.g., Desktop).</p></li>
 <li><p>Starts VirtualBox Installer and install VirtualBox software.</p></li>
 <li>Starts VirtualBox by double clicking MateriAppsLive-*-amd64.ova Virtual Disk Image. Click &quot;Import&quot; button in VirtualBox import window.</li>
-<li>Disable noisy popup menus in VirtualBox
-
-<ul>
-<li>Windows: double click vbconfig.bat</li>
-<li>maxOS: double click vbconfig.command or execute the following in the Terminal.
-<code>
-sh vbconfig.command
-</code></li>
-<li>To enable popups again, choose &quot;Reset All Warnings&quot; from &quot;Help&quot; menu in VirtualBox.</li>
-</ul></li>
 <li>Choose &quot;MateriAppsLive&quot; on Oracle VM VirtualBox Manager panel and click &quot;Start&quot; button.</li>
 <li>Login to MateriApps LIVE! by using the following username and password
 
@@ -357,11 +346,12 @@ sh vbconfig.command
 <li><p>Setting: file sharing between host OS and virtual machine</p>
 
 <ol>
+<li>shutdown the virtual machine, if it is running</li>
 <li>choose MateriAppsLive-* in VirtualBox Manager window, and press “Settings”</li>
 <li>open “Shared Folders” tab and click “+” on the right</li>
 <li>click “v” on the right of “Folder Path”, choose “Other…”, and select the folder to which the files have been copied from the USB stick memory</li>
 <li>check “Auto-mount” box and press “OK”.  Then press “OK” again</li>
-<li>the folder specified above can be accessed as /media/sf_... after rebooting  the virtual machine</li>
+<li>the folder specified above can be accessed as /media/sf_... after restarting the virtual machine</li>
 </ol></li>
 <li><p>Connect a USB stick memory to MateriApps LIVE!</p>
 

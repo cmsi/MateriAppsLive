@@ -308,7 +308,7 @@ pre {
 <ul>
 <li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox-*-Win.exe</a> (Windows用) あるいは <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox-*-OSX.dmg</a> (macOS用): VirtualBoxインストーラ (110-130MB)</li>
 <li><a href="https://sourceforge.net/projects/ceenv/files">ceenv-*-amd64.ova</a> : ceenv仮想ディスクイメージ (1.5GB)</li>
-<li><a href="https://github.com/cmsi/MateriAppsLive/blob/master/ova/vbconfig.bat">vbconfig.bat</a> (Windows用) あるいは <a href="https://github.com/cmsi/MateriAppsLive/blob/master/ova/vbconfig.command">vbconfig.command</a> (macOS用): VirtualBox で不要なポップアップメニューを非表示にするためのスクリプト (100B)</li>
+<li>32bit版 Windowsの場合には、<a href="https://www.virtualbox.org/wiki/Download_Old_Builds_5_2">VirtualBox-5.2.*-*-Win.exe</a>と<a href="https://sourceforge.net/projects/ceenv/files">ceenv-*-i386.ova</a>をダウンロードしてください</li>
 </ul>
 
 <h2>セットアップ</h2>
@@ -317,13 +317,6 @@ pre {
 <li>上記のファイルをダウンロード</li>
 <li>VirtualBoxインストーラを起動し、VirtualBoxをインストール</li>
 <li>ceenv-*-amd64.ova をダブルクリックして仮想ディスクイメージを開くと、VirtualBoxが立ち上がる。「インポート」をクリック</li>
-<li>VirutalBoxの不要なポップアップメッセージを非表示にする
-
-<ul>
-<li>Windows: vbconfig.bat をダブルクリック</li>
-<li>macOS: vbconfig.command をダブルクリック 。あるいはターミナルで <code>sh vbconfig.command</code> を実行</li>
-<li>ポップアップを再度表示するには、VirtualBoxの「ヘルプ」メニューから「Reset All Warnings」</li>
-</ul></li>
 </ol>
 
 <h2>スタート</h2>
@@ -373,11 +366,12 @@ pre {
 <li>ホストOSと仮想マシン間のファイル共有
 
 <ul>
+<li>仮想マシンが走っている場合には終了する</li>
 <li>VirtualBox マネージャー画面で ceenv-* を選択し「設定」</li>
 <li>「共有フォルダー」タブを開き、右側の「+」をクリック</li>
 <li>「フォルダーのパス」の右側の「v」マークをクリックし、「その他」を選択。さきほどUSBメモリからコピーしたフォルダーを選択する</li>
 <li>「自動マウント」をチェックし「OK」⇒ さらに「OK」</li>
-<li>仮想マシンを再起動。上で選択したフォルダが、/media/sf_... の下に見える</li>
+<li>仮想マシンを起動すると、上で選択したフォルダが、/media/sf_... の下に見える</li>
 </ul></li>
 <li>USBメモリを仮想マシンに接続する
 
