@@ -1,19 +1,19 @@
 MateriApps LIVE! Release Note
 =============================
 
+MateriApps LIVE! Release 3.2 (yyyy/mm/dd1)
+===============================================
+
+  - Updated MateriApps packages
+     * gamess-setup (202006)
+     
 MateriApps LIVE! Release 2.7 & 3.1 (2020/08/01)
 ===============================================
 
   - Final version 2.x based on Debian 9 (Stretch)
-  
-    Debian packages for MateriApps Applications are still provided
-    also for Debian 8 (Jessie) and 9 (Stretch)
-    
+     * Debian packages for MateriApps Applications are still provided also for Debian 8 (Jessie) and 9 (Stretch)
   - Final distribution of 32bit version of MateriApps LIVE!
-  
-    Debian packages for MateriApps Applications are still provided
-    also for 32bit architecture
-    
+     * Debian packages for MateriApps Applications are still provided also for 32bit architecture
   - Started support for Ubuntu 20 (Focal)
   - Newly included MateriApps packages
      * cif2cell (1.2.10)
