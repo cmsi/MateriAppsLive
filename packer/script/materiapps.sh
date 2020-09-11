@@ -30,6 +30,7 @@ apt-get -y install --no-install-recommends materiappslive \
 	\
 	gromacs gromacs-data gromacs-openmpi \
 	lammps lammps-data lammps-doc liblammps \
+        octa ocat-data \
 	\
 	alps-applications alps-tutorials \
 	ddmrg \
