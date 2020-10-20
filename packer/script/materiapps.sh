@@ -38,6 +38,7 @@ apt-get -y install --no-install-recommends materiappslive \
 	feram \
 	hphi \
 	mvmc \
+        tenes \
 	triqs triqs-cthyb triqs-dfttools triqs-hubbardi dcore
 
 echo "==> Copy desktop file(s)"
