@@ -1,7 +1,7 @@
 #!/bin/bash -eux
 
 echo "==> Install Editors"
-apt-get -y install --no-install-recommends emacs vim
+apt-get -y install --no-install-recommends emacs vim mousepad
 
 echo "==> Install Graphics Tools"
 apt-get -y install --no-install-recommends evince gnuplot-x11

@@ -1,9 +1,0 @@
-{
-  "debian_version": "@DEBIAN8_VERSION@",
-  "iso_url": "http://cdimage.debian.org/cdimage/archive/@DEBIAN8_VERSION@/amd64/iso-dvd/debian-@DEBIAN8_VERSION@-amd64-DVD-1.iso",
-  "iso_checksum": "@DEBIAN8_CHECKSUM@",
-  "_comment": "Build with `packer build -var-file=debian8-amd64.json debian.json`",
-  "vm_name": "debian8-amd64",
-  "preseed" : "preseed8.cfg",
-  "virtualbox_guest_os_type": "Debian_64"
-}
