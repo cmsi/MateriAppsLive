@@ -55,8 +55,10 @@
         },
 	{
 	    "type": "shell-local",
-            "inline": ["echo VBoxManage setextradata ceenv-@CE3_VERSION@-amd64 GUI/ScaleFactor 2.0",
-                       "VBoxManage setextradata ceenv-@CE3_VERSION@-amd64 GUI/ScaleFactor 2.0"
+            "inline": ["echo VBoxManage setextradata ceenv-@CE3_VERSION@-amd64 GUI/ScaleFactor 1.0",
+                       "VBoxManage setextradata ceenv-@CE3_VERSION@-amd64 GUI/ScaleFactor 1.0",
+                       "echo VBoxManage controlvm ceenv-@CE3_VERSION@-amd64 setvideomodehint 1024 768 32",
+                       "VBoxManage controlvm ceenv-@CE3_VERSION@-amd64 setvideomodehint 1024 768 32"
 		      ]
 	},
         {
