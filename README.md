@@ -8,11 +8,13 @@ MateriApps LIVE! Release 3.2 (yyyy/mm/dd1)
      * octa (8.3)
      * tenes (1.1.0)
   - Updated MateriApps packages
-     * akaikkr (20200903)
-     * gamess-setup (202006)
+     * akaikkr (20200910)
+     * conquest (1.0.6)
+     * gamess-setup (202009)
      * lammps (20200824)
      * ovito (3.2.1)
-     * vesta (3.5.3)
+     * espresso (quantum espresso) (6.6)
+     * vesta (3.5.5)
      
 MateriApps LIVE! Release 2.7 & 3.1 (2020/08/01)
 ===============================================
