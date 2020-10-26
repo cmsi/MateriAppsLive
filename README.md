@@ -1,7 +1,7 @@
 MateriApps LIVE! Release Note
 =============================
 
-MateriApps LIVE! Release 3.2 (yyyy/mm/dd1)
+MateriApps LIVE! Release 3.2 (2020/10/26)
 ===============================================
 
   - Newly included MateriApps packages
@@ -16,7 +16,6 @@ MateriApps LIVE! Release 3.2 (yyyy/mm/dd1)
      * ovito (3.2.1)
      * vesta (3.5.5)
   - Disable screensaver by default
-  - Set default screen resolution to 1024x768 w/scale factor 1.0
      
 MateriApps LIVE! Release 2.7 & 3.1 (2020/08/01)
 ===============================================
