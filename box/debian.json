@@ -18,7 +18,6 @@
       "headless": "{{ user `headless` }}",
       "http_directory": "http",
       "iso_checksum": "{{user `iso_checksum`}}",
-      "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_urls": [
         "{{ user `iso_url` }}"
       ],
@@ -54,7 +53,6 @@
       "headless": "{{ user `headless` }}",
       "http_directory": "http",
       "iso_checksum": "{{ user `iso_checksum` }}",
-      "iso_checksum_type": "{{ user `iso_checksum_type` }}",
       "iso_urls": [
         "{{ user `iso_url` }}"
       ],
@@ -93,7 +91,6 @@
       "guest_os_type": "{{ user `parallels_guest_os_type` }}",
       "http_directory": "http",
       "iso_checksum": "{{ user `iso_checksum` }}",
-      "iso_checksum_type": "{{ user `iso_checksum_type` }}",
       "iso_urls": [
         "{{ user `iso_url` }}"
       ],
@@ -166,8 +163,7 @@
     "http_proxy": "{{env `http_proxy`}}",
     "https_proxy": "{{env `https_proxy`}}",
     "install_vagrant_key": "true",
-    "iso_checksum": "40f51a36b39c180fe46d7393e5a3a3985072ffc2",
-    "iso_checksum_type": "sha1",
+    "iso_checksum": "sha1:40f51a36b39c180fe46d7393e5a3a3985072ffc2",
     "iso_url": "http://cdimage.debian.org/cdimage/release/8.2.0/amd64/iso-dvd/debian-8.2.0-amd64-DVD-1.iso",
     "memory": "2048",
     "no_proxy": "{{env `no_proxy`}}",
