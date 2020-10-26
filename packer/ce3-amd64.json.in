@@ -69,6 +69,7 @@
                 "script/ldconfig.sh",
                 "script/bashrc.sh",
 		"script/development.sh",
+                "script/emacs.sh",
                 "script/firefox.sh",
                 "script/grub.sh",
                 "script/keyboard.sh",

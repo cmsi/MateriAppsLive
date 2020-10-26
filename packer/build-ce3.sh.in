@@ -2,11 +2,7 @@
 
 VB_VERSION=$(VBoxManage -V | cut -d. -f1)
 CE3_VERSION="@CE3_VERSION@"
-if [ "$VB_VERSION" = "5" ]; then
-    ARCHITECTURES="i386"
-else
-    ARCHITECTURES="amd64"
-fi
+ARCHITECTURES="amd64"
 for arch in $ARCHITECTURES; do
     if [ -f ce3-${arch}.json ]; then
 	rm -rf output-virtualbox-iso

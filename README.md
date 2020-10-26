@@ -1,19 +1,29 @@
 MateriApps LIVE! Release Note
 =============================
 
+MateriApps LIVE! Release 3.2 (2020/10/26)
+===============================================
+
+  - Newly included MateriApps packages
+     * octa (8.3)
+     * tenes (1.1.0)
+  - Updated MateriApps packages
+     * akaikkr (20200910)
+     * conquest (1.0.6)
+     * espresso (quantum espresso) (6.6)
+     * gamess-setup (202009)
+     * lammps (20201009)
+     * ovito (3.2.1)
+     * vesta (3.5.5)
+  - Disable screensaver by default
+     
 MateriApps LIVE! Release 2.7 & 3.1 (2020/08/01)
 ===============================================
 
   - Final version 2.x based on Debian 9 (Stretch)
-  
-    Debian packages for MateriApps Applications are still provided
-    also for Debian 8 (Jessie) and 9 (Stretch)
-    
+     * Debian packages for MateriApps Applications are still provided also for Debian 8 (Jessie) and 9 (Stretch)
   - Final distribution of 32bit version of MateriApps LIVE!
-  
-    Debian packages for MateriApps Applications are still provided
-    also for 32bit architecture
-    
+     * Debian packages for MateriApps Applications are still provided also for 32bit architecture
   - Started support for Ubuntu 20 (Focal)
   - Newly included MateriApps packages
      * cif2cell (1.2.10)

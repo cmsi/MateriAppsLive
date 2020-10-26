@@ -1,6 +1,11 @@
 ccenv (Computer Experiment Envirionment) Release Note
 =====================================================
 
+ceenv Release 3.2 (2020/10/26)
+==============================
+
+  - Disable screensaver by default
+
 ceenv Release 3.1 (2020/08/01)
 ==============================
 

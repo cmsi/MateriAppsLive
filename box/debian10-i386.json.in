@@ -1,7 +1,7 @@
 {
   "debian_version": "@DEBIAN10_VERSION@",
   "iso_url": "http://cdimage.debian.org/cdimage/release/@DEBIAN10_VERSION@/i386/iso-dvd/debian-@DEBIAN10_VERSION@-i386-DVD-1.iso",
-  "iso_checksum": "@DEBIAN10_CHECKSUM@",
+  "iso_checksum": "sha1:@DEBIAN10_CHECKSUM@",
   "_comment": "Build with `packer build -var-file=debian10-i386.json debian.json`",
   "vm_name": "debian10-i386",
   "preseed" : "preseed10.cfg",
