@@ -1,19 +1,21 @@
 #!/bin/sh
-DEB_HOME=$HOME/vagrant/data
+DEB_HOME=$HOME/malive/data
 RSYNC="rsync -avzP --delete -e ssh"
 
 DISTS="buster stretch jessie wheezy focal bionic xenial"
 
+EXA="tk2-248-33678.vs.sakura.ne.jp"
+
 set -x
 for d in $DISTS; do
-  $RSYNC $DEB_HOME/apt/$d/dists $DEB_HOME/apt/$d/pool root@exa.phys.s.u-tokyo.ac.jp:/var/www/vhosts/exa.phys.s.u-tokyo.ac.jp/httpdocs/archive/MateriApps/apt/$d
+  $RSYNC $DEB_HOME/apt/$d/dists $DEB_HOME/apt/$d/pool root@${EXA}:/var/www/html/archive/MateriApps/apt/$d
 done
-$RSYNC $DEB_HOME/archive/stretch/*.orig.tar.gz root@exa.phys.s.u-tokyo.ac.jp:/var/www/vhosts/exa.phys.s.u-tokyo.ac.jp/httpdocs/archive/MateriApps/src
-$RSYNC $(dirname $0)/sources root@exa.phys.s.u-tokyo.ac.jp:/var/www/vhosts/exa.phys.s.u-tokyo.ac.jp/httpdocs/archive/MateriApps
-$RSYNC $(dirname $0)/../README.md root@exa.phys.s.u-tokyo.ac.jp:/var/www/vhosts/exa.phys.s.u-tokyo.ac.jp/httpdocs/archive/MateriApps
-$RSYNC $(dirname $0)/../keys root@exa.phys.s.u-tokyo.ac.jp:/var/www/vhosts/exa.phys.s.u-tokyo.ac.jp/httpdocs/archive/MateriApps
-$RSYNC $(dirname $0)/../ova/vbconfig.bat root@exa.phys.s.u-tokyo.ac.jp:/var/www/vhosts/exa.phys.s.u-tokyo.ac.jp/httpdocs/archive/MateriApps/scripts
-$RSYNC $(dirname $0)/../ova/vbconfig.command root@exa.phys.s.u-tokyo.ac.jp:/var/www/vhosts/exa.phys.s.u-tokyo.ac.jp/httpdocs/archive/MateriApps/scripts
+$RSYNC $DEB_HOME/archive/stretch/*.orig.tar.gz root@${EXA}:/var/www/html/archive/MateriApps/src
+$RSYNC $(dirname $0)/sources root@${EXA}:/var/www/html/archive/MateriApps
+$RSYNC $(dirname $0)/../README.md root@${EXA}:/var/www/html/archive/MateriApps
+$RSYNC $(dirname $0)/../keys root@${EXA}:/var/www/html/archive/MateriApps
+$RSYNC $(dirname $0)/../ova/vbconfig.bat root@${EXA}:/var/www/html/archive/MateriApps/scripts
+$RSYNC $(dirname $0)/../ova/vbconfig.command root@${EXA}:/var/www/html/archive/MateriApps/scripts
 
 for d in $DISTS; do
   $RSYNC $DEB_HOME/apt/$d/dists $DEB_HOME/apt/$d/pool frs.sourceforge.net:/home/frs/project/materiappslive/Debian/$d
