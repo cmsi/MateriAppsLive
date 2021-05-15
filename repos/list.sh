@@ -2,7 +2,6 @@
 PACKAGE="$1"
 test -z $PACKAGE && exit 127
 
-VM="madev10-amd64"
-cd $HOME/vagrant/$VM
+DATA_DIR=$HOME/malive/data
 CODENAME="buster stretch jessie wheezy focal bionic xenial"
-vagrant ssh -c "for cname in $CODENAME; do reprepro -Vb data/apt/\$cname list \$cname $PACKAGE; done"
+for cname in $CODENAME; do reprepro -Vb $DATA_DIR/apt/$cname list $cname $PACKAGE; done

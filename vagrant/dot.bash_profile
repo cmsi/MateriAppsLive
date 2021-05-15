@@ -26,4 +26,7 @@ export EDITOR="vi"
 export GNUPGHOME="/data/gnupg"
 export DEBFULLNAME=$(cat $GNUPGHOME/fullname.txt)
 export DEBEMAIL=$(cat $GNUPGHOME/email.txt)
-unalias ls
+
+if [ "$PS1" ]; then
+  unalias ls
+fi
