@@ -12,6 +12,7 @@ apt-get -y install --no-install-recommends materiappslive \
 	c-tools \
 	fermisurfer \
 	libalpscore-dev \
+        physbo \
 	tapioca \
 	\
         abinit \
