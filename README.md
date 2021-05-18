@@ -1,7 +1,7 @@
 MateriApps LIVE! Release Note
 =============================
 
-MateriApps LIVE! Release 3.3 (2021/05/xx)
+MateriApps LIVE! Release 3.3 (2021/05/18)
 ===============================================
 
   - Stopped support for Debian 8 (Jessie) and Ubuntu 16 (Xenial)
