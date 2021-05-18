@@ -28,5 +28,6 @@ export DEBFULLNAME=$(cat $GNUPGHOME/fullname.txt)
 export DEBEMAIL=$(cat $GNUPGHOME/email.txt)
 
 if [ "$PS1" ]; then
+  export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[33m\]\w\[\033[31m\]\[\033[00m\]\$ '
   unalias ls
 fi
