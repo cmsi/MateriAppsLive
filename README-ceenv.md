@@ -1,6 +1,11 @@
 ccenv (Computer Experiment Envirionment) Release Note
 =====================================================
 
+ceenv Release 3.3 (2021/05/xx)
+===============================================
+
+  - Stopped support for 32bit (i386) architecture
+
 ceenv Release 3.2 (2020/10/26)
 ==============================
 

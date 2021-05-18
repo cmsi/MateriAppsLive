@@ -1,6 +1,24 @@
 MateriApps LIVE! Release Note
 =============================
 
+MateriApps LIVE! Release 3.3 (2021/05/xx)
+===============================================
+
+  - Stopped support for Debian 8 (Jessie) and Ubuntu 16 (Xenial)
+  - Stopped support for 32bit (i386) architecture
+  - Newly included MateriApps packages
+     * cif2cell (1.2.10)
+     * physbo (1.0.0)
+  - Updated MateriApps packages
+     * akaikkr (20210506)
+     * alps (20201106)
+     * espresso (quantum espresso) (6.7)
+     * lammps (20210514)
+     * tenes (1.1.2)
+     * vesta (3.5.7)
+  - Updated tools/libraries
+     * eigen3 (3.3.9)
+
 MateriApps LIVE! Release 3.2 (2020/10/26)
 ===============================================
 
