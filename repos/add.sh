@@ -3,12 +3,13 @@ PACKAGE="$1"
 test -z $PACKAGE && exit 127
 echo "PACKAGE: $PACKAGE"
 
-CODENAME="buster stretch jessie focal bionic xenial"
+DATA_DIR=$HOME/malive/data
+CODENAME="buster stretch focal bionic"
 for cname in $CODENAME; do
-  CHANGES=$(ls $HOME/data/pkg/$cname/${PACKAGE}_*.changes)
+  CHANGES=$(ls $DATA_DIR/pkg/$cname/${PACKAGE}_*.changes)
   for cng in $CHANGES; do
     echo "Adding ${cng}..."
-    reprepro --ask-passphrase --ignore=wrongdistribution -Vb $HOME/data/apt/$cname include $cname $cng
+    reprepro --ask-passphrase --ignore=wrongdistribution -Vb $DATA_DIR/apt/$cname include $cname $cng
   done
-  cp -fp $HOME/data/apt/$cname/pool/*/*/*/*${PACKAGE}_* /data/archive/$cname
+  cp -fp $DATA_DIR/apt/$cname/pool/*/*/*/*${PACKAGE}_* $DATA_DIR/archive/$cname
 done

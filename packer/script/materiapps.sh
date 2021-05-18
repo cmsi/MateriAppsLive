@@ -12,12 +12,14 @@ apt-get -y install --no-install-recommends materiappslive \
 	c-tools \
 	fermisurfer \
 	libalpscore-dev \
+        physbo \
 	tapioca \
 	\
         abinit \
 	akaikkr \
         alamode \
         casino-setup \
+	cif2cell \
         conquest \
 	quantum-espresso quantum-espresso-data \
 	openmx openmx-data openmx-example \

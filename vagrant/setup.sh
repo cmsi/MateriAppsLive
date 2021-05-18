@@ -1,13 +1,16 @@
 #!/bin/sh
 
-rm -f $HOME/development
-ln -s /development $HOME/development
+USER=vagrant
+mkdir -p /home/$USER/malive
 
-rm -f $HOME/data
-ln -s /data $HOME/data
+rm -f /home/$USER/malive/development /home/$USER/malive/data
+ln -s /development /home/$USER/malive/development
+ln -s /data /home/$USER/malive/data
+chown ${USER}.${USER} /home/$USER/malive/*
 
-rm -f $HOME/.bash_profile
-ln -s development/MateriAppsLive/vagrant/dot.bash_profile $HOME/.bash_profile
-
-rm -f $HOME/.quiltrc
-ln -s development/MateriAppsLive/vagrant/dot.quiltrc $HOME/.quiltrc
+CONF=".bash_profile .devscripts .gbp.conf .quiltrc"
+for c in $CONF; do
+  rm -f /home/$USER/$c
+  ln -s /development/MateriAppsLive/vagrant/dot$c /home/$USER/$c
+  chown ${USER}.${USER} /home/$USER/$c
+done
