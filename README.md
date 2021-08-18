@@ -1,6 +1,35 @@
 MateriApps LIVE! Release Note
 =============================
 
+MateriApps LIVE! Release 3.4 (2021/xx/xx)
+===============================================
+
+  - Started support for Debian 11 (Bullseye)
+  - Started support for 64-bit Arm (aarch64) architecture
+  - Newly included MateriApps packages
+  - Updated MateriApps packages
+     * physbo (1.0.1)
+  - Updated tools/libraries
+  - Set default OMP_NUM_THREADS to 1
+
+MateriApps LIVE! Release 3.3 (2021/05/18)
+===============================================
+
+  - Stopped support for Debian 8 (Jessie) and Ubuntu 16 (Xenial)
+  - Stopped support for 32bit (i386) architecture
+  - Newly included MateriApps packages
+     * cif2cell (1.2.10)
+     * physbo (1.0.0)
+  - Updated MateriApps packages
+     * akaikkr (20210506)
+     * alps (20201106)
+     * espresso (quantum espresso) (6.7)
+     * lammps (20210514)
+     * tenes (1.1.2)
+     * vesta (3.5.7)
+  - Updated tools/libraries
+     * eigen3 (3.3.9)
+
 MateriApps LIVE! Release 3.2 (2020/10/26)
 ===============================================
 
@@ -26,7 +55,6 @@ MateriApps LIVE! Release 2.7 & 3.1 (2020/08/01)
      * Debian packages for MateriApps Applications are still provided also for 32bit architecture
   - Started support for Ubuntu 20 (Focal)
   - Newly included MateriApps packages
-     * cif2cell (1.2.10)
      * wannier90 (3.1.0)
   - Updated MateriApps packages
      * conquest (1.0.5)

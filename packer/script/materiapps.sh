@@ -19,6 +19,7 @@ apt-get -y install --no-install-recommends materiappslive \
 	akaikkr \
         alamode \
         casino-setup \
+	cif2cell \
         conquest \
 	quantum-espresso quantum-espresso-data \
 	openmx openmx-data openmx-example \

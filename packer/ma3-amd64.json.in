@@ -21,6 +21,7 @@
             ["modifyvm", "{{.Name}}", "--usb", "on"],
             ["modifyvm", "{{.Name}}", "--graphicscontroller", "vmsvga"],
             ["modifyvm", "{{.Name}}", "--accelerate3d", "off"],
+            ["modifyvm", "{{.Name}}", "--vrde", "off"],
             ["modifyvm", "{{.Name}}", "--memory", "2000"],
             ["storageattach", "{{.Name}}", "--storagectl", "IDE Controller", "--port", "1", "--device", "0", "--type", "dvddrive", "--medium", "emptydrive"]
         ],
