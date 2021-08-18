@@ -1,6 +1,6 @@
 {
   "name": "madev/debian10-amd64",
-  "description": "Debian 10 Buster 32-bit box",
+  "description": "Debian 10 Buster 64-bit box",
   "versions": [
     {
       "version": "@DEBIAN10_VERSION@",

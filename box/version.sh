@@ -1,11 +1,16 @@
 #!/bin/sh
 
-# from http://cdimage.debian.org/cdimage/archive/$VERSION/amd64/iso-dvd/SHA1SUMS
+# from http://cdimage.debian.org/cdimage/archive/$VERSION/amd64/iso-dvd/SHA512SUMS
 
 DEBIAN9_VERSION="9.13.0"
-DEBIAN9_AMD64_CHECKSUM="6a474fc0819e74cbe7a6f39303315ad07ccf55c6"
+DEBIAN9_AMD64_CHECKSUM="6253ae0d80d889ca482bf1b718c1f2509b65f36d9f329595f57ef06dadb10989fb1cc15b8c4bcfbc88b3b91b9b567b469ecb1034090c295515e24082ea6b65c4"
 
-# from http://cdimage.debian.org/cdimage/release/$VERSION/amd64/iso-dvd/SHA1SUMS
+# from http://cdimage.debian.org/cdimage/archive/$VERSION/amd64/iso-dvd/SHA512SUMS
 
-DEBIAN10_VERSION="10.9.0"
-DEBIAN10_AMD64_CHECKSUM="e3fa2daba9c13f99c7d72ac869fcf09399e52686"
+DEBIAN10_VERSION="10.10.0"
+DEBIAN10_AMD64_CHECKSUM="097f6776850eee7939a2bdb233353d9aabccb3b8ce3b4e3322ef6acd6e047b0c04603a2bdd858e7207b01970b4775bf8653de8b294290bdf5a1faf0bb4db6dca"
+
+# FROM http://cdimage.debian.org/cdimage/release/$VERSION/amd64/iso-dvd/SHA512SUMS
+
+DEBIAN11_VERSION="11.0.0"
+DEBIAN11_AMD64_CHECKSUM="b64f314c4b0fc948872afe4282402a3cac1e4a534895bd2359ce5ae67360b7f53163b7eb26cb40af6562001d53faa8e5fc12b5a65b6d59a59b5b24f8738d87af"

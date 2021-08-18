@@ -1,6 +1,6 @@
 {
   "name": "madev/debian9-amd64",
-  "description": "Debian 9 Stretch 32-bit box",
+  "description": "Debian 9 Stretch 64-bit box",
   "versions": [
     {
       "version": "@DEBIAN9_VERSION@",
