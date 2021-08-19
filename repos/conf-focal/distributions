@@ -3,7 +3,7 @@ Label: MateriApps
 Suite: stable
 Codename: focal
 Version: 3.1
-Architectures: amd64 source
+Architectures: amd64 arm64 source
 Components: main non-free contrib
 Description: MateriApps Debian Repository
 SignWith: default
