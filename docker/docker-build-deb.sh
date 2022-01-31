@@ -14,10 +14,7 @@ if [ -z ${APP} ]; then
 fi
 
 if [ -z ${VERSIONS} ]; then
-  DIRS="$(find . -name Dockerfile)"
-  for d in ${DIRS}; do
-    VERSIONS="${VERSIONS} $(basename $(dirname ${d}))"
-  done
+  VERSIONS="bullseye buster stretch focal bionic"
 fi
 
 if [ -d "${HOME}/.ssh-docker" ]; then

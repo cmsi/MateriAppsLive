@@ -8,6 +8,7 @@ if [ -z ${DATA_DIR} ]; then
   exit 127
 fi
 
+GITHUB_COMMON="git@github.com:cmsi/ma-common.git"
 GITHUB="git@github.com:cmsi/ma-${APP}.git"
 export DATA_DIR
 
@@ -17,6 +18,7 @@ echo "target directory: ${TARGET_DIR}"
 echo "building ${APP}..."
 cd $HOME
 rm -rf ma-${APP}
+git clone ${GITHUB_COMMON}
 git clone ${GITHUB}
 cd ma-${APP}
 sh ./setup.sh

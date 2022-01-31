@@ -1,10 +1,14 @@
 #!/bin/sh
 
-DIRS="$(find . -name Dockerfile)"
-for d in ${DIRS}; do
-  VERSION="$(basename $(dirname ${d}))"
-  echo "building image for ${VERSION}..."
-  IMAGE="malive/${VERSION}"
-  docker build -t ${IMAGE} -f ${VERSION}/Dockerfile .
+VERSIONS="$1"
+
+if [ -z ${VERSIONS} ]; then
+  VERSIONS="bullseye buster stretch focal bionic"
+fi
+
+for v in ${VERSIONS}; do
+  echo "building image for ${v}..."
+  IMAGE="malive/${v}"
+  docker build -t ${IMAGE} -f ${v}/Dockerfile .
 done
 docker images

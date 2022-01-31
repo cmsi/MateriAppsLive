@@ -2,16 +2,18 @@ TARGETS = stretch/Dockerfile buster/Dockerfile bullseye/Dockerfile bionic/Docker
 
 default: $(TARGETS)
 
+$(TARGETS): Makefile
+
 stretch/Dockerfile: skel/Dockerfile.in
-	echo "FROM debian:9" > $@
+	echo "FROM debian:9.13" > $@
 	cat skel/Dockerfile.in >> $@
 
 buster/Dockerfile: skel/Dockerfile.in
-	echo "FROM debian:10" > $@
+	echo "FROM debian:10.11" > $@
 	cat skel/Dockerfile.in >> $@
 
 bullseye/Dockerfile: skel/Dockerfile.in
-	echo "FROM debian:11" > $@
+	echo "FROM debian:11.2" > $@
 	cat skel/Dockerfile.in >> $@
 
 bionic/Dockerfile: skel/Dockerfile.in

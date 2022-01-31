@@ -1,4 +1,4 @@
-FROM debian:10
+FROM debian:10.11
 LABEL maintainer="Synge Todo"
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -10,4 +10,7 @@ RUN apt-get update && \
   apt-get update && \
   apt-get -y upgrade
 
+RUN apt-get install -y gfortran mpi-default-dev liblapack-dev
+
 COPY script/build-deb.sh /root/
+COPY script/.quiltrc /root/
