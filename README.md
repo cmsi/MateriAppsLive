@@ -8,8 +8,11 @@ MateriApps LIVE! Release 3.4 (2021/xx/xx)
   - Started support for 64-bit Arm (aarch64) architecture
   - Newly included MateriApps packages
   - Updated MateriApps packages
+     * akaikkr (20220114)
+     * hphi (3.5.0)
      * physbo (1.0.1)
   - Updated tools/libraries
+     * eigen3 (3.4.0)
   - Set default OMP_NUM_THREADS to 1
 
 MateriApps LIVE! Release 3.3 (2021/05/18)
