@@ -114,10 +114,10 @@ cp -fp ${SCRIPT_DIR}/preseed-ma4.cfg .
 cp -frp ${SCRIPT_DIR}/script .
 
 mkdir -p files
-sh ${SCRIPT_DIR}/login-ma3.sh ${DEBIAN10_VERSION} ${MA3_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ma3.svg
-sh ${SCRIPT_DIR}/login-ce3.sh ${DEBIAN10_VERSION} ${CE3_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ce3.svg
-sh ${SCRIPT_DIR}/login-ma4.sh ${DEBIAN11_VERSION} ${MA4_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ma4.svg
-sh ${SCRIPT_DIR}/login-ce4.sh ${DEBIAN11_VERSION} ${CE4_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ce4.svg
+sh ${SCRIPT_DIR}/login-ma.sh ${DEBIAN10_VERSION} ${MA3_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ma3.svg
+sh ${SCRIPT_DIR}/login-ce.sh ${DEBIAN10_VERSION} ${CE3_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ce3.svg
+sh ${SCRIPT_DIR}/login-ma.sh ${DEBIAN11_VERSION} ${MA4_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ma4.svg
+sh ${SCRIPT_DIR}/login-ce.sh ${DEBIAN11_VERSION} ${CE4_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ce4.svg
 cp ${SCRIPT_DIR}/files/*.menu ${SCRIPT_DIR}/files/*.directory files/
 
 cp ${SCRIPT_DIR}/build-all.sh .

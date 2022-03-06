@@ -9,6 +9,8 @@ MateriApps LIVE! Release 3.4 (2021/xx/xx)
   - Newly included MateriApps packages
   - Updated MateriApps packages
      * akaikkr (20220114)
+     * alamode (1.3.0)
+     * alps (20210720-r7867)
      * hphi (3.5.0)
      * physbo (1.0.1)
   - Updated tools/libraries
