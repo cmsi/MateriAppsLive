@@ -6,7 +6,7 @@ MateriApps LIVE!
 Open Source Excellence Award (2022/03/02)
 =============================================
 
-* MateriApps LIVE! wins <a href="https://sourceforge.net/about/project_awards">Open Source Excellence Award</a> from <a href="https://sourceforget.net">SourceForge</a>
+* MateriApps LIVE! wins <a href="https://sourceforge.net/about/project_awards">Open Source Excellence Award</a> from <a href="https://sourceforge.net">SourceForge</a>
 
    <img src="https://github.com/cmsi/MateriAppsLive/blob/master/badge/oss-open-source-excellence-white.png" style="width:90px;">
 
