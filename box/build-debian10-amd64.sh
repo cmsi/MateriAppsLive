@@ -17,7 +17,11 @@ else
   packer build -only=virtualbox-iso -var-file=debian10-amd64.json $SCRIPT_DIR/debian.json 2>&1 | tee log/build-debian10-amd64.log
 fi
 if [ -f "$BOX" ]; then
-  CHECKSUM=$(md5sum $BOX | cut -d ' ' -f 1)
+  if [ -f /usr/bin/md5sum ]; then
+    CHECKSUM=$(md5sum $BOX | cut -d ' ' -f 1)
+  else
+    CHECKSUM=$(md5 $BOX | cut -d ' ' -f 4)
+  fi
   sed -e "s|@DEBIAN10_VERSION@|${DEBIAN10_VERSION}|g" \
       -e "s|@CHECKSUM@|${CHECKSUM}|g" \
   $SCRIPT_DIR/debian10-amd64.metadata.in > box/virtualbox/debian10-amd64.json

@@ -11,6 +11,8 @@ echo "PACKER_VERSION=$PACKER_VERSION"
 
 . $SCRIPT_DIR/version.sh
 
+# version 3
+
 echo "DEBIAN10_VERSION=$DEBIAN10_VERSION"
 echo "CE3_VERSION=$CE3_VERSION"
 ARCHITECTURES="amd64"
@@ -59,13 +61,67 @@ for arch in $ARCHITECTURES; do
 done
 cp -fp ${SCRIPT_DIR}/preseed-ma3.cfg .
 
+# version 4
+
+echo "DEBIAN11_VERSION=$DEBIAN11_VERSION"
+echo "CE4_VERSION=$CE4_VERSION"
+ARCHITECTURES="amd64"
+for arch in $ARCHITECTURES; do
+    iso="debian-${DEBIAN11_VERSION}-${arch}-DVD-1.iso"
+    md5="debian-${DEBIAN11_VERSION}-${arch}-DVD-1.md5"
+    if [ -f "$iso" ]; then
+	if [ -f "$md5" ]; then :; else
+            if [ $(type md5 > /dev/null 2>&1; echo $?) -eq 0 ]; then
+		md5 "$iso" | awk '{print $4}' > "$md5"
+            else
+		md5sum "$iso" | awk '{print $1}' > "$md5"
+            fi
+	fi
+	DEBIAN11_CHECKSUM=$(cat "$md5")
+	echo "$iso: $DEBIAN11_CHECKSUM"
+	sed -e "s|@CE4_VERSION@|${CE4_VERSION}|g" \
+	    -e "s|@DEBIAN11_VERSION@|${DEBIAN11_VERSION}|g" \
+	    -e "s|@DEBIAN11_CHECKSUM@|${DEBIAN11_CHECKSUM}|g" \
+	    ${SCRIPT_DIR}/ce4-${arch}.json.in > ce4-${arch}.json
+    fi
+done
+cp -fp ${SCRIPT_DIR}/preseed-ce4.cfg .
+
+echo "DEBIAN11_VERSION=$DEBIAN11_VERSION"
+echo "MA4_VERSION=$MA4_VERSION"
+ARCHITECTURES="amd64"
+for arch in $ARCHITECTURES; do
+    iso="debian-${DEBIAN11_VERSION}-${arch}-DVD-1.iso"
+    md5="debian-${DEBIAN11_VERSION}-${arch}-DVD-1.md5"
+    if [ -f "$iso" ]; then
+	if [ -f "$md5" ]; then :; else
+            if [ $(type md5 > /dev/null 2>&1; echo $?) -eq 0 ]; then
+		md5 "$iso" | awk '{print $4}' > "$md5"
+            else
+		md5sum "$iso" | awk '{print $1}' > "$md5"
+            fi
+	fi
+	DEBIAN11_CHECKSUM=$(cat "$md5")
+	echo "$iso: $DEBIAN11_CHECKSUM"
+	sed -e "s|@MA4_VERSION@|${MA4_VERSION}|g" \
+	    -e "s|@DEBIAN11_VERSION@|${DEBIAN11_VERSION}|g" \
+	    -e "s|@DEBIAN11_CHECKSUM@|${DEBIAN11_CHECKSUM}|g" \
+	    ${SCRIPT_DIR}/ma4-${arch}.json.in > ma4-${arch}.json
+    fi
+done
+cp -fp ${SCRIPT_DIR}/preseed-ma4.cfg .
+
 cp -frp ${SCRIPT_DIR}/script .
 
 mkdir -p files
-sh ${SCRIPT_DIR}/login-ma3.sh ${DEBIAN10_VERSION} ${MA3_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ma3.svg
-sh ${SCRIPT_DIR}/login-ce3.sh ${DEBIAN10_VERSION} ${CE3_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ce3.svg
+sh ${SCRIPT_DIR}/login-ma.sh ${DEBIAN10_VERSION} ${MA3_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ma3.svg
+sh ${SCRIPT_DIR}/login-ce.sh ${DEBIAN10_VERSION} ${CE3_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ce3.svg
+sh ${SCRIPT_DIR}/login-ma.sh ${DEBIAN11_VERSION} ${MA4_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ma4.svg
+sh ${SCRIPT_DIR}/login-ce.sh ${DEBIAN11_VERSION} ${CE4_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ce4.svg
 cp ${SCRIPT_DIR}/files/*.menu ${SCRIPT_DIR}/files/*.directory files/
 
 cp ${SCRIPT_DIR}/build-all.sh .
 sed -e "s|@MA3_VERSION@|${MA3_VERSION}|g" ${SCRIPT_DIR}/build-ma3.sh.in > build-ma3.sh
 sed -e "s|@CE3_VERSION@|${CE3_VERSION}|g" ${SCRIPT_DIR}/build-ce3.sh.in > build-ce3.sh
+sed -e "s|@MA4_VERSION@|${MA4_VERSION}|g" ${SCRIPT_DIR}/build-ma4.sh.in > build-ma4.sh
+sed -e "s|@CE4_VERSION@|${CE4_VERSION}|g" ${SCRIPT_DIR}/build-ce4.sh.in > build-ce4.sh

@@ -4,7 +4,7 @@ echo "==> Replacing lightdm login background"
 
 mkdir -p /etc/malive
 chmod 755 /etc/malive
-cp /tmp/files/login-ma2.svg /etc/malive/login.svg
+cp /tmp/files/login-ma4.svg /etc/malive/login.svg
 chmod 644 /etc/malive/login.svg
 
 cp -fp /etc/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf.orig

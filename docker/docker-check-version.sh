@@ -9,6 +9,6 @@ for v in ${VERSIONS}; do
   echo "checking for ${v}..."
   IMAGE="malive/${v}"
   set -x
-  docker run --rm --name ${v} ${IMAGE} lsb_release -s -c
+  docker run --rm --name ${v}.$$ ${IMAGE} lsb_release -s -c
   set +x
 done

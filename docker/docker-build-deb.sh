@@ -37,6 +37,6 @@ for v in ${VERSIONS}; do
   echo "building ${APP} for ${v}..."
   IMAGE="malive/${v}"
   set -x
-  docker run --rm --name ${v} ${SSH_CONFIG} ${SHARE_CONFIG} ${GIT_CONFIG} ${IMAGE} /bin/bash /root/build-deb.sh ${APP} ${MALIVE_DATA_DIR}
+  docker run --rm --name ${v}.$$ ${SSH_CONFIG} ${SHARE_CONFIG} ${GIT_CONFIG} ${IMAGE} /bin/bash /root/build-deb.sh ${APP} ${MALIVE_DATA_DIR}
   set +x
 done
