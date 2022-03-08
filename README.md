@@ -1,5 +1,18 @@
-MateriApps LIVE! Release Note
-=============================
+MateriApps LIVE!
+================
+
+[![Download MateriApps LIVE!](https://img.shields.io/sourceforge/dm/materiappslive.svg)](https://sourceforge.net/projects/materiappslive/files/latest/download)
+
+Open Source Excellence Award (2022/03/02)
+=============================================
+
+* MateriApps LIVE! wins <a href="https://sourceforge.net/about/project_awards">Open Source Excellence Award</a> from <a href="https://sourceforget.net">SourceForge</a>
+
+    <div class="sf-root" data-id="1889173" data-badge="oss-open-source-excellence-white" data-metadata="achievement=oss-open-source-excellence" style="width:90px">
+      <a href="https://sourceforge.net/projects/materiappslive/" target="_blank">MateriApps LIVE!</a>
+    </div>
+    <script>(function () {var sc=document.createElement('script');sc.type='text/javascript';sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=1889173';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();
+    </script>
 
 MateriApps LIVE! Release 3.3 (2021/05/18)
 ===============================================
