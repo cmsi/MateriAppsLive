@@ -33,5 +33,5 @@ fi
 echo "starting ${VERSION}"
 IMAGE="malive/${VERSION}"
 set -x
-# docker run --rm -it --name $VERSION.$$ -e DISPLAY=host.docker.internal:0 ${SSH_CONFIG} ${SHARE_CONFIG} ${DEV_CONFIG} ${GIT_CONFIG} malive/${VERSION} bash
-docker run --rm -it -u 1001:202 --name $VERSION.$$ -e DISPLAY=host.docker.internal:0 ${SSH_CONFIG} ${SHARE_CONFIG} ${DEV_CONFIG} ${GIT_CONFIG} malive/${VERSION} bash
+docker run --rm -it --name $VERSION.$$ -e DISPLAY=host.docker.internal:0 ${SSH_CONFIG} ${SHARE_CONFIG} ${DEV_CONFIG} ${GIT_CONFIG} malive/${VERSION} bash
+# docker run --rm -it -u 1001:202 --name $VERSION.$$ -e DISPLAY=host.docker.internal:0 ${SSH_CONFIG} ${SHARE_CONFIG} ${DEV_CONFIG} ${GIT_CONFIG} malive/${VERSION} bash
