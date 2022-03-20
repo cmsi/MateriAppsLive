@@ -3,7 +3,7 @@
 VERSIONS="$1"
 
 if [ -z ${VERSIONS} ]; then
-  VERSIONS="bullseye buster stretch focal bionic"
+  VERSIONS="bullseye buster stretch jammy focal bionic"
 fi
 
 for v in ${VERSIONS}; do
