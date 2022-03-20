@@ -30,8 +30,11 @@ elif [ -f "${HOME}/.gitconfig" ]; then
   GIT_CONFIG="-v ${HOME}/.gitconfig:/root/.gitconfig:ro"
 fi
 
+if [ -n "${MALIVE_DATA_DIR}" ]; then
+  DATA_CONFIG="-e DATA_DIR=${MALIVE_DATA_DIR}"
+fi
+
 echo "starting ${VERSION}"
 IMAGE="malive/${VERSION}"
 set -x
-docker run --rm -it --name $VERSION.$$ -e DISPLAY=host.docker.internal:0 ${SSH_CONFIG} ${SHARE_CONFIG} ${DEV_CONFIG} ${GIT_CONFIG} malive/${VERSION} bash
-# docker run --rm -it -u 1001:202 --name $VERSION.$$ -e DISPLAY=host.docker.internal:0 ${SSH_CONFIG} ${SHARE_CONFIG} ${DEV_CONFIG} ${GIT_CONFIG} malive/${VERSION} bash
+docker run --rm -it --name $VERSION.$$ -e DISPLAY=host.docker.internal:0 ${DATA_CONFIG} ${SSH_CONFIG} ${SHARE_CONFIG} ${DEV_CONFIG} ${GIT_CONFIG} malive/${VERSION} bash

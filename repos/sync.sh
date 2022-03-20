@@ -2,7 +2,8 @@
 DEB_HOME=$HOME/malive/data
 RSYNC="rsync -avzP --delete -e ssh"
 
-DISTS="bullseye buster stretch jessie wheezy focal bionic xenial"
+# DISTS="bullseye buster stretch jessie wheezy jammy focal bionic xenial"
+DISTS="bullseye buster stretch jammy focal bionic"
 
 EXA="tk2-248-33678.vs.sakura.ne.jp"
 

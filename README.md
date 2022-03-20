@@ -4,17 +4,19 @@ MateriApps LIVE! Release Note
 MateriApps LIVE! Release 3.4 (2021/xx/xx)
 ===============================================
 
-  - Started support for Debian 11 (Bullseye)
+  - Started support for Debian 11 (Bullseye) and Ubuntu 22.04 (Jammy)
   - Started support for 64-bit Arm (aarch64) architecture
   - Newly included MateriApps packages
   - Updated MateriApps packages
      * akaikkr (20220114)
      * alamode (1.3.0)
      * alps (20220304-r7871)
-     * bsa
+     * dsqss (3.0.4)
+     * fermisurfer (2.1.0)
      * gamess-setup
      * hphi (3.5.0)
      * physbo (1.0.1)
+     * triqs, triqs-cthyb, triqs-dfttools, triqs-hubbardi (3.1.0)
   - Updated tools/libraries
      * eigen3 (3.4.0)
   - Set default OMP_NUM_THREADS to 1
