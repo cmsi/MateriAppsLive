@@ -14,7 +14,7 @@ if [ -z ${APP} ]; then
 fi
 
 if [ -z ${VERSIONS} ]; then
-  VERSIONS="bullseye buster stretch focal bionic"
+  VERSIONS="bullseye buster stretch jammy focal bionic"
 fi
 
 if [ -d "${HOME}/.ssh-docker" ]; then
