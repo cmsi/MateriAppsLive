@@ -1,0 +1,3 @@
+# for MateriApps LIVE!
+deb http://exa.phys.s.u-tokyo.ac.jp/archive/MateriApps/apt/jammy jammy main non-free contrib
+deb-src http://exa.phys.s.u-tokyo.ac.jp/archive/MateriApps/apt/jammy jammy main non-free contrib

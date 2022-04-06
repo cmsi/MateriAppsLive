@@ -9,6 +9,9 @@ Vagrant.configure("2") do |config|
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
+  if Vagrant.has_plugin?("vagrant-vbguest")
+      config.vbguest.auto_update = false  
+  end
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
@@ -38,8 +41,8 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "../development", "/development"
-  config.vm.synced_folder "../data", "/data"
+  config.vm.synced_folder ENV["HOME"]+"/malive/development", "/development"
+  config.vm.synced_folder ENV["HOME"]+"/malive/data", "/data"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -50,7 +53,8 @@ Vagrant.configure("2") do |config|
   #   vb.gui = true
   #
     # Customize the amount of memory on the VM:
-    vb.memory = "2048"
+    vb.memory = "4096"
+    vb.cpus = 2
   end
   #
   # View the documentation for the provider you are using for more
@@ -67,22 +71,16 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
+    wget -O /etc/apt/sources.list.d/materiapps-stretch.list http://jaist.dl.sourceforge.net/project/materiappslive/Debian/sources/materiapps-stretch.list
+    apt-get -o Acquire::AllowInsecureRepositories=true update
+    apt-get -y --allow-unauthenticated install materiapps-keyring
     apt-get update
-    apt-get -y install live-build apt-cacher-ng syslinux
-    apt-get -y install cdbs devscripts quilt reprepro
+    apt-get -y remove apt-listchanges
+    apt-get -y install cdbs devscripts quilt
     apt-get -y install xauth
     apt-get -y install git cmake
-    apt-get -y install gfortran mpi-default-dev mpi-default-bin
-    apt-get -y install libblacs-mpi-dev libscalapack-mpi-dev
-    apt-get -y install libboost-all-dev libhdf5-serial-dev libsqlite3-dev liblapack-dev libfftw3-dev libeigen3-dev
-    apt-get -y install libqt4-dev freeglut3-dev
-    apt-get -y install python-matplotlib
-    apt-get -y --no-install-recommends install texlive-lang-japanese nkf htmldoc
-    apt-get -y install ghostscript
-    apt-get -y tcl tcllib xsltproc
-    apt-get -y install ruby2.3-dev rubygems
-    gem install github-markdown
     cp -fp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
     echo 'Asia/Tokyo' > /etc/timezone
+    sh /development/MateriAppsLive/vagrant/setup.sh
   SHELL
 end

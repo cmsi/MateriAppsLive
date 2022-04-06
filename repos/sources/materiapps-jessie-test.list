@@ -1,3 +1,0 @@
-# for MateriApps LIVE!
-deb http://zetta.phys.s.u-tokyo.ac.jp/Debian/jessie jessie main non-free contrib
-deb-src http://zetta.phys.s.u-tokyo.ac.jp/Debian/jessie jessie main non-free contrib

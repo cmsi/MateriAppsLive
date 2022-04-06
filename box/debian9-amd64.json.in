@@ -1,0 +1,9 @@
+{
+  "debian_version": "@DEBIAN9_VERSION@",
+  "iso_url": "http://cdimage.debian.org/cdimage/archive/@DEBIAN9_VERSION@/amd64/iso-dvd/debian-@DEBIAN9_VERSION@-amd64-DVD-1.iso",
+  "iso_checksum": "sha512:@DEBIAN9_CHECKSUM@",
+  "_comment": "Build with `packer build -var-file=debian9-amd64.json debian.json`",
+  "vm_name": "debian9-amd64",
+  "preseed" : "preseed9.cfg",
+  "virtualbox_guest_os_type": "Debian_64"
+}

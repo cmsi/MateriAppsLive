@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>MateriApps LIVE! VirtualBox版</title>
+  <title>MateriApps LIVE!</title>
   <style type="text/css">
 <!--
 body {
@@ -285,13 +285,13 @@ pre {
   </style>
 </head>
 <body>
-<h1>MateriApps LIVE! VirtualBox版</h1>
+<h1>MateriApps LIVE!</h1>
 
 <p>[<a href="README-en.html">English</a>/日本語]</p>
 
 <p>本ドキュメントの最新版は <a href="https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ova">https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ova</a> にあります。</p>
 
-<p>MateriApps LIVE! VirtualBox版は、<a href="http://cmsi.github.io/MateriAppsLive/">MateriApps LIVE!</a>のVirtualBox仮想ディスクイメージ(OVA)です。計算物質科学アプリケーションのハンズオン環境としてだけでなく、UNIX全般(UNIXコマンド, ネットワーク, Emacs, Gnuplot)、プログラミング(C, C++, Fortran)などの実習環境として使うことも想定して製作・配布しています。</p>
+<p><a href="http://cmsi.github.io/MateriAppsLive/">MateriApps LIVE!</a>はVirtualBox仮想ディスクイメージ(OVA)です。計算物質科学アプリケーションのハンズオン環境としてだけでなく、UNIX全般(UNIXコマンド, ネットワーク, Emacs, Gnuplot)、プログラミング(C, C++, Fortran)などの実習環境として使うことも想定して製作・配布しています。</p>
 
 <ul>
 <li><p><a href="http://ma.cms-initiative.jp">MateriApps</a>とは?</p>
@@ -305,14 +305,16 @@ pre {
 <p>オープンソースの仮想化ソフトウェア。macOSやWindowsなどの、既存のオペレーティングシステム(ホストOS)の上で、別のOS (ゲストOS)を実行することができます。サポートされるホストOSはLinux、macOS、Windows、Solaris。ゲストOSとしては、FreeBSD、Linux、OpenBSD、OS/2 Warp、Windows、macOS、Solarisなど、x86/x64アーキテクチャのOSであれば基本的には動作します。GNU General Public License (GPL) Version2の下で公開・配布されています。</p></li>
 </ul>
 
-<h2>USBに含まれるファイル</h2>
+<h2>USBメモリに含まれるファイル</h2>
 
 <ul>
-<li>VirtualBox-*-OSX.dmg : VirtualBoxインストーラ for macOS</li>
-<li>VirtualBox-*-Win.exe : VirtualBoxインストーラ for Windows</li>
-<li>MateriAppsLive-*-i386.ova : MateriApps LIVE!仮想ディスクイメージ(32bit版)</li>
-<li>README.html : このファイル</li>
-<li>vbconfig.* : VirtualBox で不要なポップアップメニューを非表示にするためのスクリプト</li>
+<li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox-*-OSX.dmg</a> : VirtualBoxインストーラ for macOS</li>
+<li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox-*-Win.exe</a> : VirtualBoxインストーラ for Windows</li>
+<li><a href="https://sourceforge.net/projects/materiappslive/files">MateriAppsLive-*-amd64.ova</a> : MateriApps LIVE!仮想ディスクイメージ(64bit版)</li>
+<li><a href="https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ova">README.html</a> : MateriApps LIVE! VirtualBox版について</li>
+<li><a href="https://github.com/cmsi/malive-tutorial/raw/master/setup/setup.pdf">setup.pdf</a> : MateriApps LIVE!の設定</li>
+<li>MD5SUM : チェックサム</li>
+<li>その他、講習会などで用いるサンプルファイル(*.tar.gz, *.zip, *.isoなど)が含まれています</li>
 </ul>
 
 <h2>セットアップ</h2>
@@ -320,23 +322,10 @@ pre {
 <ol>
 <li><p>USBメモリの内容をハードディスクにコピー</p>
 
-<p>すべてのファイルをPC(デスクトップ等)にコピーしてください</p></li>
+<p>すべてのファイルをPC(デスクトップ等)にコピーする</p></li>
 <li><p>VirtualBoxインストーラを起動し、VirtualBoxをインストール</p></li>
-<li>MateriAppsLive-*-i386.ova をダブルクリックして仮想ディスクイメージを開くと、VirtualBoxが立ち上がる。「インポート」をクリック</li>
-<li>VirutalBoxの不要なポップアップメッセージを非表示にする
-
-<ul>
-<li>Windows: USBメモリからコピーした vbconfig.bat をダブルクリック</li>
-<li>macOS: vbconfig.command をダブルクリック 。あるいはターミナルで以下を実行
-<code>
-sh vbconfig.command
-</code></li>
-<li>ポップアップを再度表示するには、VirtualBoxの「ヘルプ」メニューから「Reset All Warnings」</li>
-</ul></li>
-<li><p>ホストOSとMateriApps LIVE!との間でファイルをやりとりするための設定を行う</p>
-
-<p>下記「<a href="#sharing">MateriApps LIVE! とのファイルのやりとり</a>」を参照</p></li>
-<li><p>Oracle VM VirtualBoxマネージャー画面で「MateriAppsLive」を選択し、「起動」</p></li>
+<li>MateriAppsLive-*-amd64.ova をダブルクリックして仮想ディスクイメージを開くと、VirtualBoxが立ち上がる。「インポート」をクリック</li>
+<li>Oracle VM VirtualBoxマネージャー画面で「MateriAppsLive」を選択し、「起動」</li>
 <li>ログイン画面で以下の内容を入力してログイン
 
 <ul>
@@ -348,16 +337,23 @@ sh vbconfig.command
 <h2><a name="sharing"></a>MateriApps LIVE! とのファイルのやりとり</h2>
 
 <ol>
-<li><p>ホストOSとの間でファイルをやりとりする</p>
+<li><p>ISOイメージファイル(*.iso)の中身を仮想マシンから参照する</p>
 
 <ol>
-<li>Oracle VM VirtualBoxマネージャー画面で「MateriAppsLive」を選択し、「設定」</li>
-<li>「共有フォルダー」タブを開き、右側の「+」(新規共有フォルダーを追加します)をクリック</li>
-<li>「フォルダーのパス」の右側の「ｖ」をクリックし、「その他」を選択。共有したいフォルダーを選択する</li>
-<li>「自動マウント」をチェックし、「OK」。</li>
-<li>仮想マシンを起動(再起動)すると、3で選択したフォルダが、/media/sf_... の下に見える</li>
+<li>仮想マシンウインドウの枠の下にあるCD-ROMのアイコンをクリック、「Choose disk image...」を選択し、ISOイメージファイルを開く</li>
+<li>ISOイメージファイルの中身が、/media/cdrom0 の下に見える</li>
 </ol></li>
-<li><p>USBフラッシュメモリを仮想マシンに接続する</p>
+<li><p>ホストOSと仮想マシン間のファイル共有</p>
+
+<ol>
+<li>仮想マシンが走っている場合には終了する</li>
+<li>VirtualBox マネージャー画面で MateriAppsLive-* を選択し「設定」</li>
+<li>「共有フォルダー」タブを開き、右側の「+」(新規共有フォルダーを追加します)をクリック</li>
+<li>「フォルダーのパス」の右側の「ｖ」マークをクリックし、「その他」を選択。さきほどUSBメモリからコピーしたフォルダーを選択する</li>
+<li>「自動マウント」をチェックし「OK」⇒ さらに「OK」</li>
+<li>仮想マシンを起動すると、上で選択したフォルダが、/media/sf_... の下に見える</li>
+</ol></li>
+<li><p>USBメモリを仮想マシンに接続する</p>
 
 <ul>
 <li>VirtualBoxのUSBセットアップ: <a href="https://sites.google.com/site/owlnetvista/virtualpc200725">https://sites.google.com/site/owlnetvista/virtualpc200725</a></li>

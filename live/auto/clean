@@ -1,8 +1,0 @@
-#!/bin/sh
-
-set -e
-
-lb clean noauto "${@}"
-
-rm -rf config materiapps_version*
-rm -f build.log

@@ -1,14 +1,204 @@
-MateriApps LIVE! Release Files
-==============================
+MateriApps LIVE! Release Note
+=============================
 
-Which archive should be used?
+MateriApps LIVE! Release 3.4 (2021/xx/xx)
+===============================================
 
-  - MateriAppsLive-*-i386.ova: Open Virtualization Format for VirtualBox (32bit)
-  - MateriAppsLive-*-i386.hybrid.iso: Hybrid ISO Image for USB Boot (32bit)
-  - MateriAppsLive-*-amd64.ova: Open Virtualization Format for VirtualBox (64bit)
-  - MateriAppsLive-*-amd64.hybrid.iso: Hybrid ISO Image for USB Boot (64bit)
-  - MateriAppsLive-ltx-*-i386.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (32bit)
-  - MateriAppsLive-ltx-*-amd64.ova: MateriApps LIVE! + LaTeX in Open Virtualization Format for VirtualBox (64bit)
+  - Started support for Debian 11 (Bullseye) and Ubuntu 22.04 (Jammy)
+  - Started support for 64-bit Arm (aarch64) architecture
+  - Newly included MateriApps packages
+  - Updated MateriApps packages
+     * akaikkr (20220114)
+     * alamode (1.3.0)
+     * alps (20220304-r7871)
+     * dsqss (3.0.4)
+     * fermisurfer (2.1.0)
+     * gamess-setup
+     * hphi (3.5.0)
+     * physbo (1.0.1)
+     * triqs, triqs-cthyb, triqs-dfttools, triqs-hubbardi (3.1.0)
+  - Updated tools/libraries
+     * eigen3 (3.4.0)
+  - Set default OMP_NUM_THREADS to 1
+
+MateriApps LIVE! Release 3.3 (2021/05/18)
+===============================================
+
+  - Stopped support for Debian 8 (Jessie) and Ubuntu 16 (Xenial)
+  - Stopped support for 32bit (i386) architecture
+  - Newly included MateriApps packages
+     * cif2cell (1.2.10)
+     * physbo (1.0.0)
+  - Updated MateriApps packages
+     * akaikkr (20210506)
+     * alps (20201106)
+     * espresso (quantum espresso) (6.7)
+     * lammps (20210514)
+     * tenes (1.1.2)
+     * vesta (3.5.7)
+  - Updated tools/libraries
+     * eigen3 (3.3.9)
+
+MateriApps LIVE! Release 3.2 (2020/10/26)
+===============================================
+
+  - Newly included MateriApps packages
+     * octa (8.3)
+     * tenes (1.1.0)
+  - Updated MateriApps packages
+     * akaikkr (20200910)
+     * conquest (1.0.6)
+     * espresso (quantum espresso) (6.6)
+     * gamess-setup (202009)
+     * lammps (20201009)
+     * ovito (3.2.1)
+     * vesta (3.5.5)
+  - Disable screensaver by default
+     
+MateriApps LIVE! Release 2.7 & 3.1 (2020/08/01)
+===============================================
+
+  - Final version 2.x based on Debian 9 (Stretch)
+     * Debian packages for MateriApps Applications are still provided also for Debian 8 (Jessie) and 9 (Stretch)
+  - Final distribution of 32bit version of MateriApps LIVE!
+     * Debian packages for MateriApps Applications are still provided also for 32bit architecture
+  - Started support for Ubuntu 20 (Focal)
+  - Newly included MateriApps packages
+     * wannier90 (3.1.0)
+  - Updated MateriApps packages
+     * conquest (1.0.5)
+     * c-tools (6.2.0-3)
+     * hphi (3.4.0)
+     * lammps (20200721) (for ma3)
+     * spglib (1.15.1)
+     * vesta (3.5.2) (for amd64)
+  - Newly included tools/libraries
+     * python-dev, python3-dev
+     * python-pycifrw (3.3)
+
+MateriApps LIVE! Release 3.0 (2020/04/14)
+=========================================
+
+  - Updated base Debian distribution to Debian 10 (Buster)
+  - Increased default memory size to 2GB
+  - Debian packages for MateriApps Applications are still provided also for Debian 8 (Jessie) and 9 (Stretch)
+  - Updated MateriApps packages
+     * xcrysden (1.6.2)
+  - Updated tools/libraries
+     * ovito (2.9.0)
+
+MateriApps LIVE! Release 2.6 (2020/04/14)
+=========================================
+
+  - Updated VirtualBox version to 6.1 (for 64bit version)
+  - Added missing packages: pip2, pip3, evince
+  - Newly included MateriApps packages
+     * conquest (1.0.2)
+  - Updated MateriApps packages
+     * vesta (3.4.8)
+  - Newly included tools/libraries
+     * python-sympy, python3-sympy, xsel
+  
+MateriApps LIVE! Release 2.5 (2020/02/18)
+==========================================
+
+  - Newly included MateriApps packages
+     * casino-setup (2.12.1)
+  - Updated MateriApps packages
+     * espresso (quantum espresso) (6.5)
+     * fermisurfer (2.0.0)
+     * hphi (3.3.1)
+     * mvmc (1.1.1)
+     * lammps (20200204)
+     * openmx (3.9.2)
+     * respack (20200113)
+  - Newly included tools/libraries
+     * grace (xmgrace) (5.1.25)
+  - Removed MateriApps packages
+     * ermod
+  - Added menu items for setting keyboard layout
+
+MateriApps LIVE! Release 2.4 (2019/12/24)
+==========================================
+
+  - Stopped support for Debian 7 (Wheezy)
+  - Started support for Debian 10 (Buster), Ubuntu 16 (Xenial), Ubuntu 18 (Bionic)
+  - Updated MateriApps packages
+     * alps (20190807)
+     * dcore (2.0.2)
+     * hphi (3.3.0)
+     * mvmc (1.1.0)
+     * salmon (1.2.1)
+     * triqs (1.4.x)
+  - Newly included tools/libraries
+     * ovito (2.8.1)
+
+MateriApps LIVE! Release 2.3 (2019/05/14)
+==========================================
+
+  - The GPG key for the MateriApps LVIE! repository has been updated
+     * materiapps-keyring (20190512)
+  - Newly included MateriApps packages
+     * alamode (1.1.0)
+  - Updated MateriApps packages
+     * gromacs (2018.3) for i386
+     * hphi (3.2.0)
+  - Newly included tools/libraries
+     * spglib (1.12.2)
+  - Updated tools/libraries
+     * eigen3 (3.7.7)
+     * vesta (3.4.6) for amd64
+
+MateriApps LIVE! Release 2.2 (2019/02/27)
+==========================================
+
+  - Newly included MateriApps packages
+     * alpscore (2.3.0~rc.1)
+  - Updated MateriApps packages
+     * espresso (6.3.0)
+     * fermisurfer (1.10.1)
+     * lammps (20190201)
+     * respack (20190226)
+     * xtapp (20180402)
+  - Newly included Tools
+     * openbabel (3.3.2)
+     * zip & unzip
+     
+MateriApps LIVE! Release 2.1 (2018/11/10)
+==========================================
+
+  - Newly included MateriApps packages
+     * ddmrg (2.0.0)
+     * gromacs (2018.3 from sid)
+     * salmon (1.2.0)
+  - Updated MateriApps packages
+     * akaikkr (20180822)
+     * gamess-setup (201809)
+     * hphi (3.1.2)
+     * mvmc (1.0.3)
+  - Included openblas-dev package
+
+MateriApps LIVE! Release 2.0 (2018/08/26)
+==========================================
+
+  - Base Debian distribution has been updated to Debian 9 (Stretch)
+  - Made 64bit version (amd64) default
+  - Debian packages for MateriApps Applications are still provided also for Debian 7 (Wheezy) and 8 (Jessie)
+  - [MateriApps LIVE! Users Forum](https://github.com/cmsi/MateriAppsLive-forum/issues?q=is%3Aissue+sort%3Aupdated-desc) has been opened
+  - Newly included MateriApps packages
+     * dcore (1.0.0)
+     * triqs, triqs-cthyb, triqs-dfttools, triqs-hubbardi (1.4.2)
+  - Updated MateriApps packages
+     * akaikkr (20180520)
+     * alps (20180220~r7849)
+     * dsqss (1.1.17+pv1.1.3)
+     * gammess-setup (for version Feb 14, 2018)
+     * openmx (3.8.5)
+     * vesta (3.4.4)
+     * vmd-setup (for version 1.9.3)
+     * xtapp, xtapp-util, xtapp-ps-so (180420)
+  - Removed MateriApps packages
+     * gromacs
 
 MateriApps LIVE! Release 1.13 (2018/03/02)
 ==========================================
@@ -242,5 +432,6 @@ References
 ==========
 
  - [MateriApps LIVE!](http://cmsi.github.io/MateriAppsLive)
+ - [MateriApps LIVE!](http://ma.issp.u-tokyo.ac.jp/app/275) on [MateriApps](http://ma.issp.u-tokyo.ac.jp)
+ - [MateriApps LIVE! Usesrs Forum](https://github.com/cmsi/MateriAppsLive-forum/issues?q=is%3Aissue+sort%3Aupdated-desc)
  - [MateriApps LIVE! Wiki](https://github.com/cmsi/MateriAppsLive/wiki)
- - [MateriApps LIVE! Forum](http://ma.cms-initiative.jp/ja/community/materiapps-messageboard/materiapps-live)
