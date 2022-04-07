@@ -16,6 +16,14 @@ if [ -b "$DEV" ]; then :; else
   echo "Error: $DEV not exist"
   exit 127
 fi
+if [ -e /usr/sbin/parted ]; then :; else
+  echo "Error: /usr/sbin/parted not found"
+  exit 127
+fi
+if [ -e /usr/sbin/mkfs.vfat ]; then :; else
+  echo "Error: /usr/sbin/mkfs.vfat not found"
+  exit 127
+fi
 
 echo "Info: md5 file = $MD5"
 echo "Info: target device = $DEV"
@@ -31,12 +39,12 @@ for n in $NUM; do
 done
 for n in $NUM; do
   echo "Info: removing $DEV$n"
-  parted $DEV rm $n > /dev/null 2>&1
+  /usr/sbin/parted $DEV rm $n > /dev/null 2>&1
 done
 n=1
 echo "Info: making $DEV$n and mounting filesystem"
-parted --align=min $DEV mkpart primary fat32 0% 100%
-mkfs.vfat $DEV$n -n "MateriApps"
+/usr/sbin/parted --align=min $DEV mkpart primary fat32 0% 100%
+/usr/sbin/mkfs.vfat $DEV$n -n "MateriApps"
 
 # copy files
 mkdir -p $MNT
@@ -46,6 +54,7 @@ FILES=$(awk '{print $3}' $MD5)
 for f in $FILES $MD5; do
   echo "Info: copying $f to $DEV$n..."
   cp -f $f $MNT
+  sync
 done
 sync; sync; sync; umount $DEV$n
 
