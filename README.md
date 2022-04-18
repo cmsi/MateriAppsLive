@@ -11,15 +11,19 @@ MateriApps LIVE! Release 3.4 (2021/xx/xx)
      * akaikkr (20220114)
      * alamode (1.3.0)
      * alps (20220304-r7871)
+     * dcore (3.2.0) [fullseye, jammy]
      * dsqss (3.0.4)
      * fermisurfer (2.1.0)
      * gamess-setup
      * hphi (3.5.0)
+     * mvmc (1.2.0)
      * physbo (1.0.1)
-     * triqs, triqs-cthyb, triqs-dfttools, triqs-hubbardi (3.1.0)
+     * triqs, triqs-cthyb, triqs-dfttools, triqs-hubbardi (3.1.0) [bullseye, jammy]
   - Updated tools/libraries
      * eigen3 (3.4.0)
   - Set default OMP_NUM_THREADS to 1
+  - Following packages are not supported in aarch64
+     * vesta
 
 MateriApps LIVE! Release 3.3 (2021/05/18)
 ===============================================
