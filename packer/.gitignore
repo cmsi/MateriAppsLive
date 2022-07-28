@@ -1,0 +1,10 @@
+build-ce3.sh
+build-ma3.sh
+*.iso
+*.json
+*.log
+*.md5
+files/login-ce3.svg
+files/login-ma3.svg
+output-virtualbox-iso
+*.ova
