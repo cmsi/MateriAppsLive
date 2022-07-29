@@ -35,7 +35,7 @@ for arch in $ARCHITECTURES; do
 	    ${SCRIPT_DIR}/ce3-${arch}.json.in > ce3-${arch}.json
     fi
 done
-cp -fp ${SCRIPT_DIR}/preseed-ce3.cfg .
+cp -fp ${SCRIPT_DIR}/preseed-ce3.cfg . > /dev/null 2>&1
 
 echo "DEBIAN10_VERSION=$DEBIAN10_VERSION"
 echo "MA3_VERSION=$MA3_VERSION"
@@ -59,7 +59,7 @@ for arch in $ARCHITECTURES; do
 	    ${SCRIPT_DIR}/ma3-${arch}.json.in > ma3-${arch}.json
     fi
 done
-cp -fp ${SCRIPT_DIR}/preseed-ma3.cfg .
+cp -fp ${SCRIPT_DIR}/preseed-ma3.cfg . > /dev/null 2>&1
 
 # version 4
 
@@ -85,7 +85,7 @@ for arch in $ARCHITECTURES; do
 	    ${SCRIPT_DIR}/ce4-${arch}.json.in > ce4-${arch}.json
     fi
 done
-cp -fp ${SCRIPT_DIR}/preseed-ce4.cfg .
+cp -fp ${SCRIPT_DIR}/preseed-ce4.cfg . > /dev/null 2>&1
 
 echo "DEBIAN11_VERSION=$DEBIAN11_VERSION"
 echo "MA4_VERSION=$MA4_VERSION"
@@ -109,18 +109,19 @@ for arch in $ARCHITECTURES; do
 	    ${SCRIPT_DIR}/ma4-${arch}.json.in > ma4-${arch}.json
     fi
 done
-cp -fp ${SCRIPT_DIR}/preseed-ma4.cfg .
+cp -fp ${SCRIPT_DIR}/preseed-ma4.cfg . > /dev/null 2>&1
 
-cp -frp ${SCRIPT_DIR}/script .
+mkdir -p script
+cp -frp ${SCRIPT_DIR}/script/* script/ > /dev/null 2>&1
 
 mkdir -p files
 sh ${SCRIPT_DIR}/login-ma.sh ${DEBIAN10_VERSION} ${MA3_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ma3.svg
 sh ${SCRIPT_DIR}/login-ce.sh ${DEBIAN10_VERSION} ${CE3_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ce3.svg
 sh ${SCRIPT_DIR}/login-ma.sh ${DEBIAN11_VERSION} ${MA4_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ma4.svg
 sh ${SCRIPT_DIR}/login-ce.sh ${DEBIAN11_VERSION} ${CE4_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ce4.svg
-cp ${SCRIPT_DIR}/files/*.menu ${SCRIPT_DIR}/files/*.directory files/
+cp ${SCRIPT_DIR}/files/*.menu ${SCRIPT_DIR}/files/*.directory files/ > /dev/null 2>&1
 
-cp ${SCRIPT_DIR}/build-all.sh .
+cp ${SCRIPT_DIR}/build-all.sh . > /dev/null 2>&1
 sed -e "s|@MA3_VERSION@|${MA3_VERSION}|g" ${SCRIPT_DIR}/build-ma3.sh.in > build-ma3.sh
 sed -e "s|@CE3_VERSION@|${CE3_VERSION}|g" ${SCRIPT_DIR}/build-ce3.sh.in > build-ce3.sh
 sed -e "s|@MA4_VERSION@|${MA4_VERSION}|g" ${SCRIPT_DIR}/build-ma4.sh.in > build-ma4.sh

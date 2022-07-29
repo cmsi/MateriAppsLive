@@ -9,11 +9,17 @@ echo "DEBIAN11_VERSION=$DEBIAN11_VERSION"
 ARCHITECTURES="amd64"
 for arch in ${ARCHITECTURES}; do
   ISO="debian-${DEBIAN11_VERSION}-${arch}-DVD-1.iso"
-  URL="http://cdimage.debian.org/cdimage/release/${DEBIAN11_VERSION}/${arch}/iso-dvd/${ISO}"
   if [ -f "${ISO}" ]; then
     echo "Waning: ${ISO} exists. Skip."
   else
-    echo "Downloading ${URL}"
-    wget ${URL}
+    echo "Downloading ${ISO}"
+    RELEASE="release archive"
+    for rel in ${RELEASE}; do
+      URL="http://cdimage.debian.org/cdimage/${rel}/${DEBIAN11_VERSION}/${arch}/iso-dvd"
+      RES=$(curl -v -L ${URL}/SHA256SUMS 2>&1 1>/dev/null | awk '{if ($2~"HTTP") print $3}' | tail -1)
+      if [ ${RES} = 200 ]; then
+	curl -L -O ${URL}/${ISO}
+      fi
+    done
   fi
 done

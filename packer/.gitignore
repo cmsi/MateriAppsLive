@@ -1,0 +1,10 @@
+build-ce?.sh
+build-ma?.sh
+*.iso
+*.json
+*.log
+*.md5
+files/login-ce?.svg
+files/login-ma?.svg
+output-virtualbox-iso
+*.ova

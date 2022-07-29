@@ -4,14 +4,20 @@ VB_VERSION=$(VBoxManage -V | cut -d. -f1)
 CE3_VERSION="@CE3_VERSION@"
 ARCHITECTURES="amd64"
 for arch in $ARCHITECTURES; do
+  check=$(VBoxManage showvminfo ceenv-${CE3_VERSION}-${arch} > /dev/null 2>&1; echo $?)
+  if [ "${check}" = 0 ]; then
+    echo "Error: ceenv-${CE3_VERSION}-${arch} exists in VirtualBox."
+    exit 127
+  else
     if [ -f ce3-${arch}.json ]; then
-	rm -rf output-virtualbox-iso
-	packer build ce3-${arch}.json 2>&1 | tee build-ce3-${arch}.log
-	if [ -f output-virtualbox-iso/ceenv-${CE3_VERSION}-${arch}.ova ]; then
-	     mv -f output-virtualbox-iso/ceenv-${CE3_VERSION}-${arch}.ova .
-	else
-	    echo "Error: build failed."
-	    exit 127
-	fi
+      rm -rf output-virtualbox-iso
+      packer build ce3-${arch}.json 2>&1 | tee build-ce3-${arch}.log
+      if [ -f output-virtualbox-iso/ceenv-${CE3_VERSION}-${arch}.ova ]; then
+        mv -f output-virtualbox-iso/ceenv-${CE3_VERSION}-${arch}.ova .
+      else
+        echo "Error: build failed."
+        exit 127
+      fi
     fi
+  fi
 done
