@@ -37,7 +37,6 @@ apt-get -y install --no-install-recommends materiappslive \
 	alps-applications alps-tutorials \
 	ddmrg \
 	dsqss \
-	feram \
 	hphi \
 	mvmc \
         tenes \

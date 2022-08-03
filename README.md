@@ -28,6 +28,8 @@ MateriApps LIVE! Release 3.4 (2021/xx/xx)
      * mvmc (1.2.0)
      * physbo (1.0.1)
      * triqs, triqs-cthyb, triqs-dfttools, triqs-hubbardi (3.1.0) [bullseye, jammy]
+  - Removed MateriApps packages
+     * feram
   - Updated tools/libraries
      * eigen3 (3.4.0)
   - Set default OMP_NUM_THREADS to 1
