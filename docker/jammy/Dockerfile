@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:jammy
 LABEL maintainer="Synge Todo"
 ENV DEBIAN_FRONTEND=noninteractive
 

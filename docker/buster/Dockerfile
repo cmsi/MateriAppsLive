@@ -1,4 +1,4 @@
-FROM debian:10.11
+FROM debian:buster
 LABEL maintainer="Synge Todo"
 ENV DEBIAN_FRONTEND=noninteractive
 

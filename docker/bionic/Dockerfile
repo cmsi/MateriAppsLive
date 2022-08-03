@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:bionic
 LABEL maintainer="Synge Todo"
 ENV DEBIAN_FRONTEND=noninteractive
 

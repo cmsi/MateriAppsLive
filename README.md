@@ -3,29 +3,28 @@ MateriApps LIVE!
 
 [![Download MateriApps LIVE!](https://img.shields.io/sourceforge/dm/materiappslive.svg)](https://sourceforge.net/projects/materiappslive/files/latest/download)
 
-Open Source Excellence Award (2022/03/02)
-=============================================
+MateriApps LIVE! Release 4.0 (2022/xx/xx)
+=========================================
 
-* MateriApps LIVE! wins <a href="https://sourceforge.net/about/project_awards">Open Source Excellence Award</a> from <a href="https://sourceforge.net">SourceForge</a>
-
-   <a href="https://sourceforge.net/projects/materiappslive/"><img src="https://github.com/cmsi/MateriAppsLive/blob/master/badge/oss-open-source-excellence-white.png" style="width:90px;"></a>
+  - Updated base Debian distribution to Debian 11 (Bullseye)
 
 MateriApps LIVE! Release 3.4 (2021/xx/xx)
 ===============================================
 
   - Started support for Debian 11 (Bullseye) and Ubuntu 22.04 (Jammy)
-  - Started support for 64-bit Arm (aarch64) architecture
-  - Newly included MateriApps packages
+  - Started MateriApps Debian package support for 64-bit Arm (aarch64) architecture
+  - Stopped support for Debian 9 (Stretch)
   - Updated MateriApps packages
      * akaikkr (20220114)
      * alamode (1.3.0)
      * alps (20220304-r7871)
-     * dcore (3.2.0) [fullseye, jammy]
+     * dcore (3.2.0) [bullseye, jammy]
      * dsqss (3.0.4)
      * fermisurfer (2.1.0)
      * gamess-setup
      * hphi (3.5.0)
      * mvmc (1.2.0)
+     * openmx (3.9.9)
      * physbo (1.0.1)
      * triqs, triqs-cthyb, triqs-dfttools, triqs-hubbardi (3.1.0) [bullseye, jammy]
   - Removed MateriApps packages
@@ -35,6 +34,13 @@ MateriApps LIVE! Release 3.4 (2021/xx/xx)
   - Set default OMP_NUM_THREADS to 1
   - Following packages are not supported in aarch64
      * vesta
+
+Open Source Excellence Award (2022/03/02)
+=============================================
+
+* MateriApps LIVE! wins <a href="https://sourceforge.net/about/project_awards">Open Source Excellence Award</a> from <a href="https://sourceforge.net">SourceForge</a>
+
+   <a href="https://sourceforge.net/projects/materiappslive/"><img src="https://github.com/cmsi/MateriAppsLive/blob/master/badge/oss-open-source-excellence-white.png" style="width:90px;"></a>
 
 MateriApps LIVE! Release 3.3 (2021/05/18)
 ===============================================

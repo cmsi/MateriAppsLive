@@ -7,8 +7,9 @@ if [ -z ${VERSIONS} ]; then
 fi
 
 for v in ${VERSIONS}; do
+  echo "removing image malive/${v}..."
+  docker rmi malive/${v}
   echo "building image for ${v}..."
-  IMAGE="malive/${v}"
-  docker build -t ${IMAGE} -f ${v}/Dockerfile .
+  docker build -t malive/${v} -f ${v}/Dockerfile .
 done
 docker images

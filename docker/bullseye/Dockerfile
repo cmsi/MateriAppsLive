@@ -1,4 +1,4 @@
-FROM debian:11.2
+FROM debian:bullseye
 LABEL maintainer="Synge Todo"
 ENV DEBIAN_FRONTEND=noninteractive
 
