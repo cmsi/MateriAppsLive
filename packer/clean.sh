@@ -1,6 +1,6 @@
 #!/bin/bash -eux
 
-rm -f *.iso *.json *.log *.md5
+rm -f *.md5 *.json *.log
 rm -rf output-virtualbox-iso packer_cache
 rm -f *.ova
 

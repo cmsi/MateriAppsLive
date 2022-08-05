@@ -18,6 +18,7 @@ for arch in ${ARCHITECTURES}; do
       URL="http://cdimage.debian.org/cdimage/${rel}/${DEBIAN10_VERSION}/${arch}/iso-dvd"
       RES=$(curl -v -L ${URL}/SHA256SUMS 2>&1 1>/dev/null | awk '{if ($2~"HTTP") print $3}' | tail -1)
       if [ ${RES} = 200 ]; then
+	curl -L ${URL}/SHA256SUMS | grep ${ISO} > ${ISO}.sha256sum
 	curl -L -O ${URL}/${ISO}
       fi
     done

@@ -3,8 +3,7 @@
         "ssh_name": "user",
         "ssh_pass": "live",
         "ma_version": "@MA3_VERSION@",
-        "debian_version": "@DEBIAN10_VERSION@",
-        "debian_checksum": "@DEBIAN10_CHECKSUM@"
+        "debian_version": "@DEBIAN10_VERSION@"
     },
 
     "builders": [{
@@ -27,7 +26,7 @@
         ],
 
         "iso_url": "debian-{{user `debian_version`}}-amd64-DVD-1.iso",
-        "iso_checksum": "md5:{{user `debian_checksum`}}",
+        "iso_checksum": "file:debian-{{user `debian_version`}}-amd64-DVD-1.iso.sha256sum",
 
         "http_directory" : ".",
 
