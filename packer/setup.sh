@@ -28,6 +28,7 @@ if [ -f "${iso}" ] && [ -f "${sha256sum}" ]; then
   cp -fp ${SCRIPT_DIR}/preseed-ma3.cfg . > /dev/null 2>&1
   cp -fp ${SCRIPT_DIR}/preseed-ce3.cfg . > /dev/null 2>&1
   mkdir -p files
+  cp ${SCRIPT_DIR}/files/login-*-in.svg files/ > /dev/null 2>&1
   sh ${SCRIPT_DIR}/login-ma.sh ${DEBIAN10_VERSION} ${MA3_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ma3.svg
   sh ${SCRIPT_DIR}/login-ce.sh ${DEBIAN10_VERSION} ${CE3_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ce3.svg
   sed -e "s|@MA3_VERSION@|${MA3_VERSION}|g" ${SCRIPT_DIR}/build-ma3.sh.in > build-ma3.sh
@@ -51,6 +52,7 @@ if [ -f "${iso}" ] && [ -f "${sha256sum}" ]; then
   cp -fp ${SCRIPT_DIR}/preseed-ma4.cfg . > /dev/null 2>&1
   cp -fp ${SCRIPT_DIR}/preseed-ce4.cfg . > /dev/null 2>&1
   mkdir -p files
+  cp ${SCRIPT_DIR}/files/login-*-in.svg files/ > /dev/null 2>&1
   sh ${SCRIPT_DIR}/login-ma.sh ${DEBIAN11_VERSION} ${MA4_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ma4.svg
   sh ${SCRIPT_DIR}/login-ce.sh ${DEBIAN11_VERSION} ${CE4_VERSION} ${VB_VERSION} ${PACKER_VERSION} files/login-ce4.svg
   sed -e "s|@MA4_VERSION@|${MA4_VERSION}|g" ${SCRIPT_DIR}/build-ma4.sh.in > build-ma4.sh
