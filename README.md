@@ -8,7 +8,7 @@ MateriApps LIVE! Release 4.0 (2022/xx/xx)
 
   - Updated base Debian distribution to Debian 11 (Bullseye)
 
-MateriApps LIVE! Release 3.4 (2021/xx/xx)
+MateriApps LIVE! Release 3.4 (2022/xx/xx)
 ===============================================
 
   - Started support for Debian 11 (Bullseye) and Ubuntu 22.04 (Jammy)

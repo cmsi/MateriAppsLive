@@ -10,7 +10,13 @@ if [ -z ${OUTPUT} ]; then
     echo "Error: $0 debian_version ma_version vb_version packer_version filename"
     exit 127
 fi
-PROJECT="Debian GNU/Linux ${DEBIAN_VERSION} (buster)"
+DEBIAN_NAME=""
+if [ $(echo ${DEBIAN_VERSION} | cut -d. -f1) = 11 ]; then
+  DEBIAN_NAME="(bullseye)"
+elif [ $(echo ${DEBIAN_VERSION} | cut -d. -f1) = 10 ]; then
+  DEBIAN_NAME="(buster)"
+fi
+PROJECT="Debian GNU/Linux ${DEBIAN_VERSION} ${DEBIAN_NAME}"
 YEAR="$(date +%Y)"
 MONTH="$(date +%m)"
 DAY="$(date +%d)"

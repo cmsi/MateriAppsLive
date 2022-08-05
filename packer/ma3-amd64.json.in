@@ -68,7 +68,7 @@
                 "script/key.sh",
                 "script/ldconfig.sh",
                 "script/bashrc.sh",
-		"script/development.sh",
+                "script/development.sh",
                 "script/emacs.sh",
                 "script/file.sh",
                 "script/firefox.sh",

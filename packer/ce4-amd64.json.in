@@ -75,7 +75,7 @@
                 "script/keyboard.sh",
                 "script/menu.sh",
                 "script/openssl.sh",
-                "script/python.sh",
+                "script/python3.sh",
                 "script/xterm.sh",
                 "script/login-ce4.sh",
                 "script/ceenv.sh",

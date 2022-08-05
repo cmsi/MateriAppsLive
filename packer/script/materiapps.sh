@@ -31,7 +31,7 @@ apt-get -y install --no-install-recommends materiappslive \
 	smash \
 	\
 	gromacs gromacs-data gromacs-openmpi \
-	lammps lammps-data lammps-doc liblammps \
+	lammps lammps-data lammps-doc \
         octa octa-data \
 	\
 	alps-applications alps-tutorials \
