@@ -5,10 +5,8 @@ if [ -z ${VERSION} ]; then
   VERSION="bullseye"
 fi
 
-if [ -z ${VERSION} ]; then
-  echo "Usage: $0 version"
-  exit 127
-fi
+UID=$(id -u)
+GID=$(id -g)
 
 if [ -d "${HOME}/.ssh-docker" ]; then
   SSH_CONFIG="-v ${HOME}/.ssh-docker:/root/.ssh:ro"
@@ -37,4 +35,4 @@ fi
 echo "starting ${VERSION}"
 IMAGE="malive/${VERSION}"
 set -x
-docker run --rm -it --name $VERSION.$$ -e DISPLAY=host.docker.internal:0 ${DATA_CONFIG} ${SSH_CONFIG} ${SHARE_CONFIG} ${DEV_CONFIG} ${GIT_CONFIG} malive/${VERSION} bash
+docker run --rm -it --name $VERSION.$$ --user ${UID}:${GID} -e DISPLAY=host.docker.internal:0 ${DATA_CONFIG} ${SSH_CONFIG} ${SHARE_CONFIG} ${DEV_CONFIG} ${GIT_CONFIG} malive/${VERSION} bash
