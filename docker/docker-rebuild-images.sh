@@ -6,10 +6,14 @@ if [ -z ${VERSIONS} ]; then
   VERSIONS="bullseye buster jammy focal bionic"
 fi
 
+make
+
 for v in ${VERSIONS}; do
-  echo "removing image malive/${v}..."
-  docker rmi malive/${v}
-  echo "building image for ${v}..."
-  docker build -t malive/${v} -f ${v}/Dockerfile .
+  if [ -d ${v} ]; then
+    echo "building image for ${v}..."
+    IMAGE="malive/${v}"
+    docker rmi ${IMAGE}
+    docker build --no-cache=true -t ${IMAGE} -f ${v}/Dockerfile .
+  fi
 done
 docker images
