@@ -40,5 +40,7 @@ fi
 
 echo "starting ${CODENAME}"
 IMAGE="madev/${CODENAME}"
+ID_U=$(id -u)
+ID_G=$(id -g)
 set -x
-docker run --rm -it --name $CODENAME.$$ -e DISPLAY=host.docker.internal:0 ${DATA_CONFIG} ${SSH_CONFIG} ${SHARE_CONFIG} ${DEV_CONFIG} ${GIT_CONFIG} ${QUILT_CONFIG} madev/${CODENAME} /bin/bash
+docker run --rm -it --name $CODENAME.$$ --user ${ID_U}:${ID_G} -e DISPLAY=host.docker.internal:0 -v madev-vol:${D_HOME} ${DATA_CONFIG} ${SSH_CONFIG} ${SHARE_CONFIG} ${DEV_CONFIG} ${GIT_CONFIG} ${QUILT_CONFIG} madev/${CODENAME} /bin/bash

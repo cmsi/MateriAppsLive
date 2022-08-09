@@ -20,7 +20,7 @@ FROM ${BASE}
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get -y upgrade \
- && apt-get install -y \
+ && apt-get -y install \
       build-essential \
       cdbs \
       cmake \

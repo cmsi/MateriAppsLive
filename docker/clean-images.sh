@@ -14,4 +14,5 @@ for c in ${CODENAMES}; do
   docker rmi madev/${c}
 done
 docker system prune -f
+docker images
 docker system df
