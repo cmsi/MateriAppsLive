@@ -2,7 +2,7 @@
 
 CODENAMES="$1"
 
-. version.sh
+. ./version.sh
 if [ -z ${CODENAMES} ]; then
   for v in ${VERSIONS}; do
     CODENAMES="${CODENAMES} $(echo ${v} | cut -d/ -f1)"

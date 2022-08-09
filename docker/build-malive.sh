@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. version.sh
+. ./version.sh
 CODENAMES="${MALIVE_CODENAME}"
 for c in ${CODENAMES}; do
   for v in ${VERSIONS}; do

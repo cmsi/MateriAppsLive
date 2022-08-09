@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. version.sh
+. ./version.sh
 CODENAME=""
 for v in ${VERSIONS}; do
   CODENAMES="${CODENAMES} $(echo ${v} | cut -d/ -f1)"

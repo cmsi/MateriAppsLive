@@ -11,9 +11,9 @@ D_USERNAME=$(id -un)
 D_HOME=/home/${D_USERNAME}
 
 if [ -d "${HOME}/.ssh-docker" ]; then
-  SSH_CONFIG="-v ${HOME}/.ssh-docker:${D_HOME}/.ssh"
+  SSH_CONFIG="-v ${HOME}/.ssh-docker:${D_HOME}/.ssh:ro"
 elif [ -d "${HOME}/.ssh" ]; then
-  SSH_CONFIG="-v ${HOME}/.ssh:${D_HOME}/.ssh"
+  SSH_CONFIG="-v ${HOME}/.ssh:${D_HOME}/.ssh:ro"
 fi
 
 if [ -d "${HOME}/share" ]; then
@@ -25,13 +25,13 @@ if [ -d "${HOME}/development/ma" ]; then
 fi
 
 if [ -d "${HOME}/.config/git" ]; then
-  GIT_CONFIG="-v ${HOME}/.config/git:${D_HOME}/.config/git"
+  GIT_CONFIG="-v ${HOME}/.config/git:${D_HOME}/.config/git:ro"
 elif [ -f "${HOME}/.gitconfig" ]; then
-  GIT_CONFIG="-v ${HOME}/.gitconfig:${D_HOME}/.gitconfig"
+  GIT_CONFIG="-v ${HOME}/.gitconfig:${D_HOME}/.gitconfig:ro"
 fi
 
 if [ -f "${SCRIPT_DIR}/dot.quiltrc" ]; then
-  QUILT_CONFIG="-v ${SCRIPT_DIR}/dot.quiltrc:${D_HOME}/.quiltrc"
+  QUILT_CONFIG="-v ${SCRIPT_DIR}/dot.quiltrc:${D_HOME}/.quiltrc:ro"
 fi
 
 if [ -n "${MALIVE_DATA_DIR}" ]; then
