@@ -20,6 +20,7 @@ MateriApps LIVE! Release 3.4 (2022/xx/xx)
      * alps (20220304-r7871)
      * dcore (3.2.0) [bullseye, jammy]
      * dsqss (3.0.4)
+     * espresso (quantum espresso) (7.1) [bullseye, jammy, focal]
      * fermisurfer (2.1.0)
      * gamess-setup
      * hphi (3.5.0)

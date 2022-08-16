@@ -33,9 +33,9 @@ RUN apt-get update && apt-get -y upgrade \
       quilt \
       sudo \
       vim \
+      wget \
  && curl -L https://sourceforge.net/projects/materiappslive/files/Debian/sources/setup.sh/download | /bin/sh \
  && apt-get update \
- && rm -rf /var/lib/apt/lists/* \
  && echo "unalias ls" >> /etc/skel/.bashrc
 
 ARG USERNAME=$(id -un)
