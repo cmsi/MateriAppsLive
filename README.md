@@ -3,14 +3,11 @@ MateriApps LIVE!
 
 [![Download MateriApps LIVE!](https://img.shields.io/sourceforge/dm/materiappslive.svg)](https://sourceforge.net/projects/materiappslive/files/latest/download)
 
-MateriApps LIVE! Release 4.0 (2022/xx/xx)
+MateriApps LIVE! Release 4.0/3.4 (2022/xx/xx)
 =========================================
 
-  - Updated base Debian distribution to Debian 11 (Bullseye)
-
-MateriApps LIVE! Release 3.4 (2022/xx/xx)
-===============================================
-
+  - Release 4.0: Updated base Debian distribution to Debian 11 (Bullseye)
+  - Release 3.4: Final version based on Debian 10 (Buster)
   - Started support for Debian 11 (Bullseye) and Ubuntu 22.04 (Jammy)
   - Started MateriApps Debian package support for 64-bit Arm (aarch64) architecture
   - Stopped support for Debian 9 (Stretch)
@@ -18,16 +15,16 @@ MateriApps LIVE! Release 3.4 (2022/xx/xx)
      * akaikkr (20220114)
      * alamode (1.3.0)
      * alps (20220304-r7871)
-     * dcore (3.2.0) [bullseye, jammy]
+     * dcore (3.2.0) [release 4.0 only]
      * dsqss (3.0.4)
-     * espresso (quantum espresso) (7.1) [bullseye, jammy, focal]
+     * espresso (quantum espresso) (7.1) [release 4.0 only]
      * fermisurfer (2.1.0)
      * gamess-setup
-     * hphi (3.5.0)
+     * hphi (3.5.1)
      * mvmc (1.2.0)
      * openmx (3.9.9)
      * physbo (1.0.1)
-     * triqs, triqs-cthyb, triqs-dfttools, triqs-hubbardi (3.1.0) [bullseye, jammy]
+     * triqs, triqs-cthyb, triqs-dfttools, triqs-hubbardi (3.1.0) [release 4.0 only]
   - Removed MateriApps packages
      * feram
   - Updated tools/libraries
