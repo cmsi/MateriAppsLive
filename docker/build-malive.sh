@@ -6,6 +6,12 @@ echo "SCRIPT_DIR=$SCRIPT_DIR"
 . $SCRIPT_DIR/../version.sh
 CODENAMES=${MA4_CODENAME}
 VERSION=${MA4_VERSION}
+
+echo "generating malive script..."
+sed -e "s|@MA4_VERSION@|${MA4_VERSION}|g" \
+      ${SCRIPT_DIR}/malive.in > malive
+chmod +x malive
+
 for c in ${CODENAMES}; do
   for v in ${DEBIAN_VERSIONS}; do
     if [ ${c} = $(echo ${v} | cut -d/ -f1) ]; then
