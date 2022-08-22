@@ -32,7 +32,7 @@ RUN apt-get update && apt-get -y upgrade \
       python3-pip python3-venv jupyter-notebook python3-numpy python3-scipy python3-matplotlib \
  && curl -L https://sourceforge.net/projects/materiappslive/files/Debian/sources/setup.sh/download | /bin/sh \
  && apt-get update \
- && echo "unalias ls" >> /etc/skel/.bashrc
+ && echo "unalias ls" >> /etc/skel/.bashrc \
  && echo "export LIBGL_ALWAYS_INDIRECT=1" >> /etc/skel/.bashrc
 
 RUN apt-get update \
