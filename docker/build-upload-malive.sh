@@ -7,13 +7,16 @@ echo "SCRIPT_DIR=$SCRIPT_DIR"
 CODENAMES=${MA4_CODENAME}
 VERSION=${MA4_VERSION}
 
+docker buildx create --use --name multi-arch
+docker buildx inspect --builder multi-arch --bootstrap
+
 for c in ${CODENAMES}; do
   for v in ${DEBIAN_VERSIONS}; do
     if [ ${c} = $(echo ${v} | cut -d/ -f1) ]; then
       BASE=$(echo ${v} | cut -d/ -f2)
       IMAGE="malive/malive:${VERSION}"
       echo "building and uploading images malive/malive:${VERSION} and malive/malive:latest from ${BASE}..."
-      docker build -t malive/malive:${VERSION} - <<EOF
+      docker buildx build --platform linux/amd64,linux/arm64 --push -t malive/malive:${VERSION} -t malive/malive:latest - <<EOF
 FROM ${BASE}
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -42,3 +45,6 @@ docker system df
 
 echo "generating malive script..."
 sed -e "s|@MA4_VERSION@|${MA4_VERSION}|g" ${SCRIPT_DIR}/malive.in > malive
+RSYNC="rsync -avzP --delete -e ssh"
+$RSYNC malive root@$exa:/var/www/html/archive/MateriApps/docker
+$RSYNC malive frs.sourceforge.net:/home/frs/project/materiappslive/docker
