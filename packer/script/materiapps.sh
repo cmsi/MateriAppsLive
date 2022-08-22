@@ -1,7 +1,8 @@
 #!/bin/bash -eux
 
 echo "==> Install Graphics Tools"
-apt-get -y install --no-install-recommends dx grace ovito paraview pymol rasmol vesta vmd-setup xcrysden
+apt-get -y install --no-install-recommends dx grace ovito paraview pymol rasmol xcrysden
+apt-get -y install --no-install-recommends vesta vmd-setup
 
 echo "==> Install Development Tools"
 apt-get -y install --no-install-recommends h5utils

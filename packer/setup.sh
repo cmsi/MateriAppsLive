@@ -9,7 +9,7 @@ echo "VB_VERSION=$VB_VERSION"
 PACKER_VERSION=$(packer -v)
 echo "PACKER_VERSION=$PACKER_VERSION"
 
-. $SCRIPT_DIR/version.sh
+. $SCRIPT_DIR/../version.sh
 
 # version 3
 

@@ -18,4 +18,4 @@ echo "starting ${IMAGE}"
 ID_U=$(id -u)
 ID_G=$(id -g)
 set -x
-docker run -it --name ${IMAGE}.$$ --user ${ID_U}:${ID_G} -v malive-vol:/home/user ${SHARE_CONFIG} ${X_CONFIG} ${IMAGE} /bin/bash
+docker run -it --name ${IMAGE} --user ${ID_U}:${ID_G} -v malive-vol:/home/user ${SHARE_CONFIG} ${X_CONFIG} ${IMAGE} /bin/bash

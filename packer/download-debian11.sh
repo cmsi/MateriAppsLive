@@ -3,7 +3,7 @@
 SCRIPT_DIR=$(cd "$(dirname $0)"; pwd)
 echo "SCRIPT_DIR=$SCRIPT_DIR"
 
-. $SCRIPT_DIR/version.sh
+. $SCRIPT_DIR/../version.sh
 
 echo "DEBIAN11_VERSION=$DEBIAN11_VERSION"
 ARCHITECTURES="amd64"

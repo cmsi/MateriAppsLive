@@ -1,8 +1,10 @@
 #!/bin/sh
 
-. ./version.sh
+SCRIPT_DIR=$(cd "$(dirname $0)"; pwd)
+echo "SCRIPT_DIR=$SCRIPT_DIR"
+. $SCRIPT_DIR/../version.sh
 CODENAME=""
-for v in ${VERSIONS}; do
+for v in ${DEBIAN_VERSIONS}; do
   CODENAMES="${CODENAMES} $(echo ${v} | cut -d/ -f1)"
 done
 
