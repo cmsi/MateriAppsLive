@@ -39,6 +39,3 @@ EOF
 done
 docker images
 docker system df
-
-echo "generating malive script..."
-sed -e "s|@MA4_VERSION@|${MA4_VERSION}|g" ${SCRIPT_DIR}/malive.in > malive

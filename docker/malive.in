@@ -22,15 +22,12 @@ if [ ${RES} = 0 ]; then :; else
 fi
 
 # check X server
+X_CONFIG=""
 if [ -x /opt/X11/bin/xlsclients ]; then
-  if [ -f ${HOME}/.Xauthority ]; then :; else
-    echo "Starting Xquartz..."
-    xlsclients > /dev/null
-  fi
-  if [ $(du -s ${HOME}/.Xauthority | cut -f1) = 0 ]; then
-    echo "Starting Xquartz..."
-    xlsclients > /dev/null
-  fi
+  echo "Starting Xquartz..."
+  xlsclients > /dev/null
+  xhost + localhost
+  X_CONFIG="--env DISPLAY=host.docker.internal:0"
 else
   echo "Warning: Xquartz is not installed."
 fi
@@ -63,9 +60,6 @@ if [ -z ${CONTAINER_ID} ]; then
   echo "Starting container ${CONTAINER}..."
   if [ -d "${HOME}/share" ]; then
     SHARE_CONFIG="--volume ${HOME}/share:${DOCKER_HOME}/share"
-  fi
-  if [ -f "${HOME}/.Xauthority" ]; then
-    X_CONFIG="--env DISPLAY=$(hostname):0 --volume ${HOME}/.Xauthority:${DOCKER_HOME}/.Xauthority"
   fi
   docker run -it --name "${CONTAINER}" --hostname ${DOCKER_HOSTNAME} --volume malive-vol:/home/user ${SHARE_CONFIG} ${X_CONFIG} --user ${DOCKER_UID}:${DOCKER_GID} ${IMAGE} /bin/bash
 else
