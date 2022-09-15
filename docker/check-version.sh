@@ -2,7 +2,7 @@
 
 SCRIPT_DIR=$(cd "$(dirname $0)"; pwd)
 echo "SCRIPT_DIR=$SCRIPT_DIR"
-. $SCRIPT_DIR/../version.sh
+. $SCRIPT_DIR/../config/version.sh
 CODENAME=""
 for v in ${DEBIAN_VERSIONS}; do
   CODENAMES="${CODENAMES} $(echo ${v} | cut -d/ -f1)"

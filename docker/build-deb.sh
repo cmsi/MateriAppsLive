@@ -9,11 +9,6 @@ fi
 APP="$1"; shift
 CODENAMES="$*"
 
-echo ${SCRIPT}
-echo ${INCLUDE_SOURCE}
-echo ${APP}
-echo ${CODENAMES}
-
 if [ -z ${APP} ]; then
   echo "Usage: ${SCRIPT} [-sa] app [codename...]"
   exit 127

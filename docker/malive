@@ -1,0 +1,155 @@
+#!/bin/sh
+
+function malive_version_list () {
+  TAGS=$(curl -s https://registry.hub.docker.com/v2/repositories/malive/malive/tags | sed "s/,/\n/g" | grep \"name\": | cut -d '"' -f 4)
+  MALIVE_VERSIONS=
+  for t in ${TAGS}; do
+    if [ ${t} = latest ]; then :; else
+      if [ -z "${MALIVE_VERSIONS}" ]; then
+	MALIVE_VERSIONS="${t}"
+      else
+	MALIVE_VERSIONS="${MALIVE_VERSIONS} ${t}"
+      fi
+    fi
+  done
+  MALIVE_VERSION_LATEST=$(echo ${MALIVE_VERSIONS} | cut -d ' ' -f 1)
+}
+
+# check docker daemon
+RES=$(docker images > /dev/null 2>&1; echo $?)
+if [ ${RES} = 0 ]; then :; else
+  echo "Error: docker daemon is not running."
+  exit 1
+fi
+
+COMMAND="$1"
+if [ -z ${COMMAND} ]; then :; else
+  if [ ${COMMAND} = remove ]; then
+    VERSION="$2"
+    if [ -z ${VERSION} ]; then
+      echo "Error: $0 remove VERSION"
+      exit 1
+    fi
+    read -p "Really want to remove MateriApps LIVE! version ${VERSION}? (y/N): " yn
+    case "$yn" in [yY]*)
+      echo "Removing MateriApps LIVE! version ${VERSION}..."
+      IMAGE="malive:${VERSION}"
+      CONTAINER="malive-${VERSION}"
+      docker stop ${CONTAINER} > /dev/null
+      docker rm ${CONTAINER} > /dev/null
+      docker rmi ${IMAGE} > /dev/null
+      exit 0;;
+    *)
+      exit 0;;
+    esac
+  elif [ ${COMMAND} = update ]; then
+    malive_version_list
+    VERSION=$(docker images --format "{{.Tag}}" malive | head -1)
+    if [ -z "${VERSION}" ]; then :;
+    else
+      echo "Latest version: ${MALIVE_VERSION_LATEST}"
+      echo "Installed version: ${VERSION}"
+      if [ ${VERSION} = ${MALIVE_VERSION_LATEST} ]; then :; else
+        read -p "Really want to update to MateriApps LIVE! version ${MALIVE_VERSION_LATEST}? (y/N): " yn
+        case "$yn" in [yY]*)
+          echo "Removing MateriApps LIVE! version ${VERSION}..."
+          IMAGE="malive:${VERSION}"
+          CONTAINER="malive-${VERSION}"
+          docker stop ${CONTAINER} > /dev/null
+          docker rm ${CONTAINER} > /dev/null
+          docker rmi ${IMAGE} > /dev/null;;
+        *)
+          exit 0;;
+        esac
+      fi
+    fi
+  elif [ ${COMMAND} = list ]; then
+    malive_version_list
+    echo "Available versions: ${MALIVE_VERSIONS}"
+    VERSIONS=$(docker images --format "{{.Tag}}" malive)
+    echo "Installed versions: ${VERSIONS}"
+    exit 0
+  else
+    echo "Error: $0 [remove | list | update]"
+    exit 1
+  fi
+fi
+
+VERSION=
+CHECK_VERSION=0
+BUILD_IMAGE=0
+
+# check installed versions
+RES=$(docker images --format "{{.Tag}}" malive | head -1)
+if [ -z ${RES} ]; then
+  CHECK_VERSION=1
+  BUILD_IMAGE=1
+else
+  VERSION=${RES}
+fi
+
+# check version list
+if [ ${CHECK_VERSION} = 1 ]; then
+  malive_version_list
+  if [ ${BUILD_IMAGE} = 1 ]; then
+     VERSION=${MALIVE_VERSION_LATEST}
+  fi
+fi
+
+echo "Starting MateriApps LIVE! version ${VERSION}..."
+
+# check X server
+X_CONFIG=""
+if [ -x /opt/X11/bin/xlsclients ]; then
+  echo "Starting Xquartz..."
+  xlsclients > /dev/null
+  xhost + localhost > /dev/null
+  X_CONFIG="--env DISPLAY=host.docker.internal:0"
+else
+  echo "Warning: Xquartz is not installed."
+fi
+
+IMAGE="malive:${VERSION}"
+DOCKER_USERNAME=user
+DOCKER_HOME=/home/${DOCKER_USERNAME}
+DOCKER_UID=$(id -u)
+DOCKER_GID=$(id -g)
+DOCKER_HOSTNAME="malive"
+
+# build image
+if [ ${BUILD_IMAGE} = 1 ]; then
+  BASE="malive/malive:${VERSION}"
+  echo "Building building image ${IMAGE} from ${BASE}..."
+  docker build -t ${IMAGE} - <<EOF
+FROM ${BASE}
+ARG USERNAME=${DOCKER_USERNAME}
+ARG GROUPNAME=${DOCKER_USERNAME}
+ARG UID=${DOCKER_UID}
+ARG GID=${DOCKER_GID}
+ARG PASSWORD=live
+RUN groupadd -f -g \$GID \$GROUPNAME \
+ && useradd -m -s /bin/bash -u \$UID -g \$GID -G sudo \$USERNAME \
+ && echo \$USERNAME:\$PASSWORD | chpasswd \
+ && echo "\$USERNAME ALL=(ALL) ALL" >> /etc/sudoers
+USER \$USERNAME
+WORKDIR /home/\$USERNAME/
+EOF
+fi
+
+IMAGE_ID=$(docker images --format "{{.ID}}" ${IMAGE})
+echo "Docker image: ${IMAGE} (${IMAGE_ID})"
+
+# start container
+CONTAINER="malive-${VERSION}"
+CONTAINER_ID=$(docker ps --all --filter "name=${CONTAINER}" --format "{{.ID}}")
+if [ -z ${CONTAINER_ID} ]; then
+  echo "Starting container ${CONTAINER}..."
+  if [ -d "${HOME}/share" ]; then
+    SHARE_CONFIG="--volume ${HOME}/share:${DOCKER_HOME}/share"
+  fi
+  docker run -it --name "${CONTAINER}" --hostname ${DOCKER_HOSTNAME} --volume malive-vol:/home/user ${SHARE_CONFIG} ${X_CONFIG} --user ${DOCKER_UID}:${DOCKER_GID} ${IMAGE} /bin/bash
+else
+  echo "Docker container: ${CONTAINER} (${CONTAINER_ID})"
+  docker restart ${CONTAINER_ID} > /dev/null
+  docker attach ${CONTAINER_ID}
+fi
