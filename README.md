@@ -24,6 +24,7 @@ MateriApps LIVE! Release 4.0/3.4 (2022/xx/xx)
      * mvmc (1.2.0)
      * openmx (3.9.9)
      * physbo (1.0.1)
+     * salmon (2.1.0) [release 4.0 only]
      * triqs, triqs-cthyb, triqs-dfttools, triqs-hubbardi (3.1.0) [release 4.0 only]
   - Removed MateriApps packages
      * feram

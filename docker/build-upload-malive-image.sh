@@ -51,14 +51,14 @@ RUN apt-get update -qq \
 	quantum-espresso quantum-espresso-data \
 	openmx openmx-data openmx-example \
 	respack \
-	salmon \
+	salmon-tddft \
 	xtapp xtapp-ps xtapp-util \
 	\
 	gamess-setup \
 	smash \
 	\
 	gromacs gromacs-data gromacs-openmpi \
-	lammps lammps-data lammps-doc \
+	lammps lammps-data lammps-examples \
         octa octa-data \
 	\
 	alps-applications alps-tutorials \

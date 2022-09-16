@@ -1,7 +1,7 @@
 #!/bin/sh
 
 function malive_version_list () {
-  TAGS=$(curl -s https://registry.hub.docker.com/v2/repositories/malive/malive/tags | sed "s/,/\n/g" | grep \"name\": | cut -d '"' -f 4)
+  TAGS=$(curl -s https://registry.hub.docker.com/v2/repositories/malive/malive/tags | sed "s/,/\n/g" | grep \"name\": | cut -d '"' -f 4 | sort -r -V)
   MALIVE_VERSIONS=
   for t in ${TAGS}; do
     if [ ${t} = latest ]; then :; else
