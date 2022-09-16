@@ -1,6 +1,12 @@
 ccenv (Computer Experiment Envirionment) Release Note
 =====================================================
 
+ceenv Release 4.0/3.4 (2022/09/xx)
+===============================================
+
+  - Release 4.0: Updated base Debian distribution to Debian 11 (Bullseye)
+  - Release 3.4: Final version based on Debian 10 (Buster)
+
 ceenv Release 3.3 (2021/05/18)
 ===============================================
 

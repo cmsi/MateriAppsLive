@@ -3,10 +3,11 @@ MateriApps LIVE!
 
 [![Download MateriApps LIVE!](https://img.shields.io/sourceforge/dm/materiappslive.svg)](https://sourceforge.net/projects/materiappslive/files/latest/download)
 
-MateriApps LIVE! Release 4.0/3.4 (2022/xx/xx)
-=========================================
+MateriApps LIVE! Release 4.0/3.4 (2022/09/xx)
+=============================================
 
   - Release 4.0: Updated base Debian distribution to Debian 11 (Bullseye)
+  - Release 4.0: Released Docker version
   - Release 3.4: Final version based on Debian 10 (Buster)
   - Started support for Debian 11 (Bullseye) and Ubuntu 22.04 (Jammy)
   - Started MateriApps Debian package support for 64-bit Arm (aarch64) architecture
