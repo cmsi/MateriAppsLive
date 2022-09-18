@@ -25,14 +25,12 @@ apt-get -y install --no-install-recommends materiappslive \
 	quantum-espresso quantum-espresso-data \
 	openmx openmx-data openmx-example \
 	respack \
-	salmon-tddft \
 	xtapp xtapp-ps xtapp-util \
 	\
 	gamess-setup \
 	smash \
 	\
 	gromacs gromacs-data gromacs-openmpi \
-	lammps lammps-data lammps-examples \
         octa octa-data \
 	\
 	alps-applications alps-tutorials \
@@ -42,6 +40,16 @@ apt-get -y install --no-install-recommends materiappslive \
 	mvmc \
         tenes \
 	triqs triqs-cthyb triqs-dfttools triqs-hubbardi dcore
+
+if [ $(lsb_release -sc) = "bullseye" ]; then
+  apt-get -y install --no-install-recommends \
+	lammps lammps-data lammps-examples \
+        salmon-tddft
+fi
+if [ $(lsb_release -sc) = "buster" ]; then
+  apt-get -y install --no-install-recommends \
+	lammps lammps-data lammps-doc
+fi
 
 echo "==> Copy desktop file(s)"
 if [ -d /etc/skel/Desktop ]; then

@@ -33,6 +33,7 @@ RUN apt-get update -qq \
  \
  && curl -L https://sourceforge.net/projects/materiappslive/files/Debian/sources/setup.sh/download | /bin/sh \
  && apt-get update -qq \
+ && apt-get -y install --no-install-recommends dx grace \
  && apt-get -y install --no-install-recommends h5utils \
  && apt-get -y install --no-install-recommends materiappslive \
 	bsa \
