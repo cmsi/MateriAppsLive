@@ -3,7 +3,7 @@ MateriApps LIVE!
 
 [![Download MateriApps LIVE!](https://img.shields.io/sourceforge/dm/materiappslive.svg)](https://sourceforge.net/projects/materiappslive/files/latest/download)
 
-MateriApps LIVE! Release 4.0/3.4 (2022/09/xx)
+MateriApps LIVE! Release 4.0/3.4 (2022/09/19)
 =============================================
 
   - Release 4.0: Updated base Debian distribution to Debian 11 (Bullseye)
