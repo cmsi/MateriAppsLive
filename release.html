@@ -31,7 +31,7 @@
         <p class="view"><a href="https://github.com/cmsi/MateriAppsLive">View the Project on GitHub <small>cmsi/MateriAppsLive</small></a></p>
 
         <ul>
-          <li><a href="https://sourceforge.net/projects/materiappslive/files/Release-3.2/">Download <strong>LIVE! Image</strong></a></li>
+          <li><a href="https://sourceforge.net/projects/materiappslive/files/">Download <strong>LIVE! Image</strong></a></li>
           <li><a href="http://ma.issp.u-tokyo.ac.jp">Visit <strong>MateriApps</strong></a></li>
           <li><a href="https://github.com/cmsi/MateriAppsLive-forum/issues?q=is%3Aissue+sort%3Aupdated-desc">MateriApps LIVE!<strong>Users Forum</strong></a></li>
         </ul>
@@ -41,7 +41,55 @@
       <section>
 
 <h3>
-<a name="release-3.3" class="anchor" href="#release-3.3"><span class="octicon octicon-link"></span></a>Release 3.3 (2021/05/18) <a href="https://sourceforge.net/projects/materiappslive/files/Release-3.3/">[Download]</a>  <a href="https://www.slideshare.net/cms_initiative/clipboards/how-to-setup-materiapps-live">[Setup]</a><br/></h3>
+  <a name="release-4.0" class="anchor" href="#release-4.0"><span class="octicon octicon-link"></span></a>Release 4.0 (2022/09/19) <a href="https://sourceforge.net/projects/materiappslive/files/Release-4.0/">[VirtualBox edition]</a> <a href="https://github.com/cmsi/MateriAppsLive/wiki/GettingStartedDocker-en">[Docker edition]</a><br/>
+  <a name="release-3.4" class="anchor" href="#release-3.4"><span class="octicon octicon-link"></span></a>Release 3.4 (2022/09/19) <a href="https://sourceforge.net/projects/materiappslive/files/Release-3.4/">[VirtualBox edition]</a>
+</h3>
+
+<ul>
+  <li><a href="https://github.com/cmsi/malive-tutorial/blob/master/setup/setup-en.pdf">[How to setup MateriApps LIVE!]</a> <a href="https://github.com/cmsi/malive-tutorial/blob/master/setup/setup.pdf">[MateriApps LIVE!の設定]</a></li>
+  <li>Updated base Debian distribution to Debian 11 (Bullseye)</li>
+  <li>Released Docker edition in addition to VirtualBox edition</li>
+  <li>Started support for Debian 11 (Bullseye) and Ubuntu 22.04 (Jammy)</li>
+  <li>Started MateriApps Debian package support for 64-bit Arm (aarch64) architecture</li>
+  <li>Stopped support for Debian 9 (Stretch)</li>
+  <li>Updated MateriApps packages
+    <ul>
+     <li>akaikkr (20220114)</li>
+     <li>alamode (1.3.0)</li>
+     <li>alps (20220304-r7871)</li>
+     <li>dcore (3.2.0) [release 4.0 only]</li>
+     <li>dsqss (3.0.4)</li>
+     <li>espresso (quantum espresso) (7.1) [release 4.0 only]</li>
+     <li>fermisurfer (2.1.0)</li>
+     <li>gamess-setup</li>
+     <li>hphi (3.5.1)</li>
+     <li>mvmc (1.2.0)</li>
+     <li>openmx (3.9.9)</li>
+     <li>physbo (1.0.1)</li>
+     <li>salmon (2.1.0) [release 4.0 only]</li>
+     <li>triqs, triqs-cthyb, triqs-dfttools, triqs-hubbardi (3.1.0) [release 4.0 only]</li>
+    </ul>
+  </li>
+  <li>Removed MateriApps packages
+    <ul>
+      <li>feram</li>
+    </ul>
+  </li>
+  <li>Updated tools/libraries
+    <ul>
+      <li>eigen3 (3.4.0)</li>
+    </ul>
+  </li>
+  <li>Set default OMP_NUM_THREADS to 1</li>
+  <li>Following packages are not supported in aarch64
+    <ul>
+      <li>vesta</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>
+<a name="release-3.3" class="anchor" href="#release-3.3"><span class="octicon octicon-link"></span></a>Release 3.3 (2021/05/18) <a href="https://sourceforge.net/projects/materiappslive/files/Release-3.3/">[Download]</a>  <a href="https://www.slideshare.net/cms_initiative/clipboards/how-to-setup-materiapps-live">[Setup]</a></h3>
 
 <ul>
   <li>Stopped support for Debian 8 (Jessie) and Ubuntu 16 (Xenial)</li>
@@ -709,7 +757,7 @@
 
       </section>
       <footer>
-        <p>This project is maintained by <a href="http://cms-initiative.jp">CMSI</a></p>
+        <p>This project is maintained by <a href="http://ccms.issp.u-tokyo.ac.jp">ISSP-CCMS</a></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
