@@ -6,17 +6,19 @@ echo "SCRIPT_DIR=$SCRIPT_DIR"
 . $SCRIPT_DIR/../config/version.sh
 CODENAMES=${MA4_CODENAME}
 VERSION=${MA4_DOCKER_VERSION}
+LOG=build-upload-malive-image.log
 
-docker buildx create --use --name multi-arch
-docker buildx inspect --builder multi-arch --bootstrap
+docker login 2>&1 | tee -a ${LOG}
+docker buildx create --use --name multi-arch 2>&1 | tee -a ${LOG}
+docker buildx inspect --builder multi-arch --bootstrap 2>&1 | tee -a ${LOG}
 
 for c in ${CODENAMES}; do
   for v in ${DEBIAN_VERSIONS}; do
     if [ ${c} = $(echo ${v} | cut -d/ -f1) ]; then
       BASE=$(echo ${v} | cut -d/ -f2)
       IMAGE="malive/malive:${VERSION}"
-      echo "building and uploading images malive/malive:${VERSION} and malive/malive:latest from ${BASE}..."
-      docker buildx build --platform linux/amd64,linux/arm64 --push -t malive/malive:${VERSION} -t malive/malive:latest - <<EOF
+      echo "building and uploading images malive/malive:${VERSION} and malive/malive:latest from ${BASE}..." 2>&1 | tee -a ${LOG}
+      docker buildx build --platform linux/amd64,linux/arm64 --push -t malive/malive:${VERSION} -t malive/malive:latest - <<EOF 2>&1 | tee -a ${LOG}
 FROM ${BASE}
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -85,5 +87,5 @@ EOF
     fi
   done
 done
-docker images
-docker system df
+docker images 2>&1 | tee -a ${LOG}
+docker system df 2>&1 | tee -a ${LOG}

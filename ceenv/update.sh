@@ -9,18 +9,11 @@ BASEDIR=$(cd $SCRIPTDIR/.. && pwd)
 REPOSITORY="https://github.com/cmsi/MateriAppsLive.wiki.git"
 WIKIDIR="$BASEDIR/MateriAppsLive.wiki"
 
-# sudo apt-get -y install ruby-dev rubygems
-# sudo gem install github-markdown
+sudo apt-get -y install ruby-dev rubygems
+sudo gem install github-markdown
 
-if test -f "/var/lib/gems/2.1.0/gems/github-markdown-0.6.9/bin/gfm"; then
-  GFM="/var/lib/gems/2.1.0/gems/github-markdown-0.6.9/bin/gfm"
-elif test -f "/var/lib/gems/1.9.1/gems/github-markdown-0.6.9/bin/gfm"; then
-  GFM="/var/lib/gems/1.9.1/gems/github-markdown-0.6.9/bin/gfm"
-elif test -f "/var/lib/gems/2.3.0/gems/github-markdown-0.6.9/bin/gfm"; then
-  GFM="/var/lib/gems/2.3.0/gems/github-markdown-0.6.9/bin/gfm"
-elif test -f "/var/lib/gems/2.5.0/gems/github-markdown-0.6.9/bin/gfm"; then
-  GFM="/var/lib/gems/2.5.0/gems/github-markdown-0.6.9/bin/gfm"
-else
+GFM=$(ls $(gem environment gemdir)/gems/github-markdown-*/bin/gfm)
+if [ -z $GFM ]; then
   echo "Error: gfm not found"
   exit 127
 fi

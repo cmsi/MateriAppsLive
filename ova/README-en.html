@@ -294,36 +294,34 @@ pre {
 <p><a href="http://cmsi.github.io/MateriAppsLive/">MateriApps LIVE!</a> is a virtual disk image (OVA) for VirtualBox. It is being developed and distributed as a hands-on environment of materials science application programs and also as a training environment of UNIX (UNIX commands, network, Emacs, Gnuplot), programming language (C, C++, Fortran), etc.</p>
 
 <ul>
-<li><p>What&#39;s <a href="http://ma.cms-initiative.jp">MateriApps</a>?</p>
+<li><p>What&#39;s <a href="https://ma.issp.u-tokyo.ac.jp">MateriApps</a>?</p>
 
-<p>A number of high-performance and high-precision application software for computational materials science simulation have been developed in Japan.  The experimentalists and researchers in the private companies, however, don&#39;t even know the existence of such applications, and are mainly using open-source software from abroad or commercial software.  <a href="http://ma.cms-initiative.jp">MateriApps</a>, a portal site of materials science simulation, is introducing the features and characteristics of various materials science simulation programs that have not been known widely or that are being developed in years to come.</p></li>
+<p>A number of high-performance and high-precision application software for computational materials science simulation have been developed in Japan.  The experimentalists and researchers in the private companies, however, don&#39;t even know the existence of such applications, and are mainly using open-source software from abroad or commercial software.  <a href="https://ma.issp.u-tokyo.ac.jp">MateriApps</a>, a portal site of materials science simulation, is introducing the features and characteristics of various materials science simulation programs that have not been known widely or that are being developed in years to come.</p></li>
 <li><p>What&#39;s <a href="http://cmsi.github.io/MateriAppsLive/">MateriApps LIVE!</a>?</p>
 
-<p>In the meantime, when trying to try out open-source software, installation of software itself often becomes a serious obstacle.  MateriApps LIVE! offers an environment where one can try out computational materials science simulation freely, using a notebook PC, etc. All environment required to begin tutorials, such as MateriApps applications, OS (Debian GNU/Linux), editors, and visualization tools, is provided in a USB memory stick.</p></li>
+<p>In the meantime, when trying to try out open-source software, installation of software itself often becomes a serious obstacle.  MateriApps LIVE! offers an environment where one can try out computational materials science simulation freely, using a notebook PC, etc. All environment required to begin tutorials, such as MateriApps applications, OS (Debian GNU/Linux), editors, and visualization tools, is provided in a signgle image.</p></li>
 <li><p>What&#39;s <a href="https://www.virtualbox.org">VirtualBox</a>?</p>
 
 <p>VirtualBox is open-source software providing a virtual machine environment. VirtualBox can be installed on Linux、macOS、Windows、Solaris. It supports most popular operating systems on x86/x64 architecture, such as FreeBSD、Linux、OpenBSD、OS/2 Warp、Windows、macOS、Solaris, etc, as guest OS. VirtualBox is distributed under GNU General Public License (GPL) Version2.</p></li>
 </ul>
 
-<h2>Contents of USB stick memory</h2>
+<h2>Distribution file list</h2>
 
 <ul>
 <li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox-*-OSX.dmg</a> : VirtualBox Installer for macOS</li>
 <li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox-*-Win.exe</a> : VirtualBox Installer for Windows</li>
-<li><a href="https://sourceforge.net/projects/materiappslive/files">MateriAppsLive-*-amd64.ova</a> : MateriApps LIVE! virtual disk image (64bit version)</li>
+<li><a href="https://sourceforge.net/projects/materiappslive/files">MateriAppsLive-*-amd64.ova</a> : MateriApps LIVE! virtual disk image</li>
 <li><a href="https://github.com/cmsi/MateriAppsLive/wiki/MateriAppsLive-ova-en">README-en.html</a> : About MateriApps LIVE! VirtualBox Edition</li>
 <li><a href="https://github.com/cmsi/malive-tutorial/raw/master/setup/setup-en.pdf">setup-en.pdf</a> : How to setup MateriApps LIVE!</li>
-<li>MD5SUM : Checksums</li>
+<li>SHA256SUM : Checksums</li>
 <li>In addition, sample files (* .tar.gz, * .zip, * .iso, etc.) used for hands-on sessions are included</li>
 </ul>
 
 <h2>How to setup MateriApps LIVE!</h2>
 
 <ol>
-<li><p>Copy contents of USB memory stick to hard drive</p>
-
-<p>Copy all the files to your PC (e.g., Desktop).</p></li>
-<li><p>Starts VirtualBox Installer and install VirtualBox software.</p></li>
+<li>Download distribution files</li>
+<li>Starts VirtualBox Installer and install VirtualBox software.</li>
 <li>Starts VirtualBox by double clicking MateriAppsLive-*-amd64.ova Virtual Disk Image. Click &quot;Import&quot; button in VirtualBox import window.</li>
 <li>Choose &quot;MateriAppsLive&quot; on Oracle VM VirtualBox Manager panel and click &quot;Start&quot; button.</li>
 <li>Login to MateriApps LIVE! by using the following username and password
@@ -337,13 +335,7 @@ pre {
 <h2><a name="sharing"></a>How to transfer files from/to MateriApps LIVE!</h2>
 
 <ol>
-<li><p>Settings: browsing contents of ISO image file (* .iso) from the virtual machine</p>
-
-<ol>
-<li>click CD-ROM icon at the bottom of the virtual machine window frame, select &quot;Choose disk image ...&quot;, and select the ISO image file</li>
-<li>contents of ISO image file are accessible via /media/cdrom0</li>
-</ol></li>
-<li><p>Setting: file sharing between host OS and virtual machine</p>
+<li>Setting: file sharing between host OS and virtual machine
 
 <ol>
 <li>shutdown the virtual machine, if it is running</li>
@@ -353,11 +345,6 @@ pre {
 <li>check “Auto-mount” box and press “OK”.  Then press “OK” again</li>
 <li>the folder specified above can be accessed as /media/sf_... after restarting the virtual machine</li>
 </ol></li>
-<li><p>Connect a USB stick memory to MateriApps LIVE!</p>
-
-<ul>
-<li>VirtualBox USB settings: <a href="https://www.virtualbox.org/manual/ch03.html#settings-usb">https://www.virtualbox.org/manual/ch03.html#settings-usb</a></li>
-</ul></li>
 </ol>
 
 <h2>References</h2>
