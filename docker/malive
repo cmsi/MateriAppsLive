@@ -15,6 +15,10 @@ function malive_version_list () {
   MALIVE_VERSION_LATEST=$(echo ${MALIVE_VERSIONS} | /usr/bin/cut -d ' ' -f 1)
 }
 
+function malive_timezone () {
+  TZ=$(basename $(dirname $(readlink /etc/localtime)))/$(basename $(readlink /etc/localtime))
+}
+
 # check docker daemon
 RES=$(docker images > /dev/null 2>&1; echo $?)
 if [ ${RES} = 0 ]; then :; else
@@ -119,6 +123,7 @@ DOCKER_HOSTNAME="malive"
 # build image
 if [ ${BUILD_IMAGE} = 1 ]; then
   BASE="malive/malive:${VERSION}"
+  malive_timezone
   echo "Building building image ${IMAGE} from ${BASE}..."
   docker build -t ${IMAGE} - <<EOF
 FROM ${BASE}
@@ -130,7 +135,8 @@ ARG PASSWORD=live
 RUN groupadd -f -g \$GID \$GROUPNAME \
  && useradd -m -s /bin/bash -u \$UID -g \$GID -G sudo \$USERNAME \
  && echo \$USERNAME:\$PASSWORD | chpasswd \
- && echo "\$USERNAME ALL=(ALL) ALL" >> /etc/sudoers
+ && echo "\$USERNAME ALL=(ALL) ALL" >> /etc/sudoers \
+ && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime
 USER \$USERNAME
 WORKDIR /home/\$USERNAME/
 EOF
