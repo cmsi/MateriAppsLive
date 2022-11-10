@@ -153,9 +153,9 @@ if [ -z ${CONTAINER_ID} ]; then
   if [ -d "${HOME}/share" ]; then
     SHARE_CONFIG="--volume ${HOME}/share:${DOCKER_HOME}/share"
   fi
-  docker run -it --name "${CONTAINER}" --hostname ${DOCKER_HOSTNAME} --volume malive-vol:/home/user ${SHARE_CONFIG} ${X_CONFIG} --user ${DOCKER_UID}:${DOCKER_GID} ${IMAGE} /bin/bash
+  docker run -it --detach-keys='ctrl-e,e' --name "${CONTAINER}" --hostname ${DOCKER_HOSTNAME} --volume malive-vol:/home/user ${SHARE_CONFIG} ${X_CONFIG} --user ${DOCKER_UID}:${DOCKER_GID} ${IMAGE} /bin/bash
 else
   echo "Docker container: ${CONTAINER} (${CONTAINER_ID})"
   docker restart ${CONTAINER_ID} > /dev/null
-  docker attach ${CONTAINER_ID}
+  docker attach --detach-keys='ctrl-e,e' ${CONTAINER_ID}
 fi
