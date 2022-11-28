@@ -30,7 +30,7 @@ RUN apt-get update -qq \
       evince gnuplot-x11 \
       curl lftp wget \
       gfortran cmake git liblapack-dev libopenblas-dev mpi-default-dev numactl \
-      enscript time tree zip unzip bc xsel parallel \
+      man manpages-dev enscript time tree zip unzip bc xsel parallel \
       python3-pip python3-venv jupyter-notebook python3-numpy python3-scipy python3-matplotlib python3-tk python3-sympy python3-dev ipython3 \
  \
  && curl -L https://sourceforge.net/projects/materiappslive/files/Debian/sources/setup.sh/download | /bin/sh \
