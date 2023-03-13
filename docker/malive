@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function malive_version_list () {
   TAGS=$(curl -s https://registry.hub.docker.com/v2/repositories/malive/malive/tags | sed "s/,/\n/g" | grep \"name\": | cut -d '"' -f 4 | sort -r -V)
