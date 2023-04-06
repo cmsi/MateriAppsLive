@@ -3,6 +3,11 @@ MateriApps LIVE!
 
 [![Download MateriApps LIVE!](https://img.shields.io/sourceforge/dm/materiappslive.svg)](https://sourceforge.net/projects/materiappslive/files/latest/download)
 
+MateriApps LIVE! Release 4.1 (2023/mm/dd)
+=============================================
+
+  - Started support for Debian 12 (Bookworm)
+
 MateriApps LIVE! Release 4.0/3.4 (2022/09/19)
 =============================================
 
