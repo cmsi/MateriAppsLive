@@ -6,6 +6,7 @@ MateriApps LIVE!
 MateriApps LIVE! Release 4.1 (2023/mm/dd)
 =============================================
 
+  - Updated VirtualBox version to 7.0
   - Started support for Debian 12 (Bookworm)
 
 MateriApps LIVE! Release 4.0/3.4 (2022/09/19)
