@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PACKAGE="malive"
+PACKAGE="ceenv"
 
 SCRIPT_DIR=$(cd "$(dirname $0)"; pwd)
 echo "SCRIPT_DIR=$SCRIPT_DIR"
@@ -37,42 +37,6 @@ RUN apt-get update -qq \
  \
  && curl -L https://sourceforge.net/projects/materiappslive/files/Debian/sources/setup.sh/download | /bin/sh \
  && apt-get update -qq \
- && apt-get -y install --no-install-recommends dx grace \
- && apt-get -y install --no-install-recommends h5utils \
- && apt-get -y install --no-install-recommends materiappslive \
-	bsa \
-	c-tools \
-	fermisurfer \
-	libalpscore-dev \
-        physbo \
-	tapioca \
-	\
-        abinit \
-	akaikkr \
-        alamode \
-        casino-setup \
-	cif2cell \
-        conquest \
-	quantum-espresso quantum-espresso-data \
-	openmx openmx-data openmx-example \
-	respack \
-	salmon-tddft \
-	xtapp xtapp-ps xtapp-util \
-	\
-	gamess-setup \
-	smash \
-	\
-	gromacs gromacs-data gromacs-openmpi \
-	lammps lammps-data lammps-examples \
-        octa octa-data \
-	\
-	alps-applications alps-tutorials \
-	ddmrg \
-	dsqss \
-	hphi \
-	mvmc \
-        tenes \
-	triqs triqs-cthyb triqs-dfttools triqs-hubbardi dcore \
  \
  && echo "export PATH=\$HOME/bin:\$PATH" >> /etc/skel/.bashrc \
  && echo "export OMP_NUM_THREADS=1" >> /etc/skel/.bashrc \
