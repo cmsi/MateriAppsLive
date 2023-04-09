@@ -1,6 +1,11 @@
 ccenv (Computer Experiment Envirionment) Release Note
 =====================================================
 
+ceenv Release 4.1 (2023/04/09)
+=============================================
+
+  - Updated VirtualBox version to 7.0
+
 ceenv Release 4.0/3.4 (2022/09/19)
 ===============================================
 
