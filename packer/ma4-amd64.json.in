@@ -33,7 +33,7 @@
 
         "ssh_username": "{{user `ssh_name`}}",
         "ssh_password": "{{user `ssh_pass`}}",
-        "ssh_wait_timeout": "30m",
+        "ssh_wait_timeout": "60m",
 
         "shutdown_command": "echo {{user `ssh_pass`}} | sudo -S shutdown -hP now",
 
@@ -66,10 +66,8 @@
                 "script/00_remove-cdrom-sources.sh",
                 "script/01_update.sh",
                 "script/02_virtualbox.sh",
-                "script/key.sh",
                 "script/ldconfig.sh",
                 "script/bashrc.sh",
-                "script/development.sh",
                 "script/emacs.sh",
                 "script/file.sh",
                 "script/firefox.sh",
@@ -77,7 +75,6 @@
                 "script/keyboard.sh",
                 "script/menu.sh",
                 "script/openssl.sh",
-                "script/python3.sh",
                 "script/xterm.sh",
                 "script/login-ma4.sh",
                 "script/materiapps.sh",
