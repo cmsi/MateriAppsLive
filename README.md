@@ -3,7 +3,7 @@ MateriApps LIVE!
 
 [![Download MateriApps LIVE!](https://img.shields.io/sourceforge/dm/materiappslive.svg)](https://sourceforge.net/projects/materiappslive/files/latest/download)
 
-MateriApps LIVE! Release 4.1 (2023/mm/dd)
+MateriApps LIVE! Release 4.1 (2023/04/09)
 =============================================
 
   - Updated VirtualBox version to 7.0
