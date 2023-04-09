@@ -12,20 +12,25 @@ echo "PACKER_VERSION=$PACKER_VERSION"
 . $SCRIPT_DIR/../config/version.sh
 . $SCRIPT_DIR/../config/package.sh
 
+ARCHITECTURE=$(uname -m)
+if [ ${ARCHITECTURE} = x86_64 ]; then
+  ARCHITECTURE=amd64
+fi
+
 # version 4
 
-iso="debian-${DEBIAN11_VERSION}-amd64-DVD-1.iso"
-sha256sum="debian-${DEBIAN11_VERSION}-amd64-DVD-1.iso.sha256sum"
+iso="debian-${DEBIAN11_VERSION}-${ARCHITECTURE}-DVD-1.iso"
+sha256sum="debian-${DEBIAN11_VERSION}-${ARCHITECTURE}-DVD-1.iso.sha256sum"
 if [ -f "${iso}" ] && [ -f "${sha256sum}" ]; then
   echo "DEBIAN11_VERSION=$DEBIAN11_VERSION"
   echo "MA4_VERSION=$MA4_VERSION"
   echo "CE4_VERSION=$CE4_VERSION"
   sed -e "s|@MA4_VERSION@|${MA4_VERSION}|g" \
       -e "s|@DEBIAN11_VERSION@|${DEBIAN11_VERSION}|g" \
-      ${SCRIPT_DIR}/ma4-amd64.json.in > ma4-amd64.json
+      ${SCRIPT_DIR}/ma4-${ARCHITECTURE}.json.in > ma4-${ARCHITECTURE}.json
   sed -e "s|@CE4_VERSION@|${CE4_VERSION}|g" \
       -e "s|@DEBIAN11_VERSION@|${DEBIAN11_VERSION}|g" \
-      ${SCRIPT_DIR}/ce4-amd64.json.in > ce4-amd64.json
+      ${SCRIPT_DIR}/ce4-${ARCHITECTURE}.json.in > ce4-${ARCHITECTURE}.json
   cp -fp ${SCRIPT_DIR}/preseed-ma4.cfg . > /dev/null 2>&1
   cp -fp ${SCRIPT_DIR}/preseed-ce4.cfg . > /dev/null 2>&1
   mkdir -p files script
