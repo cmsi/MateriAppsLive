@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NAMESPCE="malive"
+NAMESPACE="malive"
 CONTAINER="ceenv"
 CONTAINER_NAME="${CONTAINER}"
 
@@ -31,7 +31,26 @@ if [ ${RES} = 0 ]; then :; else
 fi
 
 COMMAND="$1"
-if [ -z ${COMMAND} ]; then :; else
+if [ -z ${COMMAND} ]; then
+  VERSION=
+  CHECK_VERSION=0
+  BUILD_IMAGE=0
+  # check installed versions
+  RES=$(docker images --format "{{.Tag}}" ${CONTAINER} | /usr/bin/head -1)
+  if [ -z ${RES} ]; then
+    CHECK_VERSION=1
+    BUILD_IMAGE=1
+  else
+    VERSION=${RES}
+  fi
+  # check version list
+  if [ ${CHECK_VERSION} = 1 ]; then
+    get_version_list
+    if [ ${BUILD_IMAGE} = 1 ]; then
+       VERSION=${CONTAINER_VERSION_LATEST}
+    fi
+  fi
+else
   if [ ${COMMAND} = remove ]; then
     VERSION="$2"
     if [ -z ${VERSION} ]; then
@@ -77,30 +96,12 @@ if [ -z ${COMMAND} ]; then :; else
     VERSIONS=$(docker images --format "{{.Tag}}" ${CONTAINER})
     echo "Installed versions: ${VERSIONS}"
     exit 0
+  elif [ ${COMMAND} = version ]; then
+    VERSION="$2"
+    BUILD_IMAGE=1
   else
-    echo "Error: $0 [remove | list | update]"
+    echo "Error: $0 [remove | list | update | version]"
     exit 1
-  fi
-fi
-
-VERSION=
-CHECK_VERSION=0
-BUILD_IMAGE=0
-
-# check installed versions
-RES=$(docker images --format "{{.Tag}}" ${CONTAINER} | /usr/bin/head -1)
-if [ -z ${RES} ]; then
-  CHECK_VERSION=1
-  BUILD_IMAGE=1
-else
-  VERSION=${RES}
-fi
-
-# check version list
-if [ ${CHECK_VERSION} = 1 ]; then
-  get_version_list
-  if [ ${BUILD_IMAGE} = 1 ]; then
-     VERSION=${CONTAINER_VERSION_LATEST}
   fi
 fi
 
