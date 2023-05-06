@@ -126,7 +126,7 @@ DOCKER_GID=$(id -g)
 DOCKER_HOSTNAME="${CONTAINER}"
 
 # build image
-if [ ${BUILD_IMAGE} = 1 ]; then
+if [ "${BUILD_IMAGE}" = 1 ]; then
   BASE="${NAMESPACE}/${CONTAINER}:${VERSION}"
   get_timezone
   echo "Building building image ${IMAGE} from ${BASE}..."
