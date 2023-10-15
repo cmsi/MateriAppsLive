@@ -10,5 +10,4 @@ EOF
 
 apt-get -o Acquire::AllowInsecureRepositories=true update
 apt-get -y --allow-unauthenticated install materiapps-keyring
-fi
 apt-get update
