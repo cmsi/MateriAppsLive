@@ -4,7 +4,7 @@ test -z $PACKAGE && exit 127
 echo "PACKAGE: $PACKAGE"
 
 DATA_DIR=$HOME/malive/data
-CODENAME="bookworm bullseye buster stretch jammy focal bionic"
+CODENAME="trixie bookworm bullseye buster jammy focal"
 for cname in $CODENAME; do
   CHANGES=$(ls $DATA_DIR/pkg/$cname/${PACKAGE}_*.changes)
   for cng in $CHANGES; do
