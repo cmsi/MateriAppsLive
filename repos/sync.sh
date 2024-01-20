@@ -3,7 +3,7 @@
 DEB_HOME=$HOME/malive/data
 RSYNC="rsync -avzP --delete -e ssh"
 
-DISTS="trixie bookworm bullseye buster jammy focal"
+DISTS="trixie bookworm bullseye buster noble jammy focal"
 
 EXA="tk2-248-33678.vs.sakura.ne.jp"
 
