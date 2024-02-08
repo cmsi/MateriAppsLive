@@ -4,7 +4,7 @@ NAMESPACE="malive"
 CONTAINER="malive"
 CONTAINER_NAME="MateriApps LIVE!"
 
-function get_version_list () {
+get_version_list () {
   TAGS=$(/usr/bin/curl -s https://registry.hub.docker.com/v2/repositories/${NAMESPACE}/${CONTAINER}/tags | /usr/bin/sed 's/,/\'$'\n/g' | /usr/bin/grep \"name\": | /usr/bin/cut -d '"' -f 4 | /usr/bin/sort -r -V)
   CONTAINER_VERSIONS=
   for t in ${TAGS}; do
@@ -19,7 +19,7 @@ function get_version_list () {
   CONTAINER_VERSION_LATEST=$(echo ${CONTAINER_VERSIONS} | /usr/bin/cut -d ' ' -f 1)
 }
 
-function get_timezone () {
+get_timezone () {
   TZ=$(basename $(dirname $(readlink /etc/localtime)))/$(basename $(readlink /etc/localtime))
 }
 
@@ -57,7 +57,7 @@ else
       echo "Error: $0 remove VERSION"
       exit 1
     fi
-    read -p "Really want to remove ${CONTAINER_NAME} version ${VERSION}? (y/N): " yn
+    read -r "Really want to remove ${CONTAINER_NAME} version ${VERSION}? (y/N): " yn
     case "$yn" in [yY]*)
       echo "Removing ${CONTAINER_NAME} version ${VERSION}..."
       IMAGE="${CONTAINER}:${VERSION}"
@@ -77,7 +77,7 @@ else
       echo "Latest version: ${CONTAINER_VERSION_LATEST}"
       echo "Installed version: ${VERSION}"
       if [ ${VERSION} = ${CONTAINER_VERSION_LATEST} ]; then :; else
-        read -p "Really want to update to ${CONTAINER_NAME} version ${CONTAINER_VERSION_LATEST}? (y/N): " yn
+        read -r "Really want to update to ${CONTAINER_NAME} version ${CONTAINER_VERSION_LATEST}? (y/N): " yn
         case "$yn" in [yY]*)
           echo "Removing ${CONTAINER_NAME} version ${VERSION}..."
           IMAGE="${CONTAINER}:${VERSION}"
