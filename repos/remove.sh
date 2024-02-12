@@ -5,5 +5,5 @@ echo "PACKAGE: $PACKAGE"
 
 CODENAME="trixie bookworm bullseye buster noble jammy focal"
 for cname in $CODENAME; do
-  reprepro --ask-passphrase --ignore=wrongdistribution -Vb $HOME/data/apt/$cname remove $cname $PACKAGE
+  reprepro --ask-passphrase --ignore=wrongdistribution -Vb $HOME/malive/data/apt/$cname remove $cname $PACKAGE
 done
