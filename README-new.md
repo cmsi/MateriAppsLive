@@ -8,13 +8,23 @@ MateriApps LIVE! Release 5.0/4.2 (2023/xx/xx)
 
   - Release 5.0: Updated base Debian distribution to Debian 12 (Bookworm)
   - Release 4.2: Final version based on Debian 11 (Bullseye)
-  - Started support for Debian 13 (Trixie)
+  - Started support for Debian 13 (Trixie) and Ubuntu 24.04 (Noble)
   - Stopped support for Debian 10 (Stretch) and Ubuntu 18.04 (Bionic)
+  - Docker version for Windows WSL2
   - Newly included MateriApps packages
      * hwave (1.0.0)
   - Updated MateriApps packages
      * akaikkr (20230519)
+     * alamode (1.4.2)
      * alpscore (2.3.1)
+     * cif2cell (2.0.0a5)
+     * conquest (1.2)
+     * dcore (3.4.0)
+     * espresso (7.3)
+     * fermisurfer (2.4)
+     * ovito (3.10.2)
+     * tenes (2.0.0)
+     * triqs (3.2.0), triqs-cthyb (3.2.1), triqs-dfttools (3.2.0), triqs-hubbardi (3.2.0)
 
 MateriApps LIVE! Release 4.1 (2023/04/09)
 =============================================

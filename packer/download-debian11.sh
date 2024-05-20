@@ -6,7 +6,7 @@ echo "SCRIPT_DIR=$SCRIPT_DIR"
 . $SCRIPT_DIR/../config/version.sh
 
 echo "DEBIAN11_VERSION=$DEBIAN11_VERSION"
-ARCHITECTURES="amd64"
+ARCHITECTURES="amd64 arm64"
 for arch in ${ARCHITECTURES}; do
   ISO="debian-${DEBIAN11_VERSION}-${arch}-DVD-1.iso"
   if [ -f "${ISO}" ]; then
