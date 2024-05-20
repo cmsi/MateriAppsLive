@@ -1,5 +1,3 @@
-#!/bin/sh
-
 NAMESPACE="malive"
 CONTAINER="malive"
 CONTAINER_NAME="MateriApps LIVE!"
@@ -116,9 +114,24 @@ if [ -x /opt/X11/bin/xlsclients ]; then
   xlsclients > /dev/null
   xhost + localhost > /dev/null
   X_CONFIG="--env DISPLAY=host.docker.internal:0"
+elif [ -x /mnt/wslg ]; then
+  echo "Using WSLg"
+  X_CONFIG="--volume /tmp/.X11-unix:/tmp/.X11-unix --volume /mnt/wslg:/mnt/wslg \
+    --env DISPLAY=${DISPLAY} --env WAYLAND_DISPLAY=${WAYLAND_DISPLAY} \
+    --env XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR} --env PULSE_SERVER=${PULSE_SERVER}"
+  # Check for nVidia GPU
+  if command -v nvidia-smi &> /dev/null; then
+    echo "nVidia GPU available"
+    GPU_CONFIG="--volume /usr/lib/wsl:/usr/lib/wsl --env LD_LIBRARY_PATH=/usr/lib/wsl/lib \
+    		--device=/dev/dxg --device /dev/dri/card0 --device /dev/dri/renderD128 --gpus all"
+  else
+    GPU_CONFIG=""
+  fi
 else
-  echo "Warning: Xquartz is not installed."
+  echo "Warning: X server not available"
 fi
+
+
 
 IMAGE="${CONTAINER}:${VERSION}"
 DOCKER_USERNAME=user
@@ -143,7 +156,8 @@ RUN groupadd -f -g \$GID \$GROUPNAME \
  && useradd -m -s /bin/bash -u \$UID -g \$GID -G sudo \$USERNAME \
  && echo \$USERNAME:\$PASSWORD | chpasswd \
  && echo "\$USERNAME ALL=(ALL) ALL" >> /etc/sudoers \
- && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime
+ && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime \
+ && sudo usermod -a -G audio,video \$USERNAME 
 USER \$USERNAME
 WORKDIR /home/\$USERNAME/
 EOF
@@ -160,7 +174,7 @@ if [ -z ${CONTAINER_ID} ]; then
   if [ -d "${HOME}/share" ]; then
     SHARE_CONFIG="--volume ${HOME}/share:${DOCKER_HOME}/share"
   fi
-  docker run -it --detach-keys='ctrl-e,e' --name "${CONTAINER}" --hostname ${DOCKER_HOSTNAME} --volume ${CONTAINER}-vol:/home/user ${SHARE_CONFIG} ${X_CONFIG} --user ${DOCKER_UID}:${DOCKER_GID} ${IMAGE} /bin/bash
+  docker run -it --detach-keys='ctrl-e,e' --name "${CONTAINER}" --hostname ${DOCKER_HOSTNAME} --volume ${CONTAINER}-vol:/home/user ${SHARE_CONFIG} ${X_CONFIG} ${GPU_CONFIG} --user ${DOCKER_UID}:${DOCKER_GID} ${IMAGE} /bin/bash
 else
   echo "Docker container: ${CONTAINER} (${CONTAINER_ID})"
   docker restart ${CONTAINER_ID} > /dev/null
