@@ -12,8 +12,10 @@ for d in $DISTS; do
   $RSYNC $DEB_HOME/apt/$d/dists $DEB_HOME/apt/$d/pool root@${EXA}:/var/www/html/archive/MateriApps/apt/$d
 done
 $RSYNC $(dirname $0)/sources root@${EXA}:/var/www/html/archive/MateriApps
+$RSYNC $(dirname $0)/../keys root@${EXA}:/var/www/html/archive/MateriApps
 
 for d in $DISTS; do
   $RSYNC $DEB_HOME/apt/$d/dists $DEB_HOME/apt/$d/pool frs.sourceforge.net:/home/frs/project/materiappslive/Debian/$d
 done
 $RSYNC $(dirname $0)/sources frs.sourceforge.net:/home/frs/project/materiappslive/Debian/
+$RSYNC $(dirname $0)/../keys frs.sourceforge.net:/home/frs/project/materiappslive/Debian/
