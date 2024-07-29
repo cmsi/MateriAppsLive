@@ -76,7 +76,7 @@ else
       echo "Latest version: ${CONTAINER_VERSION_LATEST}"
       echo "Installed version: ${VERSION}"
       if [ ${VERSION} = ${CONTAINER_VERSION_LATEST} ]; then :; else
-	printf "Really want to update to ${CONTAINER_NAME} version ${CONTAINER_VERSION_LATEST}? (y/N): "
+        printf "Really want to update to ${CONTAINER_NAME} version ${CONTAINER_VERSION_LATEST}? (y/N): "
         read -r yn
         case "$yn" in [yY]*)
           echo "Removing ${CONTAINER_NAME} version ${VERSION}..."
@@ -130,8 +130,6 @@ elif [ -x /mnt/wslg ]; then
 else
   echo "Warning: X server not available"
 fi
-
-
 
 IMAGE="${CONTAINER}:${VERSION}"
 DOCKER_USERNAME=user
