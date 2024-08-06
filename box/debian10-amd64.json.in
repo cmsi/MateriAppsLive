@@ -1,9 +1,0 @@
-{
-  "debian_version": "@DEBIAN10_VERSION@",
-  "iso_url": "http://cdimage.debian.org/cdimage/archive/@DEBIAN10_VERSION@/amd64/iso-dvd/debian-@DEBIAN10_VERSION@-amd64-DVD-1.iso",
-  "iso_checksum": "sha512:@DEBIAN10_CHECKSUM@",
-  "_comment": "Build with `packer build -var-file=debian10-amd64.json debian.json`",
-  "vm_name": "debian10-amd64",
-  "preseed" : "preseed10.cfg",
-  "virtualbox_guest_os_type": "Debian_64"
-}

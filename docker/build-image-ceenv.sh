@@ -8,8 +8,8 @@ echo "SCRIPT_DIR=$SCRIPT_DIR"
 . $SCRIPT_DIR/../config/version.sh
 . $SCRIPT_DIR/../config/package.sh
 
-CODENAMES=${MA4_CODENAME}
-VERSION=${MA4_DOCKER_VERSION}
+CODENAMES=${MA5_CODENAME}
+VERSION=${MA5_DOCKER_VERSION}
 LOG=build-upload-${PROJECT}-image.log
 
 for c in ${CODENAMES}; do

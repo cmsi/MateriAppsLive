@@ -9,7 +9,7 @@ MateriApps LIVE! Release 5.0/4.2 (2023/xx/xx)
   - Release 5.0: Updated base Debian distribution to Debian 12 (Bookworm)
   - Release 4.2: Final version based on Debian 11 (Bullseye)
   - Started support for Debian 13 (Trixie) and Ubuntu 24.04 (Noble)
-  - Stopped support for Debian 10 (Stretch) and Ubuntu 18.04 (Bionic)
+  - Stopped support for Debian 10 (Buster) and Ubuntu 18.04 (Bionic)
   - Docker version for Windows WSL2
   - Newly included MateriApps packages
      * hwave (1.0.0)

@@ -15,7 +15,7 @@ if [ -z ${APP} ]; then
 fi
 
 if [ -z "${CODENAMES}" ]; then
-  CODENAMES="bullseye buster jammy focal bionic"
+  CODENAMES="bookworm bullseye noble jammy focal"
 fi
 
 if [ -z ${MALIVE_DATA_DIR} ]; then
