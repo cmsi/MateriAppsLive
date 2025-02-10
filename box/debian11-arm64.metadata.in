@@ -1,0 +1,17 @@
+{
+  "name": "madev/debian11-arm64",
+  "description": "Debian 11 Bullseye 64-bit box",
+  "versions": [
+    {
+      "version": "@DEBIAN11_VERSION@",
+      "providers": [
+        {
+          "name": "virtualbox",
+          "url": "https://sourceforge.net/projects/materiappslive/files/Debian/box/debian11-arm64-@DEBIAN11_VERSION@.box",
+          "checksum_type": "md5",
+          "checksum": "@CHECKSUM@"
+        }
+      ]
+    }
+  ]
+}

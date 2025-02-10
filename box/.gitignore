@@ -1,5 +1,5 @@
 debian*-amd64.json
-debian*-i386.json
+debian*-arm64.json
 box
 log
 packer_cache
