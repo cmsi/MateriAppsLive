@@ -2,16 +2,20 @@
 
 VB_VERSION=$(VBoxManage -V | cut -d. -f1)
 MA5_VERSION="@MA5_VERSION@"
-ARCHITECTURES="amd64"
-for arch in $ARCHITECTURES; do
-    if [ -f ma5-${arch}.json ]; then
+ARCH=$(arch)
+if [ "$ARCH" = "x86_64" ]; then
+  	arch="amd64"
+else
+  	arch="arm64"
+fi
+
+if [ -f ma5-${arch}.json ]; then
 	rm -rf output-virtualbox-iso
 	packer build ma5-${arch}.json 2>&1 | tee build-ma5-${arch}.log
-	if [ -f output-virtualbox-iso/MateriAppsLive-${MA5_VERSION}-${arch}.ova ]; then
-	     mv -f output-virtualbox-iso/MateriAppsLive-${MA5_VERSION}-${arch}.ova .
+	if [ -f output-virtualbox-iso/ceenv-${MA5_VERSION}-${arch}.ova ]; then
+		mv -f output-virtualbox-iso/ceenv-${MA5_VERSION}-${arch}.ova .
 	else
 	    echo "Error: build failed."
 	    exit 127
 	fi
-    fi
-done
+fi

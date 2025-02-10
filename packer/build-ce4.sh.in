@@ -2,16 +2,20 @@
 
 VB_VERSION=$(VBoxManage -V | cut -d. -f1)
 CE4_VERSION="@CE4_VERSION@"
-ARCHITECTURES="amd64"
-for arch in $ARCHITECTURES; do
-    if [ -f ce4-${arch}.json ]; then
+ARCH=$(arch)
+if [ "$ARCH" = "x86_64" ]; then
+	arch="amd64"
+else
+	arch="arm64"
+fi
+
+if [ -f ce4-${arch}.json ]; then
 	rm -rf output-virtualbox-iso
 	packer build ce4-${arch}.json 2>&1 | tee build-ce4-${arch}.log
 	if [ -f output-virtualbox-iso/ceenv-${CE4_VERSION}-${arch}.ova ]; then
-	     mv -f output-virtualbox-iso/ceenv-${CE4_VERSION}-${arch}.ova .
+		mv -f output-virtualbox-iso/ceenv-${CE4_VERSION}-${arch}.ova .
 	else
 	    echo "Error: build failed."
 	    exit 127
 	fi
-    fi
-done
+fi
