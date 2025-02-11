@@ -1,8 +1,9 @@
 #!/bin/bash -eux
 
-echo "==> Replace MateriApps LIVE! gpg key"
-apt-get -y install --no-install-recommends materiapps-keyring
-rm -f /etc/apt/trusted.gpg
+echo "==> Install MagteriApps gpg key"
+apt-get -y install --no-install-recommends curl
+curl -L https://exa.phys.s.u-tokyo.ac.jp/archive/MateriApps/apt/setup.sh | /bin/sh
+apt-get update
 
 echo "==> Install ceenv Package"
 apt-get -y install --no-install-recommends ceenv

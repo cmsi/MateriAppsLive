@@ -1,0 +1,101 @@
+{
+    "variables": {
+        "ssh_name": "user",
+        "ssh_pass": "live",
+        "ma_version": "@CE5_VERSION@",
+        "debian_version": "@DEBIAN11_VERSION@"
+    },
+
+    "builders": [{
+        "type": "virtualbox-iso",
+        "format": "ova",
+        "guest_os_type": "Debian_arm64",
+        "vm_name": "ceenv-{{user `ma_version`}}-arm64",
+
+        "vboxmanage": [
+            ["setextradata", "global", "GUI/SuppressMessages", "all"],
+            ["modifyvm", "{{.Name}}", "--nictype1", "virtio"],
+            ["modifyvm", "{{.Name}}", "--vram", "32"],
+            ["modifyvm", "{{.Name}}", "--clipboard-mode", "bidirectional"],
+            ["modifyvm", "{{.Name}}", "--usb-xhci", "on"],
+            ["modifyvm", "{{.Name}}", "--graphicscontroller", "vmsvga"],
+            ["modifyvm", "{{.Name}}", "--accelerate3d", "off"],
+            ["modifyvm", "{{.Name}}", "--vrde", "off"],
+            ["modifyvm", "{{.Name}}", "--mouse", "usbtablet", "--keyboard", "usb"],
+            ["modifyvm", "{{.Name}}", "--ioapic", "off"],
+            ["modifyvm", "{{.Name}}", "--boot1", "disk", "--boot2", "dvd", "--boot3", "floppy", "--boot4", "none"],
+            ["modifyvm", "{{.Name}}", "--firmware", "bios"],
+            ["modifyvm", "{{.Name}}", "--memory", "2000"],
+            ["modifyvm", "{{.Name}}", "--nat-localhostreachable1", "on"],
+            ["storageattach", "{{.Name}}", "--storagectl", "IDE Controller", "--port", "1", "--device", "0", "--type", "dvddrive", "--medium", "emptydrive"]
+        ],
+
+        "hard_drive_interface": "virtio",
+
+        "iso_url": "debian-{{user `debian_version`}}-arm64-DVD-1.iso",
+        "iso_checksum": "file:debian-{{user `debian_version`}}-arm64-DVD-1.iso.sha256sum",
+        "iso_interface": "virtio",
+
+        "http_directory" : ".",
+
+        "ssh_username": "{{user `ssh_name`}}",
+        "ssh_password": "{{user `ssh_pass`}}",
+        "ssh_wait_timeout": "60m",
+
+        "shutdown_command": "echo {{user `ssh_pass`}} | sudo -S shutdown -hP now",
+
+        "boot_wait": "10s",
+        "boot_command" : [
+           "c",
+           "<wait1>",
+           "linux /install.a64/vmlinuz ",
+           "auto=true ",
+           "netcfg/get_domain=local ",
+           "netcfg/get_hostname=ceenv ",
+           "url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-ce5.cfg ",
+           "<enter>",
+           "initrd /install.a64/initrd.gz ",
+           "<enter>",
+           "boot",
+           "<enter>"
+        ]
+    }],
+
+    "provisioners": [
+        {
+            "type": "file",
+            "source": "files",
+            "destination": "/tmp"
+        },
+	{
+	    "type": "shell-local",
+            "inline": ["echo VBoxManage setextradata ceenv-@CE5_VERSION@-arm64 GUI/ScaleFactor 2.0",
+                       "VBoxManage setextradata ceenv-@CE5_VERSION@-arm64 GUI/ScaleFactor 2.0"
+		      ]
+	},
+        {
+            "execute_command": "echo {{user `ssh_pass`}} | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+            "scripts": [
+                "script/00_remove-cdrom-sources.sh",
+                "script/01_update.sh",
+                "script/02_virtualbox.sh",
+                "script/ldconfig.sh",
+                "script/bashrc.sh",
+                "script/emacs.sh",
+                "script/file.sh",
+                "script/firefox.sh",
+                "script/grub.sh",
+                "script/keyboard.sh",
+                "script/menu.sh",
+                "script/openssl.sh",
+                "script/xterm.sh",
+                "script/login-ce5.sh",
+                "script/ceenv.sh",
+                "script/96_check.sh",
+                "script/98_minimize.sh",
+                "script/99_cleanup.sh"
+            ],
+            "type": "shell"
+        }
+    ]
+}
