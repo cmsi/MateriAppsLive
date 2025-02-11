@@ -1,0 +1,32 @@
+#!/bin/bash -eux
+
+echo "==> Install MagteriApps gpg key"
+apt-get -y install --no-install-recommends curl
+curl -L https://exa.phys.s.u-tokyo.ac.jp/archive/MateriApps/apt/setup.sh | /bin/sh
+apt-get update
+
+echo "==> Install MateriApps LIVE! Package"
+apt-get -y install --no-install-recommends materiappslive
+
+echo "==> Install Development Tools"
+apt-get -y install --no-install-recommends @PACKAGES_DEVELOPMENT@
+
+echo "==> Install Python"
+apt-get -y install --no-install-recommends @PACKAGES_PYTHON@
+
+# /usr/local/lib/python3
+VERSION=$(python3 --version 2>&1 | cut -d' ' -f 2 | cut -d. -f 1,2)
+mkdir -p /usr/local/lib/python$VERSION
+ln -s python$VERSION /usr/local/lib/python3
+
+echo "==> Install MateriApps Applications/Tools"
+apt-get -y install --no-install-recommends @PACKAGES_APPLICATION_MA5@ @PACKAGES_APPLICATION_GUI@
+
+echo "==> Copy desktop file(s)"
+if [ -d /etc/skel/Desktop ]; then
+  cp -frp /etc/skel/Desktop $HOME
+fi
+if [ -d /etc/skel/.config ]; then
+  cp -frp /etc/skel/.config $HOME
+fi
+chown -R user.user $HOME/Desktop $HOME/.config

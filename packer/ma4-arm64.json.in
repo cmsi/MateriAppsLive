@@ -90,7 +90,7 @@
                 "script/openssl.sh",
                 "script/xterm.sh",
                 "script/login-ma4.sh",
-                "script/materiapps.sh",
+                "script/materiapps-ma4.sh",
                 "script/96_check.sh",
                 "script/97_check-ma.sh",
                 "script/98_minimize.sh",
