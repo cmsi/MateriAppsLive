@@ -12,8 +12,8 @@ fi
 if [ -f ma5-${arch}.json ]; then
 	rm -rf output-virtualbox-iso
 	packer build ma5-${arch}.json 2>&1 | tee build-ma5-${arch}.log
-	if [ -f output-virtualbox-iso/ceenv-${MA5_VERSION}-${arch}.ova ]; then
-		mv -f output-virtualbox-iso/ceenv-${MA5_VERSION}-${arch}.ova .
+	if [ -f output-virtualbox-iso/MateriAppsLive-${MA5_VERSION}-${arch}.ova ]; then
+		mv -f output-virtualbox-iso/MateriAppsLive-${MA5_VERSION}-${arch}.ova .
 	else
 	    echo "Error: build failed."
 	    exit 127
