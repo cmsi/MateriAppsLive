@@ -10,7 +10,7 @@ echo "SCRIPT_DIR=$SCRIPT_DIR"
 
 CODENAMES=${MA4_CODENAME}
 VERSION=${MA4_DOCKER_VERSION}
-LOG=build-image-${CONTAINER}.log
+LOG=build-image-ma4.log
 
 for c in ${CODENAMES}; do
   echo ${c}

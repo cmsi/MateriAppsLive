@@ -15,5 +15,6 @@ deb-src [arch=${ARCH} signed-by=/etc/apt/keyrings/materiapps.gpg] ${ROOT}/${DEBI
 EOF
 chmod 644 /etc/apt/sources.list.d/materiapps.list
 
+mkdir -p /etc/apt/keyrings
 curl -fksSL ${ROOT}/materiapps.gpg > /etc/apt/keyrings/materiapps.gpg
 chmod 644 /etc/apt/keyrings/materiapps.gpg
