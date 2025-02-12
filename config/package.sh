@@ -11,7 +11,7 @@ PACKAGES_PYTHON="python3-pip python3-venv jupyter-notebook python3-numpy python3
 PACKAGES_APPLICATION_MA4="dx grace \
   h5utils \
   bsa c-tools fermisurfer libalpscore-dev physbo tapioca \
-  abinit akaikkr alamode casino-setup cif2cell conquest hwave quantum-espresso quantum-espresso-data openmx openmx-data openmx-example respack salmon-tddft xtapp xtapp-ps xtapp-util \
+  abinit akaikkr alamode casino-setup cif2cell conquest quantum-espresso quantum-espresso-data openmx openmx-data openmx-example respack salmon-tddft xtapp xtapp-ps xtapp-util \
   gamess-setup smash \
   gromacs gromacs-data lammps lammps-data lammps-examples octa octa-data \
   alps-applications alps-tutorials ddmrg dsqss hphi mvmc tenes triqs triqs-cthyb triqs-dfttools triqs-hubbardi dcore"

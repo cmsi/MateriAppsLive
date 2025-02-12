@@ -3,7 +3,7 @@ MateriApps LIVE!
 
 [![Download MateriApps LIVE!](https://img.shields.io/sourceforge/dm/materiappslive.svg)](https://sourceforge.net/projects/materiappslive/files/latest/download)
 
-MateriApps LIVE! Release 5.0/4.2 (2023/xx/xx)
+MateriApps LIVE! Release 5.0/4.2 (2025/xx/xx)
 =============================================
 
   - Release 5.0: Updated base Debian distribution to Debian 12 (Bookworm)
@@ -11,8 +11,9 @@ MateriApps LIVE! Release 5.0/4.2 (2023/xx/xx)
   - Started support for Debian 13 (Trixie) and Ubuntu 24.04 (Noble)
   - Stopped support for Debian 10 (Buster) and Ubuntu 18.04 (Bionic)
   - Docker version for Windows WSL2
+  - VirtualBox version for Apple Silicon
   - Newly included MateriApps packages
-     * hwave (1.0.0)
+     * hwave (1.0.1)
   - Updated MateriApps packages
      * akaikkr (20230519)
      * alamode (1.4.2)

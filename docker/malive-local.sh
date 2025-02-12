@@ -78,10 +78,9 @@ ARG USERNAME=${DOCKER_USERNAME}
 ARG GROUPNAME=${DOCKER_USERNAME}
 ARG UID=${DOCKER_UID}
 ARG GID=${DOCKER_GID}
-ARG PASSWORD=live
 RUN groupadd -f -g \$GID \$GROUPNAME \
  && useradd -m -s /bin/bash -u \$UID -g \$GID -G sudo \$USERNAME \
- && echo \$USERNAME:\$PASSWORD | chpasswd \
+ && echo \$USERNAME:live | chpasswd \
  && echo "\$USERNAME ALL=(ALL) ALL" >> /etc/sudoers \
  && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime \
  && sudo usermod -a -G audio,video \$USERNAME 

@@ -8,9 +8,16 @@ echo "SCRIPT_DIR=$SCRIPT_DIR"
 . $SCRIPT_DIR/../config/version.sh
 . $SCRIPT_DIR/../config/package.sh
 
-CODENAMES=${MA4_CODENAME}
-VERSION=${MA4_DOCKER_VERSION}
-LOG=build-upload-${PROJECT}-image.log
+CODENAMES=${CE5_CODENAME}
+VERSION=${CE5_DOCKER_VERSION}
+LOG=build-upload-image-${PROJECT}.log
+
+DEV=0
+if [[ "$VERSION" == *a* ]]; then
+  DEV=1
+elif [[ "$VERSION" == *b* ]]; then
+  DEV=1
+fi
 
 docker login 2>&1 | tee -a ${LOG}
 docker buildx create --use --name multi-arch 2>&1 | tee -a ${LOG}
@@ -20,10 +27,12 @@ for c in ${CODENAMES}; do
   for v in ${DEBIAN_VERSIONS}; do
     if [ ${c} = $(echo ${v} | cut -d/ -f1) ]; then
       BASE=$(echo ${v} | cut -d/ -f2)
-      IMAGE="malive/${PROJECT}:${VERSION}"
-      IMAGE2="malive/${PROJECT}:latest"
-      echo "building and uploading images ${IMAGE} and ${IMAGE2} from ${BASE}..." 2>&1 | tee -a ${LOG}
-      docker buildx build --platform linux/amd64,linux/arm64 --push -t ${IMAGE} -t ${IMAGE2} - <<EOF 2>&1 | tee -a ${LOG}
+      TARGET="-t malive/${PROJECT}:${VERSION} -t malive/${PROJECT}:latest"
+      if [ ${DEV} -eq 1 ]; then
+        TARGET="-t malive/${PROJECT}-dev:${VERSION}"
+      fi
+      echo "building and uploading ${PROJECT} images version ${VERSION} from ${BASE}..." 2>&1 | tee -a ${LOG}
+      docker buildx build --platform linux/amd64,linux/arm64 --push ${TARGET} - <<EOF 2>&1 | tee -a ${LOG}
 FROM ${BASE}
 ENV DEBIAN_FRONTEND=noninteractive
 
