@@ -3,7 +3,7 @@
         "ssh_name": "user",
         "ssh_pass": "live",
         "ma_version": "@CE5_VERSION@",
-        "debian_version": "@DEBIAN11_VERSION@"
+        "debian_version": "@DEBIAN12_VERSION@"
     },
 
     "builders": [{
