@@ -2,22 +2,21 @@
 
 PROJECT="malive"
 
-SCRIPT_DIR=$(cd "$(dirname $0)"; pwd)
+SCRIPT_DIR=$(cd "$(dirname "$0")" || exit; pwd)
 echo "SCRIPT_DIR=$SCRIPT_DIR"
 
-. $SCRIPT_DIR/../config/version.sh
-. $SCRIPT_DIR/../config/package.sh
+. "$SCRIPT_DIR"/../config/version.sh
+. "$SCRIPT_DIR"/../config/package.sh
 
 CODENAMES=${MA5_CODENAME}
 VERSION=${MA5_DOCKER_VERSION}
-LOG=build-upload-image-${PROJECT}.log
+LOG=build-upload-image-ma5.log
 
 DEV=0
-if [[ "$VERSION" == *a* ]]; then
-  DEV=1
-elif [[ "$VERSION" == *b* ]]; then
-  DEV=1
-fi
+case "$VERSION" in
+  *a*) DEV=1 ;;
+  *b*) DEV=1 ;;
+esac
 
 docker login 2>&1 | tee -a ${LOG}
 docker buildx create --use --name multi-arch 2>&1 | tee -a ${LOG}
@@ -25,7 +24,7 @@ docker buildx inspect --builder multi-arch --bootstrap 2>&1 | tee -a ${LOG}
 
 for c in ${CODENAMES}; do
   for v in ${DEBIAN_VERSIONS}; do
-    if [ ${c} = $(echo ${v} | cut -d/ -f1) ]; then
+    if [ ${c} = $(echo "${v}" | cut -d/ -f1) ]; then
       BASE=$(echo ${v} | cut -d/ -f2)
       TARGET="-t malive/${PROJECT}:${VERSION} -t malive/${PROJECT}:latest"
       if [ ${DEV} -eq 1 ]; then
