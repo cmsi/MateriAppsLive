@@ -48,6 +48,7 @@ if [ -z ${COMMAND} ]; then
   VERSION=
   CHECK_VERSION=0
   BUILD_IMAGE=0
+  DEV=0
   # check installed versions
   RES=$(docker images --format "{{.Tag}}" ${CONTAINER} | /usr/bin/head -1)
   if [ -z ${RES} ]; then
