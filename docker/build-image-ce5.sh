@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PROJECT="ceenv-dev"
+CONAINER="ceenv-dev"
 
 SCRIPT_DIR=$(cd "$(dirname $0)"; pwd)
 echo "SCRIPT_DIR=$SCRIPT_DIR"
@@ -8,16 +8,16 @@ echo "SCRIPT_DIR=$SCRIPT_DIR"
 . $SCRIPT_DIR/../config/version.sh
 . $SCRIPT_DIR/../config/package.sh
 
-CODENAMES=${MA5_CODENAME}
-VERSION=${MA5_DOCKER_VERSION}
-LOG=build-upload-${PROJECT}-image.log
+CODENAMES=${CE5_CODENAME}
+VERSION=${CE5_VERSION}
+LOG=build-image-ce5.log
 
 for c in ${CODENAMES}; do
   for v in ${DEBIAN_VERSIONS}; do
     if [ ${c} = $(echo ${v} | cut -d/ -f1) ]; then
       BASE=$(echo ${v} | cut -d/ -f2)
-      IMAGE="malive/${PROJECT}:${VERSION}"
-      echo "building images malive/${PROJECT}:${VERSION} from ${BASE}..." 2>&1 | tee -a ${LOG}
+      IMAGE="${CONTAINER}:${VERSION}"
+      echo "building images ${CONTAINER}:${VERSION} from ${BASE}..." 2>&1 | tee -a ${LOG}
       docker build -t ${IMAGE}  - <<EOF 2>&1 | tee -a ${LOG}
 FROM ${BASE}
 ENV DEBIAN_FRONTEND=noninteractive

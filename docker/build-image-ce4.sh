@@ -1,37 +1,24 @@
 #!/bin/sh
 
-PROJECT="ceenv"
+CONAINER="ceenv-dev"
 
-SCRIPT_DIR=$(cd "$(dirname "$0")" || exit; pwd)
+SCRIPT_DIR=$(cd "$(dirname $0)"; pwd)
 echo "SCRIPT_DIR=$SCRIPT_DIR"
 
-. "$SCRIPT_DIR"/../config/version.sh
-. "$SCRIPT_DIR"/../config/package.sh
+. $SCRIPT_DIR/../config/version.sh
+. $SCRIPT_DIR/../config/package.sh
 
-CODENAMES=${CE5_CODENAME}
-VERSION=${CE5_VERSION}
-LOG=build-upload-image-ce5.log
-
-DEV=0
-case "$VERSION" in
-  *a*) DEV=1 ;;
-  *b*) DEV=1 ;;
-esac
-
-docker login 2>&1 | tee -a ${LOG}
-docker buildx create --use --name multi-arch 2>&1 | tee -a ${LOG}
-docker buildx inspect --builder multi-arch --bootstrap 2>&1 | tee -a ${LOG}
+CODENAMES=${CE4_CODENAME}
+VERSION=${CE4_VERSION}
+LOG=build-image-ce4.log
 
 for c in ${CODENAMES}; do
   for v in ${DEBIAN_VERSIONS}; do
-    if [ ${c} = $(echo "${v}" | cut -d/ -f1) ]; then
+    if [ ${c} = $(echo ${v} | cut -d/ -f1) ]; then
       BASE=$(echo ${v} | cut -d/ -f2)
-      TARGET="-t malive/${PROJECT}:${VERSION} -t malive/${PROJECT}:latest"
-      if [ ${DEV} -eq 1 ]; then
-        TARGET="-t malive/${PROJECT}-dev:${VERSION}"
-      fi
-      echo "building and uploading ${PROJECT} images version ${VERSION} from ${BASE}..." 2>&1 | tee -a ${LOG}
-      docker buildx build --platform linux/amd64,linux/arm64 --push ${TARGET} - <<EOF 2>&1 | tee -a ${LOG}
+      IMAGE="${CONTAINER}:${VERSION}"
+      echo "building images ${CONTAINER}:${VERSION} from ${BASE}..." 2>&1 | tee -a ${LOG}
+      docker build -t ${IMAGE}  - <<EOF 2>&1 | tee -a ${LOG}
 FROM ${BASE}
 ENV DEBIAN_FRONTEND=noninteractive
 

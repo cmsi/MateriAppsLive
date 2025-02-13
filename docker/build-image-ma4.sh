@@ -9,13 +9,11 @@ echo "SCRIPT_DIR=$SCRIPT_DIR"
 . $SCRIPT_DIR/../config/package.sh
 
 CODENAMES=${MA4_CODENAME}
-VERSION=${MA4_DOCKER_VERSION}
+VERSION=${MA4_VERSION}
 LOG=build-image-ma4.log
 
 for c in ${CODENAMES}; do
-  echo ${c}
   for v in ${DEBIAN_VERSIONS}; do
-    echo ${v}
     if [ ${c} = $(echo ${v} | cut -d/ -f1) ]; then
       BASE=$(echo ${v} | cut -d/ -f2)
       IMAGE="${CONTAINER}:${VERSION}"
@@ -30,7 +28,7 @@ RUN apt-get update -qq \
  \
  && curl -L https://exa.phys.s.u-tokyo.ac.jp/archive/MateriApps/apt/setup.sh | /bin/sh \
  && apt-get update -qq \
- && apt-get -y install --no-install-recommends ${PACKAGES_APPLICATION_MA4} \
+ && apt-get -y install --no-install-recommends materiappslive ${PACKAGES_APPLICATION_MA4} \
  \
  && echo "export PATH=\$HOME/bin:\$PATH" >> /etc/skel/.bashrc \
  && echo "export OMP_NUM_THREADS=1" >> /etc/skel/.bashrc \

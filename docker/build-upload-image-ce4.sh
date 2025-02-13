@@ -9,7 +9,7 @@ echo "SCRIPT_DIR=$SCRIPT_DIR"
 . "$SCRIPT_DIR"/../config/package.sh
 
 CODENAMES=${CE4_CODENAME}
-VERSION=${CE4_DOCKER_VERSION}
+VERSION=${CE4_VERSION}
 LOG=build-upload-image-ce4.log
 
 DEV=0

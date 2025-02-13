@@ -9,13 +9,11 @@ echo "SCRIPT_DIR=$SCRIPT_DIR"
 . $SCRIPT_DIR/../config/package.sh
 
 CODENAMES=${MA5_CODENAME}
-VERSION=${MA5_DOCKER_VERSION}
+VERSION=${MA5_VERSION}
 LOG=build-image-ma5.log
 
 for c in ${CODENAMES}; do
-  echo ${c}
   for v in ${DEBIAN_VERSIONS}; do
-    echo ${v}
     if [ ${c} = $(echo ${v} | cut -d/ -f1) ]; then
       BASE=$(echo ${v} | cut -d/ -f2)
       IMAGE="${CONTAINER}:${VERSION}"

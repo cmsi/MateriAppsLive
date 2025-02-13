@@ -9,7 +9,7 @@ echo "SCRIPT_DIR=$SCRIPT_DIR"
 . "$SCRIPT_DIR"/../config/package.sh
 
 CODENAMES=${MA4_CODENAME}
-VERSION=${MA4_DOCKER_VERSION}
+VERSION=${MA4_VERSION}
 LOG=build-upload-image-ma4.log
 
 DEV=0
