@@ -30,7 +30,7 @@ RUN apt-get update -qq \
  \
  && curl -L https://exa.phys.s.u-tokyo.ac.jp/archive/MateriApps/apt/setup.sh | /bin/sh \
  && apt-get update -qq \
- && apt-get -y install --no-install-recommends ${PACKAGES_APPLICATION_MA5} \
+ && apt-get -y install --no-install-recommends materiappslive ${PACKAGES_APPLICATION_MA5} \
  \
  && echo "export PATH=\$HOME/bin:\$PATH" >> /etc/skel/.bashrc \
  && echo "export OMP_NUM_THREADS=1" >> /etc/skel/.bashrc \

@@ -1,5 +1,8 @@
+#!/bin/sh
+
 NAMESPACE="malive"
 CONTAINER="malive"
+CONTAINER_DEV="malive-dev"
 CONTAINER_NAME="MateriApps LIVE!"
 
 get_version_list () {
@@ -8,13 +11,25 @@ get_version_list () {
   for t in ${TAGS}; do
     if [ ${t} = latest ]; then :; else
       if [ -z "${CONTAINER_VERSIONS}" ]; then
-	CONTAINER_VERSIONS="${t}"
+      	CONTAINER_VERSIONS="${t}"
       else
-	CONTAINER_VERSIONS="${CONTAINER_VERSIONS} ${t}"
+      	CONTAINER_VERSIONS="${CONTAINER_VERSIONS} ${t}"
       fi
     fi
   done
   CONTAINER_VERSION_LATEST=$(echo ${CONTAINER_VERSIONS} | /usr/bin/cut -d ' ' -f 1)
+
+  TAGS=$(/usr/bin/curl -s https://registry.hub.docker.com/v2/repositories/${NAMESPACE}/${CONTAINER_DEV}/tags | /usr/bin/sed 's/,/\'$'\n/g' | /usr/bin/grep \"name\": | /usr/bin/cut -d '"' -f 4 | /usr/bin/sort -r -V)
+  CONTAINER_DEV_VERSIONS=
+  for t in ${TAGS}; do
+    if [ ${t} = latest ]; then :; else
+      if [ -z "${CONTAINER_DEV_VERSIONS}" ]; then
+      	CONTAINER_DEV_VERSIONS="${t}"
+      else
+      	CONTAINER_DEV_VERSIONS="${CONTAINER_DEV_VERSIONS} ${t}"
+      fi
+    fi
+  done
 }
 
 get_timezone () {
@@ -55,11 +70,35 @@ else
       echo "Error: $0 remove VERSION"
       exit 1
     fi
+    get_version_list
+    VERSION_CHECKED=0
+    DEV=0
+    for v in ${CONTAINER_VERSIONS}; do
+      if [ ${VERSION} = ${v} ]; then
+        VERSION_CHECKED=1
+        break
+      fi
+    done
+    for v in ${CONTAINER_DEV_VERSIONS}; do
+      if [ ${VERSION} = ${v} ]; then
+        VERSION_CHECKED=1
+        DEV=1
+        break
+      fi
+    done
+    if [ ${VERSION_CHECKED} = 1 ]; then :;
+    else
+      echo "Error: version ${VERSION} is not found."
+      exit 1
+    fi
     printf "Really want to remove ${CONTAINER_NAME} version ${VERSION}? (y/N): "
     read -r yn
     case "$yn" in [yY]*)
       echo "Removing ${CONTAINER_NAME} version ${VERSION}..."
       IMAGE="${CONTAINER}:${VERSION}"
+      if [ ${DEV} = 1 ]; then
+        IMAGE="${CONTAINER_DEV}:${VERSION}"
+      fi
       CONTAINER="${CONTAINER}-${VERSION}"
       docker stop ${CONTAINER} > /dev/null
       docker rm ${CONTAINER} > /dev/null
@@ -93,11 +132,45 @@ else
   elif [ ${COMMAND} = list ]; then
     get_version_list
     echo "Available versions: ${CONTAINER_VERSIONS}"
+    echo "Available beta versions: ${CONTAINER_DEV_VERSIONS}"
     VERSIONS=$(docker images --format "{{.Tag}}" ${CONTAINER})
-    echo "Installed versions: ${VERSIONS}"
+    VERSION_LIST=
+    for v in ${VERSIONS}; do
+      if [ -z "${VERSION_LIST}" ]; then
+      	VERSION_LIST="${v}"
+      else
+      	VERSION_LIST="${VERSION_LIST} ${v}"
+      fi
+    done
+    echo "Installed versions: ${VERSION_LIST}"
     exit 0
   elif [ ${COMMAND} = version ]; then
     VERSION="$2"
+    if [ -z ${VERSION} ]; then
+      echo "Error: $0 version VERSION"
+      exit 1
+    fi
+    get_version_list
+    VERSION_CHECKED=0
+    DEV=0
+    for v in ${CONTAINER_VERSIONS}; do
+      if [ ${VERSION} = ${v} ]; then
+        VERSION_CHECKED=1
+        break
+      fi
+    done
+    for v in ${CONTAINER_DEV_VERSIONS}; do
+      if [ ${VERSION} = ${v} ]; then
+        VERSION_CHECKED=1
+        DEV=1
+        break
+      fi
+    done
+    if [ ${VERSION_CHECKED} = 1 ]; then :;
+    else
+      echo "Error: version ${VERSION} is not available."
+      exit 1
+    fi
     BUILD_IMAGE=1
   else
     echo "Error: $0 [remove | list | update | version]"
@@ -141,6 +214,9 @@ DOCKER_HOSTNAME="${CONTAINER}"
 # build image
 if [ "${BUILD_IMAGE}" = 1 ]; then
   BASE="${NAMESPACE}/${CONTAINER}:${VERSION}"
+  if [ ${DEV} = 1 ]; then
+    BASE="${NAMESPACE}/${CONTAINER_DEV}:${VERSION}"
+  fi
   get_timezone
   echo "Building building image ${IMAGE} from ${BASE}..."
   docker build -t ${IMAGE} - <<EOF
@@ -149,10 +225,9 @@ ARG USERNAME=${DOCKER_USERNAME}
 ARG GROUPNAME=${DOCKER_USERNAME}
 ARG UID=${DOCKER_UID}
 ARG GID=${DOCKER_GID}
-ARG PASSWORD=live
 RUN groupadd -f -g \$GID \$GROUPNAME \
  && useradd -m -s /bin/bash -u \$UID -g \$GID -G sudo \$USERNAME \
- && echo \$USERNAME:\$PASSWORD | chpasswd \
+ && echo \$USERNAME:live | chpasswd \
  && echo "\$USERNAME ALL=(ALL) ALL" >> /etc/sudoers \
  && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime \
  && sudo usermod -a -G audio,video \$USERNAME 
