@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ROOT=https://exa.phys.s.u-tokyo.ac.jp/archive/MateriApps/apt
+ROOT=https://malive.s3.amazonaws.com/repos
 DEBIAN=$(lsb_release -c -s)
 ARCH=$(dpkg --print-architecture)
 
