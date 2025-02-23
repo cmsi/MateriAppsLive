@@ -20,7 +20,7 @@ mkdir -p /usr/local/lib/python$VERSION
 ln -s python$VERSION /usr/local/lib/python3
 
 echo "==> Install MateriApps Applications/Tools"
-apt-get -y install --no-install-recommends @PACKAGES_APPLICATION_MA4@ @PACKAGES_APPLICATION_GUI@
+apt-get -y install --no-install-recommends @PACKAGES_APPLICATION@ @PACKAGES_APPLICATION_GUI@
 
 echo "==> Copy desktop file(s)"
 if [ -d /etc/skel/Desktop ]; then

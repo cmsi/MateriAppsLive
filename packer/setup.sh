@@ -43,9 +43,9 @@ sh ${SCRIPT_DIR}/login-ce.sh ${DEBIAN11_VERSION} ${CE4_VERSION} ${VB_VERSION} ${
   sed -e "s|@CE4_VERSION@|${CE4_VERSION}|g" ${SCRIPT_DIR}/build-ce4.sh.in > build-ce4.sh
   sed -e "s|@PACKAGES_DEVELOPMENT@|${PACKAGES_DEVELOPMENT}|g" \
       -e "s|@PACKAGES_PYTHON@|${PACKAGES_PYTHON}|g" \
-      -e "s|@PACKAGES_APPLICATION_MA4@|${PACKAGES_APPLICATION_MA4}|g" \
-      -e "s|@PACKAGES_APPLICATION_GUI@|${PACKAGES_APPLICATION_GUI}|g" \
-      ${SCRIPT_DIR}/script/materiapps-ma4.sh.in > script/materiapps-ma4.sh
+      -e "s|@PACKAGES_APPLICATION@|${PACKAGES_APPLICATION_MA4}|g" \
+      -e "s|@PACKAGES_APPLICATION_GUI@|${PACKAGES_APPLICATION_GUI_MA4}|g" \
+      ${SCRIPT_DIR}/script/materiapps.sh.in > script/materiapps-ma4.sh
   sed -e "s|@PACKAGES_DEVELOPMENT@|${PACKAGES_DEVELOPMENT}|g" \
       -e "s|@PACKAGES_PYTHON@|${PACKAGES_PYTHON}|g" \
       ${SCRIPT_DIR}/script/ceenv.sh.in > script/ceenv.sh
@@ -78,9 +78,9 @@ if [ -f "${iso}" ] && [ -f "${sha256sum}" ]; then
   sed -e "s|@CE5_VERSION@|${CE5_VERSION}|g" ${SCRIPT_DIR}/build-ce5.sh.in > build-ce5.sh
   sed -e "s|@PACKAGES_DEVELOPMENT@|${PACKAGES_DEVELOPMENT}|g" \
       -e "s|@PACKAGES_PYTHON@|${PACKAGES_PYTHON}|g" \
-      -e "s|@PACKAGES_APPLICATION_MA5@|${PACKAGES_APPLICATION_MA5}|g" \
-      -e "s|@PACKAGES_APPLICATION_GUI@|${PACKAGES_APPLICATION_GUI}|g" \
-      ${SCRIPT_DIR}/script/materiapps-ma5.sh.in > script/materiapps-ma5.sh
+      -e "s|@PACKAGES_APPLICATION@|${PACKAGES_APPLICATION_MA5}|g" \
+      -e "s|@PACKAGES_APPLICATION_GUI@|${PACKAGES_APPLICATION_GUI_MA5}|g" \
+      ${SCRIPT_DIR}/script/materiapps.sh.in > script/materiapps-ma5.sh
   sed -e "s|@PACKAGES_DEVELOPMENT@|${PACKAGES_DEVELOPMENT}|g" \
       -e "s|@PACKAGES_PYTHON@|${PACKAGES_PYTHON}|g" \
       ${SCRIPT_DIR}/script/ceenv.sh.in > script/ceenv.sh
