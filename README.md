@@ -3,6 +3,36 @@ MateriApps LIVE!
 
 [![Download MateriApps LIVE!](https://img.shields.io/sourceforge/dm/materiappslive.svg)](https://sourceforge.net/projects/materiappslive/files/latest/download)
 
+MateriApps LIVE! Release 5.0/4.2 (2025/xx/xx)
+=============================================
+
+  - Release 5.0: Updated base Debian distribution to Debian 12 (Bookworm)
+  - Release 4.2: Final version based on Debian 11 (Bullseye)
+  - Started support for Debian 13 (Trixie) and Ubuntu 24.04 (Noble)
+  - Stopped support for Debian 10 (Buster) and Ubuntu 18.04 (Bionic)
+  - Docker version for Windows WSL2
+  - VirtualBox version for Apple Silicon
+  - Newly included MateriApps packages
+     * hwave (1.0.1)
+  - Updated MateriApps packages
+     * akaikkr (20230519)
+     * alamode (1.4.2)
+     * alpscore (2.3.1)
+     * cif2cell (2.1.0)
+     * conquest (1.2)
+     * dcore (3.4.0)
+     * espresso (7.3)
+     * fermisurfer (2.4)
+     * ovito (3.10.2)
+     * tenes (2.0.0)
+     * triqs (3.2.0), triqs-cthyb (3.2.1), triqs-dfttools (3.2.0), triqs-hubbardi (3.2.0)
+
+MateriApps Debian Repository (2025/02/23)
+=============================================
+
+   - MateriApps Debian Repository has been moved to AWS S3
+   - run `curl -L https://malive.s3.amazonaws.com/repos/setup.sh | sudo /bin/sh` to update repository info
+
 MateriApps LIVE! Release 4.1 (2023/04/09)
 =============================================
 

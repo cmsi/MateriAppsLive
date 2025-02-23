@@ -2,7 +2,7 @@
 
 echo "==> Install MagteriApps gpg key"
 apt-get -y install --no-install-recommends curl
-curl -L https://exa.phys.s.u-tokyo.ac.jp/archive/MateriApps/apt/setup.sh | /bin/sh
+curl -L https://malive.s3.amazonaws.com/repos/setup.sh | /bin/sh
 apt-get update
 
 echo "==> Install ceenv Package"
