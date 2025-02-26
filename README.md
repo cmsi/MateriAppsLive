@@ -1,9 +1,9 @@
 MateriApps LIVE!
 ================
 
-[![Download MateriApps LIVE!](https://img.shields.io/sourceforge/dm/materiappslive.svg)](https://sourceforge.net/projects/materiappslive/files/latest/download)
+[[Download MateriApps LIVE!](https://github.com/cmsi/MateriAppsLive/wiki/download)]
 
-MateriApps LIVE! Release 5.0/4.2 (2025/xx/xx)
+MateriApps LIVE! Release 5.0/4.2 (2025/02/26)
 =============================================
 
   - Release 5.0: Updated base Debian distribution to Debian 12 (Bookworm)
