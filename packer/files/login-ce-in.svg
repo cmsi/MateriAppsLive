@@ -2,19 +2,19 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="640"
    height="480"
    id="svg3320"
    version="1.1"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   sodipodi:docname="login-ce-in.svg">
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   sodipodi:docname="login-ce-in.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs3322">
     <linearGradient
@@ -81,16 +81,19 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.775"
-     inkscape:cx="303.81949"
-     inkscape:cy="250.84337"
+     inkscape:cx="304.51613"
+     inkscape:cy="250.32258"
      inkscape:document-units="px"
      inkscape:current-layer="g3825"
      showgrid="false"
-     inkscape:window-width="931"
-     inkscape:window-height="672"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1" />
+     inkscape:window-width="1240"
+     inkscape:window-height="631"
+     inkscape:window-x="415"
+     inkscape:window-y="71"
+     inkscape:window-maximized="0"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
   <metadata
      id="metadata3325">
     <rdf:RDF>
@@ -146,26 +149,26 @@
          style="font-size:40px;line-height:1.25;font-family:sans-serif"> </tspan></text>
     <g
        id="g3825"
-       transform="translate(-322)">
+       transform="translate(-322,12)">
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:0%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none"
          x="360.74557"
          y="631.14252"
          id="text3002"
-         transform="scale(1.0000015,0.9999985)"><tspan
+         transform="scale(1.0000015)"><tspan
            id="tspan3066"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;line-height:100%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#e6e6e6"
            sodipodi:role="line"
            x="360.74557"
-           y="631.14252">ceenv @CE_VERSION@ for MateriApps LIVE!</tspan></text>
+           y="631.14252">ceenv @CE_VERSION@</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:0%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none"
          x="360.76697"
          y="649.00757"
          id="text3002-3"
-         transform="scale(1.0000015,0.9999985)"><tspan
+         transform="scale(1.0000015)"><tspan
            id="tspan3039-5"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:100%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#e6e6e6"
            sodipodi:role="line"
@@ -175,27 +178,26 @@
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:1;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold'"
            sodipodi:role="line"
            x="360.76697"
-           y="661.00757">@PROJECT@</tspan><tspan
+           y="661.14166">@PROJECT@</tspan><tspan
            id="tspan3753-5"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:1;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold'"
            sodipodi:role="line"
            x="360.76697"
-           y="673.00757">VirtualBox @VB_VERSION@ </tspan><tspan
+           y="673.2757">VirtualBox @VB_VERSION@ </tspan><tspan
            id="tspan3012-6"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:1;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold'"
            sodipodi:role="line"
            x="360.76697"
-           y="679.00757" /><tspan
+           y="679.2757" /><tspan
            id="tspan3755-2"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;line-height:1;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold'"
            sodipodi:role="line"
            x="360.76697"
-           y="685.00757">Packer @PACKER_VERSION@</tspan><tspan
+           y="685.40979">Packer @PACKER_VERSION@</tspan><tspan
            id="tspan3066-9"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;line-height:1;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold'"
            sodipodi:role="line"
            x="360.76697"
-           y="698.5271"> </tspan></text>
+           y="698.9621"> </tspan></text>
     </g>
   </g>
 </svg>
