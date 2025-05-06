@@ -4,7 +4,7 @@ ROOT=https://malive.s3.amazonaws.com/repos
 DEBIAN=$(lsb_release -c -s)
 ARCH=$(dpkg --print-architecture)
 
-dpkg --purege materiapps-keyring > /dev/null 2>&1
+dpkg --purge materiapps-keyring > /dev/null 2>&1
 rm -f /etc/apt/trusted.gpg.d/materiapps.gpg /etc/apt/trusted.gpg.d/MateriApps_LIVE_Repository.gpg 
 rm -f /etc/apt/sources.list.d/materiapps-*.list
 
