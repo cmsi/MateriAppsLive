@@ -4,7 +4,7 @@ REPOS_DIR=$HOME/malive/public/repos
 VB_DIR=$HOME/malive/public/vb
 RSYNC="rsync -avzP --delete -e ssh"
 
-DISTS="trixie bookworm bullseye noble jammy focal"
+DISTS="forky trixie bookworm bullseye noble jammy"
 
 EXA_ROOT="root@tk2-248-33678.vs.sakura.ne.jp:/var/www/html/archive/MateriApps"
 SF_ROOT="frs.sourceforge.net:/home/frs/project/materiappslive"

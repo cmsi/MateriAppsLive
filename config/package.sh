@@ -10,14 +10,6 @@ PACKAGES_DEVELOPMENT="sudo lsb-release \
 
 PACKAGES_PYTHON="python3-pip python3-venv jupyter-notebook python3-numpy python3-scipy python3-matplotlib python3-tk python3-sympy python3-dev ipython3"
 
-PACKAGES_APPLICATION_MA4="dx grace \
-  h5utils \
-  bsa c-tools fermisurfer libalpscore-dev physbo tapioca \
-  abinit akaikkr alamode casino-setup cif2cell conquest quantum-espresso quantum-espresso-data openmx openmx-data openmx-example respack salmon-tddft xtapp xtapp-ps xtapp-util \
-  gamess-setup smash \
-  gromacs gromacs-data lammps lammps-data lammps-examples octa octa-data \
-  alps-applications alps-tutorials ddmrg dsqss hphi mvmc tenes triqs triqs-cthyb triqs-dfttools triqs-hubbardi dcore"
-
 PACKAGES_APPLICATION_MA5="dx grace \
   h5utils \
   bsa c-tools fermisurfer libalpscore-dev physbo tapioca \
@@ -25,11 +17,6 @@ PACKAGES_APPLICATION_MA5="dx grace \
   gamess-setup smash \
   gromacs gromacs-data lammps lammps-data lammps-examples octa octa-data \
   alps-applications alps-tutorials ddmrg dsqss hphi mvmc tenes triqs triqs-cthyb triqs-dfttools triqs-hubbardi dcore"
-
-PACKAGES_APPLICATION_GUI_MA4="ovito paraview pymol rasmol xcrysden"
-if [ "$ARCH" = "x86_64" ]; then
-  PACKAGES_APPLICATION_GUI_MA4="$PACKAGES_APPLICATION_GUI_MA4 vesta vmd-setup"
-fi
 
 PACKAGES_APPLICATION_GUI_MA5="ovito paraview pymol rasmol xcrysden"
 if [ "$ARCH" = "x86_64" ]; then

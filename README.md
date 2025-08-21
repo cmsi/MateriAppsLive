@@ -6,7 +6,8 @@ MateriApps LIVE!
 MateriApps LIVE! Release 5.1 (2025/xx/xx)
 =============================================
 
-  - Stopped support for Ubuntu 20.04 (focal)
+  - Started support for Debian 14 (Forky)
+  - Stopped support for Ubuntu 20.04 (Focal)
 
 MateriApps LIVE! Release 5.0/4.2 (2025/02/26)
 =============================================

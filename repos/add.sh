@@ -5,7 +5,7 @@ echo "PACKAGE: $PACKAGE"
 
 DATA_DIR=$HOME/malive/data
 REPOS_DIR=$HOME/malive/public/repos
-CODENAME="trixie bookworm bullseye noble jammy focal"
+CODENAME="forky trixie bookworm bullseye noble jammy"
 for cname in $CODENAME; do
   CHANGES=$(ls $DATA_DIR/pkg/$cname/${PACKAGE}_*.changes)
   for cng in $CHANGES; do
