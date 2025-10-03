@@ -28,7 +28,7 @@ RUN apt-get update -qq \
  \
  && curl -L https://malive.s3.amazonaws.com/repos/setup.sh | /bin/sh \
  && apt-get update -qq \
- && apt-get -y install --no-install-recommends materiappslive ${PACKAGES_APPLICATION_MA4} \
+ && apt-get -y install --no-install-recommends materiappslive ${PACKAGES_APPLICATION_MA} \
  \
  && echo "export PATH=\$HOME/bin:\$PATH" >> /etc/skel/.bashrc \
  && echo "export OMP_NUM_THREADS=1" >> /etc/skel/.bashrc \

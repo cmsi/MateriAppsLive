@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PROJECT="malive"
+PROJECT="ceenv"
 
 SCRIPT_DIR=$(cd "$(dirname "$0")" || exit; pwd)
 echo "SCRIPT_DIR=$SCRIPT_DIR"
@@ -8,9 +8,9 @@ echo "SCRIPT_DIR=$SCRIPT_DIR"
 . "$SCRIPT_DIR"/../config/version.sh
 . "$SCRIPT_DIR"/../config/package.sh
 
-CODENAMES=${MA5_CODENAME}
-VERSION=${MA5_VERSION}
-LOG=build-upload-image-ma5.log
+CODENAMES=${CE6_CODENAME}
+VERSION=${CE6_VERSION}
+LOG=build-upload-image-ce6.log
 
 DEV=0
 case "$VERSION" in
@@ -41,7 +41,7 @@ RUN apt-get update -qq \
  \
  && curl -L https://malive.s3.amazonaws.com/repos/setup.sh | /bin/sh \
  && apt-get update -qq \
- && apt-get -y install --no-install-recommends materiappslive ${PACKAGES_APPLICATION_MA5} \
+ && apt-get -y install --no-install-recommends ceenv \
  \
  && echo "export PATH=\$HOME/bin:\$PATH" >> /etc/skel/.bashrc \
  && echo "export OMP_NUM_THREADS=1" >> /etc/skel/.bashrc \

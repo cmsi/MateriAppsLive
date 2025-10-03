@@ -1,37 +1,24 @@
 #!/bin/sh
 
-PROJECT="malive"
+CONTAINER="malive-dev"
 
-SCRIPT_DIR=$(cd "$(dirname "$0")" || exit; pwd)
+SCRIPT_DIR=$(cd "$(dirname $0)"; pwd)
 echo "SCRIPT_DIR=$SCRIPT_DIR"
 
-. "$SCRIPT_DIR"/../config/version.sh
-. "$SCRIPT_DIR"/../config/package.sh
+. $SCRIPT_DIR/../config/version.sh
+. $SCRIPT_DIR/../config/package.sh
 
-CODENAMES=${MA5_CODENAME}
-VERSION=${MA5_VERSION}
-LOG=build-upload-image-ma5.log
-
-DEV=0
-case "$VERSION" in
-  *a*) DEV=1 ;;
-  *b*) DEV=1 ;;
-esac
-
-docker login 2>&1 | tee -a ${LOG}
-docker buildx create --use --name multi-arch 2>&1 | tee -a ${LOG}
-docker buildx inspect --builder multi-arch --bootstrap 2>&1 | tee -a ${LOG}
+CODENAMES=${MA6_CODENAME}
+VERSION=${MA6_VERSION}
+LOG=build-image-ma6.log
 
 for c in ${CODENAMES}; do
   for v in ${DEBIAN_VERSIONS}; do
-    if [ ${c} = $(echo "${v}" | cut -d/ -f1) ]; then
+    if [ ${c} = $(echo ${v} | cut -d/ -f1) ]; then
       BASE=$(echo ${v} | cut -d/ -f2)
-      TARGET="-t malive/${PROJECT}:${VERSION} -t malive/${PROJECT}:latest"
-      if [ ${DEV} -eq 1 ]; then
-        TARGET="-t malive/${PROJECT}-dev:${VERSION}"
-      fi
-      echo "building and uploading ${PROJECT} images version ${VERSION} from ${BASE}..." 2>&1 | tee -a ${LOG}
-      docker buildx build --platform linux/amd64,linux/arm64 --push ${TARGET} - <<EOF 2>&1 | tee -a ${LOG}
+      IMAGE="${CONTAINER}:${VERSION}"
+      echo "building images ${CONTAINER}:${VERSION} from ${BASE}..." 2>&1 | tee -a ${LOG}
+      docker build -t ${IMAGE}  - <<EOF 2>&1 | tee -a ${LOG}
 FROM ${BASE}
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -41,7 +28,7 @@ RUN apt-get update -qq \
  \
  && curl -L https://malive.s3.amazonaws.com/repos/setup.sh | /bin/sh \
  && apt-get update -qq \
- && apt-get -y install --no-install-recommends materiappslive ${PACKAGES_APPLICATION_MA5} \
+ && apt-get -y install --no-install-recommends materiappslive ${PACKAGES_APPLICATION_MA} \
  \
  && echo "export PATH=\$HOME/bin:\$PATH" >> /etc/skel/.bashrc \
  && echo "export OMP_NUM_THREADS=1" >> /etc/skel/.bashrc \

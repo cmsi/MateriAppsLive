@@ -11,7 +11,11 @@ if [ -z ${OUTPUT} ]; then
     exit 127
 fi
 DEBIAN_NAME=""
-if [ $(echo ${DEBIAN_VERSION} | cut -d. -f1) = 11 ]; then
+if [ $(echo ${DEBIAN_VERSION} | cut -d. -f1) = 13 ]; then
+  DEBIAN_NAME="(trixie)"
+elif [ $(echo ${DEBIAN_VERSION} | cut -d. -f1) = 12 ]; then
+  DEBIAN_NAME="(bookworm)"
+elif [ $(echo ${DEBIAN_VERSION} | cut -d. -f1) = 11 ]; then
   DEBIAN_NAME="(bullseye)"
 elif [ $(echo ${DEBIAN_VERSION} | cut -d. -f1) = 10 ]; then
   DEBIAN_NAME="(buster)"

@@ -3,17 +3,20 @@ MateriApps LIVE!
 
 [[Download MateriApps LIVE!](https://github.com/cmsi/MateriAppsLive/wiki/download)]
 
-MateriApps LIVE! Release 5.1 (2025/xx/xx)
-=============================================
+MateriApps LIVE! Release 6.0/5.1/4.3 (2025/10/03)
+=================================================
 
+  - Release 6.0: Updated base Debian distribution to Debian 13 (Trixie)
   - Started support for Debian 14 (Forky)
   - Stopped support for Ubuntu 20.04 (Focal)
+  - Updated MateriApps packages
+     * akaikkr (20250731)
+     * gamess-setup ()
 
 MateriApps LIVE! Release 5.0/4.2 (2025/02/26)
 =============================================
 
   - Release 5.0: Updated base Debian distribution to Debian 12 (Bookworm)
-  - Release 4.2: Final version based on Debian 11 (Bullseye)
   - Started support for Debian 13 (Trixie) and Ubuntu 24.04 (Noble)
   - Stopped support for Debian 10 (Buster) and Ubuntu 18.04 (Bionic)
   - Docker version for Windows WSL2

@@ -8,9 +8,9 @@ echo "SCRIPT_DIR=$SCRIPT_DIR"
 . "$SCRIPT_DIR"/../config/version.sh
 . "$SCRIPT_DIR"/../config/package.sh
 
-CODENAMES=${CE4_CODENAME}
-VERSION=${CE4_VERSION}
-LOG=build-upload-image-ce4.log
+CODENAMES=${CE5_CODENAME}
+VERSION=${CE5_VERSION}
+LOG=build-upload-image-ce5.log
 
 DEV=0
 case "$VERSION" in
